@@ -1,1 +1,26 @@
+{{#if showError}}
+    <span style="color: red">Error! {{err}}</span>
+{{/if}}
+{{#if created}}
+    <span style="color: blue">new drone created!</span>
+{{/if}}
+{{#if updated}}
+    <span style="color: blue">drone updated!!!</span>
+{{/if}}
+{{#if deleted}}
+    <span style="color: blue">drone deleted :(</span>
+{{/if}}
 <h2>Available drones</h2>
+<div class="drnz">
+{{#each results}}
+    <div class="drone">
+        <h3>{{this.name}}</h3>
+        <ul>
+            <li>{{this.propellers}} propellers</li>
+            <li>{{this.maxSpeed}} mph</li>
+        </ul>
+        <a href="/drones/{{this._id}}/edit" class="btn btn-outline-primary">edit</a>
+        <a href="/drones/{{this._id}}/delete" class="btn btn-outline-danger">delete</a>
+    </div>
+{{/each}}
+</div>
