@@ -3,22 +3,12 @@
     <div class="container">
          <form action="/drones/create" method="POST">
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value="name"><br>
+        <input type="text" id="name" name="name" placeholder="name"><br>
         <label for="propellers">Propellers:</label><br>
-        <input type="text" id="propellers" name="propellers" value="number"><br>
+        <input type="text" id="propellers" name="propellers" placeholder="number"><br>
         <label for="maxSpeed">Maximal Speed:</label><br>
-        <input type="text" id="maxSpeed" name="maxSpeed" value="speed"><br>
+        <input type="text" id="maxSpeed" name="maxSpeed" placeholder="speed"><br>
         <input type="submit" value="Submit">
     </form>
     </div>
-   
-
-    {{#if showSuccessMessage}}
-    <p>New drone added</p>
-    {{/if}}
-
-    {{#if showFailureMessage}}
-    <p>Something went wrong!</p>
-    {{/if}}
-
 </div>

@@ -9,7 +9,7 @@ let DroneSchema = new Schema({
         type: Number
     },
     maxSpeed: {
-        type: Number,
+        type: Number
     }
 })
 
