@@ -3,4 +3,10 @@
     <h3>Name : {{this.name}}</h3>
     <p>Number of propellers : {{this.propellers}} </p>
     <p>Maximum Speed : {{this.maxSpeed}} km/h</p>
+    <a href="/drones/{{this._id}}/edit">edit</a>
+
+    <form action = "/drones/{{this._id}}/delete" method="POST">
+    <button type="submit">Delete</button>
+    </form>
+   
 {{/each}}
