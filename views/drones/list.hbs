@@ -1,1 +1,11 @@
 <h2>Available drones</h2>
+
+{{#each drones}}
+        
+            <div class="todo-element">
+                <p>{{this.name}}</p>
+                <p>propellers: {{this.propellers}}</p>
+                <p>maxSpeed: {{this.maxSpeed}}</p>
+            </div>
+        
+    {{/each}}
