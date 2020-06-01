@@ -6,3 +6,85 @@ body {
 a {
   color: #00b7ff;
 }
+
+h2 {
+  font-weight: bold;
+}
+
+button {
+  border: 1px solid lightseagreen;
+}
+
+/*=====INDEX PAGE=====*/
+
+#indexPage{
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#indexPage div {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:  20px 20px 60px #d9d9d9, 
+             -20px -20px 60px #ffffff;
+}
+
+/*=====ALL DRONES=====*/
+
+#allDrones{
+  width: 100%;
+}
+
+#allDrones .outerBox {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+#allDrones .innerBox {
+  width: 30%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: inset 20px 20px 60px #d9d9d9, 
+              inset -20px -20px 60px #ffffff;
+}
+
+/*=====CREATE DRONE=====*/
+
+#createDrone {
+  width: 100%;
+}
+
+#createDrone div {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*=====FOOTER=====*/
+
+footer{
+  margin-top: 50px;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  font-weight: lighter;
+}

@@ -1,1 +1,18 @@
-<h2>Available drones</h2>
+
+
+<section id="allDrones">
+    <h2>Available drones</h2>
+    <div class="outerBox">
+        {{#each resultat}}
+            <div class="innerBox">
+                <h3>Name : {{this.name}}</h3>
+                <p>Number of propellers : {{this.propellers}} </p>
+                <p>Maximum Speed : {{this.maxSpeed}} km/h</p>
+                <a href="/drones/{{this._id}}/edit">Edit</a>
+                <form action="/drones/{{this._id}}/delete" method="POST">
+                    <button type="submit">DELETE</button>
+                </form>
+            </div>
+        {{/each}}
+    </div>
+</section>
