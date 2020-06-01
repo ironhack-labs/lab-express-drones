@@ -5,15 +5,19 @@ let DronesModel = require('../models/drone.model')
 
 const router = express.Router();
 
+
 router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
   DronesModel.find()
     .then((resultat)=>{res.render('../views/drones/list.hbs', {resultat})})
+
 });
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   res.render('../views/drones/create-form.hbs')
+
+
 });
 
 //send --> terminal 
@@ -23,15 +27,18 @@ router.get('/drones/create', (req, res, next) => {
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   const {name, propellers, maxSpeed} = req.body;
+
   
     DronesModel.create({name: name, propellers: propellers, maxSpeed: maxSpeed})
         .then(()=>{
             res.redirect('/drones')
             
+
         })
         .catch(()=>{
             res.render('../views/drones/create-form.hbs')
         })
+
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
@@ -41,6 +48,8 @@ router.get('/drones/:id/edit', (req, res, next) => {
         })
         .catch(()=>{res.send('Hmmm... Something went wrong')
         })
+
+
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
@@ -64,4 +73,4 @@ router.post('/drones/:id/delete', (req, res, next) => {
         })
 });
 
-module.exports = router;
+module.exports = router

@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+require('../configs/db.config')
+
 // Iteration #1
 const mongoose = require('mongoose');
 require('../configs/db.config')
@@ -15,3 +18,4 @@ DroneModel.create(drones)
     .catch(()=>{console.log('Something went wrong')})
         .then(()=>{mongoose.disconnect()});
     
+
