@@ -1,1 +1,30 @@
 <h2>Create a new drone</h2>
+
+<div class = "form-container">
+<form action="/drones/create" method="POST">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name</label>
+    <input type="text" name="name" class="form-control" id="exampleFormControlInput1" >
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Propellers</label>
+    <textarea name ="propellers" class="form-control" id="exampleFormControlSelect1" rows="3">
+    </textarea>
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Speed</label>
+    <textarea name ="maxSpeed" class="form-control" id="exampleFormControlSelect1" rows="3">
+
+    </textarea>
+  </div>
+  <button type="submit" class="btn btn-dark">Create</button>
+  
+</form>
+
+{{#if showSuccessMessage}}
+    <p class ="text-success">Successfully Added</p>
+{{/if}}
+{{#if showFailureMessage}}
+    <p class="text-danger">Something went wrong!</p>
+{{/if}}
+</div>
