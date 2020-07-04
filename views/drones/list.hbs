@@ -1,1 +1,24 @@
 <h2>Available drones</h2>
+{{#if drones }}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Propellers</th>
+            <th scope="col">Max Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each drones as |drone|}}
+        <tr>
+            <td>{{drone.name}}</td>
+            <td>{{drone.propellers}}</td>
+            <td>{{drone.maxSpeed}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{else}}
+<p>There are no drones</p>
+{{/if}}
