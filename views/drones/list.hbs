@@ -29,21 +29,21 @@
      <div class="container">
          <div class="row">
              {{#each drones as |drone|}}
-             <div class="col-3">
-                   
-                        <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Drone :{{drone.name}} </h5>
-                                    <p class="card-text">Propellers: {{drone.propellers}}</p>
-                                    <p class="card-text">Max Speed: {{drone.maxSpeed}}</p>
-                                    
-                                    <a href="/drones/{{drone.id}}/edit" class="card-link btn btn-primary">Update</a>
-                                    <form action="/drones/{{drone.id}}/delete" method="POST">
-                                        <button type="submit" class="btn btn-danger">Delete Drone</button>
-                                    </form>
-                                </div>
+             <div class="col-3 m-5">
+                <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Drone :{{drone.name}} </h5>
+                            <p class="card-text">Propellers: {{drone.propellers}}</p>
+                            <p class="card-text">Max Speed: {{drone.maxSpeed}}</p>
+                            <div class="text-center">
+                                <a href="/drones/{{drone.id}}/edit" class="card-link btn btn-primary mb-2 ">Update</a>
+                                <form action="/drones/{{drone.id}}/delete" method="POST">
+                                    <button type="submit" class="btn btn-danger">Delete Drone</button>
+                                </form>
+                            </div>
+                            
                         </div>
-                   
+                </div>
              </div>
               {{/each}}
          </div>
@@ -51,3 +51,4 @@
    
      
 
+         

@@ -6,3 +6,12 @@ body {
 a {
   color: #00b7ff;
 }
+
+.img-home {
+  background-image: url('https://estaticos.elperiodico.com/resources/jpg/4/3/dron-una-foto-archivo-1535627358134.jpg');
+  height: calc(100vh - 200px);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  
+  
+}
