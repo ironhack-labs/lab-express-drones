@@ -14,6 +14,7 @@ Add the link that goes to /drones route in the layout.hbs file to easier navigat
 router.get('/drones', (req, res, next) => {
   Drone.find({}).then((dronesFromDB) => {
     res.render('drones/list', { dronesFromDB })
+    console.log(dronesFromDB)
   })
   // Iteration #2: List the drones
   // ... your code here
@@ -21,12 +22,17 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form')
 })
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  const body = req.body
+  Drone.create(body)
+  .then(() => {
+    res.redirect('/drones')
+  })
+  .catch((error) => console.log(error))
 })
 
 router.get('/drones/:id/edit', (req, res, next) => {
