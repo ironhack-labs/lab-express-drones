@@ -1,1 +1,16 @@
 <h2>Available drones</h2>
+
+<a href="/drones/create" class="btn btn-primary">Create a new drone</a>
+
+{{#each dronesFromDB as |drone|}}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{drone.name}}</h5>
+        <p class="card-text">{{drone.propellers}}</p>
+        <p class="card-text">{{drone.maxSpeed}}</p>
+        <a href="/drones/:id/edit" class="btn btn-primary">Edit drone</a>
+        <a href="/drones/:id/delete" class="btn btn-primary">Delete drone</a>
+    </div>
+</div>
+
+{{/each}}
