@@ -27,25 +27,30 @@ router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   const body = req.body
   Drone.create(body)
-  .then(() => {
-    res.redirect('/drones')
-  })
-  .catch((error) => console.log(error))
+    .then(() => {
+      res.redirect('/drones')
+    })
+    .catch((error) => console.log(error))
 })
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  res.render('drones/update-form')
+  const id = req.params.id
+  const body = req.body
+  Drone.findById(id)
+    .then((drone) => res.render('drones/update-form', { drone }))
+    .catch((error) => console.log(error))
 })
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   const id = req.params.id
   const body = req.body
-  Drone.findByIdAndUpdate(id, {body})
-  .then(() => {
-    res.redirect('/drones')
-  })
-  .catch((error) => console.log(error))
+  Drone.findByIdAndUpdate(id, { body })
+    .then((drone) => {
+      console.log(drone)
+      res.redirect('/drones')
+    })
+    .catch((error) => console.log(error))
 })
 
 router.post('/drones/:id/delete', (req, res, next) => {
