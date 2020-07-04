@@ -1,8 +1,53 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url('https://www.cinconoticias.com/wp-content/uploads/drones-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
   color: #00b7ff;
 }
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem 25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5%;
+}
+
+#home a {
+  width: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin: 50px 520px;
+}
+
+.row {
+  margin-top: 100px;
+  padding-left: 450px;
+}
+
+.card-body a { 
+  margin-top: 15px;
+  margin-left: 140px;
+}
+
+.card-body button { 
+  margin-top: 15px;
+  margin-left: 130px;
+}
+
+.create {
+  width: 50rem;
+  margin-left: 17rem;
+  margin-top: 5rem;
+}
+
