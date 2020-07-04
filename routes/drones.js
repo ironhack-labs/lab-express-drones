@@ -33,17 +33,26 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const droneId = req.params.id;
+  Drone.findById(droneId)
+  .then((drone)=> res.render('drones/update-form',drone))
+  .catch((error)=> error)
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const body = req.body;
+  const droneId = req.params.id;
+  Drone.findByIdAndUpdate(droneId,body)
+  .then(()=> res.redirect('/drones'))
+  .catch((error)=> error)
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.get('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+  .then(()=> res.redirect('/drones'))
+  .catch((error)=> error)
 });
 
 module.exports = router;
