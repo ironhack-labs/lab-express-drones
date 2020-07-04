@@ -15,6 +15,7 @@ router.get('/', (req, res, next) => {
 router.get('/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  res.render()
 });
 
 router.post('/create', (req, res, next) => {
