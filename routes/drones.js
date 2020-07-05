@@ -35,9 +35,8 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   const id = req.params.id
-  const body = req.body
   Drone.findById(id)
-    .then((drone) => res.render('drones/update-form', { drone }))
+    .then((drone) => res.render('drones/update-form', drone))
     .catch((error) => console.log(error))
 })
 

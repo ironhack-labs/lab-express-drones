@@ -1,17 +1,31 @@
-<h2>Available drones</h2>
-
-<a href="/drones/create" class="btn btn-primary">Create a new drone</a>
-
-{{#each dronesFromDB as |drone|}}
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">{{drone.name}}</h5>
-        <p class="card-text">{{drone.propellers}}</p>
-        <p class="card-text">{{drone.maxSpeed}}</p>
-        <a href="/drones/{{drone._id}}/edit" class="btn btn-primary">Edit drone</a>
-        <a href="/drones/{{drone._id}}/delete" class="btn btn-primary">Delete drone</a>
+<body id="list">
+    {{>nav}}
+    <div class="container-fluid bg"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 create">
+                <h2>Available drones</h2>
+                <a href="/drones/create" class="btn btn-primary ">Create a new drone</a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            {{#each dronesFromDB as |drone|}}
+            <div class=" col-3">
+                <div class="card col-12">
+                    <div class="card-header">
+                        <img src="images/drone.svg">
+                        <p class="card-title">{{drone.name}}</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"><strong>Number of propellers</strong> {{drone.propellers}}</p>
+                        <p class="card-text"><strong>Max speed</strong> {{drone.maxSpeed}}</p>
+                        <a href="/drones/{{drone._id}}/edit" class="btn btn-primary edit">Edit drone</a>
+                        <a href="/drones/{{drone._id}}/delete" class="btn btn-primary">Delete drone</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
     </div>
-</div>
-
-
-{{/each}}
+    {{>footer}}
+</body>

@@ -1,8 +1,192 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+/*
+font-family: 'Muli', sans-serif;
+font-family: 'Playfair Display', serif;
+*/
+html {
+  font-size: 10px;
 }
 
-a {
-  color: #00b7ff;
+body {
+  font: 1.4rem 'Muli', sans-serif;
+  line-height: 2;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  font-size: 5rem;
+  display: inline-block;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  padding: 0;
+}
+
+nav .nav-item {
+  padding-top: 0.5rem;
+}
+
+#homepage {
+  background: url(../images/aerial002.jpg) no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+#homepage nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#homepage .desc {
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  padding: 9rem 3rem 1rem 3rem;
+  height: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#list {
+  overflow: hidden;
+}
+
+#list .bg {
+  background: url(../images/aerial001.jpg) no-repeat center center/cover;
+  height: 50rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 105%;
+}
+
+#list nav {
+  margin-bottom: 6rem;
+}
+
+#list .create {
+  margin-bottom: 6rem;
+}
+
+#list .create a {
+  border: 0;
+  text-decoration: underline;
+}
+
+#list .create a:hover {
+  text-decoration: none;
+}
+
+#list .create a:before {
+  content: '|';
+  padding-right: 2rem;
+  margin-left: 2rem;
+}
+
+#list .card .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+}
+
+#list .card .card-header img {
+  width: 6rem;
+  margin-right: 2rem;
+}
+
+#list .card .card-header .card-title {
+  font-weight: 600;
+}
+
+#list .card strong {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#list a.btn {
+  background: none;
+  color: #333;
+  border-color: #333;
+  font-size: 1.4rem;
+}
+
+#list a.btn.edit {
+  background: #333;
+  color: #fff;
+}
+
+#create {
+  background: url(../images/aerial003.jpg) no-repeat center center/cover;
+  height: 100vh;
+}
+
+#create .block {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3rem;
+  margin-top: 18rem;
+}
+
+#create .form-group {
+  display: inline-block;
+}
+
+#create .form-group input {
+  padding: 1rem 2rem;
+  height: auto;
+  font-size: 1.4rem;
+}
+
+#create button {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  justify-self: flex-end;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+}
+
+#list footer,
+#create footer {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem 3rem;
+}
+/*# sourceMappingURL=style.css.map */
