@@ -1,1 +1,20 @@
 <h2>Available drones</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Number of propellers</td>
+            <td>Speed (m/sec)</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each drones}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.propellers}}</td>
+            <td>{{this.maxSpeed}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
