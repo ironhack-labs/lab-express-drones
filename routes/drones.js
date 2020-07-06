@@ -9,7 +9,6 @@ router.get("/drones", (req, res, next) => {
   droneModel
     .find()
     .then((drones) => {
-      console.log(drones);
       res.render("drones/list", { drones });
     })
     .catch(next);
@@ -28,12 +27,20 @@ router.post("/drones/create", (req, res, next) => {
 
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  droneModel
+    .findById(req.params.id)
+    .then((drone) => {
+      res.render("drones/update-form", { drone });
+    })
+    .catch(next);
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  droneModel
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.redirect("/drones"))
+    .catch(next);
 });
 
 router.post("/drones/:id/delete", (req, res, next) => {
