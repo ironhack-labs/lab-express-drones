@@ -16,13 +16,14 @@ router.get("/drones", (req, res, next) => {
 });
 
 router.get("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  res.render("drones/create-form");
 });
 
 router.post("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  droneModel
+    .create(req.body)
+    .then(() => res.redirect("/drones"))
+    .catch((dbErr) => res.send(JSON.stringify(cbErr)));
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
