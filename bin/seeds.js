@@ -13,11 +13,21 @@ const drones = [
     { name: 'Courier 3000i', propellers: 6, maxSpeed: 18 }
 ];
 
-Drone.create(drones)
-    .then(dronesFromDB => {
-        console.log(`Created ${dronesFromDB.length} drones`);
+// Drone.create(drones)
+//     .then(dronesFromDB => {
+//         console.log(`Created ${dronesFromDB.length} drones`);
+//         mongoose.connection.close();
+//     })
+//     .catch(err => 
+//         console.log(`An error occurred while getting movies from the DB: ${err}`)    
+// );
+
+(async function seedDB(){
+    try{
+        const result = await Drone.create(drones)
+        console.log(`Success! Created ${result.length} drones added to db`)
         mongoose.connection.close();
-    })
-    .catch(err => 
-        console.log(`An error occurred while getting movies from the DB: ${err}`)    
-);
+    }catch(err){
+        console.error(err)
+    }
+})()

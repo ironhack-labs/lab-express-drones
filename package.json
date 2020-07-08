@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prod": "node ./bin/www",
-    "start": "DEBUG=starter-code:* nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "DEBUG=starter-code:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
