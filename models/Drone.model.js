@@ -1,4 +1,3 @@
-// Iteration #1
 const mongoose = require("mongoose");
 require("../configs/db.config");
 

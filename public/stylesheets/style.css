@@ -1,8 +1,22 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.separator {
+  color: #cecccc;
+}
+
+.btn-link {
+  color: #00b7ff !important;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  vertical-align: baseline;
+}
+
+.btn-link:hover {
+  color: #007bff !important;
 }
