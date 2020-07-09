@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./configs/db.config');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -10,14 +11,11 @@ const logger = require('morgan');
 const path = require('path');
 
 const app_name = require('./package.json').name;
-const debug = require('debug')(
-  `${app_name}:${path.basename(__filename).split('.')[0]}`
-);
+// const debug = require('debug')(
+//   `${app_name}:${path.basename(__filename).split('.')[0]}`
+// );
 
 const app = express();
-
-// require database configuration
-require('./configs/db.config');
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -40,6 +38,5 @@ app.use('/', index);
 
 const droneRoutes = require('./routes/drones');
 app.use('/drones', droneRoutes);
-app.use('/drones/create', droneRoutes);
 
 module.exports = app;

@@ -5,3 +5,12 @@ body {
 a {
   color: #00b7ff;
 }
+table th,
+table td {
+  text-align: center;
+}
+
+table th:first-child,
+table td:first-child {
+  text-align: left;
+}
