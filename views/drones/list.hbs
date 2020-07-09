@@ -6,6 +6,7 @@
             <th scope="col">Name</th>
             <th scope="col">Propellers</th>
             <th scope="col">Max Speed</th>
+            <th scope="col">Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
             <td>{{drone.name}}</td>
             <td>{{drone.propellers}}</td>
             <td>{{drone.maxSpeed}}</td>
+            <td><a href="/drones/{{drone.id}}/edit">Modify Drone</a> </td>
         </tr>
         {{/each}}
     </tbody>

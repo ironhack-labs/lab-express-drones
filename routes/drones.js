@@ -27,11 +27,17 @@ router.post('/create', (req, res, next) => {
 router.get('/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  Drone.findById(req.params.id)
+    .then(drone => res.render('drones/update-form', {drone}))
+    .catch(e => console.error(e))
 });
 
 router.post('/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  const {name, propellers, maxSpeed} = req.body;
+  Drone.findOneAndUpdate({id: req.params.id}, {name, propellers, maxSpeed })
+  .then( drone => res.json(drone))
 });
 
 router.post('/:id/delete', (req, res, next) => {
