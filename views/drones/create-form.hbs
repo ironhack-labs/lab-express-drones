@@ -1,1 +1,22 @@
 <h2>Create a new drone</h2>
+
+{{#if failDrone}}
+ <p>Oops, something went wrong... Please try again to add your drone</p>
+ {{/if}}
+
+<form method="POST" action="/drones/create">
+  <div class="form-group">
+    <label for="droneName">Name</label>
+    <input name="name" type="text" class="form-control" id="droneName">
+  </div>
+  <div class="form-group">
+    <label for="dronePropellers">Number of Propellers</label>
+    <input name="propellers" type="number" class="form-control" id="dronePropellers">
+  </div>
+  <div class="form-group">
+    <label for="droneMaxSpeed">Maximum Speed (m/sec)</label>
+    <input name="maxSpeed" type="number" class="form-control" id="droneMaxSpeed">
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
