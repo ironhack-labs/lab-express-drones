@@ -1,1 +1,12 @@
 <h2>Available drones</h2>
+<section class='drone-list'>
+{{#each drones}}
+<article class='drone-item'>
+    <h4><a href="/drones/{{this._id}}/edit">{{this.name}}</a></h4>
+    <ul class='drone-specs'>
+        <li class='spec'>Number of propellers: {{this.propellers}}</li>
+        <li class='spec'>Max horizontal speed: {{this.maxSpeed}} m/s</li>
+    </ul>
+{{/each}}
+</article>
+</section>
