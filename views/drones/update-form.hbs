@@ -1,3 +1,4 @@
+<div id="createForm" class="card card-body">
 <h2>Update the drone</h2>
 {{#if failEditDrone}}
  <p>Oops, something went wrong... Please try again to add your drone</p>
@@ -16,5 +17,6 @@
     <label for="droneMaxSpeed">Maximum Speed (m/sec)</label>
     <input name="maxSpeed" type="number" class="form-control" id="droneMaxSpeed" value="{{result.maxSpeed}}">
   </div>
-  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type="submit" class="btn btn-dark">Edit</button>
 </form>
+</div>

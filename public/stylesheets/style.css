@@ -1,8 +1,99 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: #dbdada;
 }
 
-#navbarNav a {
-  color: #00b7ff;
+.navbar img {
+  height: 40px;
+}
+
+#homePage {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #dbdada;
+
+}
+
+#addDroneBtn {
+  color:#4e5d78 ;
+  border: 1px solid #4e5d78 ;
+  margin-bottom: 10px;
+}
+
+#addDroneBtn:hover {
+  background-color:#354053 ;
+  color: white;
+}
+
+#seeDroneBtn {
+  margin-bottom: 10px;
+}
+
+#homePage img {
+  height: 100px;
+}
+
+
+#createForm {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+#createForm h2 {
+  text-align: center;
+}
+
+.btn-dark{
+  background-color: #4e5d78 ;
+}
+
+.btn-dark:hover {
+  background-color: #354053;
+}
+
+#listButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#listButtons a {
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+#listButtons form {
+  margin-top: 20px;
+}
+
+.row-cols-md-3 {
+  margin-left: 20px;
+}
+
+.card {
+  margin-right: 20px;
+}
+
+.row-cols-md-3 p {
+  margin: 0px;
+  padding-bottom: 5px;
+  font-style: italic;
+}
+
+.listTitle {
+  text-align: center;
+  padding-top: 20px;
+}
+
+footer{
+  color:white;
+  background-color: #4e5d78;
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
 }
