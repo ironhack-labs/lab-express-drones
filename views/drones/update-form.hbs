@@ -1,26 +1,30 @@
 <h2>Update the drone</h2>
 
-<form method='POST' action:'/create-form'>
+<form method='POST' action:'/drones/:id/edit'>
     <div class="input-group">
         <div class="input-group-prepend">
             <label class="input-group-text" id="basic-addon1"for="droneName">Name</label>
         </div>
-        <input name= 'name'type="text" class="form-control" id="droneName">
+        <input name= 'name'type="text" class="form-control" id="droneName" value='{{drone.name}}'>
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
             <label class="input-group-text" id="basic-addon1"for="propellers">Number of propellers</label>
         </div>
-        <input name= 'propellers'type="propellers" class="form-control" id="propellers">
+        <input name= 'propellers'type="propellers" class="form-control" id="propellers" value='{{drone.propellers}}'>
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
             <label class="input-group-text" for="maxSpeed">Max horizontal speed</label>
         </div>
-        <input name='maxSpeed' type="number" class="form-control" id="maxSpeed">
+        <input name='maxSpeed' type="number" class="form-control" id="maxSpeed" value='{{drone.maxSpeed}}'>
         <div class="input-group-append">
             <span class="input-group-text">m/s</span>
          </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Edit</button>
 </form> 
+
+{{#if error}}
+<p>Could not update the drone info. Please try again.</p>
+{{/if}}

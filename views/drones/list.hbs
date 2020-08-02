@@ -1,12 +1,19 @@
-<h2>Available drones</h2>
+<h2>This is a list of your drones</h2>
 <section class='drone-list'>
 {{#each drones}}
 <article class='drone-item'>
-    <h4><a href="/drones/{{this._id}}/edit">{{this.name}}</a></h4>
+    <div class='drone-info'>
+    <h4>{{this.name}}</h4>
     <ul class='drone-specs'>
         <li class='spec'>Number of propellers: {{this.propellers}}</li>
         <li class='spec'>Max horizontal speed: {{this.maxSpeed}} m/s</li>
     </ul>
-{{/each}}
+    </div>
+    <div class="btn-group-vertical" role="group" aria-label="Basic example">
+        <a href='/drones/{{this._id}}/edit'><button type="button" class="btn btn-secondary">Edit</button></a>
+        <form method='POST' action='/drones/{{this._id}}/delete'><button type="submit" class="btn btn-secondary">Delete</button></form>
+    </div>
 </article>
+{{/each}}
+
 </section>

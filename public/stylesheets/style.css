@@ -1,8 +1,39 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 a {
-  color: #00b7ff;
+  color: #007bff;
+}
+
+.drone-item{
+  display: flex;
+  justify-content: start;
+  height: 150px;
+}
+
+.drone-info{
+  border: 2px solid #007bff;
+  margin: 20px;
+  padding: 15px;
+}
+
+#home{
+  background-image: url('/images/home-background.jpg');
+  background-repeat: round;
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+.btn-group-vertical{
+  height: 150px;
+}
+.btn-secondary{
+  background-color: #007bff;
+}
+h2{
+  margin:20px;
 }

@@ -15,7 +15,7 @@ router.get('/drones/create', (req, res, next) => {
 
 router.post('/drones/create', (req, res, next) => {
   droneModel.create(req.body)
-    .then(()=>res.redirect('drones'))
+    .then(()=>res.redirect('../drones'))
     .catch(()=>res.render('drones/create-form.hbs', {error:true}))
 });
 
@@ -24,18 +24,21 @@ router.get('/drones/:id/edit', (req, res, next) => {
   droneModel.findById(req.params.id)
     .then((drone)=> res.render('drones/update-form.hbs', {drone}))
     .catch(() => `Could not find the drone in the database`)
-
-  // ... your code here
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  let {name, propellers, maxSpeed} = req.body
+  let droneId = req.params.id
+  droneModel.findByIdAndUpdate(droneId, {$set: {name, propellers, maxSpeed}})
+    .then(()=>res.redirect('../../drones'))
+    .catch(()=>res.render('drones/update-form.hbs', {error:true}))
 });
 
+
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  let droneId = req.params.id
+  droneModel.findByIdAndDelete(droneId)
+    .then(()=> res.redirect('/drones'))
 });
 
 module.exports = router;
