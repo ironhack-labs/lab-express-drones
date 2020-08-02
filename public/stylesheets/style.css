@@ -1,8 +1,60 @@
 body {
   padding: 50px;
+  margin: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: white;
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+}
+
+a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+#start-pic {
+  width: calc(100vw - 100px);
+  margin: auto;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: pink;
+  border: none;
+  margin: 5px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: pink;
+}
+
+#drone-list {
+  margin: 30px;
+}
+
+.drone-item {
+  padding: 15px;
+}
+
+.drone-buttons {
+  display: flex;
+}
+
+
+@media screen and (max-width: 400px) {
+  .justify-content-end {
+    flex-direction: column;
+  }
 }
