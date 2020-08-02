@@ -21,21 +21,24 @@ router.get('/drones', (req, res, next) => {
   // ... your code here
 });
 
-/*router.get('/drones/create', (req, res, next) => {
+router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  dronesData.create({name:'Robotic4',propellers:5,maxSpeed:48})
-  .then((drones)=>{
-    res.render('drones/create-form.hbs',{drones})
-  })
+ res.render('drones/drone-create.hbs')
+  
   // ... your code here
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
+  //console.log(req.body)
+  let drone = req.body
+  drone.propellers= parseInt(drone.propellers)
+  drone.maxSpeed= parseInt(drone.maxSpeed)
+  console.log(drone)
   //me llama la atencion tras el create no poner llaves dentro de los parentesis
-  dronesData.create(req.body)
+  dronesData.create(drone)
   .then((drones)=>{
-    res.render('drones/create-form.hbs',{successDrones:true})
+    res.redirect('/drones',{successDrones:true})
   })
   // ... your code here
 });
@@ -47,7 +50,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   dronesData.findById(req.params.id)
   .then((drones)=>{
-    res.render('drones/update-form.hbs',{successDrones:true})
+    res.render('drones/update-form.hbs',{drones})
   })
   // ... your code here
 });
@@ -55,19 +58,26 @@ router.get('/drones/:id/edit', (req, res, next) => {
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // is sent as
-  let {name, propellers,maxSpeed}= req.body
+  let drone = req.body
+  drone.propellers= parseInt(drone.propellers)
+  drone.maxSpeed= parseInt(drone.maxSpeed)
+ 
   let dronesId= req.params.id
-dronesData.findByIdAndUpdate(dronesId, { $set: { name:'humanRobotic' }
-  // ... your code here
+dronesData.findByIdAndUpdate(dronesId, { $set: { name:drone.name , propellers:drone.propellers,maxSpeed:drone.maxSpeed}})
+  .then((drones)=>{
+    res.redirect("/drones")
+  })
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  dronesData.findByIdAndDelete({_id: req.params.id}, }
+  dronesData.findByIdAndDelete({_id: req.params.id})
     .then(()=>{
-      res.redirect()
+      res.redirect("/drones")
     })
   // ... your code here
-});*/
+});
 
 module.exports = router;
+
+

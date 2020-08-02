@@ -1,13 +1,17 @@
 
 
-<form method="POST" action="/create">
+<form method="POST" action="/drones/create">
   <div class="form-group">
     <label for="dronName">Name</label>
     <input name="name" class="form-control" id="dronName" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
-    <label for="dronDescription">Description</label>
-    <input name="description" class="form-control" id="dronDescription">
+    <label for="dronDescription">Propellers</label>
+    <input name="propellers" class="form-control" id="dronPropellers">
+  </div>
+  <div class="form-group">
+    <label for="dronDescription">maxSpeed</label>
+    <input name="maxSpeed" class="form-control" id="dronSpeed">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
