@@ -1,8 +1,17 @@
-body {
+div {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMPVK25hB14feRB9Vsnh0xesWSIraAWylfWw&usqp=CAU);
   padding: 50px;
+  image-orientation: flip;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
 }
+
+#navbar-collapse.nav-link {
+  color: white;
+}
+
+
+
