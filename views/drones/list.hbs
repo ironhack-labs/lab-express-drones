@@ -1,1 +1,22 @@
 <h2>Available drones</h2>
+<hr>
+
+{{!-- iterate over array of drones --}}
+{{#each drones}}
+    <div>
+        <h3>Drone Name: {{name}}</h3>
+        <h4>Number of Propellers: {{propellers}}</h4>
+        <h4>Max Speed: {{maxSpeed}} mph</h4>
+    </div>
+        <a class= 'btn btn-primary m-1' href="/drones/{{_id}}/edit">Update Drone</a>
+       
+   
+
+        <form action="/drones/{{_id}}/delete" method="post">
+
+            <button class = "btn btn-danger m-1" type="submit">Delete Drone</button>
+
+        </form>
+ 
+<hr>
+    {{/each}}
