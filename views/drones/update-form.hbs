@@ -1,16 +1,33 @@
-<h2>Update the drone: {{name}}</h2>
-
-<form action="/drones/{{_id}}/edit" method="post">
-
-  <label for="name-input">Name:</label>
-  <input type="text" name="name" id="name-input" value="{{name}}" />
-
-  <label for="propellers-input">Number of propellers:</label>
-  <input type="number" name="propellers" id="propellers-input" min="1" max="250" value="{{propellers}}" />
-
-  <label for="maxSpeed-input">Top speed:</label>
-  <input type="number" name="maxSpeed" id="maxSpeed-input" min="1" max="500" value="{{maxSpeed}}" />
-
-  <button type="submit">Save changes</button>
-
-</form>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Update the drone: {{name}}</h2>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal" action="/drones/{{_id}}/edit" method="post">
+        <div class="form-group">
+            <label for="name-input" class="col-sm-2 control-label">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" name="name" id="name-input" value="{{name}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propellers-input" class="col-sm-2 control-label">Number of Propellers:</label>
+            <div class="col-sm-10">
+                <input type="number" name="propellers" id="propellers-input" min="1" max="250" value="{{propellers}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="maxSpeed-input" class="col-sm-2 control-label">Top Speed:</label>
+            <div class="col-sm-10">
+                <input type="number" name="maxSpeed" id="maxSpeed-input" min="1" max="500" value="{{maxSpeed}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save changes</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+<a class="btn btn-info btn-sm" href="/drones" role="button">See the list of drones!</a>
