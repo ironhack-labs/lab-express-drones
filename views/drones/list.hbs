@@ -1,1 +1,20 @@
+<hr>
 <h2>Available drones</h2>
+<br>
+<p>🤓 Want to create a new drone? Click <a href="/drones/create">here</a> 🤓</p>
+{{!-- <p>🚀 To update an existing drone, click <a href="/drones/{{_id}}/edit">here</a> 🚀</p> --}}
+<br>
+{{#each drones}}
+  <div>
+    <h3>{{name}}</h3>
+    <ul>
+        <li>Propellers: {{propellers}}</li>
+        <li>Maximum Speed: {{maxSpeed}}</li>
+    </ul>
+    <p>🚀 Update this drone <a href="/drones/{{_id}}/edit">here</a></p>
+    <form action="/drones/{{_id}}/delete" method="post">
+      <button type="submit">Delete this drone 🚮</button>
+    </form> 
+  </div>
+  <hr>
+{{/each}}
