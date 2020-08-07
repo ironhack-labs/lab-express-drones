@@ -3,7 +3,7 @@ const router = express.Router();
 const Drone = require('../models/Drone.model');
 
 
-router.get('/drones', (req, res, next) => {
+router.get('/', (req, res, next) => {
   // Iteration #2: List the drones
   Drone.find()
     .then(dronesFromDB => {
@@ -12,12 +12,12 @@ router.get('/drones', (req, res, next) => {
     }).catch(err => console.log(`Error finding all drones: ${err}`))
 });
 
-router.get('/drones/create', (req, res, next) => {
+router.get('/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   res.render('drones/create-form.hbs');
 });
 
-router.post('/drones/create', (req, res, next) => {
+router.post('/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   Drone.create(req.body)
     .then(newDrone => {
@@ -26,19 +26,29 @@ router.post('/drones/create', (req, res, next) => {
     }).catch(err => console.log(`Error creating new drone: ${err}`))
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
+router.get('/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+    .then(droneFromDB => {
+      res.render('drones/update-form.hbs', {drone: droneFromDB})
+    }).catch(err => console.log(`Error finding drone by id: ${err}`))
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
+router.post('/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(updatedDrone => {
+      console.log(updatedDrone);
+      res.redirect('/drones')
+    }).catch(err => console.log(`Error updating drone info: ${err}`))
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.post('/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect('back');
+    }).catch(err => console.log(`Error finding and deleting drone: ${err}`))
 });
 
 module.exports = router;
