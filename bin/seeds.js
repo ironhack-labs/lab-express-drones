@@ -18,9 +18,11 @@ const drones = [
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
 
+    Drone.collection.drop();
+    
     Drone.create(drones)
         .then(dronesFromDB => {
-            console.log(`Seeded ${dronesFromDB.length} into the database.`)
+            console.log({dronesFromDB})
         }).catch(err => console.log(`Error seeding database with drones: ${err}`))
 
     setTimeout(() => {

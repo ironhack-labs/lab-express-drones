@@ -14,12 +14,16 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form.hbs');
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  Drone.create(req.body)
+    .then(newDrone => {
+      console.log(newDrone);
+      res.redirect('/drones');
+    }).catch(err => console.log(`Error creating new drone: ${err}`))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
