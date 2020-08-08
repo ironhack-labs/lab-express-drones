@@ -11,9 +11,14 @@
 
   <body>
 
+<ul class="topnav">
+  <li><a {{#if page_home}}class="active"{{/if}} href="/">Home</a></li>
+  <li><a {{#if page_drones}}class="active"{{/if}} href="/drones">Drones</a></li>
+</ul>
+
     {{{body}}}
 
     <script src="/javascripts/script.js"></script>
-  </body>
+ </body>
 
 </html>
