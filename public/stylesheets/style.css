@@ -1,8 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+main {
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 a {
   color: #00b7ff;
+}
+
+/* Buttons */
+
+.btn {
+  width: 100%;
+}
+
+.btn-edit {
+  border-radius: 0;
+  border-top: 1px solid rgb(92, 92, 92);
+  border-bottom: 1px solid rgb(92, 92, 92);
+  border-right: 0;
+  border-left: 0;
+}
+
+.btn-edit:hover {
+  border-top: 1px solid rgb(92, 92, 92);
+  border-bottom: 1px solid rgb(92, 92, 92);
+  border-right: 0;
+  border-left: 0;
+}
+
+.btn-delete {
+  border: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-danger {
+  background-color: rgb(255, 101, 101);
+}
+
+/* Navbar */
+
+nav {
+  border-bottom: 1px solid rgb(92, 92, 92);
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+/* Drone Card */
+
+.list-header {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-info {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  margin-right: 5px;
+  font-weight: 700;
 }
