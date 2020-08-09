@@ -1,10 +1,15 @@
-<h1>{{title}}</h1>
+<h2>{{title}}</h2>
+{{#if updatedId}}
+<p class="green-message">Drone was updated succesfully.</p>
+{{/if}}
 <div id="drone-container"> 
 {{#each drones}}
 <div class="drone-card">
 <p><b>{{name}}</b></p>
 <p>Propellers: {{propellers}}</p>
 <p>Max Speed: {{maxSpeed}}</p>
+<a href="/drones/{{id}}/edit">Edit drone</a><br />
+<a href="/drones/{{id}}/delete">Delete drone</a>
 </div>
 {{/each}}
 </div>

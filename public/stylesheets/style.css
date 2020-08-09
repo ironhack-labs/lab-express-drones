@@ -19,6 +19,14 @@ a {
   /* padding: 5px 0; */
 }
 
+.row {
+  padding: 10px 0;
+}
+
+.green-message {
+  color: green;
+}
+
 /* Navbar Styles */
 
 ul.topnav {
