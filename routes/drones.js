@@ -55,8 +55,15 @@ router.post('/drones/:id/edit', (req, res) => {
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  const id = req.params.id
+  const {name, propellers, maxSpeed} = req.body;
+  Drones.findByIdAndDelete(id, {$set: {name: name, propellers: propellers,maxSpeed:maxSpeed }})
+  .then((todo) => {
+       res.redirect('/drones')
+  })
+  .catch((response) => {
+       res.render('../views/drones/update-form.hbs',{response})
+  })
 });
 
 module.exports = router;
