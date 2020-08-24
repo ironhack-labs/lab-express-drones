@@ -4,4 +4,8 @@
 <p>Drone: {{this.name}}</p>
 <p>Propellers: {{this.propellers}}</p>
 <p>Speed: {{this.maxSpeed}}</p>
+<a href="/drones/{{this._id}}/edit">edit</a>
+<form action = "/drones/{{this._id}}/delete" method="POST">
+    <button type="submit">Delete</button>
+    </form>
 {{/each}}

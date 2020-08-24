@@ -29,14 +29,29 @@ router.post('/drones/create', (req, res) => {
     })
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
+router.get('/drones/:id/edit', (req, res) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drones.findById(req.params.id)
+  .then((response)=> {
+    res.render('../views/drones/update-form.hbs',{response})
+    })
+    .catch(()=> {
+    res.send('Nope!Not working,check again everything!')
+    })
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+
+router.post('/drones/:id/edit', (req, res) => {
+  const id = req.params.id
+  const {name, propellers, maxSpeed} = req.body;
+  Drones.findByIdAndUpdate(id, {$set: {name: name, propellers: propellers,maxSpeed:maxSpeed }})
+  .then((todo) => {
+       res.redirect('/drones')
+  })
+  .catch((response) => {
+       res.render('../views/drones/update-form.hbs',{response})
+  })
+
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
