@@ -13,14 +13,20 @@ router.get('/drones', (req, res) => {
     .catch(error => console.log("Error while getting the drones from the DB: ", error));
 });
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.get('/drones/create', (req, res) => { 
+  res.render("../views/drones/create-form.hbs")
+ 
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.post('/drones/create', (req, res) => {
+  const {name, propellers,maxSpeed} = req.body;
+  Drones.create({name:name,propellers:propellers, maxSpeed:maxSpeed})
+    .then(()=> {
+    res.redirect('/drones')
+    })
+    .catch(()=> {
+    res.render('../views/drones/create-form.hbs')
+    })
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
