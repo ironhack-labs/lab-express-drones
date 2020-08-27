@@ -5,4 +5,23 @@ body {
 
 a {
   color: #00b7ff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th {
+  padding-bottom: 1rem;
+}
+
+h4 {
+  color: darkgray;
 }
