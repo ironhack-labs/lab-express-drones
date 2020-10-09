@@ -1,37 +1,70 @@
 const express = require('express');
 
-// require the Drone model here
+const droneModel = require('../models/Drone.models')
 
 const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+   droneModel.find()
+   .then((drone) =>{
+     res.render('drones/list.hbs',{drone})
+   })
+   .catch(() => {
+     console.log("Unable to retrieve the DATA")
+   })
+
+ 
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+   res.render('drones/drone-create.hbs')
+
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+   droneModel.create(req.body)
+   .then(() =>{
+    res.redirect('/drones')
+   })
+   .catch(() => {
+    res.render('drones/drone-create.hbs')
+  })
+
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+   let id = req.params.id
+   droneModel.findById(id)
+   .then((drone) => {
+    res.render('drones/update-form',{drone})
+   })
+   .catch(() => {
+        console.log('The ID doesnt exist')
+   })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  let id = req.params.id
+  droneModel.findByIdAndUpdate(id, {$set: req.body})
+  .then(() => {
+    res.redirect('/drones')
+  })
+  .catch((error) => {
+    res.redirect('/drones/'+ id + "/edit")
+    console.log(error)
+
+  })
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  let id = req.params.id
+  droneModel.findByIdAndDelete(id)
+  .then(() => {
+    res.redirect('/drones')
+  })
+  .catch(() => {
+    console.log("Couldn't delete a drone")
+  })
 });
 
 module.exports = router;
