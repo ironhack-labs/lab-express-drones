@@ -1,3 +1,6 @@
+/*
+* General
+*/
 html,
 body {
   margin: 0;
@@ -7,18 +10,24 @@ body {
   height: 100%;
 }
 
-#container {
-  min-height: 100%;
-  position: relative;
-}
-
 a {
   color: #00b7ff;
 }
 
+/*
+* Header
+*/
 #bar-title {
   font-size: 20px;
   margin-left: 30px;
+}
+
+/*
+* Main
+*/
+#container {
+  min-height: 100%;
+  position: relative;
 }
 
 main {
@@ -34,6 +43,9 @@ main {
   align-items: center;
 }
 
+/*
+* Footer
+*/
 footer {
   height: 50px;
   background-color: gray;

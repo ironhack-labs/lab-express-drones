@@ -1,26 +1,26 @@
 <div id="main-card-container">
     <div class="card" style="width: 18rem;">
+
+        <!-- Iterating over each drone in the database. -->
         {{#each drones}}
         <div class="card-body">
 
             <h5 class="card-title">
-                <a href="/drones/{{ this._id }}">
-                    {{ this.name }}
-                </a>
+                {{ this.name }}
             </h5>
 
             <h6 class="card-subtitle mb-2 text-muted">Number of propellers: {{this.propellers}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Maximum speed: {{this.maxSpeed}}</h6>
 
             <div id="myBtn-container">
-                <!-- Edit -->
+                <!-- Edit button. -->
                 <a href="/drones/{{this._id}}/edit">
                     <button type="submit" class="btn btn-outline-primary">Edit</button>
                 </a>
 
 
 
-                <!-- Delete -->
+                <!-- Delete button. -->
                 <form method="POST" action="/drones/{{this._id}}/delete">
                     <button type="submit" class="btn btn-outline-danger">Delete</button>
                 </form>
@@ -29,28 +29,6 @@
 
         </div>
         {{/each}}
+
     </div>
 </div>
-
-
-{{!-- {{#each drones}}
-<a href="/drones/{{ this._id }}">
-    <h5>{{ this.name }}</h5>
-</a>
-
-<ul>
-    <li>Number of propellers: {{this.propellers}}</li>
-    <li>Maximum speed: {{this.maxSpeed}}</li>
-</ul>
-
-<!-- Edit -->
-<a href="/drones/{{this._id}}/edit">
-    <button type="submit" class="btn btn-outline-primary">Edit</button>
-</a>
-
-<!-- Delete -->
-<form method="POST" action="/drones/{{this._id}}/delete">
-    <button type="submit" class="btn btn-outline-danger">Delete</button>
-</form>
-
-{{/each}} --}}

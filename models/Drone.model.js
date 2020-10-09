@@ -1,14 +1,15 @@
+// Importing Mongoose.
 const mongoose = require("mongoose");
 
-// Create schema.
+// Creating schema.
 let DroneSchema = new mongoose.Schema({
   name: { type: String, required: true },
   propellers: { type: Number, required: true },
   maxSpeed: { type: Number, required: true },
 });
 
-// Create your model.
+// Creating model.
 let DroneModel = mongoose.model("iDrone", DroneSchema);
 
-// Export module.
+// Exporting module.
 module.exports = DroneModel;

@@ -1,4 +1,4 @@
-// Iteration #1
+// Iteration #1: Adding information into the database.
 const mongoose = require("mongoose");
 const DroneModel = require("../models/Drone.model");
 

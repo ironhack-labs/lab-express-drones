@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-// require the Drone model here
+// Importing `DroneModel`.
 const DroneModel = require("../models/Drone.model");
 
+// Iteration #2: Listing all the drones.
 router.get("/drones", (req, res, next) => {
-  // Iteration #2: List the drones
   DroneModel.find()
     .then((drones) => {
       console.log("Information found!");
@@ -16,13 +16,12 @@ router.get("/drones", (req, res, next) => {
     });
 });
 
+// Iteration #3: Adding a new drone.
 router.get("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
   res.render("drones/create-form.hbs");
 });
 
 router.post("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
   DroneModel.create(req.body)
     .then(() => {
       console.log("Data was added successfully.");
@@ -34,8 +33,8 @@ router.post("/drones/create", (req, res, next) => {
     });
 });
 
+// Iteration #4: Updating a drone.
 router.get("/drones/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
   const id = req.params.id;
 
   DroneModel.findById(id).then((drone) => {
@@ -44,7 +43,6 @@ router.get("/drones/:id/edit", (req, res, next) => {
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
   const id = req.params.id;
 
   DroneModel.findByIdAndUpdate(id, { $set: req.body }).then(() => {
@@ -53,8 +51,8 @@ router.post("/drones/:id/edit", (req, res, next) => {
   });
 });
 
+// Iteration #5: Deleting a drone.
 router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
   const id = req.params.id;
 
   DroneModel.findByIdAndDelete(id)
