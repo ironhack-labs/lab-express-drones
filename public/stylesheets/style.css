@@ -28,6 +28,12 @@ main {
   justify-content: center;
 }
 
+#myBtn-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 footer {
   height: 50px;
   background-color: gray;
