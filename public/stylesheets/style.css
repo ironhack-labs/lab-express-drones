@@ -35,7 +35,7 @@ main {
 
 footer {
   height: 50px;
-  background-color: #0a2c42;
+  background-color: gray;
   color: white;
   display: flex;
   justify-content: flex-start;
