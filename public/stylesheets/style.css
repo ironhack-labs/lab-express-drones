@@ -6,3 +6,28 @@ body {
 a {
   color: #00b7ff;
 }
+
+.each-drone a {
+  color: #008000;
+  font-weight: 900;
+}
+
+.each-drone button {
+  background-color: #FF69B4;
+  color: yellow;
+  border: 2px groove orange;
+  border-radius: 3px;
+}
+
+.each-drone {
+border: 5px solid #a9b2c6;
+margin: 10px;
+padding: 10px;
+width: 50%;
+}
+
+.add-drone-btn {
+  background-color: orange;
+  color: #FF69B4;
+  border: 2px groove yellow;
+}
