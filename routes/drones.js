@@ -30,6 +30,7 @@ router.post("/drones/create", (req, res, next) => {
     })
     .catch((err) => {
       console.log("Something has gone horribly wrong.", err);
+      res.redirect("/drones/create");
     });
 });
 

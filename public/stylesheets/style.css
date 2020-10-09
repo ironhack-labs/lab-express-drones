@@ -18,6 +18,7 @@ a {
 
 #bar-title {
   font-size: 20px;
+  margin-left: 30px;
 }
 
 main {
@@ -25,12 +26,6 @@ main {
   padding-bottom: 80px;
   display: flex;
   justify-content: center;
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 footer {
