@@ -18,11 +18,9 @@
             </a>
 
             <!-- Delete -->
-            <button type="submit" class="btn btn-outline-danger">
-                <form method="POST" action="/drones/{{this._id}}/delete">
-                    Delete
-                </form>
-            </button>
+            <form method="POST" action="/drones/{{this._id}}/delete">
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
+            </form>
         </div>
         {{/each}}
     </div>
