@@ -8,7 +8,7 @@ const DroneModel = require("../models/Drone.model");
 router.get("/drones", (req, res, next) => {
   DroneModel.find()
     .then((drones) => {
-      console.log("Information found!");
+      console.log("Information found.");
       res.render("drones/list.hbs", { drones });
     })
     .catch((err) => {
@@ -37,18 +37,28 @@ router.post("/drones/create", (req, res, next) => {
 router.get("/drones/:id/edit", (req, res, next) => {
   const id = req.params.id;
 
-  DroneModel.findById(id).then((drone) => {
-    res.render("drones/update-form.hbs", drone);
-  });
+  DroneModel.findById(id)
+    .then((drone) => {
+      res.render("drones/update-form.hbs", drone);
+    })
+    .catch((err) => {
+      console.log("Something has gone horribly wrong.", err);
+      res.redirect("/drones/create");
+    });
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
   const id = req.params.id;
 
-  DroneModel.findByIdAndUpdate(id, { $set: req.body }).then(() => {
-    console.log("Data was updated successfully.");
-    res.redirect("/drones");
-  });
+  DroneModel.findByIdAndUpdate(id, { $set: req.body })
+    .then(() => {
+      console.log("Data was updated successfully.");
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log("Something has gone horribly wrong.", err);
+      res.redirect("/drones/create");
+    });
 });
 
 // Iteration #5: Deleting a drone.
@@ -57,11 +67,11 @@ router.post("/drones/:id/delete", (req, res, next) => {
 
   DroneModel.findByIdAndDelete(id)
     .then(() => {
-      console.log("It was deleted");
+      console.log("Data was deleted successfully.");
       res.redirect("/drones");
     })
     .catch((err) => {
-      console.log("Didnt work", err);
+      console.log("Something has gone horribly wrong.", err);
     });
 });
 
