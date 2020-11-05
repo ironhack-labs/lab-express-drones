@@ -1,1 +1,21 @@
 <h2>Available drones</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Propellers</th>
+                <th>Max Speed (meters per second)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each drones}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.propellers}}</td>
+                <td>{{this.maxSpeed}}</td>
+                <td><button><a href="/drones/{{this._id}}/edit">Edit</a></button></td>
+                <td><button><a href="/drones/{{this._id}}/delete">Delete</a></button></td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>

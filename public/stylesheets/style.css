@@ -1,8 +1,55 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+nav {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 25px;
+  text-transform: uppercase;
+}
+
+table th, td {
+  text-align: center;
+  padding: 20px;
+}
+
+table thead {
+  background-color: lightgray;
+}
+
+button {
+  background-color: lightgray;
+  border: solid lightgray 1px;
+  border-radius: 5px;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+  padding: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form div {
+  margin: 10px;
+}
+
+.form div button {
+  margin-top: 20px;
 }
