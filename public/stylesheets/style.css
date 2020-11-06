@@ -1,8 +1,48 @@
-body {
+html, body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  width: 100%;
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none;
+  font-size: 1.1em;;
+}
+
+.main-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.drone-container {
+  border-bottom: 1px solid grey;
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.delete-button, .save-button {
+  margin: 20px 0;
+  padding: 5px 15px;
+}
+
+.link-box {
+  margin: 10px 0;
+}
+
+.link-box a {
+  color: #62246D;
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+input {
+  margin: 10px 0;
+  padding: 5px;
 }

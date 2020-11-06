@@ -1,21 +1,22 @@
 <h2>Drones: The Complete Collection</h2>
 
-<div>
+<div class="main-container">
     {{#each allTheDrones}}
+    <div class="drone-container">
+        <p>Name: {{this.name}}</p>
+        <p>Number of propellers: {{this.propellers}}</p>
+        <p>Max speed: {{this.maxSpeed}}</p>
 
-    <p>Name: {{this.name}}</p>
-    <p>Number of propellers: {{this.propellers}}</p>
-    <p>Max speed: {{this.maxSpeed}}</p>
+        <a href="/drones/{{this._id}}/edit">(Edit)</a>
 
-    <a href="/drones/{{this._id}}/edit">(Edit)</a>
+        <form action="/drones/{{this._id}}/delete" method="post">
+            <button class="delete-button">Delete !</button>
+        </form>
 
-    <form action="/drones/{{this._id}}/delete" method="post">
-    <button>Delete !</button>
-  </form>
+    </div>
     {{/each}}
 
-    <hr>
-    <div>
+    <div class="link-box">
         <a href="/drones/create">Add new drone</a>
     </div>
 
