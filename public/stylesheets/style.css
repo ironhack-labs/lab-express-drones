@@ -1,8 +1,54 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  width: 900px;
+  margin: 0 auto;
 }
 
 a {
   color: #00b7ff;
+}
+
+.navbar {
+  display:flex;
+  justify-content: center;
+	align-items: center;
+  height: 50px;
+  background-color: #736E6E;
+  text-align: center;
+}
+
+.nava {
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  background-color: #BBBBBB;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+}
+
+.drones {
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.dronebox {
+  width: 300px;
+  height: 120px;
+  text-align: center;
+  border: 1px solid black;
+  margin:24px 24px;
+}
+
+.middledronebox {
+  padding: 10px;
+  
 }
