@@ -1,9 +1,9 @@
 const express = require('express');
-const Drone = require('../models/Drone.model')
+
 
 
 // require the Drone model here
-
+const Drone = require('../models/Drone.model')
 const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
@@ -14,7 +14,9 @@ router.get('/drones', (req, res, next) => {
         .catch((err) => console.log(`Could not render /drones path: ${err}`))
 });
 
-router.get('/drones/create', (req, res, next) => res.render("drone-create"));
+router.get('/drones/create', (req, res, next) => {
+  res.render("drones/create-form")
+});
 
 router.post('/drones/create', (req, res, next) => {
   const { name, propellers, maxSpeed } = req.body;
