@@ -4,9 +4,11 @@
     <h3>{{this.name}}</h3>
     <p>Specs</p>
     <ul>
-        <li>Propellors:{{this.propellors}}</li>
+        <li>Propellors: {{this.propellors}}</li>
         <li>Speed: {{speed}} KM/H</li>
     </ul>
+    <a href="/drones/{{this.id}}/edit" class="edit-drone">Edit</a>
+    <button>Delete</button>
     {{/each}}
 </div>
 <div class="add-button">
