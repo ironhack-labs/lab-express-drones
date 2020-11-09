@@ -13,24 +13,24 @@ mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
 const drones = [
     {
       name: 'drone1',
-      propeller: 4,
+      propellers: 4,
       maxSpeed :50
     },
     {
         name: 'drone2',
-        propeller: 3,
+        propellers: 3,
         maxSpeed :30
     },
     {
         name: 'drone3',
-        propeller: 5,
+        propellers: 5,
         maxSpeed :90
     }
 ];
 
 Drone.create(drones)
   .then(dronesFromDB => {
-    console.log(`Created ${dronesFromDB.length} books`);
+    console.log(`Created ${dronesFromDB.length} drones`);
  
     // Once created, close the DB connection
     mongoose.connection.close();
