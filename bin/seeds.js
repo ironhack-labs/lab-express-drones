@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Drone = require('../models/Drone.model');
-const DB_NAME = 'drone-collection';
+const DB_NAME = 'express-drones-dev';
 
 mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
     useCreateIndex: true,
