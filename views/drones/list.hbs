@@ -8,7 +8,9 @@
         <li>Speed: {{speed}} KM/H</li>
     </ul>
     <a href="/drones/{{this.id}}/edit" class="edit-drone">Edit</a>
-    <button>Delete</button>
+    <form action="/drones/{{this.id}}/delete" method="post">
+    <button type='submit'>Delete</button>
+    </form>
     {{/each}}
 </div>
 <div class="add-button">
