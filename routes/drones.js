@@ -14,14 +14,24 @@ router.get('/drones', (req, res, next) => {
     .catch((error) => `An error occurred when loading ${error}`)
 });
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.get("/drones/create", (req, res) => res.render("drones/create-form"));
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  const {
+    name,
+    propellors,
+    maxSpeed
+  } = req.body;
+
+  Drone.create({
+      name,
+      propellors,
+      maxSpeed
+    }).then(() => res.redirect("/drones"))
+    .catch((error => {
+      `An error occurred while creating ${error}`,
+      res.render('drones/create-form')
+    }))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
