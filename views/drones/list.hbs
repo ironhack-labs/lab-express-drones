@@ -1,1 +1,14 @@
 <h2>Available drones</h2>
+<br>
+<div class="container-fluid">
+    {{#each drones}}
+        <h5> Name: {{this.name}}</h1> <br>
+        <p>Propellers Number: {{this.propellers}}</p> <br>
+        <p>Maximum Speed: {{this.maxSpeed}}</p> <br>
+    {{/each}}
+</div>
+
+
+    
+
+<button class="btn btn-dark"><a href="/">Home</a></button>
