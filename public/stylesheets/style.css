@@ -1,8 +1,71 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  min-height: 800px;
+  min-width: 800px;
+  background-image: url('/images/Soxhq2I-blue-sky-wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 a {
-  color: #00b7ff;
+  color: black;
+  text-decoration: none;
+}
+
+.drone-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.oneDrone,
+.big-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  padding: 1%;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+ul {
+  font-weight: 700;
+}
+
+li {
+  font-weight: 500;
+}
+
+.oneDrone a,
+button,
+.add-button,
+.home-button {
+  background-color: white;
+  text-decoration: none;
+  margin: 1%;
+  width: 100px;
+  text-align: center;
+  border: 1px solid black;
+  font: 14px 'Lucida Grande',
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.add-button,
+.home-button,
+.big-form button {
+  width: 200px;
+  padding: 1%;
+}
+
+.big-form {
+  justify-content: space-between;
 }
