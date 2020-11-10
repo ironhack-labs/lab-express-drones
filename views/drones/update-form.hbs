@@ -1,1 +1,14 @@
-<h2>Update the drone</h2>
+<div class="update-page">
+    {{#each singleDrone}}
+    <h2>Update the drone</h2>
+    <form action="/drones/{{this.id}}/edit" method="POST">
+        <label for="name">Update drone name: </label>
+        <input id="name" type="text" name="name" value="{{this.name}}">
+        <label for="propellers">Update number of propellers: </label>
+        <input id="propellers" type="text" name="propellers" value="{{this.propellers}}">
+        <label for="maxSpeed">Update maximum speed in kph: </label>
+        <input id="maxSpeed" type="text" name="maxSpeed" value="{{this.maxSpeed}}">
+        <button type="submit">Submit</button>
+    </form>
+    {{/each}}
+</div>

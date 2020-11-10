@@ -5,6 +5,7 @@
         <h2>Name of Drone: {{this.name}}</h2>
         <h3>Number of Propellers: {{this.propellers}}</h3>
         <h3>Max Speed: {{this.maxSpeed}}</h3>
+        <a href="/drones/{{this._id}}/edit">Edit info</a>
     </div>
     {{/each}}
     <a href="/drones/create"><button>Create a new drone!</button></a>
