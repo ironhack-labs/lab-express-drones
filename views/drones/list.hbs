@@ -1,20 +1,28 @@
-<h2>Available drones</h2>
-<br>
-<div class="container-fluid">
-    {{#each drones}}
-        <br>
-        <h5> Name: {{this.name}}</h1> <br>
-        <p>Propellers Number: {{this.propellers}}</p> <br>
-        <p>Maximum Speed: {{this.maxSpeed}}</p> <br>
-        <button class="btn btn-primary"><a href="/drones/{{this.id}}/edit">Modify your Drone</a></button>
-        <br>
-        <form action="/drones/{{id}}/delete" method="POST">
-            <button class="btn btn-danger" type="submit">Delete your Drone !</button>  
-        </form>
-    {{/each}}
+
+<div class="Container-fluid d-flex flex-column ">
+    <h2>Available drones</h2>
+    <button class="btn-list-1"><a href="/">Home</a></button>
+        <div class="row"></div>
+        {{#each drones}}
+            <div class="p-2 d-flex justify-content-center drones">
+                <h2> Name: {{this.name}}</h1>
+                <div class="p-2 d-flex justify-content-center">
+                    <p class="p-tag"> | Propellers Number: {{this.propellers}}</p>
+                    <p class="p-tag"> | Maximum Speed: {{this.maxSpeed}}</p>
+                </div>
+            </div>
+            <div class="p-2 d-flex justify-content-center">
+                <button class="btn-list"><a href="/drones/{{this.id}}/edit">Modify your Drone</a></button>
+                <form action="/drones/{{id}}/delete" method="POST">
+                    <button class="btn-list" type="submit">Delete your Drone !</button>  
+                </form>
+            </div>
+        {{/each}}
+        <div class="p-2 d-flex justify-content-center">
+            <button class="btn-list-1"><a href="/drones/create">Make your OWN drone !</a></button>
+        </div>
+    </div>
 </div>
+ 
 
 
-<button class="btn btn-dark"><a href="/drones/create">Make your OWN drone !</a></button>
-
-<button class="btn btn-dark"><a href="/">Home</a></button>

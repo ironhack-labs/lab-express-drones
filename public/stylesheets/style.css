@@ -1,8 +1,57 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00b7ff;
+a{
+  text-decoration: none!important;
+}
+*{
+  background-color: blue;
+  color: #FFFF00;
+  font-size: 18px;
+}
+.check-btn a{
+  font-size: 4rem;
+  margin-top: 200px;
+  padding: 80px;
+  background-color: #FFFF00;
+  color: blue;
+}
+.check-btn a:hover{
+  background-color: #0000DF;
+  color: #FFFF00;
+}
+.btn-list{
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #FFFF00;
+  color: blue;
+}
+.btn-list:hover{
+  background-color: #0000DF;
+  color: #FFFF00;
+}
+.btn-list-1{
+  margin: 10px 20px;
+  padding: 15px;
+  background-color: #FFFF00;
+  color: #4040FF;
+  border: 3px solid #0000DF;
+  border-radius: 2px;
+}
+.btn-list-1:hover{
+  background-color: #4040FF;
+  color: #FFFF00;
+}
+.p-tag{
+  font-size: 1.5rem;
+}
+.title-{
+  margin: 30px;
+  padding: 30px;
+  border: 3px solid #FFFF00;
+}
+.drones{
+  margin: 20px;
+  padding: 40px;
+  border: 4px dotted #4040FF;
 }
