@@ -21,17 +21,13 @@ router.post("/drones/create", (req, res, next) => {
     .then(() => {
       res.redirect("/drones");
     })
-    .catch((err) => {
-      console.error(err);
-    });
+    .catch((err) => console.error(err));
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
   Drone.find({ _id: req.params.id })
-    .then((singleDrone) => {
-      res.render("drones/update-form", { singleDrone });
-    })
-    .catch();
+    .then((singleDrone) => res.render("drones/update-form", { singleDrone }))
+    .catch((err) => console.error(err));
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
@@ -45,8 +41,9 @@ router.post("/drones/:id/edit", (req, res, next) => {
 });
 
 router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findOneAndRemove({ _id: req.params.id })
+    .then(() => res.redirect("/drones"))
+    .catch((err) => console.error(err));
 });
 
 module.exports = router;

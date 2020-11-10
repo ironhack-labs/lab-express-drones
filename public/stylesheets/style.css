@@ -54,16 +54,33 @@ form label {
 form input {
   padding: 0.5rem;
 }
-button {
+.create-button {
   background-color: lightcoral;
   color: white;
   font-size: 1.5rem;
   padding: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-style: none;
   border-radius: 25px;
 }
 button:hover {
   cursor: pointer;
   font-weight: bold;
+}
+.update-page {
+  padding: 2rem;
+}
+.crud-links {
+  display: flex;
+  flex-direction: column;
+}
+.crud-links a {
+  padding: 0.3rem;
+}
+.delete-button {
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 0;
+  border-radius: 25px;
 }

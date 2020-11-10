@@ -5,8 +5,12 @@
         <h2>Name of Drone: {{this.name}}</h2>
         <h3>Number of Propellers: {{this.propellers}}</h3>
         <h3>Max Speed: {{this.maxSpeed}}</h3>
-        <a href="/drones/{{this._id}}/edit">Edit info</a>
+        <div class="crud-links">
+            <a href="/drones/{{this._id}}/edit">Edit drone info</a>
+            <form action="/drones/{{this._id}}/delete" method="POST"><button class="delete-button" type="submit">Delete
+                    this drone</button>
+            </form>
+        </div>
+        {{/each}}
+        <a href="/drones/create"><button class="create-button">Create a new drone!</button></a>
     </div>
-    {{/each}}
-    <a href="/drones/create"><button>Create a new drone!</button></a>
-</div>
