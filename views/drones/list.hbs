@@ -1,15 +1,32 @@
 <div>
+
   <h2 class="title">List of available drones</h2>
+
   <hr>
+
   <div class="drones">
     {{#each DronesFromDB}}
+
     <div class="dronebox">
+      
       <h3>{{name}}</h3>
       <div class="middledronebox">Number of propellers: {{propellers}}. </div>
-      <div>Max. speed: {{maxSpeed}} m per second.</div>
+      <div class="speed-drone" >Max. speed: {{maxSpeed}} m per second.</div>
+      <form action="drones/{{_id}}/edit" method="GET">
+        <button type="submit">Edit drone</button>
+      </form>
+      <form class='deletebttn' action="drones/{{_id}}/delete" method="post">
+        <button type="submit">Delete drone</button>
+      </form>
+      
     </div>
+
     {{/each}}
   </div>
+
+  <a class='createdrone' href="/drones/create"> Create a drone </a>
+
   <hr>
+
 </div>
 
