@@ -12,9 +12,7 @@
       <h3>{{name}}</h3>
       <div class="middledronebox">Number of propellers: {{propellers}}. </div>
       <div class="speed-drone" >Max. speed: {{maxSpeed}} m per second.</div>
-      <form action="drones/{{_id}}/edit" method="GET">
-        <button type="submit">Edit drone</button>
-      </form>
+      <a class="editButton" href="drones/{{_id}}/edit"> Edit drone</a>
       <form class='deletebttn' action="drones/{{_id}}/delete" method="post">
         <button type="submit">Delete drone</button>
       </form>

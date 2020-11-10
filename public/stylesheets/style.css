@@ -80,3 +80,13 @@ a {
 .createdrone {
   text-align: center;
 }
+
+.editButton {
+  text-decoration: none;
+  color: black;
+  background-color: #E5E5E5;
+  border: solid 1px black;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  padding:3px  5px;
+}

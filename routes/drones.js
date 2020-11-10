@@ -9,7 +9,7 @@ router.get('/drones', (req, res, next) => {
     .then((DronesFromDB) => {
       res.render("drones/list", { DronesFromDB })
     })
-    .catch((error) => `Error while fetching all drones: ${error}`);
+    .catch((error) => console.log(`Error while fetching all drones: ${error}`));
 });
 
 router.get('/drones/create', (req, res, next) => {
@@ -23,7 +23,7 @@ router.post('/drones/create', (req, res, next) => {
 
   Drone.create({ name, propellers, maxSpeed },)
     .then(() => res.redirect('/drones'))
-    .catch((error) => `Error while creating drone: ${error}`);
+    .catch((error) => console.log(`Error while creating drone: ${error}`));
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
@@ -34,7 +34,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
       console.log(drone);
       res.render('drones/update-form', drone);
     })
-    .catch((error) => `Error while editing drone: ${error}`);
+    .catch((error) => console.log(`Error while editing drone: ${error}`));
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
@@ -43,7 +43,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
   Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed }, { new: true })
     .then(() => res.redirect('/drones'))
-    .catch((error) => `Error while editing drone: ${error}`);
+    .catch((error) => console.log(`Error while editing drone: ${error}`));
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
@@ -51,7 +51,7 @@ router.post('/drones/:id/delete', (req, res, next) => {
 
   Drone.findByIdAndDelete(id)
   .then(() => res.redirect('/drones'))
-  .catch((error) => `Error while deleting drone: ${error}`);
+  .catch((error) => console.log(`Error while deleting drone: ${error}`));
 });
 
 module.exports = router;
