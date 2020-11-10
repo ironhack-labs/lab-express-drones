@@ -10,28 +10,41 @@ router.get('/drones', (req, res, next) => {
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+ Drone.create()
+ .then(() => res.render("./drones/create-form")
+ .catch((error) => `Error while rendering a new drone: ${error}`))
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+ const {name, propellers, maxSpeed} = req.body;
+
+ Drone.create({name, propellers, maxSpeed})
+ .then(() => res.redirect("/drones"))
+ .catch((error) => `Error while creating a new drone: ${error}`)
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const {id} = req.params;
+  Drone.findById(id)
+  .then((foundDrone) => {
+   res.render("./drones/edit-drone",foundDrone)
+    })
+   .catch((error) => `Error while editing a drone: ${error}`)
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const {id} = req.params;
+  const {name, propellers, maxSpeed} = req.body;
+  Drone.findByIdAndUpdate(id,{name, propellers, maxSpeed}, {new : true})
+  .then((foundDrone) => res.redirect("/drones"))
+  .catch((error) => `Error while updating a drone: ${error}`)
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  const {id} = req.params;
+  Drone.findByIdAndDelete(id)
+  .then(() => res.redirect("/drones")
+  .catch((error) => `Error while deleting a drone: ${error}`))
 });
 
 module.exports = router;
