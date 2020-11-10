@@ -4,7 +4,13 @@
     <li><h3>{{this.name}}</h3>
         <p><i>Propellers: </i>{{this.propellers}}</p>
         <p><i>Maximum Speed: </i>{{this.maxSpeed}} m/s</p>
+        <a href="/drones/{{this._id}}/edit" class="edit-btn">Edit</a>
+        <form action="/drones/{{id}}/delete" method="POST">
+                <button type="submit"> Delete Drone </button>  
+        </form>
     </li>
 </ul>
 
 {{/each}} 
+
+<a href="/drones/create" class="create-btn">Add Drones</a>
