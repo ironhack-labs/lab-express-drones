@@ -1,8 +1,56 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: #2C2C2B;
 }
 
 a {
-  color: #00b7ff;
+  color: #38829A;
+}
+
+.navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item .nav-link:active,
+.navbar-light .nav-item .nav-link:focus,
+.navbar-light .nav-item:hover .nav-link {
+    color: #38829A;
+}
+
+h1 {
+  color: white;
+  font-size: 6em;
+}
+
+h2 {
+  color: white;
+  font-size: 2em;
+  padding: 20px;
+}
+
+.main-img {
+  width: 350px;
+  height: auto;
+  
+}
+
+.index-cont {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 15px;
+}
+
+.btn-warning {
+  margin: 20px;
 }
