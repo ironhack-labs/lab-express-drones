@@ -39,3 +39,7 @@ h1 {
   margin: 20px;
   text-align: center;
 }
+
+.drone-row>img {
+  object-fit: cover;
+}
