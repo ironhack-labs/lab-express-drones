@@ -1,8 +1,56 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: grey;
 }
 
 a {
-  color: #00b7ff;
+  color: #071216;
 }
+
+.indexText {
+  padding: 0;
+  margin-top: 60px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.titleH1 {
+  font-size: 90px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  border: 2px dotted black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.listText {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: space-around;
+ border-bottom: 1px solid black;
+ margin-bottom: 10px;
+}
+
+.listSecondH2 {
+  width: 25%;
+}
+
+.listBtn {
+  margin-left: 10px;
+}
+
+.listACreate {
+  margin-bottom: 10px;
+  color: white;
+}
+
+
+
