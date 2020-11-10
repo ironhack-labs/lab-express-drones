@@ -2,9 +2,15 @@
 <br>
 <div class="container-fluid">
     {{#each drones}}
+        <br>
         <h5> Name: {{this.name}}</h1> <br>
         <p>Propellers Number: {{this.propellers}}</p> <br>
         <p>Maximum Speed: {{this.maxSpeed}}</p> <br>
+        <button class="btn btn-primary"><a href="/drones/{{this.id}}/edit">Modify your Drone</a></button>
+        <br>
+        <form action="/drones/{{id}}/delete" method="POST">
+            <button class="btn btn-danger" type="submit">Delete your Drone !</button>  
+        </form>
     {{/each}}
 </div>
 
