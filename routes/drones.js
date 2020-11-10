@@ -25,21 +25,17 @@ router.post("/drones/create", (req, res, next) => {
     .catch((error) => console.log(error), res.render("drones/create-form"));
 });
 
-router.get("/drones/:id/edit", (req, res, next) => {
-  const { id } = req.params;
-  Drone.findById(id)
-    .then((editDrone) => res.render("drones/update-form", { editDrone }))
-    .catch((error) => console.log(error));
-})
+//router.get("/drones/:id/edit", (req, res, next) => {
 
-router.post("/drones/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+//});
 
-router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-});
+//router.post("/drones/:id/edit", (req, res, next) => {
+
+//);
+
+//router.post("/drones/:id/delete", (req, res, next) => {
+// Iteration #5: Delete the drone
+// ... your code here
+//});
 
 module.exports = router;
