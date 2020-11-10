@@ -1,8 +1,11 @@
-<h1>Available drones</h1>
-{{#each allDronesFromDb}}
-<div class="drone-list">
-    <h2>Name of Drone: {{this.name}}</h2>
-    <h3>Number of Propellers: {{this.propellers}}</h3>
-    <h3>Max Speed: {{this.maxSpeed}}</h3>
+<div class="drones-page">
+    <h1>Available drones</h1>
+    {{#each allDronesFromDb}}
+    <div class="drone-list">
+        <h2>Name of Drone: {{this.name}}</h2>
+        <h3>Number of Propellers: {{this.propellers}}</h3>
+        <h3>Max Speed: {{this.maxSpeed}}</h3>
+    </div>
+    {{/each}}
+    <a href="/drones/create"><button>Create a new drone!</button></a>
 </div>
-{{/each}}

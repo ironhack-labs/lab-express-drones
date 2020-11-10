@@ -1,5 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -10,6 +15,7 @@ li {
   list-style: none;
   color: white;
   padding: 1rem;
+  font-size: 1.5rem;
 }
 li:hover {
   font-weight: bold;
@@ -19,8 +25,12 @@ li:hover {
 .drone-list {
   padding-top: 2rem;
 }
+.drones-page {
+  padding: 2rem;
+}
 
 nav {
+  width: 100vw;
   background-color: lightcoral;
   height: 3rem;
   display: flex;
@@ -29,4 +39,31 @@ nav {
 ul {
   display: flex;
   flex-direction: row;
+}
+.create-drone-page {
+  padding: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+}
+form label {
+  padding-top: 1rem;
+}
+form input {
+  padding: 0.5rem;
+}
+button {
+  background-color: lightcoral;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 25px;
+}
+button:hover {
+  cursor: pointer;
+  font-weight: bold;
 }
