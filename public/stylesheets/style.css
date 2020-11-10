@@ -9,6 +9,7 @@ a {
 h1 {
   font-size: 5em !important;
   color: #FFF;
+  -webkit-text-stroke: 2px black;
 }
 
 .index-container {
