@@ -1,14 +1,19 @@
-<h2>Available drones</h2>
-<button onclick="location.href='/drones/create/'">Create</button>
-
-{{#each drones}}
-<div>
-    <h3>{{this.name}}</h3>
-    <p>No. of propellers: {{this.propellers}}</p>
-    <p>Maximum speed: {{this.maxSpeed}}</p>
-    <button onclick="location.href='{{this.id}}/edit/'">Edit</button>
-    <form action="/drones/{{_id}}/delete/" method="post">
-        <button>Delete</button>
-    </form>
+<div class="container list-container">
+    <div class="container header-container">
+        <h2>Available drones</h2>
+    </div>
+    <div class="drones-container">
+        {{#each drones}}
+        <div class="drone-row">
+            <img src="../../../{{this.image}}" alt="image">
+            <h3>{{this.name}}</h3>
+            <p>No. of propellers: {{this.propellers}}</p>
+            <p>Maximum speed: {{this.maxSpeed}}</p>
+            <button onclick="location.href='{{this.id}}/edit/'">Edit</button>
+            <form action="/drones/{{_id}}/delete/" method="post">
+                <button>Delete</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
 </div>
-{{/each}}

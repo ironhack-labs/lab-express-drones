@@ -1,8 +1,40 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+h1 {
+  font-size: 5em !important;
+  color: #FFF;
+}
+
+.index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 700px;
+  background-image: url(/images/drone.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.drones-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.drone-row {
+  width: 20%;
+  margin: 20px;
+  text-align: center;
 }
