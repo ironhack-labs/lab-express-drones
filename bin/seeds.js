@@ -7,6 +7,7 @@ mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
 });
 
 const drones = [
