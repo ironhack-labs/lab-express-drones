@@ -1,1 +1,25 @@
-<h2>Update the drone</h2>
+<h2>Updating {{this.name}}</h2>
+
+    <hr>
+    <div>
+    <p>Drone model: {{name}}</p>
+    <p>Propellers: {{propellers}}</p>
+    <p>Speed m/sec: {{maxSpeed}}</p>
+    </div>
+    <hr>
+
+<form action="/drones/{{_id}}/edit" method="post">
+<h3> Update this drone: </h3>
+
+  <label for="title-input">Name:</label>
+  <input type="text" name="name" id="name-input" value="" />
+
+  <label for="author-input">Propellers:</label>
+  <input type="text" name="propellers" id="propellers-input" value="" />
+
+  <label for="maxSpeed-input">Speed m/sec:</label>
+  <input type="text" name="maxSpeed" id="maxSpeed-input" value="" />
+
+  <button type="submit">Save changes</button>
+
+</form>
