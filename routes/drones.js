@@ -68,16 +68,6 @@ router.post('/drones/:id/edit', (req, res, next) => {
             console.error(`An error occurred while updating drone ${err}`, ));
 });
 
-//iteration 5 to find
-
-// router.post('/drones/:id/delete', (req, res, next) => {
-//     // Iteration #5: Delete the drone
-//     // ... your code here
-//     let { id } = req.params;
-//     drone.findById(id)
-//         .then(() =>
-//             console.log(`the id is: ${id}`));
-// });
 
 //iteration 5 to delete
 router.post('/drones/:id/delete', (req, res, next) => {
