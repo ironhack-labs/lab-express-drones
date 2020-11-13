@@ -54,3 +54,7 @@ h2 {
 .btn-warning {
   margin: 20px;
 }
+
+.wrapper {
+  display: flex;
+}

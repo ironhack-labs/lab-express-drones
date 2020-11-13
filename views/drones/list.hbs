@@ -1,9 +1,11 @@
 <h2>Available drones</h2>
+
+<div class="wrapper">
 {{#each dronesFromDB}}
 
 
 <div class="container">
-     <div class="row">
+    <div class="row">
          <div class="col">
              <div class="card" style="width: 18rem;">
         <div class="card-body" style="width: 18rem;">
@@ -24,4 +26,5 @@
 </div>
 
 {{/each}} 
+</div>
 <a href="/drones/create" class="btn btn-warning">Add Drones</a>
