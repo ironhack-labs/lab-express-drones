@@ -16,6 +16,8 @@ const debug = require('debug')(
 
 const app = express();
 
+//const cors = require('cors');
+
 // require database configuration
 require('./configs/db.config');
 
@@ -40,5 +42,12 @@ app.use('/', index);
 
 const droneRoutes = require('./routes/drones');
 app.use('/', droneRoutes);
+
+/* app.use(
+  cors({
+    credentials: true,
+    origin: ['http://localhost:3001'] // <== this will be the URL of our React app (it will be running on port 3000)
+  })
+); */
 
 module.exports = app;
