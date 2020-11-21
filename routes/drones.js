@@ -1,37 +1,61 @@
 const express = require('express');
-
-// require the Drone model here
-
+const Drone = require('../models/Drone.model');
 const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+  Drone.find()
+  .then(allDronesFromDB => {
+    console.log(allDronesFromDB);
+    res.render('drones/list', {allDronesFromDB});
+  })
+  .catch(error => {
+    console.log('Error displaying all drones: ', error);
+  })
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form')
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  Drone.create(req.body)
+  .then(() => {
+    res.redirect('/drones');
+  })
+  .catch(() => {
+    res.render('drones/create-form');
+    window.alert('Your drone was not saved! Click ok and try again');
+  });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+  .then(drone => {
+    res.render('drones/update-form', drone);
+  })
+  .catch(error => {
+    console.log('Error trying to update the drone: ', error);
+  });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(() => {
+    res.redirect('/drones');
+  })
+  .catch(error => {
+    console.log('Error updating the drone: ', error);
+  });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/drones');
+  })
+  .catch(error => {
+    console.log('There was an error while deleting the drone: ', error);
+  });
 });
 
 module.exports = router;
