@@ -6,3 +6,11 @@ body {
 a {
   color: #00b7ff;
 }
+
+input, a, label{
+  display: block;
+}
+
+label{
+  margin-bottom: 20px;
+}
