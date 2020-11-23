@@ -5,4 +5,7 @@
     <h5>Amount of propellers: {{this.propellers}}</h5>
     <h5>Speed of drone: {{this.speed}}</h5>
     <a href="/drones/{{this.id}}/edit">Edit</a>
+    <form action="/drones/{{id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
 {{/each}}
