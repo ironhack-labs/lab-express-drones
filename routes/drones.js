@@ -60,7 +60,7 @@ router.post('/drones/:id/delete', async (req, res, next) => {
   try {
     const { id } = req.params;
     const drone = await Drone.findByIdAndDelete(id);
-    res.redirect("drones")
+    res.redirect("/drones")
   } catch (err) {
     console.error(err)
   }
