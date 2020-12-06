@@ -1,0 +1,26 @@
+<h2>Edit drone</h2>
+<h4>Current dron info:</h4>
+
+<p>Dron name: {{name}}</p>
+<p>Number of propellers:{{propellers}}</p>
+<p>Max Speed:{{maxSpeed}}</p>
+<p>Number of Id:{{_id}}</p>
+
+<p>Edit Dron</p>
+<form action="/drones/{{_id}}/edit" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <label for="propellers">Propellers</label>
+    <input type="text" name="propellers" id="propellers">
+    <label for="maxSpeed">maxSpeed</label>
+    <input type="text" name="maxSpeed" id="maxSpeed">
+    <button type="submit">Edit Dron</button>
+</form>
+
+<br>
+<form action="/drones/{{_id}}/delete" method="POST">
+    <input type="text" name="{{_id}}" hidden>
+    <button type="submit">Delete Dron</button>
+</form>
+
+<p><a href="/drones">View all drones</a></p>
