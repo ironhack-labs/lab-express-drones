@@ -39,6 +39,9 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const droneRoutes = require('./routes/drones');
-app.use('/', droneRoutes);
+app.use('/drones', droneRoutes);
 
+
+
+app.listen(process.env.PORT, console.log("Connecto to port 3000"))
 module.exports = app;
