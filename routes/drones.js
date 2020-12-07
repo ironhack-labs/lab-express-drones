@@ -1,36 +1,29 @@
-const express = require('express');
+const express = require("express");
 
-const {getDrones} = require('../controllers/drone.controller');
+const {
+  getDrones,
+  getDrone,
+  createDrone,
+  updateDrone,
+  deleteDrone,
+} = require("../controllers/drone.controller");
 
 // require the Drone model here
 
 const router = express.Router();
 
-router.get('/drones', getDrones);
+router.get("/drones", getDrones);
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.get("/drones/create", (req, res, next) =>
+  res.render("drones/create-form")
+);
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.get("/drones/:DroneId", getDrone);
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.post("/drones/create", createDrone);
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.post("/drones/:DroneId/update", updateDrone);
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-});
+router.post("/drones/:DroneId/delete", deleteDrone);
 
 module.exports = router;

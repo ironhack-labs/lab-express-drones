@@ -10,58 +10,59 @@ const getDrones = async (req, res) => {
   }
 };
 
-// const getMovie = async (req, res) => {
-//   try {
-//     const { MovieId } = req.params;
-//     const movie = await Movie.findById(MovieId);
-//     console.log(movie)
-//     res.render("movies/show", { movie });
-//   } catch (err) {
-//     next();
-//     return err;
-//   }
-// };
+const getDrone = async (req, res) => {
+  try {
+    const { DroneId } = req.params;
+    const drone = await Drone.findById(DroneId);
+    console.log(drone);
+    res.render("drones/update-form", { drone });
+  } catch (err) {
+    // next();
+    // return err;
+  }
+};
 
-// const createMovie = async (req, res) => {
-//   try {
-//     await Movie.create(req.body);
-//     const movies = await Movie.find();
-//     res.render("movies/index", { movies });
-//   } catch (err) {
-//     next();
-//     return err;
-//   }
-// };
+const createDrone = async (req, res) => {
+  try {
+    await Drone.create(req.body);
+    const drones = await Drone.find();
+    console.log(drones);
+    res.render("drones/list", { drones });
+  } catch (err) {
+    next();
+    return err;
+  }
+};
 
-// const deleteMovie = async (req, res) => {
-//   try {
-//     const { MovieId} = req.params;
-//     console.log(MovieId);
-//     const removedMovie = await Movie.findByIdAndRemove(MovieId);
-//     console.log("removed movie", removedMovie);
-//     res.redirect("/movies");
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
+const deleteDrone = async (req, res) => {
+  try {
+    const { DroneId } = req.params;
+    console.log(DroneId);
+    const removedDrone = await Drone.findByIdAndRemove(DroneId);
+    console.log("removed Drone", removedDrone);
+    res.redirect("/drones");
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-// const updateMovie = async (req, res) => {
-//   try {
-//     const { MovieId } = req.params;
-//     const updatedMovie = await Movie.findByIdAndUpdate(MovieId, req.body, {
-//       new: true,
-//     });
-//     console.log("updeted movie", updatedMovie);
-//     res.redirect(`/movies/${MovieId}`);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
+const updateDrone = async (req, res) => {
+  try {
+    const { DroneId } = req.params;
+    const updatedDrone = await Drone.findByIdAndUpdate(DroneId, req.body, {
+      new: true,
+    });
+    console.log("updeted Drone", updatedDrone);
+    res.redirect(`/drones/${DroneId}`);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 module.exports = {
   getDrones,
-  // getMovie,
-  // createMovie,
-  // deleteMovie,
-  // updateMovie
+  getDrone,
+  createDrone,
+  deleteDrone,
+  updateDrone,
 };
