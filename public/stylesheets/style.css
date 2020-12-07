@@ -62,3 +62,12 @@ form button:hover {
   color: black;
   border: 1px solid;
 }
+form.delete{
+  display: inline-block;
+}
+form.delete button{
+  /* all:initial; */
+  background-color: transparent;
+  display: inline-block;
+  color: #00b7ff;
+}

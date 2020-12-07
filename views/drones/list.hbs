@@ -4,8 +4,11 @@
         <li>
                 {{this.name}} - {{this.propellers}} - {{this.maxSpeed}}
                 <a href="/drones/{{this._id}}/edit"><i class="fas fa-edit"></i></a>
-                <a href="drones/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a>
-              
+                {{!-- <a href="drones/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a> use for GET route--}} 
+                <form action="drones/{{this._id}}/delete" method="post" class="delete">
+                        <button><i class="fas fa-trash-alt"></i></button>
+                </form>
+
         </li>
 
         {{/each}}

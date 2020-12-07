@@ -53,13 +53,13 @@ router.post('/drones/:id/edit', async (req, res, next) => {
   }
 });
 
-//use GET ROUTE to delete not POST
-router.get('/drones/:id/delete', async (req, res, next) => {
+//create form with method POST
+router.post('/drones/:id/delete', async (req, res, next) => {
   // Iteration #5: Delete the drone
   try {
     // console.log(req.params.id)
     console.log("check---------------------------")
-    await DroneModel.findByIdAndDelete(req.params.id);
+    await DroneModel.findByIdAndRemove(req.params.id);
     res.redirect("/drones");
   } catch (err) {
     next(err)

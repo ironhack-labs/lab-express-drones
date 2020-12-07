@@ -1,7 +1,7 @@
 // Iteration #1
 require("dotenv").config();
 require("./../configs/db.config");
-const Drone = require("./../models/Drone.model");
+const mongoose = require("mongoose");
 const DroneModel = require("./../models/Drone.model");
 
 const drones = [
@@ -13,8 +13,9 @@ const drones = [
 async function insertTestDrone(){
         try{
                 await DroneModel.deleteMany(); //delete previous data when re-run this file
-                const insertDrone = await DroneModel.insertMany(drones);
-                console.log(insertDrone)
+                const insertDrone = await DroneModel.insertMany(drones).then(() =>  mongoose.disconnect())
+               
+                
         }catch(err){
                 console.log(err)
         }
