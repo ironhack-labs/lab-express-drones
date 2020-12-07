@@ -1,7 +1,8 @@
+
 const mongoose = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost/express-drones-dev', {
+  .connect(process.env.MONGO_URI , {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true

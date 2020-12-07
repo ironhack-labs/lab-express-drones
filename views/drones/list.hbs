@@ -1,1 +1,12 @@
 <h2>Available drones</h2>
+<ul class="list">
+        {{#each dronesList}}
+        <li>
+                {{this.name}} - {{this.propellers}} - {{this.maxSpeed}}
+                <a href="/drones/{{this._id}}/edit"><i class="fas fa-edit"></i></a>
+                <a href="drones/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a>
+              
+        </li>
+
+        {{/each}}
+</ul>
