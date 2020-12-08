@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost/express-drones-dev', {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(x =>
+  .connect(process.env.MONGODB_URL, {useNewUrlParser: true})
+  .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  )
-  .catch(err => console.error('Error connecting to mongo', err));
+  })
+  .catch(err => {
+    console.error('Error connecting to mongo', err)
+  });

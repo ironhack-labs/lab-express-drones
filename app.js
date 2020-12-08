@@ -15,6 +15,7 @@ const debug = require('debug')(
 );
 
 const app = express();
+app.use(express.urlencoded({ extended : true}))
 
 // require database configuration
 require('./configs/db.config');
