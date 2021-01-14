@@ -42,3 +42,8 @@ const droneRoutes = require('./routes/drones');
 app.use('/', droneRoutes);
 
 module.exports = app;
+
+const port = Number(process.env.PORT || 3000);
+app.listen(port, () => {
+  console.log(`Ready! Listening on port ${port}`);
+});
