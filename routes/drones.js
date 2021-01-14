@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
   Drone.find({})
-    .then(FromDB => {
-      res.render('drones/list', { drones :FromDB });
+    .then(dronesFromDB => {
+      res.render('drones/list', { drones : dronesFromDB });
     })
     .catch((error) => {
       console.log(error)}
@@ -16,15 +16,14 @@ router.get('/drones', (req, res, next) => {
 });
 
 router.get('/drones/create', (req, res, next) => {
-   Drone.create()
-    .then( )
-  // ... your code heren
-
+   res.render('drones/create-form')
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  Drone.create(req.body)
+    .then(drone => res.redirect('/drones'))
+    .catch(error => {         
+        res.render('drones/create-form')})
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
