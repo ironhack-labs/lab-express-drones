@@ -11,8 +11,10 @@ const droneSchema = new Schema({
         type: Number,
         min:0
     },
-    maXSpeed: Number,
-
+    maxSpeed:{ 
+        type: Number,
+        min:0
+    }
 });
 
 
