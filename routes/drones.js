@@ -53,11 +53,11 @@ router.post('/drones/:id/edit', (req, res, next) => {
       }
     }).catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        const post = req.body;
+        const drone = req.body;
         drone.id = req.params.id;
         res.render('drones/update-form', { 
           errors: error.errors,
-          post: post
+          drone: drone
         });
       } else {
         next(error);
