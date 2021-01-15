@@ -1,1 +1,46 @@
-<h2>Create a new drone</h2>
+<h2>New drone</h2>
+<hr class="mb-6" />
+
+<section>
+    <div class="card mx-auto " style="width: 38rem;">
+        <div class="card-body">
+            <form action="/drones/create" method="POST">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">DRONE NAME</label>
+                    <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Drone name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">NUMBER OF PROPELLERS</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="propellers">
+                        <option>4</option>
+                        <option>6</option>
+                        <option>8</option>
+                        <option>12</option>
+                        <option>16</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">SPEED IN M/S</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="maxSpeed">
+                        <option>4</option>
+                        <option>6</option>
+                        <option>8</option>
+                        <option>10</option>
+                        <option>12</option>
+                        <option>18</option>
+                        <option>20</option>
+                    </select>
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary">Create new Drone</button>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,1 +1,28 @@
-<h2>Available drones</h2>
+<h2>List of drones</h2>
+<hr class="mb-6" />
+<div class="row d-flex justify-content-center">
+
+
+    {{#if drones}}
+
+    {{#each drones as |drone| }}
+
+    <div class="card text-center shadow mb-3 bg-white rounded m-4">
+        <div class="card-body">
+            <h3 class="card-title">{{this.name}} </h5>
+                <h4 class="">Propellers: {{this.propellers}}</h4>
+                    <h4 class="">Max Speed: {{this.maxSpeed}} m/s</h4>
+
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a class="btn btn-primary  mr-4 ml-5" href="/drones/{{ this.id }}/edit">Edit drone<i class="fa fa-edit"></i></a>
+
+            <form action="/drones/{{this.id}}/delete" method="POST">
+                <button type="submit" class="btn btn-danger ml-4 mr-5"><i class="fa fa-trash-o"></i>Delete Drone </button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+
+    {{/if}}
+</div>
