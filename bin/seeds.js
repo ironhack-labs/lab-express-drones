@@ -18,4 +18,4 @@ Drone.create(drones)
 
     mongoose.connection.close();
 })
-.catch(err => console.log(`The seeding of the database was not successful: ${err}`));
+.catch((err) => console.log(`The seeding of the database was not successful: ${err}`));
