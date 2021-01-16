@@ -43,14 +43,10 @@ router.post('/drones/:id/edit', (req, res, next) => {
   Drone.findByIdAndUpdate(req.params.id, req.body)
   .then(() =>
     res.redirect('/drones'))
-    .catch(err => console.log(`Error occurred while updating drone: ${err}.`))
-    
-    // Re-rendering to update-form with fields still populated: Cleaner way to do this?
-    // Causes POST header error.
-    .then(() => 
-      Drone.findById(req.params.id))
-      .then(droneToUpdate => 
-      res.render("drones/update-form", { droneToUpdate }))
+    .catch(err => {
+      console.log(`Error occurred while updating drone: ${err}.`);
+      res.redirect('back')
+    })
 });
 
 // POST Delete Drones
