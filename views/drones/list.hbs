@@ -3,10 +3,8 @@
 <br>
 <br>
 <h2>Available drones</h2>
-
+<hr>
 {{#each dronesFromDB}}
-<br>
-<br>
 <br>
 <div>
 <img src="{{image}}" alt="{{name}} image" height="200" width="auto">
@@ -14,16 +12,13 @@
 <h5>Propellers: {{propellers}}</h5>
 <h5>Maximum Speed m/sec: {{maxSpeed}}</h5>
 <br>
-<a href="/drones/{{_id}}/edit">Edit Drone</a>
+<h6> <a href="/drones/{{_id}}/edit">Edit Drone</a></h6>
 </div>
-<br>
 <br>
  <form action="/drones/{{id}}/delete" method="POST">
         <button> Delete </button>
   </form>
   <hr>
-<br>
-<br>
 <br>
 {{/each}}
 

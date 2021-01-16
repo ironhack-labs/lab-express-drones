@@ -20,10 +20,7 @@ router.get('/drones/create', (req, res, next) => {
 router.post('/drones/create', (req, res, next) => {
   //console.log("savedDrone:", req.body)
   Drone.create(req.body)
-    .then((savedDrone)=> {
-      console.log(savedDrone)
-      res.redirect("/drones")
-    })
+    .then(()=> res.redirect("/drones"))
     .catch((err) => console.log(`Error while saving a new drone to DB: ${err}`));
 })    
 
@@ -39,15 +36,22 @@ router.get('/drones/:id/edit', (req, res, next) => {
 })
   
 
-
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const { name, propellers, maxSpeed, image } = req.body;
+
+  Drone.findByIdAndUpdate(req.params.id, { name, propellers, maxSpeed, image }, { new: true })
+    .then((updatedDrone) => {
+      console.log("updated:", updatedDrone);
+      res.redirect(`/drones`);
+    })
+  .catch((err) => console.log(`Error while saving updated drone in DB : ${err}`));
 });
 
+
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect("/drones"))
+    .catch((err) => console.log(`Error while deleting drone from DB: ${err}`));
 });
 
 module.exports = router;
