@@ -1,1 +1,26 @@
 <h2>Create a new drone</h2>
+
+
+
+<form action="/drones/create" method="POST">
+  <label> Name:
+    <input type="text" name="name">
+  </label>
+<hr>
+  <label> Propellers:
+    <input type="number" name="propellers" min=1 max=8>
+  </label>
+<hr>
+  <label> Max Speed (m/sec):
+    <input type="number" name="maxSpeed" min=0 max=30>
+  </label>
+<hr>
+  <label> Image URL (or use default): 
+    <input type="text" name="image" value="/images/default-drone.jpg">
+  </label>
+<hr>
+
+  <button type="submit"> Save </button>
+</form>
+
+

@@ -9,13 +9,19 @@
 <br>
 <br>
 <div>
-<img src="{{image}}" alt="{{name}} image" height="150" width="auto">
+<img src="{{image}}" alt="{{name}} image" height="200" width="auto">
 <h3>{{name}}</h3>
 <h5>Propellers: {{propellers}}</h5>
 <h5>Maximum Speed m/sec: {{maxSpeed}}</h5>
-
-
+<br>
+<a href="/drones/{{_id}}/edit">Edit Drone</a>
 </div>
+<br>
+<br>
+ <form action="/drones/{{id}}/delete" method="POST">
+        <button> Delete </button>
+  </form>
+  <hr>
 <br>
 <br>
 <br>
