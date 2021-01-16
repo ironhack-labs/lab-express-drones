@@ -7,9 +7,9 @@ const router = express.Router();
 router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
     Drone.find()
-    .then((dronesFromDB) => 
+    .then((dronesFromDB) => {
       // console.log(allDronesFromDB))
-      res.render('drones/list.hbs', { dronesFromDB }))
+      res.render('drones/list.hbs', { dronesFromDB })})
     .catch((err) => console.log(`There was an error retrieving all the drones: ${err}`));
 });
 
@@ -31,18 +31,37 @@ router.post('/drones/create', (req, res, next) => {
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+  // // Iteration #4: Update the drone
+  // Drone.findById(req.params.id)
+  // .then((foundDrone) => { console.log (foundDrone)
+
+  const { id } = req.params;
+
+  Drone.findById(id)
+  
+  .then( droneToUpdate => {
+    res.render('drones/update-form', { droneToUpdate} )})
+  .catch((err) => console.log(`There was an error updating the Drone: ${err}`));
+  });
+
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  
+  const { id } = req.params;
+  const { name, propellers, maxSpeed } = req.body
+
+  Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed }, { new: true })
+  .then(() => res.redirect('/drones'))
+  .catch((err) => console.log(`There was an error updating the Drone: ${err}`))
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
-});
+  const { id } = req.params
+  Drone.findByIdAndRemove(id)
+  .then(()=> res.redirect('/drones'))
+  .catch(err=> console.log(`Unable to delete this drone: : ${err}`))
+});	
 
 module.exports = router;
