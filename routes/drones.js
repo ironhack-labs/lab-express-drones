@@ -1,37 +1,53 @@
 const express = require('express');
+const { isValidObjectId } = require('mongoose');
 
-// require the Drone model here
+const Drone = require('../models/Drone.model');
 
 const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+  Drone.find()
+    .then(dronesFound => res.render('drones/list', { drones: dronesFound }))
+    .catch(err => console.log(`Error while displaying drones: ${err}`))
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form')
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drone.create( {name, propellers, maxSpeed} )
+    .then(() => res.redirect('/drones'))
+    .catch(err => console.log(`Error while creating drone: ${err}`))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+    const { id } = req.params;
+    Drone.findById(id)
+      .then(foundDrone => res.render('drones/update-form', foundDrone))
+      .catch(error => console.log(`Error while editing drone: ${error}`))
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed }, { new: true })
+    .then(droneToUpdate => res.redirect('/drones'))
+    .catch(error => {
+      console.log(`Error while updating drone: ${error}`)
+      res.redirect(`/drones/${id}/edit`)
+    });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  const { id } = req.params;
+
+  Drone.findByIdAndDelete(id)
+    .then(() => res.redirect('/drones'))
+    .catch(error => console.log(`Error while deleting drone: ${error}`))
 });
 
 module.exports = router;

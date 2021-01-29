@@ -4,5 +4,54 @@ body {
 }
 
 a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+span {
+  color: white;
+}
+
+h2 {
+  color: white
+}
+
+a:hover {
   color: #00b7ff;
+}
+
+.delete-form {
+  display: inline;
+}
+
+.delete-btn {
+  display: inline;
+}
+
+html,
+body {
+  background-image: url("../images/drone.jpg");
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+table {
+  border-radius: 10rem;
 }
