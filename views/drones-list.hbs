@@ -5,8 +5,11 @@
 <p>maxSpeed: {{maxSpeed}}</p>
 <a href="/drones/{{_id}}/edit">Edit drone</a>
 </br>
+<form action="/drones/{{_id}}/delete" method="POST">
+    <button type="submit">Delete</button>
+</form>
 
 {{/each}}
 
 <a href="/">Home</a>
-<a href="/drones/create">Create a new dron</a>
+<a href="/drones/create">Create a new drone</a>
