@@ -10,7 +10,7 @@ router.get('/drones', (req, res, next) => {
   // ... your code here
   Drone.find()
     .then((drones) => {
-      console.log(drones)
+      //console.log(drones)
       res.render('drones-list', { drones })
     .catch(e => next(e))
   })
@@ -19,11 +19,16 @@ router.get('/drones', (req, res, next) => {
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  res.render('create-form')
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  const drone = req.body;
+  Drone.create(drone)
+    .then((d) => res.render('drones-list', d))
+    .catch((e) => next(e))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
