@@ -1,0 +1,43 @@
+<h2>Available drones</h2>
+{{#each drones as |drone|}}
+    {{name}}<br>
+    {{propellers}}<br>
+    {{maxSpeed}}<br>
+    <a href="/drones/{{_id}}/edit" class="btn btn-secondary btn-sm">Edit</a>
+    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete" data-bs-droneName="{{name}}" data-bs-droneid="{{_id}}">Delete</button>
+    <br><br>
+{{/each}}
+<a href="/drones/create" class="btn btn-lg btn-primary">+</a>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to deltele <span id="droneName"></span>?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/drones/{{_id}}/delete" id="delete-form" method="POST">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var deleteModal = document.getElementById('delete')
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        var droneid = button.getAttribute('data-bs-droneid')
+        var modalForm = document.getElementById('delete-form')
+        modalForm.setAttribute('action', `/drones/${droneid}/delete`)
+
+        var droneName = button.getAttribute('data-bs-droneName')
+        document.getElementById('droneName').innerHTML = droneName
+    });
+</script>
