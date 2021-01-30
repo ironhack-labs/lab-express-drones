@@ -12,18 +12,28 @@ router.get('/drones', (req, res, next) => {
         console.log(`drones disponibles : ${drones}`)
         res.render("drones/list", {drones})
     })
-  // ... your code here
+    .catch(error =>
+      console.log(`Error while getting a single book for edit: ${error}`)
+    );
 });
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
+  res.render("drones/create-form");
   // ... your code here
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
+const drone = req.body
+console.log(drone)
+
+Drone.create(drone)
+  .then(() => res.redirect("/drones"))
+  .catch((e) => next(e));
+
+})
   // ... your code here
-});
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
