@@ -1,1 +1,40 @@
+require("../configs/db.config");
+const Drone = require("../models/Drone.model");
+const mongoose = require('mongoose');
+
 // Iteration #1
+const drones = [{
+        name: "Creeper XL 500",
+        propellers: 3,
+        maxSpeed: 12
+    },
+    {
+        name: "Racer 57",
+        propellers: 4,
+        maxSpeed: 20
+    },
+    {
+        name: "Courier 3000i",
+        propellers: 6,
+        maxSpeed: 18
+    },
+];
+
+
+
+Drone.deleteMany()
+    .then((result) => {
+        //console.log(result)
+        Drone.create(drones)
+            .then((d) => {
+                console.log(d);
+            })
+            .then(() => {
+                mongoose.connection.close();
+                console.log("Disconected")
+            })
+    })
+    .catch((e) => console.log(e))
+
+//======================================================
+      
