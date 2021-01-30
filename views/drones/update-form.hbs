@@ -3,13 +3,13 @@
 <div class="bg-light p-5">
 <form action="/drones/{{id}}/edit" method="post">
     <label for="drone-name">Drone name:</label>
-    <input type="text" name="name" id="drone-name" placeholder="{{name}}" required>
+    <input type="text" name="name" id="drone-name" value="{{name}}" required>
     <br>
     <label for="propellers">Number of propellers</label>
-    <input type="number" name="propellers" id="propellers" min="1" max="10" value="propellers" placeholder="{{propellers}}" required>
+    <input type="number" name="propellers" id="propellers" min="1" max="10"  value="{{propellers}}" required>
     <br>
     <label for="maxSpeed">Max Speed:</label>
-    <input type="number" name="maxSpeed" id="maxSpeed" min="10" max="50" value="maxSpeed" placeholder="{{maxSpeed}}" required>  
+    <input type="number" name="maxSpeed" id="maxSpeed" min="10" max="50" value="{{maxSpeed}}" required>  
     <br>
     <button class="btn btn-success"type="submit">Save Changes</button>
 </form>

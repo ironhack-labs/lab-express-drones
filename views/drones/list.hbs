@@ -1,19 +1,4 @@
 <h2 class="text-center fw-bold mb-3">Available drones</h2>
-{{!-- 
-<ol>
-    {{#each drones}}
-    <li>
-        <p>
-            <b>{{name}}</b> | Propellers: {{propellers}} | maxSpeed: {{maxSpeed}}
-            <button class="btn btn-primary" href="/drones/{{id}}/edit">Edit</button> |
-                <form class="delete-form" action="/drones/{{id}}/delete" method="post">
-                    <button type="submit" class="btn btn-danger" onclick="return clicked()">Remove</button>
-                </form>
-        </p>
-    </li>
-    {{/each}}
-</ol> --}}
-
 
 <table class="table table-striped table-light p-5">
     <thead>
@@ -41,20 +26,6 @@
             </td>
         </tr>
         {{/each}}
-        {{!-- <tr>
-            {{#each drones}}
-            <th scope="row">2</th>
-
-            <td>@fat</td>
-        </tr>
-        {{/each}}
-        <tr>
-            {{#each drones}}
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        {{/each}} --}}
     </tbody>
 
 </table>
