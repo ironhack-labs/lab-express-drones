@@ -1,13 +1,22 @@
-<h2>Available drones</h2>
-{{#each drones as |drone|}}
-    {{name}}<br>
-    {{propellers}}<br>
-    {{maxSpeed}}<br>
-    <a href="/drones/{{_id}}/edit" class="btn btn-secondary btn-sm">Edit</a>
-    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete" data-bs-droneName="{{name}}" data-bs-droneid="{{_id}}">Delete</button>
-    <br><br>
-{{/each}}
-<a href="/drones/create" class="btn btn-lg btn-primary">+</a>
+<div class="flexblock">
+    <h1><b>Available drones</b></h1>   
+    <a href="/drones/create" class="btn btn-primary"><i class="las la-plus-circle"></i> New drone</a>
+</div>
+<div class="row mt-4">
+    {{#each drones as |drone|}}
+        <div class="col-sm-3 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://img.icons8.com/ios-filled/45/000000/drone.png"/>
+                    <h5 class="mt-2"><b>{{name}}</b></h5>
+                    <p>Propellers: {{propellers}} | MaxSpeed: {{maxSpeed}}</p>
+                    <a href="/drones/{{_id}}/edit" class="btn btn-secondary btn-sm px-4"><i class="las la-pen"></i> Edit</a>
+                    <button class="btn btn-danger btn-sm px-4" data-bs-toggle="modal" data-bs-target="#delete" data-bs-droneName="{{name}}" data-bs-droneid="{{_id}}"><i class="las la-trash-alt"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
 
 
     <!-- Modal -->

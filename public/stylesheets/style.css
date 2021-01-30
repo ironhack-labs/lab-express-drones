@@ -1,8 +1,13 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+.card {
+  border-radius: 22px !important;
 }
 
-a {
-  color: #00b7ff;
+.btn {
+  border-radius: 10px !important;
+}
+
+.flexblock {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
 }
