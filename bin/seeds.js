@@ -7,7 +7,7 @@ const Drone = require("../models/Drone.model");
 
 const insertDrones = []
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 50; i++) {
         insertDrones.push({
             name: faker.random.word() + ' ' + faker.random.number(),
             propellers: (Math.floor(8 * Math.random()) + 2),

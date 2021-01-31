@@ -30,8 +30,8 @@
             <a class="nav-link" href="/drones/create"><small>[+]</small> New drone</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" action="/drones/">
+          <input class="form-control me-2" type="search" placeholder="Search drones" aria-label="Search" name="name" value="{{#if search}} {{search}} {{/if}}">
           <button class="btn btn-outline-dark" type="submit">Search</button>
         </form>
       </div>

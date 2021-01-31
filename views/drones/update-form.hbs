@@ -1,1 +1,44 @@
-<h2>Update the drone</h2>
+<div class="container">
+  <h2 class="py-3">Update drone "{{drone.name}}"</h2>
+  <form action="/drones/{{drone._id}}/edit" method="POST">
+    <input type="text" class="form-control" id="name" name="_id" value="{{drone._id}}" hidden>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{drone.name}}" required>
+  </div>
+  <div class="mb-3">
+    <label for="propellers" class="form-label">Propellers</label>
+    <input type="number" class="form-control" id="propellers" name="propellers" value="{{drone.propellers}}" required>
+  </div>
+  <div class="mb-3">
+    <label for="maxSpeed" class="form-label">Max speed</label>
+    <input type="number" class="form-control" id="maxSpeed" name="maxSpeed" value="{{drone.maxSpeed}}" required>
+  </div>
+  <button type="submit" class="btn btn-dark">Update</button> 
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+  <a href="/drones"><button type="button" class="btn btn-light">Go back</button></a>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete done '{{drone.name}}'? This action cannot be restored.
+      </div>
+      <div class="modal-footer">
+          <form action="/drones/{{drone._id}}/delete" method="POST">
+            <input type="text" class="form-control" id="name" name="_id" value="{{drone._id}}" hidden>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-danger">Confirm delete</button>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
