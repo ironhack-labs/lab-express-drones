@@ -1,5 +1,5 @@
 const express = require('express');
-
+const mongoose = require('mongoose');
 // require the Drone model here
 const Drone = require("../models/Drone.model")
 const router = express.Router();
@@ -18,12 +18,20 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form')
+  
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  const {name,propellers,maxSpeed} = req.body;
+
+  Drone.create({name,propellers,maxSpeed})
+  .then((newDrone) => console.log(`A new drone named ${newDrone.name} has been added to the DB`))
+    .then(() => {
+      res.redirect('/drones');
+    })
+
+  .catch((e) => console.log(e))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {

@@ -3,13 +3,16 @@
     <div class="row">
         {{#each drones as |drone|}}
             <div class='col-3'>
-                <h3>Name</h3>
-                <p>{{drone.name}}</p>
-                <h3>Propellers</h3>
-                <p>{{drone.propellers}}</p>
-                <h3>Maximum Speed</h3>
-                <p>{{drone.maxSpeed}}</p>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: {{drone.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Number of propellers: {{drone.propellers}}</h6>
+                         <h6 class="card-subtitle mb-2 text-muted">Maximum Speed: {{drone.maxSpeed}}</h6>
+                        <a href="#" class="card-link">Drone specifications</a>
+                    </div>
+                </div>
             </div>
         {{/each}}
     </div>
+    <a href="/drones/create">Create a new Drone</a>
 </div>
