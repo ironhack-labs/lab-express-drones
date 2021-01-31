@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost/express-drones-dev', {
+  .connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -10,3 +10,10 @@ mongoose
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   )
   .catch(err => console.error('Error connecting to mongo', err));
+
+  process.on('SIGINT', function() {
+    mongoose.connection.close(function () {
+      console.log('Mongoose disconnected on app');
+      process.exit(0);
+    });
+  });
