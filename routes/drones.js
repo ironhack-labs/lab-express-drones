@@ -1,4 +1,4 @@
-const express = require('express');
+/*  */const express = require('express');
 
 // require the Drone model here
 const Drone = require("../models/Drone.model");
@@ -26,7 +26,6 @@ router.get('/drones/create', (req, res, next) => {
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
 const drone = req.body
-console.log(drone)
 
 Drone.create(drone)
   .then(() => res.redirect("/drones"))
@@ -37,11 +36,24 @@ Drone.create(drone)
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
+  const id = req.params.id
+ 
+  Drone.findById(id)
+     .then((drone) => res.render("drones/update-form", drone))
+     .catch((e) => next(e));
+  
   // ... your code here
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
+  const drone = req.body
+  const id = req.params.id;
+
+  
+  Drone.findByIdAndUpdate(id,drone,{new: true})
+    .then(()=> res.redirect("/drones"))
+    .catch(() => res.render("drones/update-form", drone))
   // ... your code here
 });
 
