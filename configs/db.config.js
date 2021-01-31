@@ -13,7 +13,7 @@ mongoose
 
   process.on('SIGINT', function() {
     mongoose.connection.close(function () {
-      console.log('Mongoose disconnected on app');
+      console.log('DB has been disconected');
       process.exit(0);
     });
   });
