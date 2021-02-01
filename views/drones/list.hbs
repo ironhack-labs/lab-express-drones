@@ -5,7 +5,11 @@
                 <div class="card-body">
                     <h5 class="card-title mb-2"><strong>Model: {{name}}</strong></h5>
                     <h5 class="card-title mb-2"><strong>Propellers: {{propellers}}</strong></h5>
-                    <h5 class="card-title mb-2"><strong>Max Speed: {{maxSpeed}}</strong></h5>
+                    <h5 class="card-title mb-1"><strong>Max Speed: {{maxSpeed}}</strong></h5>
+                </div>
+                <div>
+                    <a class="btn-sm btn-dark" href="/drones/{{_id}}/edit" role="button">Edit</a>
+                    <a class="btn-sm btn-dark" href="#" role="button">Delete</a>
                 </div>
             </div>
     {{/each}}
