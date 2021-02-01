@@ -22,7 +22,8 @@ const drones = [
 ]
 
 
-Drone.create(drones)
+Drone
+.create(drones)
 .then(drone => drone.forEach(dron => console.log(`New drone added: ${dron.name}`)))
     .then(() => {
         console.log('Mongoose conection close')

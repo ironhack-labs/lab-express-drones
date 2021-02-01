@@ -1,8 +1,45 @@
+
+
+
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 5px;
 }
 
 a {
   color: #00b7ff;
 }
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 2rem;
+  
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+
+  text-align: center;
+}
+
