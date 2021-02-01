@@ -18,9 +18,11 @@ const drones = [
 ]
 
 require('../configs/db.config')
-const Drone = require('../models/Drone.model')
+const mongoose = require('mongoose');
+const Drone = require('../models/Drone.model');
 
-Drone.create(drones)
+Drone.deleteMany()
+    .then(() => Drone.create(drones))
     .then(createdDrones => console.log(`${createdDrones.length} drones created!`))
     .catch(error => console.log(`Error while creating a new drone: ${error}`))
-    .finally(mongoose.connection.close())
+    .finally(() => mongoose.connection.close())
