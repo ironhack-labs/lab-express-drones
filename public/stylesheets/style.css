@@ -30,6 +30,10 @@ a {
   
 }
 
+a{
+  text-decoration:none!important;
+  color: white!important;
+}
 
 footer {
   position: fixed;

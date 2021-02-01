@@ -42,7 +42,10 @@ router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   const { name, propellers, maxSpeed } = req.body;
   Drone.findByIdAndUpdate(req.params.id, {name, propellers, maxSpeed}, { new: true })
-    .then(drone => console.log(`Drone ${drone.id} updated`))
+    .then(drone => {
+      console.log(`Drone ${drone.id} updated`)
+      res.redirect('/drones')
+    })
     .catch(error => {
       console.log(`Error updating drone: ${error}`)
       res.redirect('/drones')
@@ -51,7 +54,12 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+      console.log(`Drone ${req.params.id} deleted`)
+      res.redirect('/drones')
+    })
+    .catch(error => console.log(`Error deleting drone: ${error}`))
 });
 
 module.exports = router;

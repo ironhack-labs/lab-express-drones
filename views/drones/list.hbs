@@ -8,8 +8,11 @@
                     <h5 class="card-title mb-1"><strong>Max Speed: {{maxSpeed}}</strong></h5>
                 </div>
                 <div>
-                    <a class="btn-sm btn-dark" href="/drones/{{_id}}/edit" role="button">Edit</a>
-                    <a class="btn-sm btn-dark" href="#" role="button">Delete</a>
+           
+                     <button type="submit" class="btn-sm btn-dark mb-2"><a class="none__style" href="/drones/{{_id}}/edit">Edit</a></button>
+                     <form class="d-inline" action="/drones/{{id}}/delete" method="post">
+                        <button type="submit" class="btn-sm btn-dark mb-2">Remove</button>
+                    </form>
                 </div>
             </div>
     {{/each}}
