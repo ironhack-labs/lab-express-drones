@@ -38,7 +38,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
   Drone
       .findByIdAndUpdate(req.params.id, droneData, { new: true })
       .then(drone => {
-        res.redirect('/drones')
+        // res.redirect('/drones')
         console.log(drone)
       })
       .catch(e => console.log(e))

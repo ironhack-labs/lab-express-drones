@@ -1,16 +1,39 @@
-<h2>Update the drone</h2>
+<h1 class="drone-form-title">Drone update</h1>
 <form action="/drones/{{drone._id}}/edit" method="POST">
-    <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" value="{{drone.name}}" placeholder="Technical name of the drone">
+    <div class="row mb-3">
+        <div class="col-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="drone-input" id="name" name="name" value="{{drone.name}}" placeholder="Technical name of the drone">
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="propellers" class="form-label">Proppellers</label>
-        <input type="number" class="form-control" id="propellers" name="propellers" value="{{drone.propellers}}" placeholder="Number of proppellers">
+    <div class="row mb-3 mt-3">
+        <div class="col-3 mb-3">
+            <label for="propellers" class="form-label">Proppellers</label>
+            <input type="number" class="drone-input" id="propellers" name="propellers" value="{{drone.propellers}}" placeholder="Number of proppellers">
+        </div>
+        <div class=" col-3 mb-3">
+            <label for="maxspeed" class="form-label">Max Speed m/s</label>
+            <input type="text" class="drone-input" id="maxspeed" name="maxSpeed" value="{{drone.maxSpeed}}" placeholder="Max speed reached by the drone m/s">
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="maxspeed" class="form-label">Max Speed</label>
-        <input type="text" class="form-control" id="maxspeed" name="maxSpeed" value="{{drone.maxSpeed}}" placeholder="Max speed reached by the drone km/h">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalSave">Update →</button>
 </form>
+
+<!-- Modal Save changes -->
+
+<div class="modal" id="modalSave" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Changes succsessfully saved ✅ </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/drones" method="GET">
+            <button type="submit" class="btn btn-sm btn-dark">Go to drones <i class="las la-chevron-circle-right"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
