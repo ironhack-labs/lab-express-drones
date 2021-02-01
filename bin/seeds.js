@@ -14,6 +14,14 @@ require('../configs/db.config')
 const Drone = require('../models/Drone.model')
 
   Drone.create(drones)
-    .then(createdDrones => console.log(`${createdDrones.length} drones created!`))
+
+  .then(dronesFromDB =>{
+    console.log(dronesFromDB)
+    console.log(dronesFromDB.length)
+    mongoose.connection.close();
+  })
+   // .then(createdDrones => console.log(`${createdDrones.length} drones created!`))
+
+  
     .catch(error => console.log(`Error while creating a new drone: ${error}`))
-    .finally(mongoose.connection.close()) 
+    
