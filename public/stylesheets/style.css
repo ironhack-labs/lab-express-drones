@@ -1,8 +1,88 @@
+/* COMMON */
+
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url("https://wi.wallpapertip.com/wsimgs/30-301335_drones-wallpaper-hd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-a {
-  color: #00b7ff;
+.btn {
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 1.5em;
+  width: max-content;
 }
+
+/* INDEX */
+
+.drone {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #00B7FF;
+}
+
+.intro {
+  text-align: end;
+  color: #fff;
+}
+
+.intro h1 {
+  font-size: 4em;
+  text-transform: uppercase;
+  margin-top: 600px;
+}
+
+.intro p {
+  font-size: 3em;
+  font-weight: 100;
+}
+
+/* DRONES LIST */
+.card {
+  margin: 30px;
+  text-align: center;
+  padding: 30px;
+  height: 280px;
+}
+
+.card h2 {
+  font-weight: 700;
+}
+
+.editDrone {
+  align-self: center;
+  background-color: #10F4C4;
+  border: 2px solid #10F4C4;
+  color: #fff;
+}
+
+.deleteDrone {
+  background-color: #F44E10;
+  border: 2px solid #F44E10;
+  color: #fff;
+}
+
+.createDrone {
+  background-color: #00B7FF;
+  border: 2px solid #00B7FF;
+  color: #fff;
+}
+
+/* FORMS */
+
+.create_form {
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color:#00B7FF;
+}
+
+
+
+
