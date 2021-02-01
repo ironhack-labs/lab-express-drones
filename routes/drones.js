@@ -8,26 +8,24 @@ const router = express.Router();
 router.get('/drones', (req, res, next) => {
   Drone.find()
     .then(dronesFound => res.render('drones/list', { drones: dronesFound }))
-    .catch(err => console.log(`Error while displaying drones: ${err}`))
+    .catch(err => next(err))
 });
 
-router.get('/drones/create', (req, res, next) => {
-  res.render('drones/create-form')
-});
+router.get('/drones/create', (req, res, next) => res.render('drones/create-form'));
 
 router.post('/drones/create', (req, res, next) => {
   const { name, propellers, maxSpeed } = req.body;
 
   Drone.create( {name, propellers, maxSpeed} )
     .then(() => res.redirect('/drones'))
-    .catch(err => console.log(`Error while creating drone: ${err}`))
+    .catch(err => next(err))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
     const { id } = req.params;
     Drone.findById(id)
       .then(foundDrone => res.render('drones/update-form', foundDrone))
-      .catch(error => console.log(`Error while editing drone: ${error}`))
+      .catch(err => next(err))
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
@@ -36,10 +34,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
   Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed }, { new: true })
     .then(droneToUpdate => res.redirect('/drones'))
-    .catch(error => {
-      console.log(`Error while updating drone: ${error}`)
-      res.redirect(`/drones/${id}/edit`)
-    });
+    .catch(error => res.redirect(`/drones/${id}/edit`));
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
@@ -47,7 +42,7 @@ router.post('/drones/:id/delete', (req, res, next) => {
 
   Drone.findByIdAndDelete(id)
     .then(() => res.redirect('/drones'))
-    .catch(error => console.log(`Error while deleting drone: ${error}`))
+    .catch(err => next(err))
 });
 
 module.exports = router;
