@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 // require the Drone model here
 const Drone = require('../models/Drone.model');
 
@@ -22,7 +23,11 @@ router.post('/drones/create', (req, res, next) => {
   Drone
       .create(drone)
       .then(() => res.redirect('/drones'))
-      .catch(e => console.log(e))
+      .catch(error => {
+        if (error instanceof mongoose.Error.ValidationError) {
+            res.render('/drones/create', { errorMessage: error.message });
+        }
+      })
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {

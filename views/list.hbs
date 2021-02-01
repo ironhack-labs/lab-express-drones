@@ -4,7 +4,7 @@
 </div>
 <div class="row mt-4">
     {{#each drones as |drone|}}
-        <div class="col-sm-3 mb-4">
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body">
                     <img src="https://img.icons8.com/ios-filled/45/000000/drone.png"/>
@@ -19,22 +19,22 @@
 </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to deltele <span id="droneName"></span>?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="/drones/{{_id}}/delete" id="delete-form" method="POST">
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                    </form>
-                </div>
+<!-- Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to deltele <span id="droneName"></span>?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/drones/{{_id}}/delete" id="delete-form" method="POST">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 <script>
     var deleteModal = document.getElementById('delete')

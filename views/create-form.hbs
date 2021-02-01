@@ -14,3 +14,7 @@
     </div>
     <button type="submit" class="btn btn-success">Create <i class="las la-plus-circle"></i></button>
 </form>
+
+{{#if errorMessage}}
+    <div class="alert aler-danger">{{errorMessage}}<div/>
+{{/if}}
