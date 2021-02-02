@@ -1,4 +1,9 @@
-<h2>Available drones</h2>
+<class="container">
+    <div class="row pb-5 list__title ">
+        <h2>Available drones</h2>
+    </div>
+</class>
+
 <div class="container">
     <div class="row">
         {{#each drones as |drone|}}
@@ -8,11 +13,13 @@
                         <h5 class="card-title">Name: {{drone.name}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Number of propellers: {{drone.propellers}}</h6>
                          <h6 class="card-subtitle mb-2 text-muted">Maximum Speed: {{drone.maxSpeed}}</h6>
-                        <a href="#" class="card-link">Drone specifications</a>
+                        <a href="/drones/{{_id}}/edit" class="card-link">Edit</a>
                     </div>
                 </div>
             </div>
         {{/each}}
     </div>
-    <a href="/drones/create">Create a new Drone</a>
+    <div class='create__btn'> 
+        <a class="btn btn-warning " href="/drones/create" role="button">Create a new drone</a>
+    </div>
 </div>

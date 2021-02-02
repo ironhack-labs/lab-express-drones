@@ -35,13 +35,22 @@ router.post('/drones/create', (req, res, next) => {
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+  .then(droneToEdit => {
+    res.render('drones/update-form',{drone: droneToEdit})
+  })
+  .catch(e => console.log('Error uopdating the document', e))
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const {name, propellers, maxSpeed} = req.body;
+  console.log(name)
+
+  Drone.findByIdAndUpdate(req.params.id, {name, propellers, maxSpeed}, {new: true})
+  .then(updatedDrone => {
+    console.log(`Drone ${updatedDrone.name} have been updated`)
+    res.redirect('/drones')})
+  .catch(e => console.log(e))
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {

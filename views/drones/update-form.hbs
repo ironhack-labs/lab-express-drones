@@ -1,1 +1,21 @@
-<h2>Update the drone</h2>
+<class="container">
+    <div class="row pb-5 list__title ">
+        <h2>Update the drone</h2>
+    </div>
+</class>
+
+<form action="/drones/{{drone.id}}/edit" method="post">
+  <div class="mb-3">
+    <label for="name-input" class="form-label">Drone Name</label>
+    <input type="text" class="form-control" name='name' id="name-input" aria-describedby="textHelp" value="{{drone.name}}">
+  </div>
+  <div class="mb-3">
+    <label for="propellers-input" class="form-label">Number of propellers</label>
+    <input type="text" class="form-control" name='propellers' id="propellers-input" aria-describedby="textHelp" value="{{drone.propellers}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Maximum Speed:</label>
+    <input type="text" class="form-control" name='maxSpeed' id="exampleInputEmail1" aria-describedby="textHelp" value="{{drone.maxSpeed}}">
+  </div>
+   <button type="submit" class="btn btn-primary">Save changes</button>
+</form>
