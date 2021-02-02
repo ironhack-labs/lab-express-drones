@@ -43,7 +43,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
   // ... your code here
   const drone = req.body
   Drone.findByIdAndUpdate(req.params.id, drone, { new: true })
-    .then((d) => res.render('drones-list', d))
+    .then(() => res.render('drones-list'))
     .catch((error) => next(error))
 });
 
