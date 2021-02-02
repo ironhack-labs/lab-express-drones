@@ -13,7 +13,10 @@
                         <h5 class="card-title">Name: {{drone.name}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Number of propellers: {{drone.propellers}}</h6>
                          <h6 class="card-subtitle mb-2 text-muted">Maximum Speed: {{drone.maxSpeed}}</h6>
-                        <a href="/drones/{{_id}}/edit" class="card-link">Edit</a>
+                        <a class="btn btn-secondary " href="/drones/{{_id}}/edit" role="button">Edit</a>
+                        <form action="/drones/{{_id}}/delete" method='POST'>
+                        <button class="btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
