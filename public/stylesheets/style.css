@@ -31,6 +31,20 @@ a {
   justify-content: flex-end;
 }
 
+.index__btn{
+ text-align: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.card__btns{
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 5px;
+  padding: 0 20px;
+}
+
 .create__btn{
   display: flex;
   justify-content: flex-start;
@@ -40,4 +54,8 @@ a {
 .list__title{
   text-align: center;
   text-decoration: underline;
+}
+
+.drone__card{
+  background-color: rgba(0,123,255,0.5) !important;
 }
