@@ -11,7 +11,7 @@ const droneSchema = new mongoose.Schema({
   },
   maxSpeed: {
     type: Number,
-    max: 40
+    min: 1
   }
 })
 
