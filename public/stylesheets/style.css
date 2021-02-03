@@ -6,3 +6,32 @@ body {
 a {
   color: #00b7ff;
 }
+
+/*BUTTON ADD*/
+
+#create__drone{
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  line-height: 40px;
+  background-color: lightblue;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#inputDrone{
+  width: 30%;
+}
+
+#inputPropellers{
+  width: 10%;
+}
+
+#inputSpeed{
+  width: 10%;
+}

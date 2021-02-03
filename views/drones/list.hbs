@@ -1,1 +1,15 @@
-<h2>Available drones</h2>
+<h2>Available drones</h2> 
+
+<div class="card-group">
+    {{#each drone}}
+        <div class="card m-2" style="border: grey solid 1px;">
+            <div class="card-body">
+                <h5 class="card-title">{{this.name}}</h5>
+                <p class="card-text mt-3">Propellers: {{this.propellers}}</p>
+                <p class="card-text">Max Speed: {{this.maxSpeed}}</p>
+            </div>
+        </div>    
+    {{/each}}
+</div>
+
+<a id="create__drone" href="/drones/create">+</a>
