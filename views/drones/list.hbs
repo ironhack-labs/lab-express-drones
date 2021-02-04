@@ -1,1 +1,17 @@
+<a href="create" class="btn btn-light text-center mt-2">Create Drone</a>
 <h2>Available drones</h2>
+
+<div class="container">
+    <div class="row">
+        {{#each drones as |drone|}}
+        <div class="col py-3">
+            <div class="px-2 text-center py-2">
+                {{!-- <img style="height : 450px;" src="{{this.name}}" alt=""> --}}
+                <h2 class="card-title text-light pt-3 py-2">{{this.name}}</h2>
+                <h3 class="card-title text-light pt-3 py-2">Propellers: {{this.propellers}}</h3>
+                <h3 class="card-title text-light pt-3 py-2">MaxSpeed: {{this.maxSpeed}}</h3>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
