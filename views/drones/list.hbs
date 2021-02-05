@@ -1,17 +1,45 @@
-<a href="create" class="btn btn-light text-center mt-2">Create Drone</a>
-<h2>Available drones</h2>
 
-<div class="container">
-    <div class="row">
+<div class="d-flex justify-content-between my-3">
+<h2>Available drones</h2>
+<a href="drones/create" class="btn btn-light text-center mt-2">Create Drone</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Propellers</th>
+            <th scope="col">MaxSpeed</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+        </tr>
+    </thead>
+    <tbody>
         {{#each drones as |drone|}}
-        <div class="col py-3">
-            <div class="px-2 text-center py-2">
-                {{!-- <img style="height : 450px;" src="{{this.name}}" alt=""> --}}
-                <h2 class="card-title text-light pt-3 py-2">{{this.name}}</h2>
-                <h3 class="card-title text-light pt-3 py-2">Propellers: {{this.propellers}}</h3>
-                <h3 class="card-title text-light pt-3 py-2">MaxSpeed: {{this.maxSpeed}}</h3>
-            </div>
-        </div>
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.propellers}}</td>
+            <td>{{this.maxSpeed}}</td>
+            <td><a href="/drones/{{_id}}/edit">Edit</a></td>
+            <td><a href="/drones/{{_id}}/delete">Delete</a></td>
+        </tr>
+
         {{/each}}
+    </tbody>
+</table>
+
+
+{{#if delete}}
+<div class="container">
+    <div class="modal-content">
+        <div class="modal-body">
+            <p>Are you sure you want to delete?</p>
+        </div>
+        <div class="modal-footer">
+            <form action="/drones/{{_id}}/delete" method="POST"><button type="submit"
+                    class="btn btn-primary">Yes</button>
+            </form>
+            <a href="/drones" type="submit" class="btn btn-danger">No</a>
+        </div>
     </div>
 </div>
+{{/if}}
