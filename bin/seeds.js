@@ -1,6 +1,6 @@
 // Iteration #1
 require("dotenv").config();
-require("../config/db.config");
+require("../configs/db.config");
 const Drone = require("../models/Drone.model")
 const mongoose = require('mongoose');
 
@@ -23,5 +23,6 @@ const drones = [{
 
 Drone.create(drones)
     .then((dronesDB) => {
-        console.log(`$ {dronesDb}have been added`)
+        console.log('The Drone have been added ', dronesDB)
     })
+    .catch((e) => console.error(e))
