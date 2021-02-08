@@ -21,8 +21,14 @@ const drones = [{
     }
 ];
 
-Drone.create(drones)
-    .then((dronesDB) => {
-        console.log('The Drone have been added ', dronesDB)
+Drone.deleteMany()
+    .then(() => {
+        console.log(`Delete all drones`);
+        Drone.create(drones)
+            .then((droneDB) => {
+                console.log(`Created ${droneDB.length} drones`);
+                mongoose.connection.close();
+            })
+            .catch((err) => console.log(`Error from DB: ${err}`));
     })
-    .catch((e) => console.error(e))
+    .catch();

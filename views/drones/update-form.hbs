@@ -1,25 +1,25 @@
 <h2>Update the drone: {{name}}</h2>
 
 <div class="updateDrone">
-    <form action="/drones/{{id}}/edit" method="post" class="p-2"></form>
+    <form action="/drones/{{drone.id}}/edit" method="POST" class="p-2">
     <div class="mb-5">
 
         <label for="dron-name" class="form-label">Name:</label>
-        <input type="text" name="name" id="dron-name" value="{{name}}" required>
+        <input type="text" name="name" id="dron-name" value="{{drone.name}}" required>
 
     </div>
     <div class="mb-5">
 
         <label for="propellers" class="form-label">Propellers:</label>
-        <input type="number" name="propollers" id="propollers" min="1" max="5" value="{{propellers}}" required>
+        <input type="number" name="propellers" id="propellers" min="1" max="5" value="{{drone.propellers}}" required>
 
     </div>
     <div class="mb-5">
 
         <label for="maxSpeed" class="form-label">Max Speed:</label>
-        <input type="number" name="maxSpeed" id="maxSpeed" min="5" max="18" value="{{maxSpeed}}" required>
+        <input type="number" name="maxSpeed" id="maxSpeed" min="5" max="18" value="{{drone.maxSpeed}}" required>
 <br>
-        <button type="submit" class="btn-update btn-warning">Save Changes</button>
+        <button type="submit" class="btn-update btn-warning">Save</button>
         </br>
         </form>
     </div>

@@ -1,12 +1,41 @@
-    body {
-        /*padding: 50px;*/
-        font-family: 'Comfortaa', cursive;
-    }
-    
-    a {
-        color: #00b7ff;
-    }
-    
-    .nav-item {
-        margin-left: 50px;
-    }
+        body {
+            /*padding: 50px;*/
+            font-family: 'Comfortaa', cursive;
+        }
+        
+        a {
+            color: #00b7ff;
+        }
+        
+        .nav-item {
+            margin-left: 50px;
+        }
+        
+        .home,
+        .hhome {
+            color: #00b7ff;
+            text-align: center;
+            font-weight: bold;
+            font-size: 100px;
+            mar
+        }
+        
+        .home,
+        .phome {
+            color: green;
+            font-size: 50px;
+        }
+        
+        .home {
+            margin-top: 70px;
+        }
+        
+        #cover-img {
+            width: 50vw;
+            height: 50vh;
+            object-fit: cover;
+        }
+        
+        .logo {
+            margin-left: 20px;
+        }
