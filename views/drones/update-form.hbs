@@ -1,4 +1,26 @@
-<h2>Update the drone</h2>
+<h2>Update the drone: {{name}}</h2>
 
-//campòs llenos y modificar cada campo
-poner type summit en el btn
+<div class="updateDrone">
+    <form action="/drones/{{id}}/edit" method="post" class="p-2"></form>
+    <div class="mb-5">
+
+        <label for="dron-name" class="form-label">Name:</label>
+        <input type="text" name="name" id="dron-name" value="{{name}}" required>
+
+    </div>
+    <div class="mb-5">
+
+        <label for="propellers" class="form-label">Propellers:</label>
+        <input type="number" name="propollers" id="propollers" min="1" max="5" value="{{propellers}}" required>
+
+    </div>
+    <div class="mb-5">
+
+        <label for="maxSpeed" class="form-label">Max Speed:</label>
+        <input type="number" name="maxSpeed" id="maxSpeed" min="5" max="18" value="{{maxSpeed}}" required>
+<br>
+        <button type="submit" class="btn-update btn-warning">Save Changes</button>
+        </br>
+        </form>
+    </div>
+</div>

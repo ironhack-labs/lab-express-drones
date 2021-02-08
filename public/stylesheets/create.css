@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+* {
+    font-family: 'Comfortaa', cursive;
+}
+
+.createDrone {
+    margin-left: 550px;
+    margin-top: 50px;
+}
+
+.btn-create {
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 9px;
+    color: white;
+    padding: 6px;
+}

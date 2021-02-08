@@ -57,6 +57,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
         .then((drones => {
             res.redirect('/drones')
         }))
+        .catch(err => console.log(error))
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
@@ -67,5 +68,6 @@ router.post('/drones/:id/delete', (req, res, next) => {
         .then(() => {
             res.redirect('/drones')
         })
+        .catch(err => console.log(error))
 });
 module.exports = router;

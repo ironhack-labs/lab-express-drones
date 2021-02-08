@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
-}
+    body {
+        /*padding: 50px;*/
+        font-family: 'Comfortaa', cursive;
+    }
+    
+    a {
+        color: #00b7ff;
+    }
+    
+    .nav-item {
+        margin-left: 50px;
+    }
