@@ -1,1 +1,26 @@
-<h2>Update the drone</h2>
+<a href="/drones">Inicio</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <h2>Te equivocaste.. CORRIGELOOOO</h2>
+            <form action="/drones/{{data.id}}/edit" method="POST">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput"   name="name" placeholder="nombre">
+                    <label for="floatingInput">{{data.name}}</label>
+                </div>
+                <div class="form-floating">
+                    <input max="20" type="number" class="form-control" id="floatingPassword" name="propellers" placeholder="numero di eliche">
+                    <label for="floatingPassword">{{data.propellers}}</label>
+                </div>
+                <div class="form-floating">
+                    <input max="18" type="number" class="form-control" id="floatingPassword" name="maxSpeed" placeholder="Velocità massima">
+                    <label for="floatingPassword">{{data.maxSpeed}}</label>
+                </div>
+                    <div class="d-grid gap-2">
+                    <button class="btn btn-warning" type="submit">ACTUALIZAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

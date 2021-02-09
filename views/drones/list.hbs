@@ -1,1 +1,23 @@
-<h2>Available drones</h2>
+<h2>Teto el que lo lea</h2>
+<a href="/drones/create" class="btn btn-primary mt-5 mb-5">Sube un dron</a>
+
+{{#each this.info}}
+<div class="card" style="width: 30rem;">
+<div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">numero di eliche : {{propellers}}</p>
+    <p>Velocità massima : {{maxSpeed}}</p>
+    <div class="row justify-content-left">
+        <div class="col-2">
+        <a href="/drones/{{_id}}/edit" class="btn btn-secondary">editar</a>
+        </div>
+        <div class="col-2">
+            <form  action="/drones/{{_id}}/delete" method="POST">
+                <button class="btn btn-danger" type="submit">borrar</button>
+            </form>
+        </div>
+        
+    </div>
+  </div>
+</div>
+{{/each}}
