@@ -47,7 +47,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
 router.post('/drones/:id/edit', (req, res, next) => {
   const uptDId = req.params.id
   const newD = req.body 
-  Drones.findByIdAndUpdate(uptDId , newD)
+  Drones.findByIdAndUpdate(uptDId , newD ,{new:true})
   .then(()=>{
     console.log("Todo en orden" , uptDId ,newD)
     res.redirect("/drones")
@@ -59,7 +59,6 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
 router.post('/drones/:id/delete', (req, res, next) => {
   const delDId = req.params.id
-  
   Drones.findByIdAndDelete(delDId)
   .then(()=>{
     res.redirect("/drones")

@@ -5,16 +5,16 @@
             <h2>Te equivocaste.. CORRIGELOOOO</h2>
             <form action="/drones/{{data.id}}/edit" method="POST">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput"   name="name" placeholder="nombre">
-                    <label for="floatingInput">{{data.name}}</label>
+                    <input type="text" class="form-control" id="floatingInput" value="{{data.name}}"  name="name" placeholder="nombre">
+                    
                 </div>
                 <div class="form-floating">
-                    <input max="20" type="number" class="form-control" id="floatingPassword" name="propellers" placeholder="numero di eliche">
-                    <label for="floatingPassword">{{data.propellers}}</label>
+                    <input max="20" type="number" class="form-control" id="floatingPassword" value="{{data.propellers}}" name="propellers" placeholder="numero di eliche">
+                    
                 </div>
                 <div class="form-floating">
-                    <input max="18" type="number" class="form-control" id="floatingPassword" name="maxSpeed" placeholder="Velocità massima">
-                    <label for="floatingPassword">{{data.maxSpeed}}</label>
+                    <input max="18" type="number" class="form-control" id="floatingPassword" value="{{data.maxSpeed}}" name="maxSpeed" placeholder="Velocità massima">
+                    
                 </div>
                     <div class="d-grid gap-2">
                     <button class="btn btn-warning" type="submit">ACTUALIZAR</button>
