@@ -18,8 +18,8 @@ const drones = [
   ];
 
   Drone.create(drones)
-  .then(dronesDB => {
-      console.log(`Created ${dronesDB.length} drones`);
+  .then(allDrones => {
+      console.log(`Created ${allDrones.length} drones`);
 
       mongoose.connection.close();
   })
