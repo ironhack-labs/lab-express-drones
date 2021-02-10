@@ -1,8 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
+
 a {
   color: #00b7ff;
+}
+
+.drone-btn {
+  position: absolute;
+  right: 500px;
+}
+
+.slider_area{
+  background-image: url("../images/drone-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 656px;
 }

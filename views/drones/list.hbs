@@ -1,6 +1,21 @@
+<p><a href="/drones/create">Create drone</a></p>
+
 <h2>Available drones</h2>
-{{#each this.drones}}
-<p>{{this.name}}</p>
-<p>{{this.propellers}}</p>
-<p>{{this.maxSpeed}}</p>
-{{/each}}
+
+<div class="container">
+    <div class="row justify-content-around">
+        {{#each this.drones}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{this.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Propellers: {{this.propellers}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Propellers: {{this.maxSpeed}}</h6>
+                <a href="/drones/{{this._id}}/edit" class="card-link">Edit</a>
+                <form action="/drones/{{this._id}}/delete" method="POST">
+                    <button>Delete</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
