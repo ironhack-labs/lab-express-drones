@@ -11,7 +11,7 @@ const droneSchema= new Schema({
 })
 
 //3. GENERACIÓN DEL MODELO
-const Drone= model('Drone', droneSchema)
+const Drone= model('Drone', droneSchema) //el 'Drone' de adentro es el nombre del documento que va adentro de la colección de la DB
 
 //4.EXPORTACIÓN
 module.exports= Drone
