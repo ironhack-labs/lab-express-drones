@@ -6,3 +6,55 @@ body {
 a {
   color: #00b7ff;
 }
+#list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#list article {
+  border: 1px black solid;
+  border-radius: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5%;
+  
+  background-color:beige;
+}
+#list article a{
+  text-decoration: none;
+  border: 1px solid grey;
+  padding: 2%;
+  color: black;
+}
+#list article a:hover {
+  color: white;
+  background-color: grey;
+}
+#list button {
+  margin: 10% 0;
+}
+.create-btn {
+  text-decoration: none;
+  border: black 1px solid;
+  color:brown;
+  padding: 5px;
+}
+.create-btn:hover {
+  background-color:brown;
+  color: white;
+}
+#list button:hover {
+  cursor: pointer;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form *{
+  margin: 3px 0;
+}
+.form button {
+  padding: 0 5px;
+  width: 60px;
+}
