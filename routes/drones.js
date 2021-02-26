@@ -4,7 +4,7 @@ const droneModel = require("./../models/Drone.model")
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
   droneModel.find()
   .then((dbRes) => {
