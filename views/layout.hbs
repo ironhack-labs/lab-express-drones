@@ -7,10 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    {{#each css}}
+      <link rel="stylesheet" href="/stylesheets/{{this}}.css">
+    {{/each}}
   </head>
 
   <body>
-
+    <nav>
+      <a href="/drones">Drones</a>
+      <a href="/drones/create">Add a drone</a>
+    </nav>
+    
     {{{body}}}
 
     <script src="/javascripts/script.js"></script>
