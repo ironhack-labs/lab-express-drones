@@ -39,6 +39,6 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const droneRoutes = require('./routes/drones');
-app.use('/', droneRoutes);
+app.use('/drones', droneRoutes);
 
 module.exports = app;
