@@ -13,7 +13,7 @@ const drones = [
 
 DroneModel.create(drones)
 .then((droneInfo) => {
-    console.log(droneInfo);
+    console.log(droneInfo.length);
 })
 .catch((err) => {
     console.log(err);
