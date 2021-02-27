@@ -12,10 +12,10 @@ const drones = [
 //Add the script that will run to seed the DB
 
 DroneModel.create(drones)
-.then((droneInfo) => {
+  .then((droneInfo) => {
     console.log(droneInfo.length);
-    mongoose.connection.close('mongodb://localhost/express-drones-dev');
-})
-.catch((err) => {
+    mongoose.connection.close("mongodb://localhost/express-drones-dev");
+  })
+  .catch((err) => {
     console.log(err);
-})
+  });

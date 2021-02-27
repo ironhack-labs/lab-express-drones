@@ -8,18 +8,30 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #ffffff;
   margin: 5% 5% 0 0;
+  text-decoration: none;
 }
 
+
 input {
-  margin: 1em;
+  margin: 0.5em;
   padding: 0.3em;
   background-color: rgba(220, 220, 220, 0.582);
   border: indianred solid 0.1em;
   border-radius: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
   margin: 2em 0;
+  width: 50x;
+  background-color: indianred;
+  border: 2px solid rgba(47, 255, 116, 0.781);
+}
+
+.btn {
+  margin: 2em 0;
+  border: none;
 }

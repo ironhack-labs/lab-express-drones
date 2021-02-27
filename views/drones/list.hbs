@@ -2,7 +2,8 @@
 
 <ul>
     {{#each drones}}
-    <li><b>Name</b> : {{this.name}}, <b>Propellers</b>: {{this.propellers}} <b>Max speed</b> :{{this.maxSpeed}}</li>
+    <li><b>Name</b> : {{this.name}},</br> <b>Propellers</b>: {{this.propellers}},</br> <b>Max speed</b> :{{this.maxSpeed}}.</li>
+    <button class="btn"><a href="/drones/{{this._id}}/edit">Drone's info</a></button></ul>
     {{/each}}
-</ul>
-<button><a href='/'>Home page</a></button></br>
+</ul></br>
+<button><a href='/'>Home page</a></button>
