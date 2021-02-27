@@ -1,2 +1,17 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+
+<h1>Home for drones</h1>
+
+<p>Here is the site for all the drones</p>
+
+<h2>Available drones huh?</h2>
+<p>{{list}}</p>
+
+{{#each list}}
+<div>
+    <h3>{{this.name}}</h3>
+    <h4>Propellors: {{this.propellors}}</h4>
+    <h4>Max Speed: {{this.propellors}}m/s</h4>
+</div>
+{{/each}}
+

@@ -1,1 +1,11 @@
 <h2>Create a new drone</h2>
+
+<form method="post" action="/drones/create" class="form">
+    <label for="name">Name</label>
+    <input class="input" type="text" id="name" name="name" placeholder="Drone name">
+    <label for="propellors">Propellors</label>
+    <input class="input" type="number" id="propellors" name="propellors">
+    <label for="maxSpeed">Max speed</label>
+    <input class="input" type="number" id="maxSpeed" name="maxSpeed">
+    <button class="btn">Create</button>
+</form>
