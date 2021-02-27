@@ -44,16 +44,21 @@ router.get('/drones/:id/edit', async (req, res, next) => {
 router.post('/drones/:id/edit', async (req, res, next) => {
   // Iteration #4: Update the drone
   try  {
-    await droneModel.findByIdAndUpdate(req.params.id, req.body)
+    await droneModel.findByIdAndUpdate(req.params.id, req.body) ;
     res.redirect("/drones")
   } catch(err) {
-    console.log(err)
+    console.log(err) ;
   }
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.post('/drones/:id/delete', async (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  try {
+    await droneModel.findByIdAndDelete(req.params.id);
+    res.redirect("/drones") ;
+  } catch (err) {
+    console.log(error) ;
+  }
 });
 
 module.exports = router;

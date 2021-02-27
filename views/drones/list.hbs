@@ -1,3 +1,7 @@
+<div>
+    <a href="/drones/create">create drone</a>
+</div>
+
 {{#each drones}}
 <div class="drone-container">
     <h3>{{this.name}}</h3>
@@ -6,8 +10,9 @@
         <li>Max speed : {{this.maxSpeed}}</li>
     </ul>
     <a href="/drones/{{this.id}}/edit">Edit</a>
+    <form method="post" action="/drones/{{this.id}}/delete" >
+        <button id="delete">Delete<button>
+    </form>
 </div>
 {{/each}}
 
-<a href="/">Home page</a>
-<a href="/drones/create">create drone</a>

@@ -1,8 +1,37 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none
 }
+
+#delete {
+  all:unset ;
+  cursor: pointer;
+  color: #00b7ff
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #00b7ff ;
+  height: 30px ;
+  padding: 0 10px;
+}
+
+header a {
+  color: white ;
+}
+
+#id {
+  position: relative;
+  top: 30px ;
+}
+
+
