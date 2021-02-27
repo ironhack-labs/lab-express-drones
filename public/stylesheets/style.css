@@ -1,4 +1,4 @@
-body {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -10,28 +10,134 @@ a {
   text-decoration: none
 }
 
-#delete {
-  all:unset ;
-  cursor: pointer;
-  color: #00b7ff
-}
-
 header {
+  position: fixed ;
+  top: 0;
+  left: 0;
+  width: 100vw ;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #00b7ff ;
-  height: 30px ;
-  padding: 0 10px;
+  height: 50px ;
+}
+
+header h1 {
+  font-size: 2rem;
+  padding: 0 30px;
+  margin: 0 ;
+}
+
+header nav {
+  margin: 0 10px;
 }
 
 header a {
   color: white ;
+  margin-left: 10px;
 }
 
-#id {
+#main {
   position: relative;
-  top: 30px ;
+  top: 50px ;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+}
+
+#home h2 {
+  font-size: 3rem;
+  margin: 0 ;
+  margin: 20px ;
+}
+
+.button {
+  all: unset;
+  display: block;
+  color: white;
+  background-color: #00b7ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 20px;
+  font-weight: bold;
+  width: 100px;
+  text-align: center ;
+  cursor: pointer ;
+}
+
+.drone-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} 
+
+.drone-container {
+  width: 25vw;
+  height: 20vw;
+  border: 2px solid #00b7ff ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2.5vw 2.5vw;
+}
+
+.drone-container .button {
+  padding: 2px 5px;
+  margin: 0 5px ;
+}
+
+.drone-container .drone-actions {
+  display: flex ;
+  justify-content: space-evenly;
+}
+
+.drone-container h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#create-box {
+  border: none ;
+}
+
+.create-update {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-update h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px 0 ;
+}
+
+.input {
+  width: 60vw;
+}
+
+.input label {
+  width: 10vw;
+  display: inline-block;
+}
+
+.input input {
+  width: 49vw;
+  border: none;
+  background-color: #00b7ff;
+  padding: 5px 10px;
+  margin: 10px 0px;
 }
 
 
