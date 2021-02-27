@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
@@ -5,4 +9,17 @@ body {
 
 a {
   color: #00b7ff;
+  margin: 5% 5% 0 0;
+}
+
+input {
+  margin: 1em;
+  padding: 0.3em;
+  background-color: rgba(220, 220, 220, 0.582);
+  border: indianred solid 0.1em;
+  border-radius: 5%;
+}
+
+button {
+  margin: 2em 0;
 }

@@ -15,13 +15,27 @@ router.get('/drones', (req, res, next) => {
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form.hbs');
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.post('/drones/create', async (req, res, next) => {
+  console.log(req.body);
+  const {name, propellers, maxSpeed} = req.body;
+  console.log(name, propellers, maxSpeed);
+  try {
+    await DroneModel.create({
+      name,
+      propellers,
+      maxSpeed,
+    });
+    console.log('Drone successfully created')
+    res.redirect('/drones')
+  }
+  catch (err) {
+    console.log('Try again :(')
+    res.render('/drones/drone-create.hbs')
+    next(err);
+  }
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
