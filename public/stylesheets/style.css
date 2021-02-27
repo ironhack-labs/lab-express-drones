@@ -1,0 +1,101 @@
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-top: 10px;
+}
+
+#nav-bar {
+  display: flex;
+  width: 300px;
+  margin: 0 0 30px 0;
+  justify-content: space-between;
+  
+
+}
+
+.btn {
+  width: 80px;
+  background: slategray;
+  color: azure;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.input {
+  height: 30px;
+  width: 300px;
+}
+
+.btn:hover {
+  background: azure;
+  color: slategray;
+}
+
+#drones {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  margin: 30px 0;
+  padding-top: 0;
+}
+
+.drone-box {
+  height: 200px;
+  width: 200px; 
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 0 30px 30px 0;
+  
+
+
+
+}
+
+.button-box {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.button-box form{
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.button-box a{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.info-box {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h4 {
+  font-size: 1rem;
+}

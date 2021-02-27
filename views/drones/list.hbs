@@ -4,13 +4,17 @@
 
 {{#each list}}
 <div class="drone-box">
-    <h3>Name: {{this.name}}</h3>
-    <h4>Propellors: {{this.propellors}}</h4>
-    <h4>Max Speed: {{this.propellors}}m/s</h4>
-    <a href="/drones/{{this._id}}/edit">edit drone</a>
-    <form method="POST" action="/drones/{{this._id}}/delete">
-        <button class="btn">Delete drone</button>
+    <div class="info-box">
+    <h3 >{{this.name}}</h3>
+    <h4 >Propellors: {{this.propellors}}</h4>
+    <h4 >Max Speed: {{this.propellors}}m/s</h4>
+    </div>
+    <div class="button-box">
+    <a  class="btn" href="/drones/{{this._id}}/edit">Edit</a>
+    <form  method="POST" action="/drones/{{this._id}}/delete">
+        <button class="btn">Delete</button>
     </form>
+    </div>
     
     
 
