@@ -14,6 +14,7 @@ const drones = [
 DroneModel.create(drones)
 .then((droneInfo) => {
     console.log(droneInfo.length);
+    mongoose.connection.close('mongodb://localhost/express-drones-dev');
 })
 .catch((err) => {
     console.log(err);
