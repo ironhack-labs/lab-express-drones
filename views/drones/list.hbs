@@ -1,1 +1,15 @@
 <h2>Available drones</h2>
+<ol id="drones">
+    {{#each drones}}
+    <li class="drone">
+        <ul>
+            <li>name: {{this.name}}</li>
+            <li>number of propellers: {{this.propellers}}</li>
+            <li>max speed: {{this.maxSpeed}}</li>
+            <li><a href="/drones/{{this._id}}/edit">edit this drone</a></li>
+            <li><a href="/drones/{{this._id}}/delete">delete this drone</a></li>
+        </ul>
+    </li>
+    {{/each}}
+</ol>
+<a href="/drones/create">Create a new drone!</a>
