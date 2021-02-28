@@ -10,3 +10,6 @@ const droneModel = new Schema({
   const DroneModel = mongoose.model("Drone.model", droneModel);
 
   module.exports = DroneModel;
+
+  mongoose.connection.close()
+  console.log("Db disconnected")

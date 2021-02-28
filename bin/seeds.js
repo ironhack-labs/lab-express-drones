@@ -1,7 +1,7 @@
 // Iteration #1
 require("./../configs/db.config")
 
-const { Mongoose } = require("mongoose");
+const mongoose  = require("mongoose");
 const droneModel = require("./../models/Drone.model")
 
  const drones = [
@@ -24,11 +24,13 @@ const droneModel = require("./../models/Drone.model")
 
  droneModel.create(drones)
  .then(dbSucess => {
-    console.log(dbSucess);
+    console.log('All good ' dbSucess);
   })
   .catch(dbError => {
-    console.log(dbError);
+    console.log('Error ' dbError);
   })
-
-  //  mongoose.connection.close()
+  .then(dbclose => {
+      MongoosE.connection.close(() => {
+      console.log('Db disconnected' dbclose)})
+  })
   
