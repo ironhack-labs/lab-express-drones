@@ -23,10 +23,11 @@ const droneModel = require('./../models/Drone.model.js');
 
 droneModel.create(dataSet)
 	.then((dbSuccess) => {
+		mongoose.connection.close("mongodb://localhost/express-drones-dev");
 		console.log(dbSuccess);
 	})
 	.catch((dbError) => {
 		console.log(dbError);
 	});
 
-mongoose.connection.close();
+
