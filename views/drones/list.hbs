@@ -5,11 +5,9 @@
     <li><b>Name</b>: {{this.name}},</br> <b>Propellers</b>: {{this.propellers}},</br> <b>Max speed</b>:
         {{this.maxSpeed}}.</li>
     <button class="btn"><a href="/drones/{{this._id}}/edit">Drone's info</a></button>
-    <div>
         <form method="post" action="/drones/{{this._id}}/delete" class="form">
             <button>Delete drone</button>
         </form>
-    </div>
 </ul>
 {{/each}}
 </br>

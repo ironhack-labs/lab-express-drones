@@ -3,47 +3,121 @@
 }
 
 :root {
-  --pink-color: indianred;
+  --btn-color: rgb(3, 197, 84);
 }
 
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 5px;
+  /* background-image: url("../images/drone.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-content: center;
+  /* padding: 10px; */
+  background-color: rgb(3, 197, 84);
+}
+
+h1 {
+  font-size: 7em;
+  margin-left: 50px;
 }
 
 h2 {
+  margin: 2em;;
   font-size: 2.5em;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 a {
   color: #ffffff;
-  margin: 5% 5% 0 0;
+  margin: 15px;
   text-decoration: none;
+}
+a:hover {
+  color: rgb(241, 161, 241);
+}
+
+#welcome {
+  font-size: 5em;
+  margin-left: 50px;
+}
+
+/*FORMS*/
+
+.big-forms {
+  padding: 2em;
+  background-color: rgba(255, 47, 255, 0.116);
+  border-radius: 5%;
+  width: 30rem;
+  margin-left: 50px;
 }
 
 input {
   margin: 0.5em;
-  padding: 0.3em;
-  background-color: rgba(220, 220, 220, 0.582);
-  border: var(--pink-color);
+  padding: 0.5em;
+  background-color: rgba(220, 220, 220, 0.76);
+  border: var(--btn-color);
   border-radius: 5%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20rem;
 }
 
+#delete-drone {
+  margin:0;
+}
+
+/*Label*/
+
+.labels{
+  font-size: 1.5em;
+  line-height: 1.8em;;
+  color:rgb(3, 197, 84);
+  text-shadow : rgba(0, 0, 0, 0.582) 0.5px -1px 0.5px;
+}
+
+/*List*/
+ul{
+  /* border: 1px solid black; */
+  background-color:rgba(255, 47, 255, 0.116);
+  width: 35em;
+  margin-left: 50px;
+  border-radius: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center ;
+}
+li{
+  list-style: none;
+  padding: 1em;
+  width: 25em;
+  line-height: 1.5em;
+  font-size: 2em;
+}
+
+/*buttons*/
 button {
   cursor: pointer;
   color: white;
-  margin: 2em 0;
+  margin: 1em;
   padding: 0.5em;
-  width: 50x;
-  background-color: var(--pink-color);
+  width: 10em;
+  background-color: var(--btn-color);
   border-radius: 5%;
-  border: 2px solid rgb(47, 255, 116);
+  border: 2px solid rgba(255, 47, 255, 0.315);
+}
+button:hover {
+  background-color: rgb(12, 151, 58);
 }
 
 .btn {
-  margin: 2em 0;
   border: none;
 }
+
+
