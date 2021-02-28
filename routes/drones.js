@@ -9,7 +9,7 @@ router.get('/drones', async (req, res, next) => {
   // Iteration #2: List the drones
   try {
     const drones = await droneModel.find()
-    res.render('drones/list', {drones})
+    res.render('drones/list', {drones, isDronePage: true})
   } catch(err)  {
     console.log(err)
   }

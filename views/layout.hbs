@@ -14,8 +14,10 @@
   <header>
     <h1>Drnz</h1>
     <nav>
-      <a href="/">Home page</a>
       {{#unless isHomePage}} 
+      <a href="/">Home page</a>
+      {{/unless}}
+      {{#unless isDronePage}} 
       <a href="/drones">drones</a>
       {{/unless}}
     </nav>
