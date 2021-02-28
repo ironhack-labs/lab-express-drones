@@ -1,11 +1,11 @@
 <h2>Update the drone</h2>
 
-<form method="post" action="/drones/:id/edit" class="form">
+<form method="post" action="/drones/{{dbRes.id}}/edit" class="form">
     <label for="name">Name</label>
     <input class="input" type="text" id="name" name="name" value="{{dbRes.name}}">
     <label for="propellers">Number of propellers</label>
     <input class="input" type="number" id="propellers" name="propellers" value="{{dbRes.propellers}}">
     <label for="maxSpeed">Maximum speed</label>
     <input class="input" type="number" id="maxSpeed" name="maxSpeed" value="{{dbRes.maxSpeed}}">
-    <button>Create the drone</button>
+    <button>Update drone's info</button>
 </form>

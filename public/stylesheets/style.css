@@ -2,9 +2,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --pink-color: indianred;
+}
+
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 a {
@@ -13,22 +22,25 @@ a {
   text-decoration: none;
 }
 
-
 input {
   margin: 0.5em;
   padding: 0.3em;
   background-color: rgba(220, 220, 220, 0.582);
-  border: indianred solid 0.1em;
+  border: var(--pink-color);
   border-radius: 5%;
   display: flex;
   flex-direction: column;
 }
 
 button {
+  cursor: pointer;
+  color: white;
   margin: 2em 0;
+  padding: 0.5em;
   width: 50x;
-  background-color: indianred;
-  border: 2px solid rgba(47, 255, 116, 0.781);
+  background-color: var(--pink-color);
+  border-radius: 5%;
+  border: 2px solid rgb(47, 255, 116);
 }
 
 .btn {
