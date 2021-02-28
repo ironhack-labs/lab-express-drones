@@ -65,9 +65,11 @@ router.post('/drones/:id([a-z0-9]{24})/edit', (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.get('/drones/:id([a-z0-9]{24})/delete', (req, res, next) => {
+  // Iteration #4: Update the drone
+  DroneModel.findByIdAndDelete(req.params.id)
+      .then(() => res.redirect('/drones'))
+      .catch((err) => next (err));
 });
 
 module.exports = router;
