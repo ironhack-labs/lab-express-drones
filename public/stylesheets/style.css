@@ -5,4 +5,24 @@ body {
 
 a {
   color: #00b7ff;
+  font-size: 20px;
+}
+
+.deluxe{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: stretch; 
+}
+
+.babyContainer{
+  color: ;
+  height: 400px;
+  border: 1px solid black;
+  background-image: url(./../images/drone.jpeg);
+  background-size: cover;
+  text-align: center;
+  color: white;
 }
