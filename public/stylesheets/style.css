@@ -5,4 +5,23 @@ body {
 
 a {
   color: #00b7ff;
+  margin: 10px;
+  text-decoration: none;
+  border: solid 1px black;
+  padding: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+button {
+  padding: 5px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
