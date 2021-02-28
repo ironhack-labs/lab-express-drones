@@ -8,7 +8,7 @@ const drones = [
     { name: 'Courier 3000i', propellers: 6, maxSpeed: 18 }
   ];
 
-DroneModel.create(drones)
+  DroneModel.create(drones)
   .then((dronesDocument) => {
     console.log(dronesDocument);
   })
