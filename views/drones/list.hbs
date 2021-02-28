@@ -1,1 +1,25 @@
-<h2>Available drones</h2>
+<div class="title-wrapper">
+    <h2>AVAILABLE DRONES</h2>
+</div>
+<div class="page-wrapper">
+    <div class="drones-wrapper">
+        <img class="sky" src="images/clear-blue-sky.jpeg" alt="sky">
+        <div class="drones-wrapper">
+            <div class="drones">
+                {{#each drones}}
+
+                <div class="drone">
+                    <p>Name: {{this.name}}</p>
+                    <p>Propellers: {{this.propellers}}</p>
+                    <p>Max speed:{{this.maxSpeed}}</p>
+                    <a class="edit" href="/drones/{{this._id}}/edit">Edit drone</a><br>
+                    <form method="post" action="/drones/{{this._id}}/delete" class="form">
+                        <button type="button" class="btn btn-primary">Delete drone</button>
+                    </form>
+                </div>
+
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

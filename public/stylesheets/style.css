@@ -1,8 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
 body {
+  box-sizing: border-box;
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: Nunito Sans;
+}
+
 a {
   color: #00b7ff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.input {
+  margin: 10px 0px;
+}
+
+.btn {
+  margin: 10px 0px;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.delete-btn {
+  margin: 10px 0px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drones-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.drones-wrapper {
+  display: flex;
+  margin: 10px;
+  color: white;
+  position: absolute;
+}
+
+.drones {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50vw;
+  max-width: 900px;
+  padding: 50px;
+  
+
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.drone {
+display: flex;
+flex-direction: column;
+background-color:rgb(22, 5, 97);
+margin: 10px;
+border-radius: 10px;
+padding: 10px;
+font-size: 1.2em;
+}
+
+a {
+ font-size: 1.5em;
+}
+
+.edit {
+  font-size: 1.1em;
+}
+
+.main-title {
+font-size: 1.3em;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.main-head-title {
+font-weight: bold;
+font-size: 4em;
+max-width: 900px;
+padding: 0;
+margin: 0;
+
+}
+
+.hover-title:hover {
+  text-decoration: none;
+  color: rgb(233, 230, 230);
+
 }
