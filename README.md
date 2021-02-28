@@ -1,32 +1,3 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
-
-# LAB | Basic CRUD with Drones
-
-## Introduction
-
-![Amazon Prime Air drone](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_926e75d45f2a997152f4401844b3b4d5.jpg)
-
-The goal of this exercise is to create a basic web application using Express. You should be able to use basic Mongoose methods to Create, Read, Update, and Delete documents in some collection in the database.
-
-The app will allow a user to keep track of their drones collection. User should be able to see a list of their existing drones (which you will seed using previously gained knowledge), add new ones to their collection, update them as well as delete them when you don't use them anymore.
-
-## Requirements
-
-- Fork this repo
-- Clone this repo
-
-## Submission
-
-Upon completion, run the following commands:
-
-```
-$ git add .
-$ git commit -m "done"
-$ git push origin master
-```
-
-- Create Pull Request so your TAs can check up your work.
-
 ## Instructions
 
 ### Iteration 0 | Initialize the project
