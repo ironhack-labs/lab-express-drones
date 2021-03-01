@@ -19,6 +19,13 @@ DroneModel.create(drones)
     console.log(error);
   }); 
   
+  mongoose.disconnect(drones)
+  .then(()=>{
+      console.log("mongoDB is over")
+  })
+  .catch(()=>{
+      console.log("error")
+  })
 
 
 
