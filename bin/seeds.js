@@ -1,6 +1,4 @@
 require("./../configs/db.config");
-const express = require("express");
-const mongoose = require("mongoose");
 const DroneModel = require("./../models/Drone.model.js");
 
 const drones = [
