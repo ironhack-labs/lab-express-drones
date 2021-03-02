@@ -5,8 +5,12 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  
+  DroneModel.find()
+    .then((dronesList) => {
+      res.render("drones/list", {list : dronesList});
+    })
+    .catch((error) => {console.log(error)
+    });
 });
 
 router.get('/drones/create', (req, res, next) => {
