@@ -1,9 +1,7 @@
 // Iteration #1
 
 require("../configs/db.config");
-// const mongoose = require('mongoose');
-// const dataSet = require("./data/hackers.json");
-// require the model hacker here
+
 const DroneModel = require("../models/Drone.model");
 
 
