@@ -1,6 +1,7 @@
 // Iteration #1
 require("../configs/db.config")
 
+const { Mongoose } = require("mongoose");
 const dronesModel = require("../models/Drone.model")
 
 
@@ -31,6 +32,6 @@ dronesModel.create(dronesArray)
         console.log(error);
     })
 
-  
+  Mongoose.connection.close();
 
 
