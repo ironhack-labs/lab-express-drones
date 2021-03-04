@@ -33,6 +33,7 @@ router.post('/drones/create', async (req, res, next) => {
   } = req.body;
   console.log(name, propellers, maxSpeed);
   try {
+    // note --> ici il fallait donner un nom à la ligne suivante ?? : const awaitDroneModel = await DroneModel.create() etc
     await DroneModel.create({
       name,
       propellers,
