@@ -1,1 +1,34 @@
-<h2>Update the drone</h2>
+<div>
+    <h1>Drone name: {{drone.name}}</h1>
+    <h2>Number of propellers: {{drone.propellers}}</h2>
+    <h3>Max Speed: {{drone.maxSpeed}}m/s</h3>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editDrone">
+  Editar dados do drone
+</button>
+
+<div class="modal fade" id="editDrone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar drone</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/drones/{{drone._id}}/edit" method="post">
+        <div class="modal-body">
+          <input type="text" name="droneName" placeholder="Nome do drone" value="{{drone.name}}">
+          <input type="text" name="droneProp" placeholder="Número de ventoinhas" value="{{drone.propellers}}">
+          <input type="text" name="droneSpeed" placeholder="Velocidade máxima" value="{{drone.maxSpeed}}">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div> 
