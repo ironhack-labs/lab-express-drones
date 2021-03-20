@@ -19,9 +19,9 @@ mongoose
 
     Drone.create(drones)
     .then(() => {
-        console.log('Drones inserted into database.')
+        console.log('Drones inserted into database.');
 
-        mongoose.disconnect()
+        mongoose.disconnect();
     })
     .catch(error => console.log(error))
 
