@@ -11,7 +11,7 @@ router.get('/drones', (req, res, next) => {
   .then(drones => {
     res.render('./drones/list.hbs', { drone: drones });
   })
-  .catch(error => console.log(error))
+  .catch(error => next(error))
 
 
 
@@ -40,7 +40,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
 
   Drone.findById(id)
   .then(drone => res.render('./drones/update-form', { drone }))
-  .catch(error => console.log(error))  
+  .catch(error => next(error))  
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
@@ -66,7 +66,7 @@ router.post('/drones/:id/delete', (req, res, next) => {
 
   Drone.findByIdAndDelete(id)
   .then(() => res.redirect('/drones'))
-  .catch(error => console.log(error))
+  .catch(error => next(error))
 })
 
 module.exports = router;
