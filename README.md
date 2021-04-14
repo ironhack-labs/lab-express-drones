@@ -59,10 +59,11 @@ The `Drone` model should have:
 
 Steps you should follow in this iteration:
 
-1. Create the `Drone.model.js` file in the `models` folder. Use Mongoose schema and make sure that the Drone model has all the properties listed above. _Hint_: Don't forget to export the Drone model.
-2. In the `bin/seeds.js` file:
+1. Go to the `Drone.model.js` file in the `models` folder. Use Mongoose schema and make sure that the Drone model has all the properties listed above. _Hint_: Don't forget to export the Drone model.
+2. In the `seeds/drones.seeds.js` file:
    - Create an array of 3 objects, each with `name`, `propellers` and `maxSpeed` as our initial drones.
-   - Call the `Drone` model's `.create()` method with the array as an argument.
+   - Establish a connection to the database. You can use the same code in `db/index.js`.
+   - Once the database conection is established, call the `Drone` model's `.create()` method with the array as an argument.
    - If the `.create()` method successfully creates drones collection, output (using _console.log()_) how many drones have been created. In case, the seeding of the database fails, catch the error and output it.
 3. Run the seed file with `node` to seed your database.
 4. Check if the _drones_ collection is successfully created through the Compass and check the output in the terminal.
@@ -93,7 +94,7 @@ Steps you should follow in this iteration:
 
 1. Find the `/drones` GET route in `routes/drones.js`.
 2. Use the Mongoose `.find()` method to retrieve all the drones. Display all the drones on the `drones/list.hbs` view. Make sure you catch the error and output it to the terminal.
-3. In the `drones/list.hbs` file, use a `forEach` loop to display tags with each drone's `name`, `propellers`, and `speed`.
+3. In the `drones/list.hbs` file, use a `#each` loop to display tags with each drone's `name`, `propellers`, and `speed`.
 4. Add the link that goes to `/drones` route in the `layout.hbs` file to easier navigate to the list of drones.
 
 ## Iteration #3: Add a new drone
@@ -109,7 +110,7 @@ Here are the routes you will be using:
 
 Steps you should follow in this iteration:
 
-1. Find the `/drones/create` GET route in `routes/drones.js` and render the `drones/drone-create.hbs` view.
+1. Find the `/drones/create` GET route in `routes/drones.js` and render the `drones/create-form.hbs` view.
 2. The `create-form.hbs` should have the form that will submit on `/drones/create` POST route. The form should have all the fields necessary to create a new drone.
 3. Locate the `/drones/create` POST route in `routes/drones.js` and using `req.body` get all the info user submitted through the form. Use this info to create a new drone in the database in the _drones_ collection. Make sure you redirect to `/drones` if the new drone is successfully created. If there is an error, render again the view so the user can try again to create a drone.
 
@@ -126,7 +127,7 @@ Here are the routes you will be using:
 
 Steps you should follow in this iteration:
 
-1. Under each drone information on the `list.hbs`, add a link to the edit page (pointing to the `/drones/oneDroneId/edit`). When clicked, the link should take you to the 404 page (still), but the URL should have a format similar to this one: `/drones/123Hgt5y4500Ux8/edit`.
+1. Under each drone information on the `list.hbs`, add a link to the edit page (pointing to the `/drones/<oneDroneId>/edit`). When clicked, the link should take you to the 404 page (still), but the URL should have a format similar to this one: `/drones/123Hgt5y4500Ux8/edit`.
 2. Find the `/drones/:id/edit` GET route in `routes/drones.js` and render the `drones/update-form.hbs` view. Make sure you get the right drone from the database using the available `id` (_hint_: `.findById()`) and pass the drone object to the view.
 3. The `update-form.hbs` should have the pre-filled form with the values of the previously passed drone object.
 4. Locate the `/drones/:id/edit` POST route in `routes/drones.js` and using `req.body` get all the info user submitted through the form. Use this info to update the existing drone in the database. Make sure you redirect to `/drones` if the new drone is successfully updated. If there is an error, render again the view so the user can try again to update a drone. (_Hint_: You can use `.findByIdAndUpdate()` Mongoose method.)
@@ -143,7 +144,7 @@ Here is the route you will be using:
 
 Steps you should follow in this iteration:
 
-1. Under each drone information on the `list.hbs`, add a small form with action to `/drones/oneDroneId/delete` and method POST. After clicking on the Delete button, this form should submit to the action route.
+1. Under each drone information on the `list.hbs`, add a small form with action to `/drones/<oneDroneId>/delete` and method POST. After clicking on the Delete button, this form should submit to the action route.
 2. Find the `/drones/:id/delete` POST route in `routes/drones.js` and using `.findByIdAndDelete()` (or `.findByIdAndRemove()`), destroy the document with the given ID from the database.
 
 ## Bonus: Styling
