@@ -1,1 +1,16 @@
-<h2>Update the drone</h2>
+<h2 class="subpage-title">Update the drone</h2>
+
+<form action="/drones/{{_id}}/edit" method="POST" class="flex-inputs">
+
+    <label for="name">Drone's Name: </label>
+    <input type="text" name="name" value={{name}}>
+
+    <label for="propellers">Number of propellers: </label>
+    <input type="number" name="propellers" value={{propellers}}>
+
+    <label for="maxSpeed">Max Speed: </label>
+    <input type="number" name="maxSpeed" value={{maxSpeed}}>
+
+    <button type="submit">Edit drone</button>
+
+</form>

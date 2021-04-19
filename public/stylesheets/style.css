@@ -1,8 +1,79 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 0px 50px;
+  font-size: 14px;
+  font-family: 'Zen Dots', cursive;
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none;
+  font-size: 1.5em;
+  margin: 40px 40px;
+  padding: 10px 40px;
+  background-color: lightblue;
+  border: 2px solid blue;
+  border-radius: 20px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  height: 20VH;
+}
+
+.page-title {
+  font-size: 3em;
+}
+.center-intro {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2em;
+}
+
+.subpage-title {
+  margin: 20px;
+  text-align: center;
+  font-size: 3em;
+}
+
+.card {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+
+}
+
+.card form {
+  display: inline;
+}
+
+.card form button {
+  padding: 5px;
+  background-color: lightblue;
+  border: 1px dotted blue;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flex-inputs {
+  font-size: 1.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-inputs input {
+  margin: 20px;
 }
