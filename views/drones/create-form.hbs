@@ -1,1 +1,23 @@
 <h2>Create a new drone</h2>
+<form action="/drones/create" method="POST">
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1" for="name">Name</span>
+  <input type="text" class="form-control" name="name" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1" for="propellers">Propellers</span>
+  <input type="number" class="form-control" name="propellers" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1" for="maxSpeed">Max. Speed</span>
+  <input type="number" class="form-control" name="maxSpeed" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<button type="submit" class="btn btn-info"> Create a new drone</button>
+
+
+
+</form>

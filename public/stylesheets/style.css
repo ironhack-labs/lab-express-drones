@@ -1,8 +1,23 @@
 body {
+  background-image: url(https://dronemultimedia.org/wp-content/uploads/2017/11/Screen-Shot-2017-11-29-at-5.38.26-PM.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+ h2{
+   color:white;
+ }
+
+.drone-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card, .btn{
+  margin:5px;
 }
