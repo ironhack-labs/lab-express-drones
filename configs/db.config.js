@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+const chalk = require(`chalk`)
 
 mongoose
   .connect('mongodb://localhost/express-drones-dev', {
     useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
   })
   .then(x =>
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    console.log(chalk.green.inverse(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
   )
-  .catch(err => console.error('Error connecting to mongo', err));
+  .catch(err => console.error(chalk.red.inverse('Error connecting to mongo', err)));
