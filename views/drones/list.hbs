@@ -1,8 +1,25 @@
 <h2>Available drones</h2>
+<div class="contenedor">
 {{#each drones}}
-<div>
-<div>Name: {{name}}</div>
-<div>Number of propellers: {{propellers}}</div>
-<div>Max Speed: {{maxSpeed}}</div>
-</div>
+    <div class="card">
+        <img src="/images/drone.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">
+            <div>Number of propellers: {{propellers}}</div>
+            <div>Max Speed: {{maxSpeed}} Km/h</div>
+            </p>
+            <div>
+                <form action="/drones/{{_id}}/edit" method="get">
+                    <button type="submit">Edit Drone</button>
+                </form>
+            </div>
+            <div>
+                <form action="/drones/{{_id}}/delete" method="POST">
+                    <button type="submit">Remove Drone</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {{/each}}
+</div>
