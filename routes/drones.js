@@ -28,18 +28,32 @@ router.post('/drones/create', (req, res, next) => {
   })
   .catch((error)=>{
   console.log(error)
+  res.redirect(`/drones/create`)
   })
   
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.get('/drones/:_id/edit', (req, res, next) => {
+  Drone.findById(req.params._id)
+  .then((result)=>{
+  res.render('drones/update-form', result)
+  })
+  .catch((error)=>{
+  console.log(error)
+  })
+  /* res.render('drones/update-form', req.params) */
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post('/drones/:_id/edit', (req, res, next) => {
+  Drone.findByIdAndUpdate(req.params._id, req.body)
+            .then((result) => {
+                console.log(req.body)
+                res.redirect(`/drones`)
+            })
+            .catch(err => {
+                console.log(err)
+                res.redirect(`/drones/update-form`)
+            })
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
