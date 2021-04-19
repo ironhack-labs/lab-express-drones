@@ -1,15 +1,18 @@
-<h2>Available drones</h2>
-<div>
-{{#each drone}}
-<h3>Name: {{name}}</h3>
-<p>Propellers: {{propellers}}</p>
-<p>Max speed: {{maxSpeed}}</p>
+<div class="list-header">
+    <h2>Available drones</h2>
+</div>
 
-<a href="/drones/{{_id}}/edit">Edit drone</a>
-
-<form action="/drones/{{_id}}/delete" method="POST">
-    <button type="submit">Delete drone</button>
-</form>
-     
+<div class="container">
+    {{#each drone}}
+    <div class="drone">
+        <img src="https://ae01.alicdn.com/kf/HTB1B5pYPFXXXXXPXXXXq6xXFXXXc/X4-H501S-5-8G-FPV-Quadcopter-RC-Drones-con-c-mara-1080P-HD-GPS-S-gueme.jpg_Q90.jpg_.webp" alt="img">
+        <h3>Name: {{name}}</h3>
+        <p>Propellers: {{propellers}}</p>
+        <p>Max speed: {{maxSpeed}}</p>
+        <a href="/drones/{{_id}}/edit">Edit drone</a>
+        <form action="/drones/{{_id}}/delete" method="POST">
+            <button type="submit">Delete drone</button>
+        </form>
+    </div>
 {{/each}}
 </div>

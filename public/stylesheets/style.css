@@ -1,8 +1,73 @@
 body {
-  padding: 50px;
+  margin: 0px;
+  padding: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none;
+}
+
+.home {
+  background-image: url('https://images.unsplash.com/photo-1506947411487-a56738267384?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80');
+  background-size: cover;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+.home h1 {
+  font-size: 6rem;
+}
+.home p {
+  font-size: 3rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-name {
+  font-size: 20px;
+}
+
+.container {
+  max-width: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+/*   border: 1px solid grey; */
+}
+
+.drone {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+}
+.drone img {
+  height: 200px;
+  object-fit: cover;
+}
+.crate-header{
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.list-header {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
