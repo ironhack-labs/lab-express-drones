@@ -1,4 +1,5 @@
 const express = require('express');
+const { render } = require('../app');
 const Drone = require('../models/Drone.model');
 
 // require the Drone model here
@@ -29,20 +30,28 @@ router.post('/drones/create', (req, res, next) => {
     res.redirect('/drones')
   })
   .catch(error => {
-    res.render('drones/create', { error })
+    res.render('drones/create-form', { error })
   })
 });
 
 
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  Drone.findById(id)
+  .then(drone => {
+    res.render('drones/update-form', { drone });
+  })
+  .catch(error => next (error))
 });
 
+
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  const { name, propellers, maxSpeed} = req.body;
+  Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed })
+  .then(() => res.redirect('/drones'))
+  .catch(error => next (error))
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
