@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
@@ -21,8 +20,8 @@ require('./configs/db.config');
 
 // Middleware Setup
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Express View engine setup
@@ -33,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Drones Ironhack';
 
 const index = require('./routes/index');
 app.use('/', index);
