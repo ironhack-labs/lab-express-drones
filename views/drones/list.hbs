@@ -4,6 +4,12 @@
     <h4>Name: {{name}}</h4>
     <p> Number of propellers: {{propellers}}</p>
     <p>Maximum speed: {{maxSpeed}}</p>
+    <form action="/drones/{{id}}/edit" method="GET">
+        <button type="submit">Edit</button>
+    </form>
+     <form action="/drones/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
 </div>
 {{/each}}
 
