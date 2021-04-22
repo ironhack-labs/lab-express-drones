@@ -4,5 +4,10 @@
         <li>{{name}}</li>
         <li>{{propellers}}</li>
         <li>{{maxSpeed}}</li>
+        <a href="/drones/{{_id}}/edit">Edit</a>
+        <form action="/drones/{{_id}}/delete" method="POST">
+         <button type="submit">Eliminate</button>
+        </form>
     </ul>
 {{/each}}
+<a href="/drones/create">Create a dron!</a>
