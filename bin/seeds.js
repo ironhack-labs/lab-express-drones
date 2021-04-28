@@ -9,7 +9,7 @@ const dronesArr = [
 ];
 
 mongoose
-  .connect("mongodb://localhost/drones", {
+  .connect("mongodb://localhost/express-drones-dev", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -20,8 +20,8 @@ mongoose
   })
   .catch((error) => {
     console.log("error ", error);
+  })
+  .finally(() => {
+    mongoose.connection.close();
+    console.log("Connection closed");
   });
-//   .finally(() => {
-//     mongoose.connection.close();
-//     console.log("Connection closed");
-//   });
