@@ -26,14 +26,16 @@ router.get("/drones/create", (req, res, next) => {
 });
 
 router.post("/drones/create", (req, res, next) => {
-  const { name, propellers, speed } = req.body;
-  Drone.create({ name, propellers, speed })
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drone.create({ name, propellers, maxSpeed })
     .then((newDrone) => {
-      res.redirect("drones/list", { newDrone: newCreatedDrone });
+      console.log("New Drone created", newDrone);
+      res.redirect("/drones");
     })
     .catch((error) => {
       console.log("No drone created", error);
-      res.render("drone/create-form");
+      res.render("drones/create-form");
       //next(error);
     });
   // Iteration #3: Add a new drone
