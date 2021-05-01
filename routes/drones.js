@@ -5,9 +5,9 @@ const Drone = require("../models/Drone.model");
 
 const router = express.Router();
 
+// Iteration #2: List the drones
+
 router.get("/drones", (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
   Drone.find({})
     .then((dronesArray) => {
       res.render("drones/list", { drones: dronesArray }); // if the value i pass to the view is the sa me i used to the then promise, dronesArray, only noe value
@@ -16,6 +16,8 @@ router.get("/drones", (req, res, next) => {
       console.log("No drones to show", error);
     });
 });
+
+// Iteration #3: Add a new drone
 
 router.get("/drones/create", (req, res, next) => {
   res.render("drones/create-form");
@@ -42,9 +44,9 @@ router.post("/drones/create", (req, res, next) => {
       res.render("drones/create-form");
       //next(error);
     });
-  // Iteration #3: Add a new drone
-  // ... your code here
 });
+
+// Iteration #4: Update the drone
 
 router.get("/drones/:id/edit", (req, res, next) => {
   const { id } = req.params;
@@ -75,14 +77,20 @@ router.post("/drones/:id/edit", (req, res, next) => {
       console.log("No drones to show", error);
       res.render("drones/update-form");
     });
-
-  // Iteration #4: Update the drone
-  // ... your code here
 });
 
+// Iteration #5: Delete the drone
+
 router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  const { id } = req.params;
+  Drone.findByIdAndDelete(id)
+    .then((deleteDrone) => {
+      console.log("Drone Deleted", deleteDrone);
+      res.redirect("/drones");
+    })
+    .catch((error) => {
+      console.log("No drone deleted", error);
+    });
 });
 
 module.exports = router;
