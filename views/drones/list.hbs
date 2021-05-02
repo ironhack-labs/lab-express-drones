@@ -1,13 +1,16 @@
 <h2>Available drones</h2>
 
 <main>
+        {{#each drones }}
+        <hr>
+        <p>Name: {{ name }}</p>
+        <p>Propellers:{{ propellers }}</p>
+        <p>MaxSpeed:{{ maxSpeed }}</p>
+        
 
-{{#each drones }}
-    {{ name }},
-    {{ propellers }},
-    {{ speed }}
-{{/each}}
+        {{/each}}
 
-<button>Back</button>
 </main>
-    
+
+<br>
+<button href="/index">Back</button>
