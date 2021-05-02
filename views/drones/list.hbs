@@ -1,1 +1,40 @@
-<h2>Available drones</h2>
+<section id="drones">
+    <h2>Available drones</h2>
+    <section id="drone-list" class="container mx-auto">
+        <div class="row">
+        {{#each drones}}
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text">Propellers: {{this.propellers}}</p>
+                        <p class="card-text">Max speed: {{this.maxSpeed}}</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="/drones/{{this.id}}/edit" class="btn btn-primary">Edit</a>
+                            </div>
+                            <div class="col-4">
+                                <form action="/drones/{{this.id}}/delete" method="post">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        <div class="col-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <a href="/drones/create" class="drone-card col add-drone">
+                        <h5 class="card-title">Add new drone</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+    </section>
+</section>
+
+
