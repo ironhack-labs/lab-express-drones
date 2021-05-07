@@ -1,11 +1,17 @@
-<h2>Available drones</h2>
+<div id="listPage">
+    <h2>Available drones</h2>
 
-<div>
-    {{#each drones}}
-    <h1>{{this.name}}</h1>
-    <p>{{this.propellers}}</p>
-    <p>{{this.maxSpeed}}</p>
-     <a href="/drones/{{this._id}}/delete">Delete</a>
-     <a href="/drones/{{this._id}}/edit">Pimp Your Drone</a>
-     {{/each}}
+    <main id="dronz">
+        <div class="list">
+            {{#each drones}}
+            <h1>Name : {{this.name}}</h1>
+            <p> Number of Propellers : {{this.propellers}}</p>
+            <p>Max speed : {{this.maxSpeed}}</p>
+            <br>
+            <br>
+            <a href="/drones/{{this._id}}/delete">Delete</a>
+            <a href="/drones/{{this._id}}/edit">Pimp Your Drone</a>
+            {{/each}}
+        </div>
+    </main>
 </div>

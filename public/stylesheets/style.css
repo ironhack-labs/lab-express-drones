@@ -1,8 +1,29 @@
+@import url(./form-create.css);
+@import url(./form-update.css);
+@import url(./list.css);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.home {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-evenly;
+  background: rgb(31, 34, 34);
+  background-size: cover;
+  width: 100%;
+  padding: 30px;
+}
+
+.links {
+  text-decoration: none;
+  color: #d6e1e6;
+  margin: 15px;
+  font-size: x-large;
 }

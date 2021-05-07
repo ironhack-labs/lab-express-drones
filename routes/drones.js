@@ -18,8 +18,8 @@ router.get("/drones/create", (req, res, next) => {
 
 router.post("/drones/create", (req, res, next) => {
   DroneModel.create(req.body)
-    .then(() => res.redirect("/drones"))
-    .catch((err) => res.redirect("/drones/create"));
+    .then(() => res.redirect("drones"))
+    .catch((err) => res.redirect("drones/create"));
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
@@ -30,8 +30,8 @@ router.get("/drones/:id/edit", (req, res, next) => {
 
 router.post("/drones/:id/edit", (req, res, next) => {
   DroneModel.findByIdAndUpdate(req.params.id, req.body)
-    .then(() => res.redirect("/drones"))
-    .catch(() => res.redirect("/drones/update-form"));
+    .then(() => res.redirect("drones"))
+    .catch(() => res.redirect("drones/update-form"));
 });
 
 //console.log("hey");
