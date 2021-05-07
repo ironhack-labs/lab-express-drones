@@ -1,1 +1,8 @@
 <h2>Available drones</h2>
+
+
+<ul>
+    {{#each drones}}
+    <li> {{this.name}} has {{this.propellers}} propellers with a max speed of {{this.maxSpeed}} meters per second </li>
+    {{/each}}
+</ul>
