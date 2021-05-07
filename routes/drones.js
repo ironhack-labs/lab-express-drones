@@ -9,20 +9,25 @@ router.get('/drones', (req, res, next) => {
     .then((dbResult) => {
       res.render("drones/list", { title: "Drones", drones: dbResult });
     })
-    .then((dbErr) => {
+    .catch((dbErr) => {
       console.log(dbErr);
       next(dbErr);
     });
 });
 
 router.get('/drones/create', function (req, res, next) {
-  
+  res.render("drones/create-form")
 });
 
-
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  DroneModel.create(req.body)
+    .then((dbResult) => {
+      res.redirect("/drones");
+    })
+    .catch((dbErr) => {
+      res.redirect("/drones/create");
+      next(dbErr);
+    });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
