@@ -16,7 +16,7 @@ router.get('/drones', (req, res, next) => {
 });
 
 router.get('/drones/create', function (req, res, next) {
-  res.render("drones/create-form")
+  res.render("drones/create-form", { title: "Create Drone" } )
 });
 
 router.post('/drones/create', (req, res, next) => {
@@ -33,7 +33,7 @@ router.post('/drones/create', (req, res, next) => {
 router.get('/drones/:id/edit', (req, res, next) => {
   DroneModel.findById(req.params.id)
   .then((dbResult) => {
-    res.render("drones/update-form", {
+    res.render("drones/update-form", { title: "Update Drone",
       drone: dbResult,
     });
   })
