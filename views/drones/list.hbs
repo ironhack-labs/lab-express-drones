@@ -5,7 +5,11 @@
         <li class="first">Drone name: {{this.name}}</li>
         <li>Number of propellers: {{this.propellers}} </li>
         <li>Max Speed: {{this.maxSpeed}}</li>
+        <a href="/drones/{{this._id}}/edit">Edit drone information</a> |
+        <a href="/drones/{{this._id}}/delete">delete</a>
+
     </ul>
     <hr>
 </div>
 {{/each}}
+<a href="/drones/create">Create a new drone</a>
