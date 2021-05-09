@@ -60,7 +60,7 @@ router.post("/drones/:id/edit", (req, res, next) => {
     .catch((dbError) => next(dbError));
 });
 
-router.post("/drones/:id/delete", (req, res, next) => {
+router.get("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
   DroneModel.findByIdAndDelete(req.params.id)
