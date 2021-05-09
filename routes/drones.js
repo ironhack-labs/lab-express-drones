@@ -55,7 +55,7 @@ router.post("/drones/:id/edit", (req, res, next) => {
   // ... your code here
   DroneModel.findByIdAndUpdate(req.params.id, req.body)
     .then((dbResult) => {
-      res.redirect("drones/list.hbs");
+      res.redirect("/drones"); //mettre la route de la page visée !!!
     })
     .catch((dbError) => next(dbError));
 });
@@ -65,7 +65,7 @@ router.post("/drones/:id/delete", (req, res, next) => {
   // ... your code here
   DroneModel.findByIdAndDelete(req.params.id)
     .then((dbSuccess) => {
-      res.redirect("drones/list.hbs");
+      res.redirect("/drones"); //mettre la route de la page visée !!!
     })
     .catch((dbErr) => {
       next(dbErr);

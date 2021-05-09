@@ -3,6 +3,11 @@
 
 <ul>
     {{#each drones}}
-    <li> {{this.name}} has {{this.propellers}} propellers with a max speed of {{this.maxSpeed}} meters per second </li>
+    <li> {{this.name}} has {{this.propellers}} propellers with a max speed of {{this.maxSpeed}} meters per second  
+        <a href="/drones/{{this._id}}/edit">Edit</a>  /   
+        <a href="/drones/{{this._id}}/delete">delete</a>
+        {{!-- <a href="/drones/update-form">delete</a> --}}
+        
+    </li>
     {{/each}}
 </ul>
