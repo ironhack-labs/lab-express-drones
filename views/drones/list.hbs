@@ -1,5 +1,10 @@
 <h2>Available drones</h2>
 
+{{#unless drones.length}}
+<p>
+    Sorry, no drones in database yet !
+</p>
+{{/unless}}
 
 <ul>
     {{#each drones}}
