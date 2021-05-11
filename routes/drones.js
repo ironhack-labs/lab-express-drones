@@ -26,12 +26,12 @@ router.post("/drones/create", (req, res, next) => {
     .then(() => res.redirect("drones"))
     .catch((dbError) => res.redirect("/drones/create-form.hbs"));*/
     DroneModel.create(req.body)
-    .then((dbResult) => res.redirect("/drones/create-form.hbs"))
-    .catch((dbError) => next(dbError));
+    .then(() => res.redirect("/drones"))
+    .catch((err) => res.redirect("/drones/create-form.hbs"));
 });
 
 
-/*});*/
+
 
 router.get("/drones/:id", (req, res, next) => {
   // Iteration #4: Update the drone
@@ -56,9 +56,10 @@ router.post("/drones/:id/edit", (req, res, next) => {
 
 router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  DroneModel.findByIdAndDelete(req.params.id).then((drones) => {
-    res.redirect("/drones");
+  DroneModel.findByIdAndDelete(req.params.id)
+  .then((drones) => res.redirect("/drones")) 
+    .catch((dbError) => next(dbError));
   });
-});
+
 
 module.exports = router;

@@ -1,15 +1,17 @@
 <h2>Update the drone</h2>
-<form method="post" action="/update/{{drones._id}}">
+<form method="post" action="/drones/{{_id}} class="form">
     <p>
         <label for="">name</label>
-        <input type="text" name="{{drones.name}}">
+        <input type="text" name="text" value="{{this.name}}">
     </p>
     <p>
         <label for="">propellers</label>
-        <input type="number" value="{{drones.propellers}}">
+        <input type="number" name="propellers" value="{{this.propellers}}">
     </p>
     <p>
         <label for="">max speed</labl>
-        <input type="number" value="{{drones.maxSpeed}}">
+        <input type="number" name="maxSpeed" value="{{this.maxSpeed}}">
     </p>
-</form>
+    <button> Update drone </button>
+</form> 
+

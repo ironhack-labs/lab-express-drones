@@ -11,7 +11,7 @@ const drones = [
   ];
 
 
-  //Create ??: 
+  // Iteration 1 - Create : 
   async function seedDrones(){ 
       try {
           await DroneModel.deleteMany();
