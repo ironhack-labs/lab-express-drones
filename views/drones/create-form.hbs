@@ -1,1 +1,39 @@
 <h2>Create a new drone</h2>
+{{#each drones}}
+
+<div class="card mt-5">
+    <div class="card-header">
+        Dron
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">Propiedades: {{propellers}}</p>
+        <p class="card-text">Speed: {{maxSpeed}}</p>
+
+    </div>
+</div>
+{{/each}}
+<hr>
+
+<form action="/drones/create" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="name">
+
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Numero de propelas</label>
+        <input type="number" class="form-control" name="propellers">
+
+    </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Velocidad Máxima</label>
+        <input type="number" class="form-control" name="maxSpeed">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
