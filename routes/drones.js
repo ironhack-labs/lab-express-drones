@@ -36,9 +36,9 @@ router.get('/drones/:id/edit', (req, res, next) => {
 
 router.post('/drones/:id/edit', (req, res, next) => {
   const { id } = req.params;
-  const { name, propellers, maxSpeed } = req.body;
+  const { name, image, propellers, maxSpeed } = req.body;
  
-  Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed }, { new: true, runValidators: true})
+  Drone.findByIdAndUpdate(id, { name, image, propellers, maxSpeed }, { new: true, runValidators: true})
     .then(updatedDrone => res.redirect(`/drones`))
     .catch(e => next(e));
 });
