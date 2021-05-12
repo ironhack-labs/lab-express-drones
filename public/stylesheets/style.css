@@ -1,8 +1,260 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+* {
+	 box-sizing: border-box;
+}
+ *::before, *::after {
+	 box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 2rem;
+  font-family: 'Powerpuff Girls', sans-serif;   
+  margin-bottom: 3rem;      
+  font-size: 4rem;      
+  color: #76add3;                                 
+}
+
+h3 {
+  color: #c04d86;
+}
+
+p {
+  color: #382b22;
+}
+
+.home__link {
+  font-family: 'Powerpuff Girls', sans-serif;
+  color: white;
+  font-size: 2rem;
 }
 
 a {
-  color: #00b7ff;
+  text-decoration: none;
+  color: #539ed3;
+}
+
+a:hover {
+  color: #76add3;
+}
+
+header {
+  background-color: #f57eb6;
+}
+
+.logo_img__wrapper {
+  max-width: 150px;
+  margin: 1rem;
+}
+
+.logo_img {
+  width: 100%;
+}
+
+main{
+  background-color: #fff0f0;
+}
+
+.landing__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.landing__wrapper h1 {
+  margin-top: 8rem;
+}
+
+.landing__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn__link {
+  text-decoration: none;
+  color: #382b22;
+}
+
+.btn__link:hover {
+  color: #c04d86;
+}
+
+a button:hover {
+  color: #c04d86;
+}
+
+button {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: #fff0f0;
+  border: 2px solid #b18597;
+  border-radius: 0.75em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button:hover {
+  background: #ffe9e9;
+  transform: translate(0, 0.25em);
+}
+
+button:hover::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+button:active {
+  background: #ffe9e9;
+  transform: translate(0em, 0.75em);
+}
+
+button:active::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  transform: translate3d(0, 0, -1em);
+}
+
+.create_btn {
+  background: #cae7f8;
+  border: 2px solid #76add3;
+}
+.create_btn::before{
+  background: #cae7f8;
+  box-shadow: 0 0 0 2px #76add3, 0 0.625em 0 0 #aee0fd;
+}
+.create_btn:hover {
+  background: #b8e2fa;
+}
+.create_btn:hover::before {
+  box-shadow: 0 0 0 2px #76add3, 0 0.625em 0 0 #aee0fd;
+}
+
+.create_btn:active {
+  background: #b8e2fa;
+}
+
+.create_btn:active::before {
+  background: #b8e2fa;
+  box-shadow: 0 0 0 2px #76add3, 0 0.625em 0 0 #aee0fd;
+}
+
+.create_btn__link {
+  text-decoration: none;
+  color: #382b22;
+}
+
+.create_btn__link:hover {
+  color: #447ea2;
+}
+
+a .create_btn:hover {
+  color: #447ea2;
+}
+
+/* list page  */
+.list__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drones__wrapper {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.drone__wrapper {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+  
+}
+
+.drones__text {
+  text-align: left;
+}
+
+.drones__text p {
+  margin: 0;
+}
+
+.drone__wrapper a{
+  margin-top: 1rem;
+}
+
+.drone_img__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  padding: .5rem;
+}
+
+.drone__img {
+  max-width: 100%;
+  max-height: 100%;
+  align-self: center;
+}
+
+/* edit page */
+
+.form__wrapper {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+}
+
+.form-check {
+  width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  width: 100%;
+}
+
+.form-control {
+  margin-top: .5rem;
+}
+
+.button__wrapper {
+  text-align: center;
 }
