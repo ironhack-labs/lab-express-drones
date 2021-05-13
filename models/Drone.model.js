@@ -6,7 +6,8 @@ const droneSchema = new Schema (
         name : String,
         image: {
             type: String,
-            default: '/images/puffgirls.png'
+            default: '/images/puffgirls.png',
+            set: v => v === '' ? '/images/puffgirls.png' : v
         }, 
         propellers : {
             type : Number, min: [1, `you can't fly without propellers`]
