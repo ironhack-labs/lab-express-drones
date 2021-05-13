@@ -1,1 +1,36 @@
-<h2>Available drones</h2>
+<div class="layout">
+    <div>
+            <h2>Available drones</h2>
+    </div>
+
+    <div>
+
+        <a type="button" href="/drones/create" class="btn btn-dark btn-lg">Crear Dron</a>
+    </div>
+
+    </div>
+
+
+
+
+
+{{#each drones}}
+
+<div class="card mt-5">
+    <div class="card-header">
+        Dron
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">Propiedades: {{propellers}}</p>
+        <p class="card-text">Speed: {{maxSpeed}}</p>
+        <div class="layout">
+            <a href="/drones/{{_id}}/edit" style="font-size: 20px;">Editar</a>
+
+
+
+            <a href="/drones/{{_id}}/delete" style="font-size: 20px;">Eliminar</a>
+        </div>
+
+    </div>
+</div>
