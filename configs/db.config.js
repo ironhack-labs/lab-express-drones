@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+DB_NAME ='express-drones-dev'
+
 mongoose
-  .connect('mongodb://localhost/express-drones-dev', {
+  .connect(`mongodb://localhost/${DB_NAME}`, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
