@@ -169,7 +169,7 @@ Steps you should follow in this iteration:
 
 Our app should be pretty ugly right now if you (correctly) focused on the back-end during this exercise. To be a fully functioning web app, we need to add some styles.
 
-In your layout require bootstrap, and add some very basic styles to make our drones app look ready for production.
+In your layout require bootstrap, and add some very basic styles to make our drones app look "ready" for production.
 
 <br>
 
