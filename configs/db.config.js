@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const uri = "mongodb+srv://hisamparker:y!K3AcgtJMgiAAsQ@cluster0.pviiy.mongodb.net/droneDB?retryWrites=true&w=majority";
 
 mongoose
-  .connect('mongodb://localhost/droneDB', {
+  .connect(uri, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
