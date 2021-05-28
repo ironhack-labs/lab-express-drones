@@ -1,14 +1,14 @@
 <main>    
     <div class="form__wrapper">
         <h1>Create new drone</h1>
-        <form class="form"  action="/drones/create" method="post">
+        <form class="form"  action="/drones/create" enctype='multipart/form-data' method="POST">
             <div class="mb-3 form-check">   
                 <label class="form-label" for="name-input">Name:</label>
                 <input class="form-control" type="text" name="name" id="name-input" />
             </div>
             <div class="mb-3 form-check">
                 <label class="form-label" for="image-input">Image:</label>
-                <input class="form-control" type="text" name="image" id="image-input" />
+                <input class="form-control" type="file" name="image" id="image-input" />
             </div>
             <div class="mb-3 form-check">
                 <label class="form-label" for="propeller-input">Propellers:</label>

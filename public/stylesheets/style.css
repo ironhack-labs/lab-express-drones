@@ -1,13 +1,21 @@
 * {
 	 box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'power_puff_girls';
+  src: url('https://res.cloudinary.com/hisam/raw/upload/v1622200989/puffy-little-drones/powerpuff_girls_font_cyux8j.ttf')  format('truetype');
+
+}
+
+
  *::before, *::after {
 	 box-sizing: border-box;
 }
 
 h1 {
   margin-top: 2rem;
-  font-family: 'Powerpuff Girls', sans-serif;   
+  font-family: 'power_puff_girls', sans-serif;   
   margin-bottom: 3rem;      
   font-size: 4rem;      
   color: #76add3;                                 

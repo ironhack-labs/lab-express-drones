@@ -3,6 +3,8 @@ const express = require('express');
 const Drone = require('../models/Drone.model.js');
 //require router
 const router = express.Router();
+//require cloudinary
+const fileUploader = require('../configs/cloudinary.config');
 
 router.get('/drones', (req, res, next) => {
   Drone.find()
@@ -17,9 +19,10 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => res.render('drones/create-form'));
 
-router.post('/drones/create', (req, res, next) => {
-  const { name, image, propellers, maxSpeed } = req.body;
-  Drone.create({ name, image, propellers, maxSpeed })
+router.post('/drones/create', fileUploader.single('image'),(req, res, next) => {
+  const { name, propellers, maxSpeed } = req.body;
+  console.log(`req.file : ${req.file}`)
+  Drone.create({ name, image: req.file.path, propellers, maxSpeed })
     .then(() => res.redirect('/drones'))
     .catch(e => next(e));
 });
