@@ -26,3 +26,24 @@ module.exports.doCreateDrone = ((req, res, next) => {
         res.redirect("drones/create-form")
     })
 })
+
+module.exports.updateDrone = ( (req, res, next) => {
+    Drone.findById(req.params.id)
+    .then ((drone) => {
+        res.render("drones/update-form", drone)
+    })
+    .catch((e) => {
+        console.log(e)
+    })
+})
+
+module.exports.doUpdateDrone = ((req, res, next) => {
+    const { id } = req.params; 
+    Drone.findByIdAndUpdate(id, req.body)
+    .then(() => {
+        res.redirect("/drones")
+    })
+    .catch((e) => {
+        console.log(e)
+    })
+})
