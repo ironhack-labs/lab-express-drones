@@ -13,10 +13,14 @@ const express = require('express');
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
 
+hbs.registerPartials(__dirname + "/views/partials")
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
+
+app.use(express.urlencoded({extended: true}))
 
 // default value for title local
 const projectName = 'lab-express-drones';
