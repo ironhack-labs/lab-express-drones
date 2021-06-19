@@ -1,11 +1,39 @@
-<h2>Create a new drone</h2>
+{{#if drone.id}}
 
-<form action='/drones/create' method='POST'>
-    <label for='name'>Drone name:</label>
-    <input type='text' id='name' name='name' placeholder='Creeper XL 500'>
-    <label for='propellers'>Drone propellers:</label>
-    <input type='number' id='propellers' name='propellers' placeholder='4'>
-    <label for='maxSpeed'>Drone maxSpeed:</label>
-    <input type='number' id='maxSpeed' name='maxSpeed' placeholder='12'>
+  <h2>Update your drone</h2>
+
+  <form action="/drones/{{drone.id}}/edit" method="POST">
+    <label for="name">Drone name:</label>
+    <input type="text" id="name" name="name" value={{drone.name}} />
+    <label for="propellers">Drone propellers:</label>
+    <input
+      type="number"
+      id="propellers"
+      name="propellers"
+      value={{drone.propellers}}
+    />
+    <label for="maxSpeed">Drone maxSpeed:</label>
+    <input
+      type="number"
+      id="maxSpeed"
+      name="maxSpeed"
+      value={{drone.maxSpeed}}
+    />
+    <button type="submit">Update</button>
+  </form>
+
+{{else}}
+
+  <h2>Create a new drone</h2>
+
+  <form action="/drones/create" method="POST">
+    <label for="name">Drone name:</label>
+    <input type="text" id="name" name="name" />
+    <label for="propellers">Drone propellers:</label>
+    <input type="number" id="propellers" name="propellers" />
+    <label for="maxSpeed">Drone maxSpeed:</label>
+    <input type="number" id="maxSpeed" name="maxSpeed" />
     <button type="submit">Create</button>
-</form>
+  </form>
+
+{{/if}}

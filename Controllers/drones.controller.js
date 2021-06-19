@@ -23,3 +23,26 @@ module.exports.doCreateDrone = (req, res, next) => {
     })
     .catch((e) => res.render("drones/create-form.hbs"));
 };
+
+module.exports.editDrone = (req, res, next) => {
+  const { id } = req.params;
+  Drone.findById(id)
+    .then((drone) => res.render(`drones/create-form.hbs`, { drone }))
+    .catch((e) => console.error(e));
+};
+
+module.exports.doEditDrone = (req, res, next) => {
+  Drone.findByIdAndUpdate(req.params.id, req.body)
+    .then((drone) => res.redirect(`/drones`))
+    .catch((e) => console.error(e));
+};
+
+module.exports.id = (req, res, next) => {
+  const { id } = req.params;
+  Drone.findById(id)
+    .then((drone) => {
+      console.log(drone);
+      res.render("drones/id.hbs", { drone });
+    })
+    .catch((e) => console.error(e));
+};
