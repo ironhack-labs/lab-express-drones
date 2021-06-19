@@ -37,6 +37,12 @@ module.exports.doEditDrone = (req, res, next) => {
     .catch((e) => console.error(e));
 };
 
+module.exports.deleteDrone = (req, res, next) => {
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect(`/drones`))
+    .catch((e) => console.error(e));
+};
+
 module.exports.id = (req, res, next) => {
   const { id } = req.params;
   Drone.findById(id)

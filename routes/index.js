@@ -13,6 +13,8 @@ router.post('/drones/create', dronesController.doCreateDrone)
 router.get('/drones/:id/edit', dronesController.editDrone)
 router.post('/drones/:id/edit', dronesController.doEditDrone)
 
+router.post('/drones/:id/delete', dronesController.deleteDrone)
+
 router.get('/drones/:id', dronesController.id)
 
 module.exports = router;
