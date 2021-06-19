@@ -9,7 +9,7 @@ const droneSchema = new mongoose.Schema(
     },
     propellers: {
       type: Number,
-      required: true,
+      required: false,
     },
     maxSpeed: {
       type: Number,

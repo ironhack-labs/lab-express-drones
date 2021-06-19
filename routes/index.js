@@ -7,4 +7,7 @@ const dronesController = require('../controllers/drones.controller')
 router.get("/", dronesController.home);
 router.get("/drones", dronesController.listDrones);
 
+router.get('/drones/create', dronesController.createDrone)
+router.post('/drones/create', dronesController.doCreateDrone)
+
 module.exports = router;
