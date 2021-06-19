@@ -1,10 +1,15 @@
 <div class="col-3">
-      <div class="card h-100" style="width: 18rem;">
-          <h3>{{this.name}}</h3>
+      <div class="card text-dark bg-light mb-3 h-100" style="width: 18rem;">
+          <h3 style="margin-left: 10px; margin-top: 10px">{{this.name}}</h3>
               <div class="card-body">
                   <p class="card-title">Propellers: {{this.propellers}}</p>
                   <p class="card-text"> Max. Speed: {{this.maxSpeed}}</p>
-                  <a href="/drones/{{this.id}}/edit" class="btn btn-primary">Edit</a>
+                  <div class="d-flex flex-row">
+                      <a href="/drones/{{this.id}}/edit" class="btn btn-primary" style="margin-right: 20px;">Edit</a>
+                      <form action="/drones/{{this.id}}/delete" method="POST">
+                          <button class="btn btn-danger">Delete</button>
+                      </form>
+                  </div>
                </div>
        </div>
 </div>

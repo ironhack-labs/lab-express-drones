@@ -30,6 +30,7 @@ module.exports.doCreateDrone = ((req, res, next) => {
 module.exports.updateDrone = ( (req, res, next) => {
     Drone.findById(req.params.id)
     .then ((drone) => {
+        console.log(drone)
         res.render("drones/update-form", drone)
     })
     .catch((e) => {
@@ -45,5 +46,12 @@ module.exports.doUpdateDrone = ((req, res, next) => {
     })
     .catch((e) => {
         console.log(e)
+    })
+})
+
+module.exports.doDeleteDrone = ((req, res, next) => {
+    Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect("/drones")
     })
 })
