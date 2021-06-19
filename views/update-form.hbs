@@ -1,0 +1,15 @@
+<form action="/drones/{{id}}/edit" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Model name</label>
+        <input class="form-control" id="name" name="name" value="{{name}}" />
+    </div>
+    <div class="mb-3"> 
+        <label for="propellers" class="form-label">Number of propellers</label>
+         <input class="form-control" id="propellers" name="propellers" value="{{propellers}}" />
+    </div>
+    <div class="mb-3"> 
+        <label for="maxSpeed" class="form-label">Top speed</label>
+        <input class="form-control" id="maxSpeed" name="maxSpeed" value="{{maxSpeed}}" />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

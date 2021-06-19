@@ -5,20 +5,11 @@ const droneController = require ('../controllers/drone.controller')
 
 router.get('/drones', droneController.showDrones);
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.get('/drones/create', droneController.createDrones);
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.post('/drones/create', droneController.postNewDrone);
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.get('/drones/:id/edit', droneController.updateDrone);
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
