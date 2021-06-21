@@ -1,14 +1,36 @@
-<h2>Drone Spec</h2>
+<div class="d-flex flex-column align-items-center justify-content-center pb-5">
+  <h1 class="text-center py-5 fw-bolder">Drone Spec</h1>
+  <a href="/drones" class="btn btn-primary p-2 fw-bolder" role="button">See all
+    the Drones</a>
+</div>
+<div class="d-flex flex-row justify-content-center px-5 pt-3">
+  <div class="card px-3 border-0" style="width: 18rem;">
+    <img
+      src="https://camo.githubusercontent.com/e4f8a091d509be9d0c56a9198373f91b17136344edf7156bd5ec8f15506c0a71/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f75706c6f61645f39323665373564343566326139393731353266343430313834346233623464352e6a7067"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title"><strong>Name:</strong> {{drone.name}}</h5>
+      <h5 class="card-title"><strong
+        >Propellers:</strong>{{drone.propellers}}</h5>
+      <h5 class="card-title"><strong>Max Speed:</strong>{{drone.maxSpeed}}</h5>
+      <div class="d-flex flex-column justify-content-center">
+        <a
+          href="/drones/{{drone.id}}/edit"
+          class="btn btn-primary p-2 mt-2"
+          role="button"
+        >Edit
+        </a>
+        <a>
+          <form action="/drones/{{drone.id}}/delete" method="POST" class="d-flex flex-column justify-content-center pt-3">
+            <button class="btn btn-danger p-2">Delete</button>
+          </form>
+        </a>
 
-<h1>name: {{drone.name}}</h1>
-<h2>propellers: {{drone.propellers}}</h2>
-<h3>maxSpeed: {{drone.maxSpeed}}</h3>
+      </div>
 
-<a
-  href="/drones/{{drone.id}}/edit"
-  class="btn btn-primary"
-  role="button"
->Udpate</a>
-<form action="/drones/{{drone.id}}/delete" method="POST">
-  <button class="btn btn-danger">Delete</button>
-</form>
+    </div>
+  </div>
+
+</div>

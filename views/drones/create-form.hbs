@@ -1,39 +1,83 @@
-{{#if drone.id}}
+<div class="container d-felx flex-row">
+  {{#if drone.id}}
 
-  <h2>Update your drone</h2>
+    <h2 class="text-center fw-bolder pt-5">Update your drone</h2>
 
-  <form action="/drones/{{drone.id}}/edit" method="POST">
-    <label for="name">Drone name:</label>
-    <input type="text" id="name" name="name" value={{drone.name}} />
-    <label for="propellers">Drone propellers:</label>
-    <input
-      type="number"
-      id="propellers"
-      name="propellers"
-      value={{drone.propellers}}
-    />
-    <label for="maxSpeed">Drone maxSpeed:</label>
-    <input
-      type="number"
-      id="maxSpeed"
-      name="maxSpeed"
-      value={{drone.maxSpeed}}
-    />
-    <button type="submit">Update</button>
-  </form>
+    <form action="/drones/create" method="POST" class="form-inline">
+      <div class="col-3 d-inline-flex flex-row pt-5 px-3 align-items-center">
+        <label for="name" class="sr-only fw-bolder">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          value={{drone.name}}
+        />
+      </div>
+      <div class="col-3 d-inline-flex flex-row px-3 align-items-center">
+        <label for="propellers" class="sr-only fw-bolder">Propellers:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="propellers"
+          name="propellers"
+          value={{drone.propellers}}
+        />
+      </div>
+      <div class="col-3 d-inline-flex flex-row px-3 align-items-center">
+        <label for="maxSpeed" class="sr-only fw-bolder">MaxSpeed:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="maxSpeed"
+          name="maxSpeed"
+          value={{drone.maxSpeed}}
+        />
 
-{{else}}
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
 
-  <h2>Create a new drone</h2>
+    </form>
 
-  <form action="/drones/create" method="POST">
-    <label for="name">Drone name:</label>
-    <input type="text" id="name" name="name" />
-    <label for="propellers">Drone propellers:</label>
-    <input type="number" id="propellers" name="propellers" />
-    <label for="maxSpeed">Drone maxSpeed:</label>
-    <input type="number" id="maxSpeed" name="maxSpeed" />
-    <button type="submit">Create</button>
-  </form>
+  {{else}}
 
-{{/if}}
+    <h2 class="text-center fw-bolder pt-5">Create a new drone</h2>
+
+    <form action="/drones/create" method="POST" class="form-inline">
+      <div class="col-3 d-inline-flex flex-row pt-5 px-3 align-items-center">
+        <label for="name" class="sr-only fw-bolder">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          value={{drone.name}}
+        />
+      </div>
+      <div class="col-3 d-inline-flex flex-row px-3 align-items-center">
+        <label for="propellers" class="sr-only fw-bolder">Propellers:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="propellers"
+          name="propellers"
+          value={{drone.propellers}}
+        />
+      </div>
+      <div class="col-3 d-inline-flex flex-row px-3 align-items-center">
+        <label for="maxSpeed" class="sr-only fw-bolder">MaxSpeed:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="maxSpeed"
+          name="maxSpeed"
+          value={{drone.maxSpeed}}
+        />
+
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+
+    </form>
+
+  {{/if}}
+</div>
