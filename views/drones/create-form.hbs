@@ -1,10 +1,10 @@
-<div class="container d-felx flex-row">
+<div class="container d-felx flex-row align-items-center">
   {{#if drone.id}}
 
     <h2 class="text-center fw-bolder pt-5">Update your drone</h2>
 
-    <form action="/drones/create" method="POST" class="form-inline">
-      <div class="col-3 d-inline-flex flex-row pt-5 px-3 align-items-center">
+    <form action="/drones/create" method="POST" class="d-flex flex-row justify-content-center pt-5">
+      <div class="col-4 d-inline-flex flex-row px-3 align-items-center">
         <label for="name" class="sr-only fw-bolder">Name:</label>
         <input
           type="text"
@@ -14,7 +14,7 @@
           value={{drone.name}}
         />
       </div>
-      <div class="col-3 d-inline-flex flex-row px-3 align-items-center">
+      <div class="col-4 d-inline-flex flex-row px-3 align-items-center">
         <label for="propellers" class="sr-only fw-bolder">Propellers:</label>
         <input
           type="number"
@@ -24,7 +24,7 @@
           value={{drone.propellers}}
         />
       </div>
-      <div class="col-3 d-inline-flex flex-row px-3 align-items-center">
+      <div class="col-4 d-inline-flex flex-row px-3 align-items-center">
         <label for="maxSpeed" class="sr-only fw-bolder">MaxSpeed:</label>
         <input
           type="number"
