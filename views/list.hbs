@@ -3,5 +3,14 @@
 <h2>{{this.name}}</h2>
 <p>{{this.propellers}}</p>
 <p>{{this.maxSpeed}}</p>
-<a href="/drones/{{this._id}}/edit">Edit drone characteristics</a>
+
+<a class="btn btn-primary" href="/drones/{{this._id}}/edit">Edit drone characteristics</a>
+
+
+<form action="/drones/{{this._id}}/delete" method="POST">
+  
+    <button type="submit" class="btn btn-primary">Delete Drone</button>
+</form>
+
+
 {{/each}}
