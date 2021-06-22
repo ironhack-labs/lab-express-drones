@@ -1,0 +1,26 @@
+[
+    { 
+        "name": "The Professor", 
+        "image": "/images/professor.png",
+        "propellers": 3, 
+        "maxSpeed": 12 
+    },
+    { 
+        "name": "Blossom",
+        "image": "/images/blossom.png", 
+        "propellers": 4, 
+        "maxSpeed": 20 
+    },
+    { 
+        "name": "Buttercup", 
+        "image": "/images/buttercup.png",
+        "propellers": 6, 
+        "maxSpeed": 18 
+    },
+    { 
+        "name": "Bubbles", 
+        "image": "/images/bubbles.png",
+        "propellers": 8, 
+        "maxSpeed": 38 
+    }
+]
