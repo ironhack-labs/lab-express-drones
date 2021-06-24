@@ -5,38 +5,21 @@ const Drone = require("../models/Drone.model");
 
 require("../db/index");
 
-
-const MONGO_URI = "mongodb://localhost:27017/lab-express-drones";
-
-mongoose
-  .connect(MONGO_URI, {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo: ", err);
-  });
-
-
-
 Drone.collection.drop();
 
-
-
-Drone.create(dronesData, (err, data) => {
-  if (err) {
-    console.log(err);
+Drone.create(drones, (error, data) => {
+  if (error) {
+    console.log(error);
   } else {
     data.forEach((drone) => {
-      console.log(drone.droneName);
+      console.log(`${drone.name}: ${drone.propellers} propellers`);
     });
   }
-
-  mongoose.connection.close();
+  mongoose.connection
+    .close()
+    .then(() => console.log("Finish seeds.js"))
+    .catch((e) => console.error(e))
+    .finally(() => {
+      process.exit(0);
+    });
 });
