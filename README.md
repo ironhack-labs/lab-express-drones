@@ -144,7 +144,7 @@ Steps you should follow in this iteration:
 1. Under each drone information on the `list.hbs`, add a link to the edit page (pointing to the `/drones/<oneDroneId>/edit`). When clicked, the link should take you to the 404 page (still), but the URL should have a format similar to this one: `/drones/123Hgt5y4500Ux8/edit`.
 2. Find the `/drones/:id/edit` GET route in `routes/drones.js` and render the `drones/update-form.hbs` view. Make sure you get the right drone from the database using the available `id` (_hint_: `.findById()`) and pass the drone object to the view.
 3. The `update-form.hbs` should have the pre-filled form with the values of the previously passed drone object.
-4. Locate the `/drones/:id/edit` POST route in `routes/drones.js` and using `req.body` get all the info user submitted through the form. Use this info to update the existing drone in the database. Make sure you redirect to `/drones` if the new drone is successfully updated. If there is an error, render again the view so the user can try again to update a drone. (_Hint_: You can use `.findByIdAndUpdate()` Mongoose method.)
+4. Locate the `/drones/:id/edit` POST route in `routes/drones.js` and using `req.body` get all the info user submitted through the form. Use this info to update the existing drone in the database. Make sure you redirect to `/drones` if the new drone is successfully updated. If there is an error, render again the view so the user can try again to update a drone. (_Hint_: You can use `.findByIdAndUpda)`te( Mongoose method.)
 
 <br>
 
