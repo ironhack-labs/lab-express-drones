@@ -5,6 +5,9 @@ module.exports.index = (req, res, next) => {
     res.render("index");
 };
 
+
+// ALL DRONES
+
 module.exports.listDrones = (req, res, next) => {
     Drone.find()
     .then((drones) => {
@@ -12,6 +15,20 @@ module.exports.listDrones = (req, res, next) => {
     })
     .catch(e => console.error(e))
 };
+
+
+// EACH DRONE
+
+module.exports.DroneId = (req, res, next) => {
+    Drone.findById(req.params)
+    .then((drone) => {
+        res.render("drones/drone-id.hbs", { drone })
+    })
+    .catch(e => console.error(e))
+};
+
+
+// CREATE DRONE
 
 module.exports.createDrone = (req, res, next) => {
     res.render("drones/create-form.hbs")
@@ -26,24 +43,30 @@ module.exports.doCreateDrone = (req, res, next) => {
 };
 
 
-// REVISAR
+// REVISAR!
+
+// UPDATE DRONE
 
 module.exports.updateDrone = (req, res, next) => {
     Drones.findById(req.params.id)
-    .then((drone) => res.render("update-form", drone))
+    .then((drone) => {
+        res.render("drones/update-form", drone)
+    })
     .catch(e => console.error(e))
 };
 
 module.exports.doUpdateDrone = (req, res, next) => {
-    Drone.findByIdAndUpdate(id, req.body)
+    Drone.findByIdAndUpdate(req.params, req.body)
     .then(() => {
         res.redirect("/drones")
     })
-    .catch((e) => res.render("drones/create-form.hbs"))
+    .catch((e) => console.log(e))
 };
 
+// DELETE DRONE
+
 module.exports.deleteDrone = (req, res, next) => {
-    Drone.deleteById(req.params.id)
+    Drone.findByIdAndDelete()(req.params.id)
       .then(() => res.redirect("/drones"))
       .catch((e) => console.error(e));
   };

@@ -1,9 +1,26 @@
 <h2>Create a new drone</h2>
-<form action="/drones/create" method="POST">
-    <input placeholder="Name" type="text" value={{drone.name}}>
-    <input placeholder="Propellers" type="text" value={{drone.propellers}}>
-    <input placeholder="Speed" type="text" value={{drone.maxSpeed}}>
+<form action="/drones/create-form" method="POST">
+
+<!--
+        <input placeholder="Name" type="text" value={{drone.name}}>
+        <input placeholder="Propellers" type="text" value={{drone.propellers}}>
+        <input placeholder="Speed" type="text" value={{drone.maxSpeed}}>
+-->
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Name">
+        <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Propellers">
+        <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Speed">
+        <label for="floatingInput">Speed</label>
+    </div>
     
 
-    <button type="submit">Add new drone!</button>
+
+    <button type="submit">Add</button>
 </form>
