@@ -6,21 +6,16 @@ const mongoose = require("mongoose");
 //Llamada al modelo drone
 const Drone = require("../models/Drone.model.js");
 
-require("../db");
+require("../db/index");
 
-const drones = [
-  { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
-  { name: "Racer 57", propellers: 4, maxSpeed: 20 },
-  { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
-];
-
+const data = require("../drones.json")
 
 //Creacion de la coleccion drones
 mongoose.connection.once("connected", () => {
   mongoose.connection.db.dropDatabase()
   .then(() => {
       console.log("Database cleared");
-      return Drone.insertMany(drones)
+      return Drone.insertMany(data)
   })
   .then((dronesCreated) => {
       console.log(`${dronesCreated.length} drones have been created`)
