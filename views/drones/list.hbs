@@ -1,12 +1,11 @@
 <h2>Available drones</h2>
 
 {{#each drones}}
-<a href="/drones/{{ this.name }}">
+
+<a href="/drones/{{ this._id }}">
+    <p>{{this.name}}</p>
     <p>{{this.propellers}}</p>
     <p>{{this.maxSpeed}}</p>
 </a>
 
 {{/each}}
-
-
-<p>testing test</p>
