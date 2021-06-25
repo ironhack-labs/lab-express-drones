@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 20px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
 }
+
+p{
+  margin: 20px;
+  
+}
+
+h3{
+  margin: 20px;
+}
+
