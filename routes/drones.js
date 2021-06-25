@@ -1,36 +1,75 @@
 const express = require('express');
+const DroneModel = require('../models/Drone.model');
 const router = express.Router();
 
 // require the Drone model here
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+
+    // do not start with a slash in render methods 
+
+    DroneModel.find()
+      .then((drones) => {
+          res.render('drones/list.hbs', {drones}) // ----> render() accepts a path to your views file
+      })
+      .catch(() => {
+            next('drones fetch failed')
+      })
+
+
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+    res.render('drones/create-form.hbs')
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+  const {name,propellers,maxSpeed} = req.body
+
+  // Add this to our DB 
+  DroneModel.create({name,propellers,maxSpeed })
+      .then(() => {
+          // send the user to a specific url
+          res.redirect('/drones/create')
+      })
+      .catch(() => {
+          next('Create failed')
+      })
+
+})
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+
+    let id = req.params.id
+
+    DroneModel.findById(id)
+    .then((drone)=>{
+        res.render('drones/update-form.hbs',{drone})
+        console.log(drone)
+    })
+    .catch(()=>{
+        next("Finding specific todo failed.")
+    })
+
+
+
+
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.get('/drones/:id/delete', (req, res, next) => {
+
+    let id2 = req.params.id
+    
+    DroneModel.findByIdAndDelete(id2)
+    .then(()=>{
+
+        res.redirect('/drones')//start with a / because we are redirecting the user to a url 
+    })
+    .catch(()=>{
+        next("Deleting specific todo failed")
+    })
+
 });
 
 module.exports = router;
