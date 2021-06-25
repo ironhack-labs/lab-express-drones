@@ -1,23 +1,4 @@
-<h2>Available drones</h2>
-
-{{#each drones}}
-   
-<p>Name:{{this.name}}</p>
-    
-<p>Propellers: {{this.propellers}}</p>
-<p>Speed: {{this.maxSpeed}}</p>
-<form method="POST" action="/drones/{{this._id}}/delete">
-  <div class="mb-3">
-    <button class="btn btn-primary" type="submit" >DELETE</button>
-  </div>
-</form>
-<form action="/drones/{{this._id}}/edit">
-  <div class="mb-3">
-    <button class="btn btn-primary" type="submit" >EDIT</button>
-  </div>
-</form>
-
-{{/each}}
+<h1>Available drones</h1>
 
 <table class="table table-hover">
   <thead>
@@ -30,14 +11,26 @@
     </tr>
   </thead>
   <tbody>
+ {{#each drones}}
     <tr>
-      <th scope="row"></th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td></td>
-      <td></td>
+      <td>{{this.name}}</td>
+      <td>{{this.propellers}}</td>
+      <td>{{this.maxSpeed}}</td>
+      <td>
+        <form action="/drones/{{this._id}}/edit">
+          <div class="mb-3">
+           <button class="btn btn-primary" type="submit" >EDIT</button>
+          </div>
+        </form>
+      </td>
+      <td>
+        <form method="POST" action="/drones/{{this._id}}/delete">
+          <div class="mb-3">
+          <button class="btn btn-primary" type="submit" >DELETE</button>
+         </div>
+      </td>
     </tr>
+    {{/each}}
   </tbody>
 </table>
 

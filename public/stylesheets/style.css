@@ -10,11 +10,16 @@ a {
 }
 
 p{
+  padding: 10px;
   margin: 20px;
-  
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-h3{
+h1{
   margin: 20px;
+  padding: 10px;
+  font: 32px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  color: #4A6FFD;
 }
+
 
