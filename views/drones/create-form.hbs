@@ -1,1 +1,16 @@
-<h2>Create a new drone</h2>
+<h2 style="color:rgb(148, 210, 212)">Create Your Funny Drone</h2>
+
+<form method="POST" action="/drones/create">
+  <div class="form-box animate__animated animate__fadeInUp">
+    <label class="form-label" >NAME</label>
+    <input class="form-control" type="text" name="name" placeholder="Name">
+    <br>
+    <label class="form-label" >PROPELLERS</label>
+    <input class="form-control" type="text" name="propellers" placeholder="Propellers">
+    <br>
+     <label class="form-label" >MAXSPEED</label>
+    <input class="form-control" type="text" name="maxSpeed" placeholder="Max Speed">
+    <br>
+    <button class="btn btn-primary" type="submit">SUBMIT</button>
+  </div>
+</form>
