@@ -2,10 +2,17 @@
 
 {{#each drones}}
 
-<a href="/drones/{{ this._id }}">
-    <p>{{this.name}}</p>
-    <p>{{this.propellers}}</p>
-    <p>{{this.maxSpeed}}</p>
+<a href="/drones/{{ this._id }}/edit">
+    <p>{{this.name}} {{this.propellers}} {{this.maxSpeed}}</p>
 </a>
+
+
+{{!-- <form action="/drones/{{this._id}}/edit" method="GET">
+    <button type="submit" class="btn btn-warning">Edit</button>
+</form>
+​
+<form action="/drones/{{this_id}}/edit" method="POST">
+    <button class="btn btn-danger">Delete</button>
+</form> --}}
 
 {{/each}}

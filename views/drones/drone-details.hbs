@@ -1,0 +1,16 @@
+<h3>Title {{drone.title}}</h3>
+
+<h4>Desc {{drone.description}}</h4>
+
+{{!-- The drone._id will be a dynamic id to a single todo --}}
+<form action="/drones/{{drone._id}}/delete" method="POST">
+    <button class="btn btn-danger">Delete</button>
+</form>
+
+
+{{!-- Two different ways to make GET requests --}}
+
+{{!-- The drone._id will be a dynamic id to a single todo --}}
+<form action="/drones/{{drone._id}}/edit" method="GET">
+    <button type="submit" class="btn btn-warning">Edit</button>
+</form>

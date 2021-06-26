@@ -1,1 +1,18 @@
 <h2>Update the drone</h2>
+{{!-- // views folder -> drones folder -> update-form.hbs --}}
+<form method="POST" action="/drones/{{ drone._id}}/edit">
+    <div class="mb-3">
+
+
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" name="name" value="{{drone.name}}">
+        <br>
+        <label class="form-label">Propellers</label>
+        <input class="form-control" type="text" name="propellers" value="{{drone.propellers}}">
+        <br>
+        <label class="form-label">Max Speed</label>
+        <input class="form-control" type="text" name="max speed" value="{{drone.maxSpeed}}">
+        <br>
+        <button class="btn btn-primary" type="submit">SUBMIT</button>
+    </div>
+</form>
