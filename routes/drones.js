@@ -22,6 +22,7 @@ router.get('/drones/create', (req, res, next) => {
 
 router.post('/drones/create', (req, res, next) => {
   const {name, propellers, maxSpeed} = req.body
+  console.log(req.body)
   // console.log(name, propellers, maxSpeed)
   DroneModel.create({name, propellers, maxSpeed})
     .then(() =>{
@@ -58,7 +59,7 @@ router.post('/drone/:id/edit', (req, res, next) => {
     })
 });
 
-router.post('/drone/:id/delete', (req, res, next) => {
+router.get('/drone/:id/delete', (req, res, next) => {
   console.log("hello")
   let dynamicId = req.params.id
 
