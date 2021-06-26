@@ -9,7 +9,7 @@ const logger = require("morgan");
 // https://www.npmjs.com/package/cookie-parser
 const cookieParser = require("cookie-parser");
 
-// ℹ️ Serves a custom favicon on each request
+// ℹ️ Sepves a custom favicon on each request
 // https://www.npmjs.com/package/serve-favicon
 const favicon = require("serve-favicon");
 
