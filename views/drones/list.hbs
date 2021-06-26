@@ -1,1 +1,13 @@
 <h2>Available drones</h2>
+{{#each drones}}
+<div>
+    {{this.name}}
+</div>
+{{/each}}
+<form method="get" action="/create">
+    <button type="submit" class="btn btn-warning">Create</button>
+</form>
+<form method="get" action="/update">
+    <button type="submit" class="btn btn-danger">Update</button>
+</form>
+
