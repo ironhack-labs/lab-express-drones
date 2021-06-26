@@ -1,6 +1,5 @@
 <h2>Available drones</h2>
 
-<button type="button" class="btn btn-primary">Create drone!</button>
 
 <div class="container">
     {{#each drones as |drone|}}
@@ -9,6 +8,16 @@
         <h3>Propellers: {{drone.propellers}}</h3>
         <h3>Speed: {{drone.maxSpeed}}</h3>
     </div>
+
+    <form action="/drones/{{drone.id}}/edit" method="POST">
+        <button class="btn btn-danger">Update</button>
+    </form>
+
+    <!-- <form action="/drones/{{drone.id}}/delete" method="POST">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    -->
+    
     {{/each}}
 
 </div>

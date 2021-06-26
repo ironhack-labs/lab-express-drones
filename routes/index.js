@@ -8,11 +8,12 @@ const dronesController = require("../controllers/drones.controllers")
 router.get('/', dronesController.index);
 router.get('/drones', dronesController.listDrones);
 
-router.get('/drones/:id', dronesController.DroneId);
 
 
 router.get('/drones/create', dronesController.createDrone);
 router.post('/drones/create', dronesController.doCreateDrone);
+
+router.get('/drones/:id', dronesController.droneId);
 
 router.get('/drones/:id/edit', dronesController.updateDrone);
 router.post('/drones/:id/edit', dronesController.doUpdateDrone);

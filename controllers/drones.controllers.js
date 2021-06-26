@@ -19,7 +19,7 @@ module.exports.listDrones = (req, res, next) => {
 
 // EACH DRONE
 
-module.exports.DroneId = (req, res, next) => {
+module.exports.droneId = (req, res, next) => {
     Drone.findById(req.params)
     .then((drone) => {
         res.render("drones/drone-id.hbs", { drone })
@@ -39,7 +39,10 @@ module.exports.doCreateDrone = (req, res, next) => {
     .then(() => {
         res.redirect("/drones")
     })
-    .catch((e) => res.render("drones/create-form.hbs"))
+    .catch((e) => {
+        console.log(e);
+        res.render("drones/create-form.hbs")
+    })
 };
 
 
@@ -56,11 +59,11 @@ module.exports.updateDrone = (req, res, next) => {
 };
 
 module.exports.doUpdateDrone = (req, res, next) => {
-    Drone.findByIdAndUpdate(req.params, req.body)
+    Drone.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
         res.redirect("/drones")
     })
-    .catch((e) => console.log(e))
+    .catch((e) => console.error(e))
 };
 
 // DELETE DRONE
@@ -70,3 +73,4 @@ module.exports.deleteDrone = (req, res, next) => {
       .then(() => res.redirect("/drones"))
       .catch((e) => console.error(e));
   };
+
