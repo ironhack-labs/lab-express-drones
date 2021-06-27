@@ -1,1 +1,16 @@
 <h2>Update the drone</h2>
+
+<form action="/drones/{{singleDrone._id}}/edit" method="post">
+  <div class="mb-3">
+    <label class="form-label" >Drone Name</label>
+    <input class="form-control" type="text" name="name" value="{{singleDrone.name}}">
+    <br>
+    <label class="form-label" >Number of Propellers</label>
+    <input class="form-control" type="text" name="propellers" value="{{singleDrone.propellers}}">
+    <br>
+    <label class="form-label" >Top Speed</label>
+    <input class="form-control" type="text" name="maxSpeed" value="{{singleDrone.maxSpeed}}">
+    <br>
+    <button class="btn btn-primary" type="submit">UPDATE</button>
+  </div>
+</form>
