@@ -1,16 +1,30 @@
-<h2>Available drones</h2>
+<header>
+  <h2>Available drones</h2>
+</header>
 
-
-
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <body >
 {{#each drones}}
 
-     <p>Drone Name :  <a href="../{{this.name}}">{{this.name}} </a> Drone Propellers : {{this.propellers}} Drone Speed : {{this.maxSpeed}}</p>
+<div>
+<p>Drone Name :  {{this.name}} Drone Propellers : {{this.propellers}} Drone Speed : {{this.maxSpeed}}</p>
+</div>
 
-  <a href="/drones/{{this._id}}/edit">Edit</a>
- 
- </form>
+  
+
+<div class="button" role="group" aria-label="Basic outlined example">
+
+<div>
+  <a href="/drones/{{this._id}}/edit">
+  <button class ="btn btn-primary">Edit</button></a>
+</div>
+
+<div>
 <form action="/drones/{{this._id}}/delete" method="GET">
-  <button type="submit" class="btn btn-warning">delete</button>
+  <button class="btn btn-primary" type="submit" class="btn btn-warning">delete</button>
 </form>
+</div>
 
+</div>
+</body>
 {{/each}}

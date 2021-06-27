@@ -1,8 +1,38 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+
+h1 {
+  margin-top: 0;
 }
 
+head{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+body {
+  padding-left: 0px;
+  font: 20px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+section{
+  padding: 50px;
+  font: 20px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+
+
 a {
+  font:50px;
   color: #00b7ff;
 }
+
+.button{
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  max-width: 150px
+  
+}
+
