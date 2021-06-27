@@ -37,11 +37,21 @@ router.post('/drones/create', (req, res, next) => {
 
 
 
+router.get('/drones/:id', (req,res,next) => {
+  let dynamicDroneId =req.params.id
+
+DroneModel.findById(dynamicDroneId)
+  .then((drone)=>{
+    res.render('drones/drone-details.hbs', {drone})
+  })
+  .catch(()=>{
+    next('Finding Drone details failed')
+  })
+})
 
 
 
-
-//asdasd
+//goes the update form
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   let dynamicDroneId = req.params.id
@@ -49,14 +59,16 @@ router.get('/drones/:id/edit', (req, res, next) => {
   // grab all the drone details
   // show them in a new edit form
   DroneModel.findById(dynamicDroneId)
-    .then ((drones)=> {
+    .then ((drone)=> {
       //pass the drones value to the edit form
-      req.render('drones/update-form.hbs', {drones})
+      res.render('drones/update-form.hbs', {drone})
     })
     .catch(()=> {
       next('Cannot find the damn drone details')
     })
 });
+
+
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
