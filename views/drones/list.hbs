@@ -1,1 +1,17 @@
-<h2>Available drones</h2>
+<h2>AVAILABLE DRONES</h2>
+<form action="/" method="GET"><button type="submit"class="btn btn-outline-dark" href="/">HOME PAGE</button></form>
+
+
+{{#each drones}}
+<div class="container-xl">
+<div class="alert alert-success" role="alert">
+
+
+<p>Drone: <a href="/public/images/drone image.jpg">{{this.name}}</a> </p> <p> Propellers : {{this.propellers}} </p><p> Speed : {{this.maxSpeed}}</p>
+
+<a href="/drones/{{_id}}/edit">Edit</a>
+
+<form action="/drones/{{this._id}}/delete" method="POST"><button type="submit" class="btn btn-outline-danger"><a href="/drones/{{this._id}}/delete"></a>Delete</button></form>
+</div>
+</div>
+{{/each}} 

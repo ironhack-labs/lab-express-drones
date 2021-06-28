@@ -1,8 +1,89 @@
+
+.h1, h1 {
+  font-size: 4.5rem;
+}
+.h2, h2{
+  font-size: 4rem;
+}
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font-family:  'Anton', sans-serif;
+    color: #271e57;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/images/image.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.btn-outline-warning {
+  color: #534a2c;
+  border-color: #ff0707;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+  margin-top: 20px;
+
+}
+
+.form-box {
+  width: 1300px;
+  padding: 0px;
+  text-align: center;
+}
+
+.form-title {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.form-box input[type="text"],
+.form-box input[type="text"],
+.form-box button[type="submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  padding: 4px 1px;
+  text-align: center;
+  border: 2px solid #a0a2e4;
+  width: 200px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+
+.form-box input[type="text"]:focus {
+  width: 280px;
+  border-color: rgba(0, 0, 0, 0.11);
+}
+
+.form-box button[type="submit"]{
+  border: 0;
+  background: #b5b5ff;
+  cursor: pointer;
+  border: 2px solid #01021a;
+}
+
+.form-box button[type="submit"]:hover {
+  background: none;
+
+}
+.btn btn-success{
+  width: 25px;
 }
 
 a {
   color: #00b7ff;
+  color:rgb(92, 21, 21);
 }
