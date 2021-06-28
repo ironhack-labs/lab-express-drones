@@ -1,1 +1,17 @@
-<h2>Available drones</h2>
+<h2> Where do you want to 🌍 send your drone? 💥 </h2>
+
+{{#each drones }}
+<div>
+    <a href="/drones/">
+    {{name}}
+    </a>
+    <p>Propellers:{{propellers}}</p>
+    <p>Max Speed:{{maxSpeed}}</p>
+    <a href="/drones/{{_id}}/edit">Link for more detail 💥</a>
+</div>
+<br>
+    <form action="/drones/{{_id}}/delete" method="POST">
+        <button type="submit">⚠️ Land evil drone 🛬</button>
+    </form>
+<br>
+{{/each}}
