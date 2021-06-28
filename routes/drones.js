@@ -44,7 +44,7 @@ router.post('/:id/edit', (req, res, next) => {
     })
   .catch(err => {
     console.log(err)
-    res.redirect('/drones/create')
+    res.redirect(`/${id}/edit`)
   })
 });
 
