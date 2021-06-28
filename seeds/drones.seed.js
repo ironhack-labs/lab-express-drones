@@ -1,4 +1,9 @@
 // Iteration #1
+const mongoose = require('mongoose');
+const Drone = require('../models/Drone.model');
+
+require('../db');
+
 let dronesArray = [
     {
         name: "Drone number 1 - First Iteration",
@@ -16,3 +21,19 @@ let dronesArray = [
         maxSpeed: 60,
     }
 ]
+
+
+Drone.deleteMany()
+.then(deletedDrones => {
+  console.log(`Deleted ${deletedDrones} drones`);
+})
+.then(
+  Drone.insertMany(dronesArray)
+  .then(dronesFromDB => {
+    console.log(`Created ${dronesFromDB.length} drones`);
+    console.log(dronesFromDB)
+    mongoose.connection.close();
+  })
+  .catch(err =>
+    console.log(`An error occurred while getting drones from the DB: ${err}`)
+  ))
