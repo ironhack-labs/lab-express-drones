@@ -1,1 +1,31 @@
 <h2>Available drones</h2>
+
+{{#each droneList}}
+
+<ul>
+    <li>{{name}}</li>
+    <li>{{propellers}}</li>
+    <li>{{maxSpeed}}</li>
+</ul>
+
+<a href = "/drones/{{id}}/edit">Update</a>
+
+<form action='/drones/{{id}}/delete' method="POST">
+
+  <button type='submit'>Delete</button>
+
+</form>
+
+<br>
+<br>
+
+{{/each}}
+
+<br><br><br><br><br><br>
+
+
+<form action='drones/create' method="GET">
+
+  <button style = "border: 1px solid; blue; color: blue")>Add New Drone!</button>
+
+</form>
