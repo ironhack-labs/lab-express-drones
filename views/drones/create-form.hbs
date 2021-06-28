@@ -1,1 +1,20 @@
+<div class="drones-list-btn">
+  <a href="/drones">View Drones List</a>
+</div>
+
 <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="POST">
+
+<label for="">Name</label>
+<input type="text" name="name">
+
+<label for="">Propellers</label>
+<input type="text" name="propellers">
+
+<label for="">Max Speed</label>
+<input type="text" name="maxSpeed">
+
+<button type="submit">Create</button>
+
+</form>

@@ -6,3 +6,49 @@ body {
 a {
   color: #00b7ff;
 }
+
+.drones-list-btn, .edit-btn, .create-btn{
+  width: 150px;
+  background-color: rgba(13, 48, 204, 0.541);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.drones-list-btn a, .edit-btn a, .create-btn a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.delete-btn{
+  width: 150px;
+  background-color: rgba(13, 48, 204, 0.541);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.card-btns{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-body{
+  flex-direction: column;
+  align-items: center
+}
+.drones-list-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.card{
+  margin-bottom: 25px;
+}
