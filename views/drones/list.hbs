@@ -1,1 +1,13 @@
 <h2>Available drones</h2>
+
+{{#each allDrones}}
+<div>
+    <ul>
+        <li>{{name}}</li>
+        <li>{{propellers}}</li>
+        <li>{{maxSpeed}}</li>
+    </ul>
+</div>
+<a href="/drones/{{id}}/edit"><button>Edit a drone</button></a>
+<br>
+{{/each}}
