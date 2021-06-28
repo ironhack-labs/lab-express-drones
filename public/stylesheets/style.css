@@ -6,3 +6,45 @@ body {
 a {
   color: #00b7ff;
 }
+
+h2{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+  position: relative;
+  margin-bottom: 50px;
+  text-shadow: 1px 3px #888888;
+  font-size: 43px;
+}
+
+.lista{
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.btn, .btn-success{
+  width: 200px;
+  margin-top: 20px;
+}
+
+.bots{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+.update{
+  float: right;
+  margin-right: 30px;
+}
+
+.in-form{
+  height: 50px;
+}

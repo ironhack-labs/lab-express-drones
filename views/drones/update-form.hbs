@@ -1,1 +1,21 @@
 <h2>Update the drone</h2>
+<form action="/drones/{{_id}}/edit" method="POST" > 
+    <div class="row">
+        <div class="bg-success card lista col-md-9">
+            <label for="">Name</label>
+            <br>
+            <label for="">Propellers</label>
+            <br>
+            <label for="">Speed</label>
+        </div>
+        <div class="card col-md-3 bots">
+            <input class= "border-success in-form" type="text" name="name" value="{{name}}"/>
+            <br>
+            <input class= "border-success in-form"  type="number" name="propellers" value="{{propellers}}"/>
+            <br>
+            <input class= "border-success in-form"  type="number" name="maxSpeed" value="{{maxSpeed}}"/>
+        </div>
+
+    </div>
+            <button type="submit" class="btn btn-success update"> Update</button>
+</form>
