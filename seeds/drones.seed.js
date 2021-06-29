@@ -32,4 +32,11 @@ const drones = [
   })
   .catch((err) =>
     console.log(`An error occurred while creating drones from the DB: ${err}`)
-  ); 
+  );
+
+  process.on('SIGINT', () => {
+    mongoose.connection.close(() => {
+      console.log('Mongoose default connection disconnected through app termination');
+      process.exit(0);
+    });
+    }); 
