@@ -2,11 +2,12 @@
 const mongoose = require("mongoose");
 const {Schema, model} = mongoose;
 
-const droneSchema = new Schema{
-    
-        name : String,
+const droneSchema = new Schema(
+    {   
+        name : {type : String, unique: true},
         propellers : Number,
         maxSpeed : Number    
-}
+    }
+);
 
 module.exports = model ("Drone", droneSchema);
