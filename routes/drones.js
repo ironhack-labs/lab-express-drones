@@ -38,6 +38,7 @@ router.post('/drones/create', async (req, res, next) => {
     console.log("Couldn't add new drone to the DB", err)
     res.redirect('/drones/create')
   }
+  
 });
 
 router.get('/drones/:id/edit', async (req, res, next) => {
@@ -56,14 +57,34 @@ router.get('/drones/:id/edit', async (req, res, next) => {
  
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post('/drones/:id/edit', async (req, res, next) => {
+  const { droneId } = req.params
+  const {name, propellers, maxSpeed} = req.body
+
+  try{
+    await Drone.findByIdAndUpdate(droneId, {name, propellers, maxSpeed}, { new: true })
+    console.log(data.name, 'has been edited')
+    res.redirect('/drones')
+  }
+  catch(err){
+    console.log("Couldn't edit", err)
+    res.redirect('/drones')
+  }
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.post('/drones/:id/delete', async (req, res, next) => {
+  const { droneId } = req.params
+
+  try{
+    await Drone.deleteOne(droneId)
+    console.log("Drone deleted")
+    res.redirect('/drones')
+  }
+  catch{
+    console.log("Failed to delete drone")
+    res.redirect('/drones')
+  }
+
 });
 
 module.exports = router;

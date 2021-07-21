@@ -3,7 +3,7 @@
 
 <table class="drones-list">
    <thead>
-        <th class="drones-list-title" colspan="4">Our Drones</th>
+        <th class="drones-list-title" colspan="5">Our Drones</th>
    </thead>
 
     <tr>
@@ -11,6 +11,7 @@
         <th>Mropellers</th>
         <th>Max Speed</th>
         <th>Edit</th>
+        <th>Delete</th>
     </tr>
 
     {{#each drones}}
@@ -19,6 +20,7 @@
             <th>{{this.propellers}}</th>
             <th>{{this.maxSpeed}} km/h</th>
             <th><a href="/drones/{{this.id}}/edit">EDIT</a></th>
+            <th><a href="/drones/{{this.id}}/delete">DELETE</a></th>
         </tr>
     {{/each}}
 
