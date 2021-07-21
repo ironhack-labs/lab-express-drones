@@ -1,1 +1,28 @@
-<h2>Available drones</h2>
+<h2 id="drones-title">Available drones</h2>
+
+
+<table class="drones-list">
+   <thead>
+        <th class="drones-list-title" colspan="4">Our Drones</th>
+   </thead>
+
+    <tr>
+        <th>Drone</th>
+        <th>Mropellers</th>
+        <th>Max Speed</th>
+        <th>Edit</th>
+    </tr>
+
+    {{#each drones}}
+        <tr>
+            <th class="drone-name">{{this.name}}</th>
+            <th>{{this.propellers}}</th>
+            <th>{{this.maxSpeed}} km/h</th>
+            <th><a href="/drones/{{this.id}}/edit">EDIT</a></th>
+        </tr>
+    {{/each}}
+
+</table>
+
+
+<a href="/drones/create" class="btn">Add a drone</a>

@@ -1,3 +1,11 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
@@ -5,4 +13,81 @@ body {
 
 a {
   color: #00b7ff;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+}
+
+.navbar li{
+  display: inline-block;
+  padding: 0 40px;
+}
+
+h2{
+  margin-bottom: 50px;
+}
+
+.drones-list-title{
+  text-align: center;
+  background-color: lightgray;
+
+}
+
+.drone-name{
+  text-align: left;
+}
+
+.drones-list th{
+  min-width: 200px;
+  padding: 5px;
+  border: solid 1px black;
+}
+
+.drones-list{
+  border: solid 1px black;
+}
+
+.btn{
+  display: inline-block;
+  color: inherit;
+  padding: 20px 40px;
+  background-color: lightcoral;
+  margin-top: 50px;
+  border: none;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+.create-drone-form{
+  border: solid 1px black;
+  max-width: 600px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.create-drone-form input{
+  min-width: 250px;
+  position: relative;
+  text-align: center;
+  right: 0;
+  height: 50px;
+}
+
+.form-field{
+  max-width: 500px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
