@@ -58,11 +58,11 @@ router.get('/drones/:id/edit', async (req, res, next) => {
 });
 
 router.post('/drones/:id/edit', async (req, res, next) => {
-  const { droneId } = req.params
-  const {name, propellers, maxSpeed} = req.body
+  const { id: droneId } = req.params
+  const data = req.body
 
   try{
-    await Drone.findByIdAndUpdate(droneId, {name, propellers, maxSpeed}, { new: true })
+    await Drone.findByIdAndUpdate(droneId, data, { new: true })
     console.log(data.name, 'has been edited')
     res.redirect('/drones')
   }
@@ -73,10 +73,10 @@ router.post('/drones/:id/edit', async (req, res, next) => {
 });
 
 router.post('/drones/:id/delete', async (req, res, next) => {
-  const { droneId } = req.params
+  const { id: droneId } = req.params
 
   try{
-    await Drone.deleteOne(droneId)
+    await Drone.findByIdAndDelete(droneId)
     console.log("Drone deleted")
     res.redirect('/drones')
   }

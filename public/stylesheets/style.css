@@ -91,3 +91,14 @@ h2{
   justify-content: space-between;
   align-items: center;
 }
+
+.delete-btn{
+  background-color: white;
+  border: none;
+  color: rgb(190, 16, 16);
+  font-weight: 800;
+}
+
+.delete-btn:hover{
+  cursor: pointer;
+}

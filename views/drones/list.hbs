@@ -20,7 +20,11 @@
             <th>{{this.propellers}}</th>
             <th>{{this.maxSpeed}} km/h</th>
             <th><a href="/drones/{{this.id}}/edit">EDIT</a></th>
-            <th><a href="/drones/{{this.id}}/delete">DELETE</a></th>
+            <th>
+                <form method="post" action="/drones/{{this._id}}/delete">
+                <button class="delete-btn">DELETE</button>
+                </form>
+            </th>
         </tr>
     {{/each}}
 
