@@ -101,4 +101,5 @@ h2{
 
 .delete-btn:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
