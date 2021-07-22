@@ -58,7 +58,7 @@ router.get('/drones/:id/edit', async (req, res, next) => {
 });
 
 router.post('/drones/:id/edit', async (req, res, next) => {
-  const { id: droneId } = req.params
+  const droneId = req.params.id
   const data = req.body
 
   try{
@@ -73,7 +73,7 @@ router.post('/drones/:id/edit', async (req, res, next) => {
 });
 
 router.post('/drones/:id/delete', async (req, res, next) => {
-  const { id: droneId } = req.params
+  const droneId = req.params.id
 
   try{
     await Drone.findByIdAndDelete(droneId)
