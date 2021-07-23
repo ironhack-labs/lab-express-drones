@@ -62,9 +62,14 @@ Drone.findbyIdAndUpdate(req.params.id, req.body)
   res.redirect('/drones' + req.params.id + '/edit')
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.get('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
+Drone.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect("/drones");
+  })
+  .catch(e => console.log(e))
 });
 
 module.exports = router;
