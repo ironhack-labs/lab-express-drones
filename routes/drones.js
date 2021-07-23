@@ -43,7 +43,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
 Drone.findById(req.params.id)
     .then((oneDrone) => {
     res.render('drones/update-form.hbs', {
-      drone: OneDrone
+      drone: oneDrone
     })
 })
 

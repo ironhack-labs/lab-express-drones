@@ -1,8 +1,69 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url('/images/Woodland-Camo.jpeg');
 }
 
 a {
   color: #00b7ff;
+}
+
+h2{
+  text-align: center;
+  top: 20px;
+    left: 20px;
+    background-color: rgba(129, 120, 120, 0.767);
+    padding: 20px;
+}
+
+.container-grid {
+  display: flex;
+  justify-content: space-around;
+      background-color: rgba(100, 100, 100, 0.6);
+      flex-wrap: wrap;
+    
+  
+}
+
+.drone {
+  text-align: center;
+  width: 200px;
+}
+
+
+.welcomePara {
+  text-align: center;
+}
+
+.welcomeHeader {
+  text-align: center;
+}
+
+.index {
+  margin-top: 100px;
+
+    top: 20px;
+    left: 20px;
+    background-color: rgba(100, 100, 100, 0.6);
+    padding: 20px;
+}
+
+
+.boxes {
+
+  text-align: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+}
+
+.nav {
+  padding-left: 10px;
+  padding-right: 10px;
 }

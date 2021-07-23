@@ -7,7 +7,7 @@
 {{#each drones}}
 
 <div class="drone"> 
-	<h3> Drone name: {{this.name}} </h3>
+	<h3> {{this.name}} </h3>
 	<ul>
 			
 			<li> Propellers: {{this.propellers}} </li>
@@ -18,7 +18,7 @@
 			
 			<li><a href="/drones/{{this._id}}/delete"> Delete </a></li>
 	</ul>
-	
+	 
 </div>
 
 {{/each}}
