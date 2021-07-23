@@ -6,3 +6,8 @@ body {
 a {
   color: #00b7ff;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
