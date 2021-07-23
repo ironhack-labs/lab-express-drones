@@ -1,1 +1,23 @@
 <h2>Available drones</h2>
+
+
+<div class="container-grid">
+
+
+{{#each drones}}
+
+<div class="drone"> 
+	<h3> Drone name: {{this.name}} </h3>
+	<ul>
+			
+			<li> Propellers: {{this.propellers}} </li>
+			<li> Max Speed: {{this.maxSpeed}} </li>
+			<li><a href="/drones/{{this._id}}/edit"> Update </a> </li>
+
+	</ul>
+	
+</div>
+
+{{/each}}
+
+</div>
