@@ -5,6 +5,12 @@
         {{ this.name}}
         {{ this.propellers}}
         {{ this.maxSpeed}}
+        <a href="/drones/{{this.id}}/edit">Edit</a>
+        <form method="POST" action="/drones/{{this.id}}/delete">
+        <button>Delete</button>
+
+        </form>
+
     </li>
     {{/each}}
 </ul>
