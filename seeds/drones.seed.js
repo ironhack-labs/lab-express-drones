@@ -13,10 +13,14 @@ const drones = [
 connectDB()
   .then(() => {
     Drone.deleteMany().then(() => {
-      Drone.create(drones).then((drone) => {
-        console.log(`Created ${drone.length} Drones.`);
-        mongoose.connection.close();
-      });
+      Drone.create(drones)
+        .then((drone) => {
+          console.log(`Created ${drone.length} Drones.`);
+          mongoose.connection.close();
+        })
+        .catch((err) => {
+          console.log("Error occured while inserting the drones", err);
+        });
     });
   })
   .catch((err) => {
