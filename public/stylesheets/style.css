@@ -1,8 +1,61 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+h2 {
+  margin: 30px;
+}
+.header {
+  text-align: center;
+  margin: 30px;
+  border: 2px solid black;
+  padding: 20px;
+}
+.droneslist {
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: lighter;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 2px;
+  margin: 20px 0px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbarwrapper nav ul {
+  display: flex;
+  justify-content: flex-start;
+}
+.navbarwrapper nav ul li a {
+  padding: 10px;
+  margin: 10px;
+}
+.navbarwrapper nav ul li {
+  list-style-type: none;
+  border: 2px solid black;
+  border-radius: 2px;
+  margin: 0px 10px;
+  padding: 15px;
+}
+.inputwrapper {
+  display:flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.inputwrapper div{
+  margin:10px;
+  padding: 20px;
+}
+.inputwrapper button{
+  padding:10px;
+
 }
