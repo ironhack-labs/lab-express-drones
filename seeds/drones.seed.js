@@ -1,8 +1,8 @@
 // Iteration #1
 
 const mongoose = require("mongoose");
-const connectDB = require("../db/index");
 const Drone = require("../models/Drone.model");
+const connectDB = require("../db/index");
 
 const drones = [
   { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
