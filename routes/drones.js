@@ -28,7 +28,7 @@ router.post("/drones/create", (req, res, next) => {
     })
     .catch((err) => {
       console.log("Error occured while creating the drone", err);
-      res.redirect("drones/create");
+      res.redirect("/drones");
     });
 });
 
@@ -38,7 +38,7 @@ router.get("/drones/:id/edit", (req, res, next) => {
     .then((id) => res.render("drones/update-form", { droneId: id }))
     .catch((err) => {
       console.log("Error occured while finding the drone", err);
-      res.redirect("drones/create");
+      res.redirect("/drones");
     });
 });
 
@@ -52,13 +52,20 @@ router.post("/drones/:id/edit", (req, res, next) => {
     })
     .catch((err) => {
       console.log("Error occured while updating the drone", err);
-      res.redirect("drones/create");
+      res.redirect("/drones");
     });
 });
 
 router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log("Error occured while deleting the drone", err);
+      res.redirect("/drones");
+    });
 });
 
 module.exports = router;
