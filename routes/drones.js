@@ -9,19 +9,27 @@ router.get("/drones", (req, res, next) => {
   const droneList = Drone.find()
     .then()
     .catch((err) => {
-      console.log("Error occured while inserting the drones", err);
+      console.log("Error occured while finding the drones", err);
     });
   res.render("drones/list", { drones: droneList });
 });
 
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render("drone/create-form");
 });
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  const drone = req.body;
+  Drone.create(drone)
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log("Error occured while creating the drone", err);
+      res.redirect("drones/create");
+    });
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
