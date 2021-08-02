@@ -21,8 +21,8 @@ router.get("/drones/create", (req, res, next) => {
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  const drone = req.body;
-  Drone.create(drone)
+  const { name, propellers, maxSpeed } = req.body;
+  Drone.create({ name, propellers, maxSpeed })
     .then(() => {
       res.redirect("/drones");
     })
@@ -34,12 +34,26 @@ router.post("/drones/create", (req, res, next) => {
 
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+    .then((id) => res.render("drones/update-form", { droneId: id }))
+    .catch((err) => {
+      console.log("Error occured while finding the drone", err);
+      res.redirect("drones/create");
+    });
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drone.findByIdAndUpdate(req.params.id, { name, propellers, maxSpeed })
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log("Error occured while updating the drone", err);
+      res.redirect("drones/create");
+    });
 });
 
 router.post("/drones/:id/delete", (req, res, next) => {
