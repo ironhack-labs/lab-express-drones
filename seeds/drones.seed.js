@@ -12,7 +12,7 @@ const drones = [
 
 connectDB()
   .then(() => {
-    Drone.DronedeleteMany().then(() => {
+    Drone.deleteMany().then(() => {
       Drone.create(drones).then((drone) => {
         console.log(`Created ${drone.length} Drones.`);
         mongoose.connection.close();
