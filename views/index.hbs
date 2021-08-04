@@ -1,2 +1,7 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Available drones</h2>
+{{#each listOfDrones}}
+
+<h1>{{name}}</h1>
+<h3>'Number of Propellers: {{propellers}}'</h3>
+<h3>'Maximum speed: {{maxSpeed}}'</h3>
+{{/each}}
