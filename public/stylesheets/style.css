@@ -1,8 +1,44 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 0px;
+  padding-top: 40px;
+  margin: 0px;
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: yellow;
+  text-align: center;
 }
 
 a {
   color: #00b7ff;
+}
+
+#navbarwrapper{
+display: flex;
+}
+
+#navbarwrapper ul{
+list-style-type: none;
+padding: 10px;
+overflow: hidden;
+position: fixed;
+top: 0;
+width: 100%;
+background-color: white;
+}
+
+#navbarwrapper li{
+  float: right;
+  padding: 10px 50px;
+  margin-right: 20px;
+  }
+
+#mainContent{
+  padding: 50px
+}
+
+#footer{
+padding: 20px;
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: rgb(255, 255, 255);
 }

@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
-    <div id="navbarwrapper">
+    <section id="navbarwrapper">
       <nav>
         <ul>
-        <li a href="/">Home</li>
-        <li a href="/drones">See drones collection</li>
-        <li a href="/drones/create">Add a Drone to the collection</li>
+        <li> <a href="/">Home</a></li>
+        <li> <a href="/drones">See drones collection</a></li>
+        <li>  <a href="/drones/create">Add a Drone to the collection</a></li>
         </ul>
       </nav>
-    </div>
+    </section>
+    <section id='mainContent'>
     {{{body}}}
+    </section>
+    <footer id="footer">
+      <p>Welcome to {{title}}</p>
+    </footer>
 
     <script src="/js/script.js"></script>
   </body>
