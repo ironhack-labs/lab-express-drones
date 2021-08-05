@@ -6,7 +6,7 @@ const droneSchema = new Schema({
   
   name: {type: String, required: true},
   propellers: {type: Number},
-  maxSpeed: {type: Number},
+  maxSpeed: {type: Number}
 
 });
 
