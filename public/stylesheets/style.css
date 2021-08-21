@@ -1,8 +1,100 @@
+/* COLORS
+GEYSER #D5DBE7
+BLUE DIANNE #1A4A4F
+OUTER SPACE #1E3130
+SHARK #1F2224
+*/
+
 body {
+  margin-left: 150px;
+  margin-right: 150px;
+  background-color: #1E3130;
+  color: #D5DBE7;
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+/* LIST.HBS STYLES */
+
+h2{
+  font-size: 40px;
+}
+
+hr{
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+
+.main-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.info-div{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.inner-info-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading-div{
+  display: flex;
+  justify-content: center;
+}
+
+.button-div{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-update-div{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.update-link{
+  font-size: 14px;
+  text-align: center;
+  border-radius: 2px;
+  padding: 5px;
+  width: 50px;
+  background-color: #1A4A4F;
+  text-decoration: none;
+  color: #D5DBE7;
+}
+
+.delete-button{
+  font-size: 14px;
+  margin-left: 5px;
+  border-radius: 2px;
+  padding: 5px;
+  width: 50px;
+  text-align: center;
+  color: #D5DBE7;
+  border: 0px;
+  background-color: transparent;
+}
+
+
+.droneButton{
+  font-size: 25px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #1A4A4F;
+  color: #D5DBE7;
+  text-decoration: none;
 }
