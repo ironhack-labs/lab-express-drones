@@ -28,18 +28,33 @@ router.post("/create", (req, res, next) => {
     })
     .catch((err) => {
       console.log("error creating properties of drones", err);
-      res.render("/drones/create")
+      res.render("/drones/create");
     });
 });
 
 router.get("/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  Drone.findById(id)
+    .then((drone) => {
+      res.render("drones/update-form", { drone });
+    })
+    .catch((err) => {
+      console.log("error finding the drone", err);
+    });
 });
 
 router.post("/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  console.log(req.body);
+  const { id } = req.params;
+  const { name, propellers, maxSpeed } = req.body;
+  Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed }, { new: true })
+    .then((drone) => {
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log("there was an error updating the drone", err);
+      res.render(`/drones/${drone._id}/edit`);
+    });
 });
 
 router.post("/:id/delete", (req, res, next) => {
