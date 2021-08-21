@@ -14,6 +14,6 @@ const drones = [
 Drone.create(drones)
 .then(responseFromDB => {
     console.log('Check Compass to verify drone was created successfully', responseFromDB);
-    mongoose.connection.disconnect();
+    mongoose.connection.close();
 })
 .catch(error => console.log('An error occurred while seeding the database', error))
