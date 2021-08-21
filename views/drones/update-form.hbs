@@ -1,5 +1,5 @@
 <h2>Update the drone</h2>
-<form action="/drones/{{drone._id}}/edit" method="POST">
+<form action="/drones/{{drone._id}}/edit" method="POST" class="form-control">
 
   <label for="name">Name</label>
   <input type="text" name="name" value="{{drone.name}}" />
@@ -10,10 +10,10 @@
   <label for="maxSpeed">Max Speed</label>
   <input type="number" name="maxSpeed" min="1" value="{{drone.maxSpeed}}" />
 
-  <button type="submit">Update the drone!</button>
+  <button type="submit" class="btn btn-danger">Update the drone!</button>
 
 </form>
 
-<form action="/drones" method="GET">
+<form action="/drones" method="GET" class="form-control">
   <button type="submit" class="btn btn-danger">See Drones</button>
 </form>
