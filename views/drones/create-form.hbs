@@ -1,26 +1,28 @@
 <h2>Create a new drone</h2>
 
-<form action="/drones/create/{{_id}}/edit" method="POST">
-Name: 
-        <input type="text" name="name">  {{!-- best practice tip: have "name" values match the model properties  --}}
-    </label>
-    <br>
+<form action="/drones/create" method="POST">
+     <label >
+            Name: 
+            <input class="name-label" type="text" name="name">
+        </label>
+        <br>
 
-     Propellers: 
-        <input type="text" name="propeller">  {{!-- best practice tip: have "name" values match the model properties  --}}
-    </label>
-    <br>
+  
+       <label>
+            Propellers: 
+            <input class="propellers-label" type="number" name="propellers" min="1" max="8">
+        </label>
 
-    maxSpeed:  
-        <input type="number" name="maxSpeed">  {{!-- best practice tip: have "name" values match the model properties  --}}
-    </label>
-    <br>
+
+        <label >
+            Max Speed: 
+            <input class="speed-label" type="number" name="maxSpeed" min="1" max="30">
+        </label>
+        <br>
 
     <button type='submit'>Save</button>
 
-
-
-
+<a href="'/drones">Back</a>
 
 </form>
 

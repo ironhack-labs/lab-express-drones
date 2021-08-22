@@ -3,6 +3,22 @@
  <p><b>Name:</b>{{name}}</p>
   <p><b>Propellers:</b>{{propellers}}</p>
    <p><b>Max Speed:</b>{{maxSpeed}}</p>
-   <p><a href="/drones/{{_id}}/edit">Click here to update drone info</a></p>
 
+  
+<div class="delete-update-div">
+               <a class="update-link" href="/drones/{{_id}}/edit">Update</a>
+
+            <br>
+
+            <form action="/drones/{{_id}}/delete" method="POST">
+               <button class="delete-button">Delete</button>
+            </form>
+         </div>
+
+ <div class="button-div">
+      <a class="droneButton" href="/drones/create">Create New Drone!</a>
+   </div>
+
+      </div>
+         <hr>
 {{/each}}
