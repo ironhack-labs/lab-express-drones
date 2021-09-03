@@ -13,7 +13,7 @@ router.get("/drones", (req, res, next) => {
       });
     })
     .catch((err) => {
-      console.log("not a drone here!");
+      console.log("no drones!");
     });
 });
 
