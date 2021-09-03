@@ -1,1 +1,30 @@
 <h2>Update the drone</h2>
+
+<form action="/drones/{{drones.id}}/edit" method="POST">
+  <div class="mb-3">
+
+    <label class="form-label" for="name">Name</label>
+    {{!-- we can add information received as values of the input tags. They will appear to the user with the current information of the ToDo --}}
+    {{!-- IMPORTANT: always wrap the {{}} around quotes when setting attribute values. '{{data.title}}' --}}
+    <input class="form-control" type="text" name="name" value="{{drones.name}}">
+
+    <br>
+
+    <label class="form-label" for="propellers">Propellers</label>
+    {{!-- we can add information received as values of the input tags. They will appear to the user with the current information of the ToDo --}}
+    {{!-- IMPORTANT: always wrap the {{}} around quotes when setting attribute values. '{{todo.title}}' --}}
+    <input class="form-control" type="number" name="propellers" value="{{drones.propellers}}">
+
+    <br>
+    <label class="form-label" for="maxSpeed">Max Speed</label>
+    {{!-- we can add information received as values of the input tags. They will appear to the user with the current information of the ToDo --}}
+    {{!-- IMPORTANT: always wrap the {{}} around quotes when setting attribute values. '{{todo.title}}' --}}
+    <input class="form-control" type="number" name="maxSpeed" value="{{drones.maxSpeed}}">
+
+    <br>
+
+    {{!-- when we click the button, the input values will be transmitted through the body of the request --}}
+    <button class="btn btn-primary" type="submit">SUBMIT CHANGES</button>
+  
+  </div>
+</form>

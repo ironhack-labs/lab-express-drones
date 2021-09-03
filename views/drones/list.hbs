@@ -1,1 +1,23 @@
-<h2>Available drones</h2>
+<div class="container=fluid">
+
+<h2 class="pl-0">Available drones</h2>
+
+<ul>
+  {{#each allDrones}}
+    <li class="list-group-item pl-3">
+      <h3>{{this.name}}</h3>
+      <p>Number of propellers: {{this.propellers}}</p>
+      <p>Max Speed: {{this.maxSpeed}}</p>
+
+<form action="/drones/{{this._id}}/edit" method="GET">
+    <button type="submit" class="btn btn-warning">Edit</button>
+</form>
+<form action="/drones/{{this.id}}/delete" method="POST">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+    </li>
+  {{/each}}
+</ul>
+
+
+</div>
