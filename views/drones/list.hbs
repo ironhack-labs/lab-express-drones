@@ -1,1 +1,40 @@
-<h2>Available drones</h2>
+<div class="columns is-fluid is-multiline">
+  <div class="column is-12">
+    <h1 class="title is-1">Available drones</h1>
+  </div>
+
+  {{#each allDrones}}
+    <div class="column is-12 box">
+      <div class="columns">
+        <div class="column is-narrow">
+          <h2 class="title is-2">
+            <a href="/drones/{{this._id}}/edit">{{this.name}} </a>
+          </h2>
+        </div>
+        <div class="column">
+          <form action="/drones/{{this._id}}/delete" method="POST">
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-danger" type="submit">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p>
+        <span class="has-text-weight-bold">
+          Propellers:
+        </span>
+        {{this.propellers}}
+      </p>
+      <p>
+        <span class="has-text-weight-bold">
+          Max Speed:
+        </span>
+        {{this.maxSpeed}}
+      </p>
+    </div>
+  {{/each}}
+</div>
