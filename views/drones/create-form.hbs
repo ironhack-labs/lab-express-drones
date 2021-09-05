@@ -1,1 +1,31 @@
 <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="POST">
+   <div>
+
+    <label class="form-label" for="name">Name</label>
+    {{!-- the name attribute of the input tag is NEEDED and will define the key to access the information --}}
+    <input class="form-control" type="text" id="name" name="name">
+
+    <br>
+
+    <label class="form-label" for="propellers">Propellers</label>
+    {{!-- the name attribute of the input tag is NEEDED and will define the key to access the information --}}
+    <input class="form-control" type="text" id="propellers" name="propellers">
+
+    <br>
+
+    <label class="form-label" for="maxSpeed">Max Speed</label>
+    {{!-- the name attribute of the input tag is NEEDED and will define the key to access the information --}}
+    <input class="form-control" type="text" id="maxSpeed" name="maxSpeed">
+
+    <br>
+
+    <br>
+
+    {{!-- when we click the button, the input values will be transmitted through the body of the request --}}
+    <button class="btn btn-primary" type="submit">ADD DRONE</button>
+
+  </div>
+  
+</form>

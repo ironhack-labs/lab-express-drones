@@ -1,1 +1,31 @@
 <h2>Update the drone</h2>
+
+<form action="/drones/{{drone._id}}/edit" method="POST">
+   <div>
+
+    <label class="form-label" for="name">Name</label>
+    {{!-- the name attribute of the input tag is NEEDED and will define the key to access the information --}}
+    <input class="form-control" type="text" id="name" name="name" value="{{drone.name}}">
+
+    <br>
+
+    <label class="form-label" for="propellers">Propellers</label>
+    {{!-- the name attribute of the input tag is NEEDED and will define the key to access the information --}}
+    <input class="form-control" type="text" id="propellers" name="propellers" value="{{drone.propellers}}">
+
+    <br>
+
+    <label class="form-label" for="maxSpeed">Max Speed</label>
+    {{!-- the name attribute of the input tag is NEEDED and will define the key to access the information --}}
+    <input class="form-control" type="text" id="maxSpeed" name="maxSpeed" value="{{drone.maxSpeed}}">
+
+    <br>
+
+    <br>
+
+    {{!-- when we click the button, the input values will be transmitted through the body of the request --}}
+    <button class="btn btn-primary" type="submit">UPDATE DRONE</button>
+
+  </div>
+  
+</form>
