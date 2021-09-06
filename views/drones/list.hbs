@@ -1,1 +1,12 @@
 <h2>Available drones</h2>
+<div class = "row">
+{{#each dronesArray}}
+<div class="card col-md-4 p-3 mb-2 bg-dark text-white" style="width: 18rem;">
+  <div class="card-body p-3 mb-2 bg-dark text-white">
+    <h5 class="card-title p-3 mb-2 bg-dark text-white">{{this.name}}</h5>
+	<p>Propellers: {{propellers}}</p>
+	<p>Speed: {{maxSpeed}}</p>
+  </div>
+</div>
+{{/each}}
+</div>
