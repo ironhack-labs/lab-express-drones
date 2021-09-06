@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "upstream"]
+	url = https://github.com/ironhack-labs/lab-express-drones.git
+	gh-resolved = base
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "origin"]
+	url = https://github.com/JesseVermeulen123/lab-express-drones.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
