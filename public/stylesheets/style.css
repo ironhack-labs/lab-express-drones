@@ -1,8 +1,81 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.container{
+  background-image: url(../images/drones.jpg);
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;  
+}
+
+.container2{
+  min-height: 50vh;
+  max-height: 50vh;
+  min-width: 80vw !important;
+  max-width: 80vw !important;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-dark:hover{
+  color:red !important;
+}
+
+.rightDiv{
+  margin-top:20%;
+}
+
+.rightDiv h1{
+  font-size:180px;
+  color:rgb(134, 199, 255)
+}
+
+.titleEveryPage{
+  padding: 50px 30px;
+  color:rgb(255, 255, 255);
+  font-size:80px;
+  text-align: center;
+}
+
+.titleEveryPage2{
+  padding: 50px 30px;
+  color:rgb(104, 24, 24);
+  font-size:20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.divForButtons{
+  text-align: center;
+}
+
+.marginStrong{
+min-width: 98vw !important;
+max-width: 98vw !important;
+text-align: center;
+}
+
+.centeredDiv{
+  text-align: center;
+}
+
+.formDiv{
+  text-align: center;
+  min-width: 98vw !important;
+  /* border:1px solid red; */
+  max-width: 98vw !important;
+}
+
+.form-label{
+  color:rgb(0, 0, 0);
+  font-size:20px;
+  font-weight: bold;
 }

@@ -1,17 +1,22 @@
-<h2>Create a new drone with ID: {{_id}} and name {{name}}</h2>
+<h2 class="titleEveryPage">Create a new drone</h2>
+<h5 class="titleEveryPage2">ID: {{_id}} | Actual name {{name}}</h5>
+<div class="mb-3 centeredDiv d-flex">
+    <form action="/drones/{{_id}}/edit" method="post" class="formDiv">
+        <label class="form-label"> Name:
+            <input type="text" name="name" class="form-control" value="{{name}}" />
+        </label>
 
-<form action="/drones/{{_id}}/edit" method="post">
-    <label> Name:
-        <input type="text" name="name" value="{{name}}" />
-    </label>
+        <label class="form-label"> Propellers:
+            <input type="number" name="propellers" class="form-control" value="{{propellers}}" />
+        </label>
 
-    <label> Propellers:
-        <input type="number" name="propellers" value="{{propellers}}" />
-    </label>
+        <label class="form-label"> Max. speed:
+            <input type="number" name="maxSpeed" class="form-control" value="{{maxSpeed}}" />
+        </label>
 
-    <label> Max. speed:
-        <input type="number" name="maxSpeed" value="{{maxSpeed}}" />
-    </label>
-
-    <button>Save changes</button>
-</form>
+        <button class=" btn btn-dark"> Save changes </button>
+    </form>
+</div>
+<div class="formDiv">
+    <a href="/drones/"><button type="text" class="btn btn-dark"> Go to list of Drones </button></a>
+</div>
