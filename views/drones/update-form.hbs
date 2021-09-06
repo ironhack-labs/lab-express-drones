@@ -1,1 +1,33 @@
 <h2>Update the drone</h2>
+
+
+{{!-- The method and action need to match the route in our server. See todo.routes.js second (U)pdate Route --}}
+<form action="/drones/{{data._id}}/edit" method="POST">
+  <div class="mb-3">
+
+    <label class="form-label" for="">Name</label>
+    {{!-- we can add information received as values of the input tags. They will appear to the user with the current information of the ToDo --}}
+    {{!-- IMPORTANT: always wrap the {{}} around quotes when setting attribute values. '{{data.title}}' --}}
+    <input class="form-control" type="text" name="name" value="{{data.name}}">
+
+    <br>
+
+    <label class="form-label" for="">Propellers</label>
+    {{!-- we can add information received as values of the input tags. They will appear to the user with the current information of the ToDo --}}
+    {{!-- IMPORTANT: always wrap the {{}} around quotes when setting attribute values. '{{data.title}}' --}}
+    <input class="form-control" type="text" name="propellers" value="{{data.propellers}}">
+
+    <br>
+
+    <label class="form-label" for="">Max Speed</label>
+    {{!-- we can add information received as values of the input tags. They will appear to the user with the current information of the ToDo --}}
+    {{!-- IMPORTANT: always wrap the {{}} around quotes when setting attribute values. '{{data.title}}' --}}
+    <input class="form-control" type="text" name="maxSpeed" value="{{data.maxSpeed}}">
+
+    <br>
+
+    {{!-- when we click the button, the input values will be transmitted through the body of the request --}}
+    <button class="btn btn-primary" type="submit">SUBMIT CHANGES</button>
+  
+  </div>
+</form>
