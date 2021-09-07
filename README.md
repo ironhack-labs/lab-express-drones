@@ -103,9 +103,10 @@ Here is the route you will be using:
 Steps you should follow in this iteration:
 
 1. Find the `/drones` GET route in `routes/drones.js`.
-2. Use the Mongoose `.find()` method to retrieve all the drones. Display all the drones on the `drones/list.hbs` view. Make sure you catch the error and output it to the terminal.
+2. Use the Mongoose `.find()` method to retrieve all the drones. Display all the drones on the `drones/list.hbs` view. Make sure you catch the error and output it to the terminal. 
 3. In the `drones/list.hbs` file, use a `#each` loop to display tags with each drone's `name`, `propellers`, and `speed`.
-4. Add the link that goes to `/drones` route in the `layout.hbs` file to easier navigate to the list of drones.
+((I'M HERE 🧠)
+4. Add the link that goes to `/drones` route in the `layout.hbs` file to easier navigate to the list of drones. 
 
 <br>
 
