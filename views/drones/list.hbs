@@ -1,1 +1,32 @@
-<h2>Available drones</h2>
+<div class="index">
+
+<div class="title-section">
+<h2>AVAILABLE DRONES</h2>
+
+<form id="create" method="get" action="/drones/create">
+    <button type="submit">Create new one</button>
+</form>
+</div>
+
+<div class="drones-section">
+
+
+{{#each dronesList}}
+<div class="drones-card">
+<h3>{{name}}</h3>
+<p>Propellers: {{propellers}}</p>
+<p>Max Speed: {{maxSpeed}}</p>
+<form id="edit" method="get" action="/drones/{{id}}/edit">
+    <button type="submit">Edit</button>
+</form>
+<form id="delete" method="post" action="/drones/{{id}}/delete">
+    <button type="submit">Delete</button>
+</form>
+</div>
+{{/each}}
+
+
+
+</div>
+
+</div>
