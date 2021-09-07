@@ -6,6 +6,12 @@
     <h5 class="card-title p-3 mb-2 bg-dark text-white">{{this.name}}</h5>
 	<p>Propellers: {{propellers}}</p>
 	<p>Speed: {{maxSpeed}}</p>
+  <div class="d-flex justify-content-center">
+     <a href="/drones/{{id}}/edit"><button class="btn me-2 bg-dark text-white">Edit</button></a>
+      <form action="/drones/{{id}}/delete" method="POST">
+          <button class="btn bg-dark text-white">Delete</button>
+      </form>
+  </div>
   </div>
 </div>
 {{/each}}
