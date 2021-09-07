@@ -35,12 +35,27 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+ 
+  Drone
+    .findById(id)
+    .then(droneToEdit => {
+      console.log(droneToEdit)
+      res.render('drones/update-form.hbs', { drone: droneToEdit }); // <-- add this line
+    })
+    .catch(error => next(error));
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  const { name, propellers, maxSpeed } = req.body;
+ 
+  Drone
+    .findByIdAndUpdate(id, {  name, propellers, maxSpeed }, { new: true })
+    .then(() => res.redirect('/drones'))
+    /* .then(updatedDrone => res.redirect(`/drones/${updatedDrone.id}`)) // go to the details page to see the updates */
+    .catch(error => next(error));
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
