@@ -9,9 +9,11 @@
         <h5>{{propellers}}</h5>
         <h5>{{maxSpeed}}</h5>
         </div>
-       <a href="/drones/{{_id}}/edit"> Edit</a>
+       <button><a href="/drones/{{_id}}/edit"> Edit</a></button>
       </div>
       <form action="/drones/{{_id}}/delete" method="post"><button>Delete</button></form>
     {{/each}}
+           <button><a class="text-danger" href="/drones/create">Create a new drone</a></button> 
+
   </div>
 </div>
