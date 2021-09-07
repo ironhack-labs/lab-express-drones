@@ -10,8 +10,12 @@
   </label>
  
   <label> Speed:
-    <input type="number" name="rating" min="1" max="10" />
+    <input type="text" name="maxSpeed" min="1" max="100" />
   </label>
- 
+
   <button type="submit"> Create </button>
 </form>
+
+{{#if _message}}
+<p>{{_message}}</p>
+{{/if}}

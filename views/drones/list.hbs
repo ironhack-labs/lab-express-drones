@@ -4,14 +4,14 @@
   <div class="">
     {{#each drones}}
       <div class="">
-       <a href="/drones/{{_id}}"> 
         <div class="">
         <h5>{{name}}</h5>
         <h5>{{propellers}}</h5>
-        <h5>{{speed}}</h5>
+        <h5>{{maxSpeed}}</h5>
         </div>
-        </a>
+       <a href="/drones/{{_id}}/edit"> Edit</a>
       </div>
+      <form action="/drones/{{_id}}/delete" method="post"><button>Delete</button></form>
     {{/each}}
   </div>
 </div>
