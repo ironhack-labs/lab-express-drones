@@ -1,6 +1,8 @@
 // Iteration #1
 const mongoose = require("mongoose");
 const Drone = require("../models/Drone.model");
+require("dotenv/config");
+require("../db");
 
 const drones = [
   { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
@@ -8,8 +10,7 @@ const drones = [
   { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
 ];
 
-require("dotenv/config");
-require("../db");
+
 
 Drone.create(drones)
   .then((dronesFromDB) => {
