@@ -1,1 +1,44 @@
-<h2>Available drones</h2>
+<div class='container'>
+  <h2>Available drones</h2>
+  <div class='row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5'>
+    {{#each drones}}
+      <div class='col'>
+        <div class='card shadow-sm'>
+          <ul class='list-group list-group-flush'>
+            <li class='list-group-item'><h4 class='mb-0'>{{name}}</h4></li>
+            <li class='list-group-item'>
+              <strong>
+                Propellers:
+              </strong>
+              {{propellers}}
+            </li>
+            <li class='list-group-item'>
+              <strong>
+                Max Speed:
+              </strong>
+              {{maxSpeed}}</li>
+          </ul>
+          <div class='d-flex'>
+            <form
+              action='/drones/{{id}}/delete'
+              method='POST'
+              class='col-6 m-0 border-right form-delet'
+            >
+              <button type='submit' class='btn text-danger rounded-0'>
+                Delete Drone
+              </button>
+            </form>
+            <a
+              type='button'
+              href='/drones/{{_id}}/edit'
+              class='btn col-6 m-0 text-success btn-edit rounded-0'
+            >
+              Edit Drone
+            </a>
+          </div>
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+</div>

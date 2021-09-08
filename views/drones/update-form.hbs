@@ -1,1 +1,42 @@
-<h2>Update the drone</h2>
+<div class='container'>
+  <h2 class='display-2'>Update {{name}}</h2>
+  <div class='card p-5 mt-5 form-container shadow'>
+    <small class='mb-2'>ID: {{_id}}</small>
+    <form action='/drones/{{_id}}/edit' method='post' class='form-floating'>
+      <div class='row mb-4'>
+        <div class='col'>
+          <input
+            type='text'
+            class='form-control'
+            placeholder='Name'
+            name='name'
+            value='{{name}}'
+          />
+        </div>
+      </div>
+      <div class='row row-cols-2 mb-4'>
+        <div class='col'>
+          <input
+            type='number'
+            class='form-control'
+            placeholder='Propellers'
+            name='propellers'
+            value='{{propellers}}'
+          />
+        </div>
+        <div class='col'>
+          <input
+            type='number'
+            class='form-control'
+            placeholder='Max Speed'
+            name='maxSpeed'
+            value='{{maxSpeed}}'
+          />
+        </div>
+      </div>
+      <div class='d-grid gap-2'>
+        <button type='submit' class='btn btn-lg alert-success'>Save</button>
+      </div>
+    </form>
+  </div>
+</div>

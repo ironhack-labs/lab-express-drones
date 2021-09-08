@@ -1,19 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
     <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css'
+      rel='stylesheet'
+      integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU'
+      crossorigin='anonymous'
+    />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
-  <body>
+  <body class='d-flex h-100 text-center'>
+    <div class='d-flex w-100 h-100 mx-auto flex-column'>
+      <header class='px-3 py-2 bg-dark text-white mb-auto'>
+        <div class='container'>
+          <div
+            class='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'
+          >
+            <a
+              href='/'
+              class='d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none'
+            >
+              <h3 class='float-md-start mb-0'>Drones</h3>
+            </a>
+            <ul
+              class='nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small'
+            >
+              <li>
 
-    {{{body}}}
-
-    <script src="/js/script.js"></script>
+                <a href='/' class='nav-link text-white'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    fill='currentColor'
+                    class='bi d-block mx-auto mb-1'
+                    viewBox='0 0 16 16'
+                  >
+                    <path
+                      d='M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z'
+                    ></path>
+                  </svg>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href='/drones' class='nav-link text-white'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    class='bi d-block mx-auto mb-1'
+                    width='24'
+                    height='24'
+                    fill='currentColor'
+                    viewBox='0 0 16 16'
+                  >
+                    <path
+                      d='M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z'
+                    ></path>
+                  </svg>
+                  Drones
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      {{{body}}}
+      <footer class='mt-auto py-3'>
+        <p>{{title}}</p>
+      </footer>
+    </div>
+    <script
+      src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js'
+      integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ'
+      crossorigin='anonymous'
+    ></script>
+    <script src='/js/script.js'></script>
   </body>
 
 </html>
