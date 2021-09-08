@@ -41,7 +41,6 @@ router.get("/drones/:id/edit", (req, res, next) => {
 
   Drone.findById(id)
     .then((drones) => {
-      // console.log(droneToEdit);
       res.render("drones/update-form.hbs", drones);
     })
     .catch((error) => next(error));
