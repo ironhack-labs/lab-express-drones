@@ -17,7 +17,9 @@ const drones = [
   .create(drones)
   .then(dronesFromDb =>{
       console.log(`Se ha creado ${dronesFromDb} en la base de datos`)
+      mongoose.connection.close()
   })
   .catch(error =>{
       console.log("ha ocurrido un error al crear drones en la bd",error)
   })
+ 

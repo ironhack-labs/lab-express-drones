@@ -1,1 +1,21 @@
 <h2>Available drones</h2>
+{{#each dronesFromDb}}
+<br>
+nombre:
+{{name}}
+<br>
+propellers:
+{{propellers}}
+<br>
+maxspeed:
+{{maxSpeed}}
+<br>
+<a href="/drones/{{id}}/edit">Editar dron</a>
+<br>
+ <form action="/drones/{{id}}/delete" method="POST">
+    <button>Borrar dron</button>
+</form>
+{{/each}}
+<br>
+<h3>Crear nuevo dron</h3>
+<a href="/drones/create">Crear nuevo dron</a>
