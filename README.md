@@ -105,7 +105,7 @@ Steps you should follow in this iteration:
 1. Find the `/drones` GET route in `routes/drones.js`.
 2. Use the Mongoose `.find()` method to retrieve all the drones. Display all the drones on the `drones/list.hbs` view. Make sure you catch the error and output it to the terminal. 
 3. In the `drones/list.hbs` file, use a `#each` loop to display tags with each drone's `name`, `propellers`, and `speed`.
-((I'M HERE 🧠)
+
 4. Add the link that goes to `/drones` route in the `layout.hbs` file to easier navigate to the list of drones. 
 
 <br>
@@ -122,7 +122,7 @@ Here are the routes you will be using:
 | `/drones/create` | POST      | Save a drone to the database  |
 
 Steps you should follow in this iteration:
-
+----------I'M HERE 🧠-------
 1. Find the `/drones/create` GET route in `routes/drones.js` and render the `drones/create-form.hbs` view.
 2. The `create-form.hbs` should have the form that will submit on `/drones/create` POST route. The form should have all the fields necessary to create a new drone.
 3. Locate the `/drones/create` POST route in `routes/drones.js` and using `req.body` get all the info user submitted through the form. Use this info to create a new drone in the database in the _drones_ collection. Make sure you redirect to `/drones` if the new drone is successfully created. If there is an error, render again the view so the user can try again to create a drone.

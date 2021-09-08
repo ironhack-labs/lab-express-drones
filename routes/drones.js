@@ -16,12 +16,12 @@ const router = express.Router();
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
