@@ -1,1 +1,25 @@
 <h2>Create a new drone</h2>
+
+<form action="createdrone" method="POST">
+    <h2>Name</h2>
+    <input type="string" name="title" />
+    <h2>Propellers</h2>
+    <input type="string" name="description" />
+    <h2>Max Speed</h2>
+    <input type="string" name="description" />
+    <button type="submit">Crear drone</button>
+</form>
+
+    <hr/>
+
+<h1>Todos los drones</h1>
+<div>   
+    {{#each droneList}}
+        <div>
+            <h2>{{name}}</h2>
+            <p>Propellers: {{propellers}}</p>
+            <p>Max Speed: {{maxSpeed}}</p>
+        </div>
+    {{/each}}
+
+</div>

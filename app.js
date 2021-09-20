@@ -24,7 +24,11 @@ const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerC
 
 app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 
+
 // 👇 Start handling routes here
+// ACTIVAR RECEPCIÓN DE DATOS DE FORMULARIOS
+app.use(express.urlencoded({ extended: true }))
+
 const index = require('./routes/index');
 app.use('/', index);
 
