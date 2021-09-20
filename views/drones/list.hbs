@@ -1,1 +1,106 @@
-<h2>Available drones</h2>
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/drones"><img src="/images/droneIcon.png" alt="" width="30" height="30" class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/drones">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/drones/create">New Drone</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="my-5">Available drones</h1>
+    <div class="row">
+        {{#each drones}}
+        <div class="col-6 mb-5">
+            <div class="card h-100 mb-3">
+                <div class="row h-100 g-0">
+                    <div class="col-md-4">
+                        <img src="{{image}}" class="img-fluid rounded-start img-drone" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">{{name}}
+                                </h5>
+                                <div class="buttons">
+                                    <a href="/drones/{{_id}}/edit" class="btn btn-outline-info me-md-2" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                        </svg></a>
+                                    <button data-bs-toggle="modal" data-bs-target="#delete{{id}}" class="btn btn-outline-danger" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+
+                            <p class="card-text">Number of propellers: {{propellers}}</p>
+                            <p class="card-text">Max speed: {{maxSpeed}}</p>
+
+                            <p class="card-text"><small class="text-muted">Ultima actualizacion {{formatDate updated}}</small></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="delete{{id}}" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Drone {{name}}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to remove the drone?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <form action="/drones/{{_id}}/delete" method="post">
+                            <button type="submit" class="btn btn-primary">Yes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+    <div id="deletedToast" class="toast align-items-center text-white bg-danger border-0 position-absolute translate-middle bg-primary text-white bottom-0 start-50 mt-5 p-1" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="toast-body">
+                Drone deleted!!!
+            </div>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div id="updatedToast" class="toast align-items-center text-white bg-primary border-0 position-absolute translate-middle bg-primary text-white bottom-0 start-50 mt-5 p-1" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="toast-body">
+                Drone updated!!!
+            </div>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div id="newToast" class="toast align-items-center text-white bg-success border-0 position-absolute translate-middle bg-primary text-white bottom-0 start-50 mt-5 p-1" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="toast-body">
+                Drone added!!!
+            </div>
+            <button type="button" class="btn-close me-2 " data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+</div>

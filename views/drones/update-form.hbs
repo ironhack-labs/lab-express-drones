@@ -1,1 +1,72 @@
-<h2>Update the drone</h2>
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/drones"><img src="/images/droneIcon.png" alt="" width="30" height="30" class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " href="/drones">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/drones/create">New Drone</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="my-5">Edit drone {{name}}</h1>
+    <div class="row">
+        <div class="col-5">
+            <form class="row g-3" action="/drones/{{_id}}/edit" enctype="multipart/form-data" method="post">
+                <div class="col-12 ">
+                    <label for="droneName" class="form-label">Drone Name</label>
+                    <input required type="text" class="form-control" placeholder="Drone Name" value="{{name}}" name="name" id="droneName">
+                </div>
+                <div class="col-12 ">
+                    <label for="propellers" class="form-label">Add number of propellers</label>
+                    <input required type="number" class="form-control" placeholder="Add number of propellers" value="{{propellers}}" name="propellers" id="propellers">
+
+                </div>
+                <div class="col-12 ">
+                    <label for="maxSpeed" class="form-label">Add max speed</label>
+                    <input required type="number" class="form-control" placeholder="Add max speed" value="{{maxSpeed}}" name="maxSpeed" id="maxSpeed">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Select one image</label>
+                    <input required class="form-control" type="file" name="image" accept="image/*" id="image">
+                </div>
+                <div class="col-12 align-self-center">
+                    <button class="btn btn-primary" type="submit">Add Drone</button>
+                </div>
+            </form>
+        </div>
+        {{!-- <div class="col-6">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{image}}" class="img-fluid rounded-start img-drone" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">{{name}}
+                                </h5>
+
+                            </div>
+
+                            <p class="card-text">Number of propellers: {{propellers}}</p>
+                            <p class="card-text">Max speed: {{maxSpeed}}</p>
+
+                            <p class="card-text"><small class="text-muted">Ultima actualizacion {{ updated}}</small></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+    </div>
+</div>
