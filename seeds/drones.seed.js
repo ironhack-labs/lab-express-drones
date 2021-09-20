@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const Drone = require("../models/Drone.model");
 
 require("dotenv").config();
+const connectionString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.jylcu.mongodb.net/${process.env.DB_NAME}`;
 
-mongoose.connect(process.env.MONGODB_URL, {
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
