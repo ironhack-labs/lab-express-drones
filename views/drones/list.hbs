@@ -4,4 +4,7 @@
 <p>Tiene {{this.propellers}} este dron</p>
 <p>Su velocidad maxima es {{this.maxSpeed}}</p>
 <a href="/drones/{{this.id}}/edit">Editar</a>
+<form action="/drones/{{this.id}}/delete" method="POST">
+<button type="submit" name="delete">Delete</button>
+</form>
 {{/each}}
