@@ -16,9 +16,9 @@
 <div>   
     {{#each droneList}}
         <div>
-            <h2>{{name}}</h2>
-            <p>Propellers: {{propellers}}</p>
-            <p>Max Speed: {{maxSpeed}}</p>
+            <h2>{{this.name}}</h2>
+            <p>Propellers: {{this.propellers}}</p>
+            <p>Max Speed: {{this.maxSpeed}}</p>
         </div>
     {{/each}}
 
