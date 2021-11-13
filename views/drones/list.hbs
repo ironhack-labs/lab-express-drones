@@ -10,6 +10,10 @@
     </ul>
     <a href='../drones/{{this.id}}/edit'>Edit</a>
 
+    <form action="/drones/{{this.id}}/delete" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+
     {{/each}}
 
 
