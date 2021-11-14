@@ -35,17 +35,16 @@ router.post('/drones/create', (req, res, next) => {
   const {name, propellers, maxSpeed} = req.body
 
   Drone.create( {name, propellers, maxSpeed} )
-  .then(newDrone => {
-    console.log(newDrone)
-  })
-  .catch((err) => console.log(err))
+    .then(newDrone => {
+      console.log(newDrone)
+    })
+    .catch((err) => console.log(err))
   
   Drone.find( function(err, result) {
   
-    if (err) { return console.log(err) }
+      if (err) { return console.log(err) }
               
-    res.render('drones/list', {dronesfound: result})
-    
+      res.render('drones/list', {dronesfound: result})
   })
 
 
@@ -55,11 +54,39 @@ router.post('/drones/create', (req, res, next) => {
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  Drone.findById(req.params.id, function (err, resultbyId) {
+
+    res.render( 'drones/update-form', resultbyId)
+  })
+
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  const {name, propellers, maxSpeed} = req.body
+
+Drone.findByIdAndUpdate(
+  req.params.id, {
+    $set: {name: req.body.name, propellers: req.body.propellers, maxSpeed: req.body.maxSpeed}
+  }, {upsert:true}, function (err, result){
+
+    if (err) { return console.log(err) }
+  }
+)
+.then(newUpdate => {
+  console.log(newUpdate)
+})
+.catch((err) => console.log(err))
+
+
+Drone.find( function(err, result) {
+  
+  if (err) { return console.log(err) }
+          
+  res.render('drones/list', {dronesfound: result})
+})
+
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
