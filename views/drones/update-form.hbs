@@ -1,1 +1,21 @@
 <h2>Update the drone</h2>
+{{#if drone}}
+	<form method='post' action='/drones/{{drone.id}}/edit'>
+		<div class='mb-3'>
+			<label for='name' class='form-label'>Name</label>
+			<input name='name' value='{{drone.name}}' type='text' class='form-control' id='name' />
+		</div>
+		<div class='mb-3'>
+			<label for='propellers' class='form-label'>Propellers</label>
+			<input name='propellers' value='{{drone.propellers}}' type='number' class='form-control' id='propellers' />
+		</div>
+		<div class='mb-3'>
+			<label for='maxSpeed' class='form-label'>Max speed</label>
+			<input name='maxSpeed' value='{{drone.maxSpeed}}' type='number' class='form-control' id='maxSpeed' />
+		</div>
+		<input type='hidden' name='id' , value='{{drone.id}}' />
+		<button type='submit' class='btn btn-primary'>Submit</button>
+	</form>
+{{else}}
+	<div class='alert alert-warning'>No drone found for given ID!</div>
+{{/if}}
