@@ -36,7 +36,7 @@ router.post('/drones/create', (req, res, next) => {
 
   Drone.create( {name, propellers, maxSpeed} )
     .then(newDrone => {
-      console.log(newDrone)
+      console.log( "CREATED:", newDrone)
     })
     .catch((err) => console.log(err))
   
@@ -75,7 +75,7 @@ Drone.findByIdAndUpdate(
   }
 )
 .then(newUpdate => {
-  console.log(newUpdate)
+  console.log("UPDATED:", newUpdate)
 })
 .catch((err) => console.log(err))
 
@@ -92,6 +92,22 @@ Drone.find( function(err, result) {
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
+
+  Drone.findByIdAndRemove(req.params.id, function (err) {
+    if (err) { return console.log(err) }
+  })
+  .then(DeletedDrone => {
+    console.log("DELETED:", DeletedDrone)
+  })
+  .catch((err) => console.log(err))
+
+  Drone.find( function(err, result) {
+  
+    if (err) { return console.log(err) }
+            
+    res.render('drones/list', {dronesfound: result})
+  })
+
 });
 
 module.exports = router;

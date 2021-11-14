@@ -8,5 +8,11 @@
 
 <li> <a href="/drones/{{this._id}}/edit"> See more </a> </li>
 
+<form method="POST" action="/drones/{{this._id}}/delete">
+<label for="name">DELETE</label>
+<input type="text" value="{{this.name}}" name="name" />
+<button type="submit">DELETE</button>
+</form>
+
 {{/each}}
 </ul>
