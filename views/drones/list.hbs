@@ -3,13 +3,27 @@
   <div>
 
     {{#each drones}}
-      <div class='row'></div>
-      <a href="/drones{{_id}}">
+
       <div>
         <h4>Name: {{name}}</h4>
         <h4>Propeller: {{propellers}}</h4>
         <h4>Max Speed: {{maxSpeed}}</h4>
       </div>
+      <a href='/drones/{{id}}/edit'>
+        <button>Edit</button>
+      </a>
+
+      <form method='POST' action='/drones/{{id}}/delete'>
+        <button type='submit'>Delete</button>
+      </form>
+
     {{/each}}
+
+    <div>
+      <a href='/drones/create'>
+        <button>Go to create new drone form</button>
+      </a>
+    </div>
+
   </div>
 </div>
