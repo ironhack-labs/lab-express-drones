@@ -30,12 +30,5 @@ mongoose
         console.error("error creating drones", error);
       });
   })
-  .then(() => {
-    console.log(`Disconnecting from the database... `);
-
-    mongoose.disconnect((err) => {
-      if (err) {
-        console.log("failed to disconnect");
-      }
-    });
-  });
+  
+  
