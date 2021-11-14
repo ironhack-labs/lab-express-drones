@@ -1,1 +1,39 @@
-<h2>Update the drone</h2>
+<section class="create-drone">
+    
+    <h2>Update drone's information</h2>
+
+    {{#if errorUpdate}}
+
+        <p class="message-error"> 
+            There has been an error in the update of your drone: 
+            <br/>
+            <span class="error-details">{{ errorUpdate }}</span>
+            <br/>
+            Please, try again.
+        </p>
+
+    {{/if}}
+
+
+    <form method='POST' action="/drones/{{drone.id}}/edit">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{drone.name}}"/>
+
+        <br/>
+
+        <label for="propellers">Proprellers</label>
+        <input type="text" name="propellers" value="{{drone.propellers}}"/>
+
+        <br/>
+        
+        <label for="maxSpeed">Max Speed</label>
+        <input type="text" name="maxSpeed" value="{{drone.maxSpeed}}"/>
+
+        <br/>
+
+        <button type="submit" class="btn">Save changes</button>
+
+    </form>
+
+</section>

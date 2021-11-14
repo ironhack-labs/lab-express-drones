@@ -1,1 +1,39 @@
-<h2>Create a new drone</h2>
+<section class="create-drone">
+    
+    <h2>Create a new drone</h2>
+
+    {{#if errorCreation}}
+
+        <p class="message-error"> 
+            There has been an error in the creation of your drone: 
+            <br/>
+            <span class="error-details">{{ errorCreation }}</span>
+            <br/>
+            Please, try again.
+        </p>
+
+    {{/if}}
+
+    <form method='POST' action="/drones/create">
+
+        <label for="name">Name</label>
+        <input type="text" name="name"/>
+
+        <br/>
+
+        <label for="propellers">Proprellers</label>
+        <input type="text" name="propellers"/>
+
+        <br/>
+        
+        <label for="maxSpeed">Max Speed</label>
+        <input type="text" name="maxSpeed"/>
+
+        <br/>
+
+        <button type="submit" class="btn">Submit</button>
+
+    </form>
+
+</section>
+

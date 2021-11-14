@@ -6,3 +6,76 @@ body {
 a {
   color: #00b7ff;
 }
+
+.create-drone h2 {
+  margin-bottom: 30px;
+}
+
+.create-drone label,
+.create-drone input {
+  width: 200px;
+  margin: 10px 0;
+  display: block;
+}
+
+.create-drone input {
+  padding: 10px;
+  border: solid 1px grey;
+}
+
+.drones-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.drone {
+  background-color: #eaeaea;
+  border: solid 1px #ccc;
+  padding: 20px 40px;
+  border-radius: 10px;
+  margin: 20px;
+  width: 200px;
+}
+
+.create-drone {
+  width: 600px;
+  margin: 20px auto;
+}
+
+.btn {
+  background-color:indianred;
+  border: solid 1px brown;
+  color: white;
+  padding: 10px 20px;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.create-drone .btn {
+  margin-left: 0;
+}
+
+.message-success {
+  border: solid 1px #097969;
+  background-color: #DAF7A6;
+}
+
+.message-error {
+  border: solid 1px brown;
+  background-color: #ffcccb;
+}
+
+.message-success,
+.message-error  {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+}
+
+.error-details {
+  font-weight: bold;
+}

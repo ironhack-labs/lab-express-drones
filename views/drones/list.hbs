@@ -1,1 +1,19 @@
-<h2>Available drones</h2>
+<h2>List of drones</h2>
+
+{{#if action }}
+    <p class="message-success"> 
+        A drone has been successfully {{ action }}:
+        <b>{{ drone.name }}</b>
+    </p>
+{{/if}}
+
+<div class="drones-list">
+
+    {{#each drones}}
+
+        {{> drone drone=this}}
+
+    {{/each}}
+</div>
+
+<a class="btn" href="/drones/create"> Create new drone </a>
