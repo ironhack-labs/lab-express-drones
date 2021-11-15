@@ -32,7 +32,6 @@ mongoose
         mongoose.connection.close()
     })
     .catch( (err) => console.log(`This error occured while trying to create drones: ${err}`))
-
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err)

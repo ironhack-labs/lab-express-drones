@@ -1,36 +1,20 @@
 const express = require('express');
-// const router = express.Router();
-
-app = express();
-
-// Handlebars, views, and partials
-
-const path = require('path');
-
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, '../views'));
-
-const hbs = require('hbs');
-hbs.registerPartials(path.join(__dirname, "../views/partials"));
-
-// Use public folder
-app.use(express.static(path.join(__dirname, '../public')));
+const router = express.Router();
 
 // Drone Model
 const Drone = require("../models/Drone.model");
 
 
-// ======== ROUTES ========= //
-
 // default route
-app.all('/', (req, res) => {
+router.all('/', (req, res) => {
   res.render('index');
 });
 
 
-app.get('/drones', (req, res, next) => {
+router.get('/drones', (req, res, next) => {
   
-  Drone.find()
+  Drone
+  .find()
   .then( (drones) => { 
     res.render("drones/list", { drones: drones }) 
   })
@@ -39,14 +23,15 @@ app.get('/drones', (req, res, next) => {
 
 
 // sister routes for Drones Creation:
-app.route("/drones/create")
+router.route("/drones/create")
   .get((req, res) => {
     res.render("drones/create-form")
   })
   .post((req, res) => {
     const {name, propellers, maxSpeed} = req.body
 
-    Drone.create( { name, propellers, maxSpeed } )
+    Drone
+      .create( { name, propellers, maxSpeed } )
       .then( (newDrone) => { 
         // The successful path is drones/list, therefore I need the list of all Drones before rendering the view:
         Drone.find()
@@ -59,10 +44,12 @@ app.route("/drones/create")
       .catch( (error) => res.render("drones/create-form", { errorCreation: error } ))
   })
 
+
 // sister routes for Drones Edition:
-app.route("/drones/:id/edit")
+router.route("/drones/:id/edit")
   .get((req, res) => {
-    Drone.findById(req.params.id)
+    Drone
+    .findById(req.params.id)
     .then( (drone) => {
       res.render("drones/update-form", { drone: drone } )  
       console.log(`About to update this dron: ${drone.name}`)
@@ -96,13 +83,16 @@ app.route("/drones/:id/edit")
 
 
 // Delete drone
-app.get('/drones/:id/delete', (req, res, next) => {
+router.get('/drones/:id/delete', (req, res, next) => {
   Drone.findByIdAndDelete({_id: req.params.id})
   .then( (deletedDrone) => {
 
     // List of drones, to show in drones/list (successful path)
     Drone.find()
     .then( (drones) => { 
+
+      // or: res.redirect('/drones')
+
       res.render("drones/list", { drones: drones, action: "deleted", drone: deletedDrone } )
       console.log("Drone deleted: ", deletedDrone);
     })
@@ -124,4 +114,4 @@ app.get('/drones/:id/delete', (req, res, next) => {
   })
 })
 
-module.exports = app;
+module.exports = router;
