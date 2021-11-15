@@ -1,17 +1,6 @@
 const express = require('express');
-
-
 // const router = express.Router();
 
-// =========> ? Questions ? <==========
-// Why "express.Router();" and not just "app = express();" ???? 
-// Why express.Router(); and expres(); are needed?
-// Why there are many things set again in app.js ?????
-
-// connect to dabatase
-require('../db');  
-
-// I use this so far:
 app = express();
 
 // Handlebars, views, and partials
@@ -44,7 +33,6 @@ app.get('/drones', (req, res, next) => {
   Drone.find()
   .then( (drones) => { 
     res.render("drones/list", { drones: drones }) 
-    console.log("Drones are:", drones);
   })
   .catch( (error) => res.render("error", { error: error } ))
   })
