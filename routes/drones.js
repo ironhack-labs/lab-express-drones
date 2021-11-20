@@ -20,12 +20,15 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+    res.render("drones/create-form.hbs");
 });
 
-router.post('/drones/create', (req, res, next) => {
+router.post('/drones/create', async (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+ const drone = req.body;
+ const newDrone = await Drone.create(drone);
+ console.log("newDrone", newDrone);
+ res.redirect("/drones");
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
