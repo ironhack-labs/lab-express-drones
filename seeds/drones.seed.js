@@ -5,7 +5,7 @@ const {
   mongoConnect,
   mongoDrop,
   mongoClose,
-} = require("../config/mongoDB.config");
+} = require("../config/mongoDB.config.js");
 
 const drones = [
   { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
