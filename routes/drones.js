@@ -30,7 +30,7 @@ router.post("/create", async (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
   try {
-    newDrone = req.body;
+    const newDrone = req.body;
     await Drone.create(newDrone);
     res.redirect("/");
   } catch (error) {
@@ -38,14 +38,32 @@ router.post("/create", async (req, res, next) => {
   }
 });
 
-router.get("/:id/edit", (req, res, next) => {
+router.get("/:id/edit", async (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  try {
+    const droneId = req.params.id;
+    const droneToEdit =  await Drone.findById(droneId)
+    res.render('drones/update-form', {droneToEdit})
+    
+  } catch (error) {
+    console.error(`Error while routing to update-form-hbs: ${error}`);
+  }
+
+  
 });
 
-router.post("/:id/edit", (req, res, next) => {
+router.post("/:id/edit", async (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  try {
+    const droneId = req.params.id
+    const newDrone = req.body;
+    const droneToEdit = await Drone.findByIdAndUpdate(droneId, newDrone);
+    res.redirect('/')
+  } catch (error) {
+    console.error('Error while updating drone', error)
+  }
 });
 
 router.post("/:id/delete", (req, res, next) => {
