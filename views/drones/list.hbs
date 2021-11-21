@@ -1,1 +1,25 @@
 <h2>Available drones</h2>
+
+{{!-- {{In the drones/list.hbs file, use a #each loop to display tags with each drone's name, propellers, and speed.}} --}}
+
+
+{{#each drones}}
+    <ul>
+        <li>Name: {{name}} </li>
+        <li>Number of propellersTea: {{propellers}}</li>
+        <li>Speed : {{maxSpeed}}</li>
+    </ul>
+    
+{{!-- {{Add the link that goes to /drones route in the layout.hbs file to easier navigate to the list of drones.}} --}}
+
+    <a href='/drones/{{id}}/edit'> See the drone </a>
+
+{{!-- {{Under each drone information on the list.hbs, add a link to the edit page (pointing to the /drones/<oneDroneId>/edit). 
+    When clicked, the link should take you to the 404 page (still), but the URL should have a format similar to this one: /drones/123Hgt5y4500Ux8/edit}} --}}
+
+
+<form method="POST" action="/drones/{{id}}/delete">
+    <button type="submit"> Bye bye Drone!</button>
+</form>
+
+{{/each}}
