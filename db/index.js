@@ -7,6 +7,14 @@ const mongoose = require("mongoose");
 
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
 
+// const connectDB = async () => {
+//   await mongoose.connect(process.env.MONGODB_URI,{
+
+//   })
+//   console.log("Base de datos conectada");
+// }
+
+
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
@@ -20,3 +28,5 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
   });
+
+  module.exports = connectDB

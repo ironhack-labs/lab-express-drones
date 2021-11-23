@@ -1,5 +1,5 @@
 # Dependency directory
-node_modules
+node_modules/
 
 # Debug log from npm
 npm-debug.log
@@ -11,3 +11,4 @@ npm-debug.log
 # For maintenance purposes - not best practice
 
 package-lock.json
+.env
