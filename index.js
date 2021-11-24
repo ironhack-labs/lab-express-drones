@@ -30,7 +30,6 @@ app.use("/drones", require("./routes/drones"))
 
 
 
-
 connectDB()
 
 

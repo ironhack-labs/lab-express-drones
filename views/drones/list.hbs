@@ -1,27 +1,50 @@
-<h2>Available drones</h2>
+<h2 style="text-align: center;
+  font-size: -webkit-xxx-large;
+  font-family: inherit;
+  color: teal;">Nuestros Drones
+</h2>
 
 
-<a href="/drones/create">Create Dron</a>
 
-<ul>
-{{#each data}}
-	
-	<li>
-		<h1>{{this.name}}</h1>
-        <p> MaxSpeed: {{this.maxSpeed}} </p>
-        <p> Propellers: {{this.propellers}} </p>
-        <img src={{this.image}} alt="" />
-		<a href="/drones/{{this._id}}">Ver detalles</a>
-		<a href="/drones/{{this._id}}/edit">
-			Editar
+
+
+
+<div class="d-grid gap-2 col-3 mx-auto">
+	<button class="btn btn-primary" type="button">
+		<a href="/drones/create">
+			<p style="color: rgb(6, 44, 44); font-family: emoji; font-size: 25;"> Crea tu Propio Dron</p>
 		</a>
+	</button>
+</div>
 
-		<form method="POST" action="/drones/{{this._id}}/delete">
-			<button>Borrar</button>
-		</form>
+<br>
 
-	</li>
-	
 
-{{/each}}
-</ul>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+	{{#each data}}
+	<div class="col">
+		<div class="card">
+			<div class="card-body">
+				<h5 style="font-size: xx-large; text-align: center; font-family: unset;" class="card-title">{{this.name}}</h5>
+				<p style="text-align: center; font-size: larger; font-style: oblique; color: indianred;" class="card-text"> MaxSpeed:{{this.maxSpeed}}</p>
+				<p style="text-align: center; font-size: larger; font-style: oblique; color: indianred;" class="card-text">Propellers: {{this.propellers}}</p>
+			</div>
+
+			<br>
+
+			<a style="align-self: center; font-size: x-large;" href="/drones/{{this._id}}" class="link-success">Ver detalles</a>
+			<br>
+			<a style="align-self: center; font-size: x-large;" href="/drones/{{this._id}}/edit" class="link-danger">Editar</a>
+
+
+			<br>
+
+			<form style="align-self: end;" method="POST" action="/drones/{{this._id}}/delete">
+				<button class="btn btn-danger">Borrar</button>
+			</form>
+
+		</div>
+	</div>
+	{{/each}}
+</div>
+
