@@ -55,7 +55,7 @@ exports.createDrone = async(req, res) => {
 exports.viewEditDrone = async (req, res) => {
         console.log(req.params)
 
-        const droneID = req.params.bookID
+        const droneID = req.params.droneID
 
         const foundDrone = await Drone.findById(droneID)
         res.render("drones/update-form", {
