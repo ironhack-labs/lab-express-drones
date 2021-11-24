@@ -5,13 +5,10 @@ const Drone = require('../models/Drone.model')
 require("dotenv").config()
 
 //2. CONEXION A BD
-mongoose.connect(
-    'mongodb+srv://Ed-Uco:lenqwjZJmIXQUPOh@cluster0.b9vfj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    },
-);
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 
 // 3. LOS DATOS QUE QUEREMOS POBLAR
