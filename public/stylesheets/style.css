@@ -1,8 +1,67 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
 }
+
+#backGhome {
+    background-image: url("./../images/DJIBackground.jpeg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    color: white;
+    font-weight: bolder;
+    font-size: 50px;
+    text-align:center;
+  }
+  #backGadd{
+    background-color: #41474c;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    font-weight: bolder;
+    font-size: 50px;
+    text-align:center;
+  }
+
+  h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 80px;
+  }
+
+  .buttonHome{
+    border-radius: 40px;
+    padding: 10px 45px;
+    color: #8db6c3;
+    font-size: 25px;
+  }
+  #buttonAdd{
+    border-radius: 40px;
+    color: #8db6c3;
+    font-size: 25px;
+    height: 9%;
+    margin-left: 10%;
+  }
+  .glow {
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1d8ad3, 0 0 40px #1d8ad3, 0 0 50px #1d8ad3, 0 0 60px #1d8ad3, 0 0 70px #1d8ad3;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #08a2bd, 0 0 40px #08a2bd, 0 0 50px #08a2bd, 0 0 60px #08a2bd, 0 0 70px #08a2bd, 0 0 80px #08a2bd;
+    }
+  }

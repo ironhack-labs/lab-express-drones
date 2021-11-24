@@ -1,23 +1,20 @@
+//1. IMPORTACIONES
 const express = require('express');
 const router = express.Router();
 
-// require the Drone model here
+const droneController =require("./../controllers/droneController")
 
-router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
-});
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+//2. -----------------------RUTAS de la BASE URL-----------------------
+router.get('/drones', droneController.listDrones)
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
 
+//3. -------------Iteration #3: Add a new drone-------------
+router.get('/drones/create', droneController.viewCreatedDrone)
+
+router.post('/drones/create', droneController.createDrone);
+
+//-------------Iteration #4: Update the drone-------------
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
