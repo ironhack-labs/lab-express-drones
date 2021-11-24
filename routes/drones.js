@@ -1,34 +1,73 @@
 const express = require('express');
 const router = express.Router();
 
-// require the Drone model here
+const Drone = require("./../models/Drone.model")
 
-router.get('/drones', (req, res, next) => {
+//TODOS LOS DRONES
+router.get('/drones', async (req, res, next) => {
   // Iteration #2: List the drones
-  // ... your code here
+  const allDrones = await Drone.find({})
+  console.log(allDrones)
+
+  res.render("drones/list", {
+    data: allDrones
+  })
 });
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+
+//CREAR DRON = VISTA FORMULARIO
+router.get("/drones/create", async (req, res, next) => {
+  const singleDroneID = req.params.DroneID
+  const getTheDrone = await Drone.findById(singleDroneID)
+
+  res.render("drones/create", {
+    data: getTheDrone
+  })
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+
+//CREAR DRON = RUTA
+router.post("/drones/create", async (req, res, next) => {
+  const name = req.body.name
+  const propellers = req.body.propellers
+  const maxSpeed = req.body.maxSpeed
+  const newDroneCreated = await Drone.create({name, propellers, maxSpeed})
+
+  res.redirect("/drones")
+  console.log("Datos de dron recibidos")
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+
+//EDITAR DRON, PASO1
+router.get("/drones/:id/edit", async (req, res, next) => {
+  const droneID = req.params.droneID
+  const foundDrone = await Drone.findById(droneID)
+
+  res.render("drones/:id/edit", {
+    data: foundDrone
+  })
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+
+//EDITAR DRON PASO2
+router.post("/drones/:id/edit", async (req, res, next) => {
+  const droneID = req.params.droneID
+
+  const name = req.body.name
+  const propellers = req.body.propellers
+  const maxSpeed = req.body.maxSpeed
+
+  const updatedDrone = await Drone.findByIdAndUpdate(
+    droneID,
+    {name, propellers, maxSpeed},
+    {new: true}
+  )
+  res.redirect(`/drones/${updatedDrone._id}`)
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+
+
+router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
 });
