@@ -1,1 +1,18 @@
 <h2>Available drones</h2>
+
+<a href="/drones/create">Create new Drone</a>
+
+
+
+{{#each data}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.propellers}} propellers</p>
+    <p class="card-text">{{this.maxSpeed}} km/h maximum speed</p>
+    <a href="/drones/{{this._id}}/edit" class="btn btn-primary">Edit drone</a>
+    <a href="/drones/{{this._id}}/delete" class="btn btn-primary">Delete Drone</a>
+  </div>
+</div>
+{{/each}}

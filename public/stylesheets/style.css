@@ -6,3 +6,19 @@ body {
 a {
   color: #00b7ff;
 }
+
+.fondo {
+  background: url(https://tec.mx/sites/default/files/styles/header_full/public/2020-03/drones-futuro-por-expertos-del-tec-monterrey.jpg ) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+list.hbs{
+  background-color: teal;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
