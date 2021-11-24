@@ -17,6 +17,7 @@ exports.createDrone = async (req,res) => {
 const name = req.body.name
 const propellers  = req.body.propellers
 const maxSpeed = req.body.maxSpeed
+const image = req.body.image
 
 const  newDroneCreated = await Drone.create({name, propellers, maxSpeed, image})
     console.log(newDroneCreated)
