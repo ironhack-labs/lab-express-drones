@@ -1,1 +1,13 @@
 <h2>Create a new drone</h2>
+<form action="/drones/create" method="POST">
+   <label for="name">Modelo Dron:</label>
+    <input type="text" name="name"><br>
+<label for="propellers">Hélices: </label>
+    <input type="text" name="propellers"><br>
+<label for="maxSpeed">Velocidad Máxima</label>
+    <input type="number" name="maxSpeed"><br>
+<label for="image">Url imagen:</label>
+    <input type="text" name="image">
+  <br>
+  <button type="submit">Enviar mi Dron</button>
+</form>
