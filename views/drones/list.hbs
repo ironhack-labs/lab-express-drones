@@ -13,9 +13,22 @@
             <h5 class="card-title">{{this.name}}</h5>
             <p class="card-text">Propellers:{{this.propellers}}</p>
             <p class="card-text">Speed:{{this.maxSpeed}}</p>
-            <form method="POST" action="/drones/{{this._id}}/delete">
-              <button>Delete</button>
-            </form>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-2">
+                  <a href="/drones/{{this._id}}/edit">
+                    <button class="btn btn-dark">Edit</button>
+                  </a>
+                </div>
+                <div class="col-2">
+                  <form method="POST" action="/drones/{{this._id}}/delete">
+                    <button class="btn btn-danger">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
