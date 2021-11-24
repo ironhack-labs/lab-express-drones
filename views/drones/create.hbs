@@ -1,0 +1,27 @@
+{{!-- ./views/drones/create --}}
+<h2>Create a new drone</h2>
+
+<form action="/drones/create" method="POST">
+	<label>Nombre</label>
+	<input type="text" name="name" />
+
+	<br />
+
+	<label>Helices</label>
+	<input type="text" name="propellers" />
+
+	<br />
+
+	<label>Velocidad Maxima</label>
+	<input type="text" name="maxSpeed" />
+
+	<br />
+
+	<label>Imagen</label>
+	<input type="number" name="image" />
+
+	<br />
+
+	<button type="submit">Crear drone</button>
+
+</form>

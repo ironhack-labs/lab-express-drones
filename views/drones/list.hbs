@@ -1,1 +1,29 @@
+{{!-- ./views/drones/list.hbs --}}
 <h2>Available drones</h2>
+
+
+
+<a href="/drones/create">Crear drone</a>
+
+<ul>
+{{#each data}}
+	
+	<li>
+            <img src="{{this.image}}">
+		<p>{{this._id}}</p>
+		<h1>{{this.name}}</h1>
+            <p>{{this.propellers}}</p>
+	{{!-- 	<a href="/drones/{{this._id}}">Ver detalles</a> --}}
+		<a href="/drones/{{this._id}}/edit">
+			Editar
+		</a>
+
+		<form method="POST" action="/drones/{{this._id}}/delete">
+			<button>Borrar</button>
+		</form>
+
+	</li>
+	
+
+{{/each}}
+</ul>
