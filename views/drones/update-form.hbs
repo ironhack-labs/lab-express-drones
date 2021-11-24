@@ -1,1 +1,33 @@
 <h2>Update the drone</h2>
+
+Este es el id: {{data.id}}
+
+<form action="/drones/{{data.id}}/edit" method="POST">
+	<label>image</label>
+	<input type="text" name="image" value="{{this.image}}" />
+
+	<br />
+
+	<label>Name</label>
+	<textarea type="text" name="name">
+		{{this.name}}
+	</textarea>
+
+	<br />
+
+	<label>propellers</label>
+	<input type="text" name="propellers" value="{{this.propellers}}" />
+
+	<br />
+
+	<label>maxSpeed</label>
+	<input type="number" name="maxSpeed" value="{{this.maxSpeed}}" />
+
+	<br />
+
+	<button>
+		Actualizar cambios
+	</button>
+
+
+</form>

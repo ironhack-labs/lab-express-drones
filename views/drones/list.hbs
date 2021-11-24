@@ -1,1 +1,19 @@
 <h2>Available drones</h2>
+
+<div class="container">
+ {{#each data}}
+  <img src="{{this.image}}" alt="" />
+  <h2>name:{{this.name}}</h2>
+  <h3>propellers:{{this.propellers}}</h3>
+  <h3>maxSpeed:{{this.propellers}}</h3>
+  <br>
+  
+  <a href="/drones/{{this.id}}/edit">
+	Editar
+	</a>
+  <a href="/drones/{{this.id}}/edit">
+	Borrar
+	</a>
+{{/each}}
+
+</div>
