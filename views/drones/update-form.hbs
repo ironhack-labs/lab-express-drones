@@ -1,8 +1,64 @@
-<h2>Update the drone</h2>
+<section id="backGadd">
+<h2>Update a new drone</h2>
 
-Este es el id: {{dataD._id}}
+<p style="font-size: 8px;">Este es el id: {{dataD._id}}</p> 
+<form class="form-compact" action="/drones/{{dataD._id}}/edit" method="POST">
+            <div class="row paddingBottom20">
+                <div class="container col-4">
+                    <div class="row">
+                        <h6 class="text-center col-12 mb-0">New Drone:</h6>
+                        <sub class="text-right text-muted col-12"><a href="#" tabindex="-1"><i class="far fa-edit"></i></a></sub>
+                    </div>
+                    <div class="dropdown-divider mb-3"></div>
+                    <div class="form-group row">
+                        <label for="firstName" class="col-4 col-form-label-sm text-right">Drone Model:</label> 
+                        <div class="col-8">
+                            <div class="input-group"> 
+                                <input id="firstName" name="name" type="text" class="form-control form-control-sm" value="{{dataD.name}}">
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="form-group row align-items-center">
+                        <label for="lastName" class="col-4 col-form-label-sm text-right">Propellers:</label> 
+                        <div class="col-8">
+                          <div class="input-group"> 
+                            <input id="lastName" name="propellers" type="number" class="form-control form-control-sm" value="{{dataD.propellers}}">
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group row align-items-center">
+                        <label for="position" class="col-4 col-form-label-sm text-right">Max Speed:</label> 
+                        <div class="col-8">
+                          <div class="input-group"> 
+                            <select type="number" name="maxSpeed" id="position" class="form-control">
+                                <option value="{{dataD.maxSpeed}}">{{dataD.maxSpeed}}</option>
+                                <option>10</option>
+                                <option>12</option>
+                                <option>18</option>
+                                <option>20</option>
+                                <option>25</option>
+                                <option>30</option>
+                                <option>35</option>
+                                <option>40</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group row align-items-center">
+                        <label for="emailAddress" class="col-4 col-form-label-sm text-right">Image URL:</label> 
+                        <div class="col-8">
+                          <div class="input-group"> 
+                            <input id="emailAddress" name="image" type="text" class="form-control form-control-sm extendable" value="{{dataD.image}}">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <button class="glow" id="buttonAdd" type="submit">Update Drone</button>  
+        </form>
+</section>
 
-
+{{!-- 
 <form action="/drones/{{dataD._id}}/edit" method="POST">
 	<label>Modelo Drone:</label>
 	<input type="text" name="name" value="{{dataD.name}}" />
@@ -29,4 +85,4 @@ Este es el id: {{dataD._id}}
 	</button>
 
 
-</form>
+</form> --}}

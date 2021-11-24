@@ -1,3 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="our-team-main">
+        <div class="team-front">
+          <img src="{{image}}" alt="{{name}}" class="img-fluid"/>
+          <h3>{{name}}</h3>
+          <p>Number of propellers: {{propellers}}</p>
+          <p>Speed: {{maxSpeed}} Km/hr</p>
+        </div>
+
+        <div class="team-back">
+          <span>
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, molestias impedit quae sit quod vel praesentium dignissimos dolore voluptate corporis vero inventore perspiciatis illum harum sequi. Doloremque tenetur laboriosam quas!
+             <a style="color: #f0762b; font-weight: bolder;" href="/drones/{{_id}}/edit">EDIT DRONE</a>
+        <form method="POST" action="/drones/{{this._id}}/delete">
+             <button>Borrar</button>
+        </form>
+          </span>
+        </div>
+      </div>
+    </div>
+
 {{!-- <div class="drone-container">
   <div>
     <a href=""><img src="{{image}}" alt="{{name}}" /></a>
@@ -15,26 +39,3 @@
     </form>
   </div>
 </div> --}}
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4">
-      <div class="our-team-main">
-        <div class="team-front">
-          <img src="{{image}}" alt="{{name}}" class="img-fluid"/>
-          <h3>{{name}}</h3>
-          <p>Number of propellers: {{propellers}}</p>
-          <p>Sped: {{maxSpeed}} Km/hr</p>
-        </div>
-
-        <div class="team-back">
-          <span>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, molestias impedit quae sit quod vel praesentium dignissimos dolore voluptate corporis vero inventore perspiciatis illum harum sequi. Doloremque tenetur laboriosam quas!
-             <a style="color: #f0762b; font-weight: bolder;" href="/drones/{{_id}}/edit">EDIT DRONE</a>
-        <form method="POST" action="/drones/{{this._id}}/delete">
-             <button>Borrar</button>
-        </form>
-          </span>
-        </div>
-      </div>
-    </div>
