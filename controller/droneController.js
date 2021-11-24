@@ -31,7 +31,7 @@ exports.getDrone = async (req, res) => {
 }
 
 exports.viewCreateDrone = async ( req, res)=> {
-    res.render ("drones/create")
+    res.render ("drones/create-form")
 }
 
 exports.createDrone = async(req, res) => {
@@ -58,7 +58,7 @@ exports.viewEditDrone = async (req, res) => {
         const droneID = req.params.bookID
 
         const foundDrone = await Drone.findById(droneID)
-        res.render("drones/edit", {
+        res.render("drones/update-form", {
             data:foundDrone
         })
 
@@ -94,7 +94,7 @@ exports.deleteDrone = async (req, res) =>{
     const droneID = req.params.droneID
 
     //2. REALIZAMOS BORRADO EN BASE DE DATOS
-    const deletedDrone = await Drone.findByIdAndDelete(bookID)
+    const deletedDrone = await Drone.findByIdAndDelete(droneID)
 
     console.log("Borrado de drone:", deletedDrone);
 

@@ -26,7 +26,7 @@ router.post("/:droneID/edit", droneController.editDrone)
 
 //DELETE
 //BORRAR UN LIBRO ESPECIFICO
-router.post("/:bookID/delete", droneController.deleteDrone)
+router.post("/:droneID/delete", droneController.deleteDrone)
 
 
 // EXPORTACION
