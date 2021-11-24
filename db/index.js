@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
+const MONGO_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.x4dey.mongodb.net/${process.env.DB_NAME}?authSource=admin&replicaSet=atlas-7g1ybp-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true`
 
 mongoose
   .connect(MONGO_URI, {
