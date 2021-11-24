@@ -1,37 +1,31 @@
-// ℹ️ Gets access to environment variables/settings
-// https://www.npmjs.com/package/dotenv
-require('dotenv/config');
+//1. IMPORTACIONES
 
-// ℹ️ Connects to the database
-require('./db');
+const express = require("express")
+const app     = express()
 
-// Handles http requests (express is node js framework)
-// https://www.npmjs.com/package/express
-const express = require('express');
+const hbs      = require("hbs")
+const connectDB = require("./db/index.js")
 
-// Handles the handlebars
-// https://www.npmjs.com/package/hbs
-const hbs = require('hbs');
 
-const app = express();
+require("dotenv").config()
 
-// ℹ️ This function is getting exported from the config folder. It runs most middlewares
-require('./config')(app);
+//2. MIDDLEWARES
+app.set("views", __dirname + "/views")
+app.set("view engine", "hbs")
 
-// default value for title local
-const projectName = 'lab-express-drones';
-const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
+hbs.registerPartials(__dirname + "/views/partials")
+app.use(express.urlencoded({extended: true}))
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+connectDB()
 
-// 👇 Start handling routes here
-const index = require('./routes/index');
-app.use('/', index);
+// 3. RUTEO
+app.use("/drones", require("./routes/drones"))
 
-const droneRoutes = require('./routes/drones')
-app.use('/', droneRoutes)
+app.use("/", require("./routes/index"))
 
-// ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
-require('./error-handling')(app);
 
-module.exports = app;
+
+// 4. SERVER
+app.listen(process.env.PORT,()=>{
+    console.log(`Corriendo en el puerto ${process.env.PORT}`);
+})

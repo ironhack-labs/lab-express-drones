@@ -1,4 +1,4 @@
-// Iteration #1
+
 //1. IMPORTACIONES
 const mongoose = require("mongoose")
 
@@ -8,16 +8,9 @@ const droneSchema = mongoose.Schema({
     name: String,
     propellers: Number,
     maxSpeed: Number
-
-
 },
  {
-
- timestamps: true 
-
- } 
-
-)
+timestamps: true  })
 
 //3. MODELO
 const Drone = mongoose.model("Drone", droneSchema)
