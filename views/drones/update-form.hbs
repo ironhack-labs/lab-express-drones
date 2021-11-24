@@ -1,1 +1,32 @@
 <h2>Update the drone</h2>
+
+Este es el id: {{dataD._id}}
+
+
+<form action="/drones/{{dataD._id}}/edit" method="POST">
+	<label>Modelo Drone:</label>
+	<input type="text" name="name" value="{{dataD.name}}" />
+
+	<br />
+
+	<label>Propellers:</label>
+	<input type="number" name="propellers" value="{{dataD.propellers}}" />
+
+	<br />
+
+	<label>Max Speed:</label>
+	<input type="number" name="maxSpeed" value="{{dataD.maxSpeed}}" />
+
+	<br />
+
+    <label>Image URL:</label>
+	<input placeholder="https://i.ibb.co/fxVJVk9/1b.png" type="text" name="image" value="" />
+
+	<br />
+
+	<button>
+		Guardar nuevos cambios
+	</button>
+
+
+</form>

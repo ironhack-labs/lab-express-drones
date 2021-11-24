@@ -6,6 +6,9 @@
             <h1>{{name}}</h1>
             <p>Number of propellers: {{propellers}}</p>
             <p>Sped: {{maxSpeed}} Km/hr</p>
-            <a style="color: #f0762b; font-weight: bolder;" href="/id-beer{{_id}}">{{name}}</a>
+            <a style="color: #f0762b; font-weight: bolder;" href="/drones/{{_id}}/edit">EDIT DRONE</a>
+        <form method="POST" action="/drones/{{this._id}}/delete">
+            <button>Borrar</button>
+        </form>
         </div>
     </div>
