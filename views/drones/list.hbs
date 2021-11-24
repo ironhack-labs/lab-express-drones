@@ -1,1 +1,25 @@
 <h2>Available drones</h2>
+
+<a href="/drones/create-form">Crear Drone</a>
+
+<ul>
+    {{#each data}}
+
+    <li>
+
+        <p>{{this._id}}</p>
+        <h1>{{this.name}}</h1>
+        <a href="/drones/{{this._id}}">Ver detalles</a>
+        <a href="/drones/{{this._id}}/update-form">
+            Editar
+        </a>
+
+        <form method="POST" action="/drones/{{this._id}}/delete">
+            <button>Borrar</button>
+        </form>
+
+    </li>
+
+
+    {{/each}}
+</ul>

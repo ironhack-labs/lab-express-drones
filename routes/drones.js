@@ -1,36 +1,35 @@
 const express = require('express');
 const router = express.Router();
 
-// require the Drone model here
+const droneController	= require("./../controllers/droneController")
 
-router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
-});
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+// CREATE
+// CREAR DRONE / VISTA (PARA EL FORMULARIO)
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.get('/create-form',droneController.viewCreateDrone)
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.post('/create-form',droneController.createDrone)
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+//READ
+// LEER TODOS LOS DRONES
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-});
+router.get('/',droneController.getAllDrones)
+
+
+// LECTURA DE UN DRONE ESPECÍFICO
+router.get("/:droneID",droneController.getDrone)
+
+//UPDATE / EDIT
+// EDITAR UN DRONE
+
+router.get('/:droneID/update-form',droneController.viewEditDrone)
+
+router.post('/:droneID/update-form',droneController.editDrone)
+
+// DELETE
+// BORRAR UN DRONE EN ESPECIFICO
+
+router.post('/:droneID/delete', droneController.deleteDrone)
 
 module.exports = router;
