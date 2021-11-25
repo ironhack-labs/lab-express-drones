@@ -35,7 +35,7 @@ exports.createDrone = async (req, res) => {
 
 	console.log(req.body)
 
-	const name = req.body.name
+	const {name, propellers, maxSpeed, image} = req.body
 	const propellers = req.body.propellers
 	const maxSpeed = req.body.maxSpeed
 	const image = req.body.image
