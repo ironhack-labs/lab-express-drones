@@ -1,1 +1,28 @@
-<h2>Update the drone</h2>
+<form action="/drones/{{drone._id}}/edit" method="post" class="uk-form-horizontal uk-margin-large">
+
+    <legend class="uk-legend">Update the drone</legend>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Name</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="name" value="{{drone.name}}">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Propellers</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="propellers" value="{{drone.propellers}}">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Speed</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="maxSpeed" value="{{drone.maxSpeed}}">
+        </div>
+    </div>
+
+    <button class="uk-button uk-button-danger">Save changes</button>
+
+</form>

@@ -1,1 +1,49 @@
-<h2>Create a new drone</h2>
+{{!-- <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="post">
+    <label> Name:
+        <input type="text" name="name">
+    </label>
+
+    <label> Propellers:
+        <input type="number" name="propellers">
+    </label>
+
+    <label> Max. Speed:
+        <input type="number" name="maxSpeed">
+    </label>
+
+    <button type="submit">Create</button>
+</form> --}}
+
+<form action="/drones/create" method="post" class="uk-form-horizontal uk-margin-large">
+
+    <legend class="uk-legend">Create a new drone</legend>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Name</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="name">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Propellers</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="propellers">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text">Speed</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="maxSpeed">
+        </div>
+    </div>
+
+    <button type="submit" class="uk-button uk-button-danger">Create</button>
+</form>
+
+<form class="uk-text-center uk-margin-small">
+    
+</form>

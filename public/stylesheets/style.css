@@ -1,8 +1,38 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.index-div {
+  height: 100vh;
+}
+
+.index-div a {
+  color: rgb(0, 0, 0);
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+.index-div a:hover {
+  color: rgb(122, 122, 122);
+}
+
+.drones-card p {
+  margin: 5px;
+}
+
+nav {
+  background-color: rgb(31, 31, 31) !important;
+}
+
+.drones-card {
+  margin: 50px;
+}
+
+.uk-form-horizontal {
+  margin: 50px;
 }
