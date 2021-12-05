@@ -8,4 +8,8 @@
     <div>
         <a href="/drones/{{_id}}/edit">Edit This Drone</a>
     </div>
+        <form action="/drones/{{_id}}/delete" method="POST">
+            <button>Delete This Drone</button>
+        </form>
+    </div>
 {{/each}}
