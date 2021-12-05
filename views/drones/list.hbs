@@ -5,8 +5,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">propellers</th>
-      <th scope="col">max speed</th>
+      <th scope="col">Propellers</th>
+      <th scope="col">Max speed</th>
     </tr>
   </thead>
   <tbody>
@@ -17,10 +17,12 @@
       <td>{{propellers}}</td>
       <td>{{maxSpeed}}</td>
       <td>
-        <a type="button" class="btn btn-outline-primary">Edit drone</a>
+        <a type="button" class="btn btn-outline-primary" href="/drones/{{_id}}/edit">Edit drone</a>
       </td>
       <td>
-          <a type="button" class="btn btn-outline-danger">delete drone</a>
+          <form action="/drones/{{_id}}/delete" method="POST">
+            <button type="submit" class="btn btn-outline-danger"  >delete drone </button>
+          </form>
       </td>
     </tr>
     {{/each}}
