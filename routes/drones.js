@@ -5,10 +5,9 @@ const router = express.Router();
 const Drone = require('../models/Drone.model')
 router.get('/drones', (req, res, next) => {
     // Iteration #2: List the drones
-    // ... your code here
     Drone.find()
         .then(data => {
-            console.log("Data", data);
+            //console.log("Data", data);
             res.render("drones/list", { "drones": data })
         })
         .catch(err => {
@@ -18,12 +17,24 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
     // Iteration #3: Add a new drone
-    // ... your code here
+    res.render('drones/create-form')
 });
 
 router.post('/drones/create', (req, res, next) => {
     // Iteration #3: Add a new drone
-    // ... your code here
+    const { name, propellers, maxSpeed, ...rest } = req.body
+    console.log("-----", req.body)
+    Drone.create({
+        name,
+        propellers,
+        maxSpeed
+    }).then(drone => {
+        console.log('drone created', drone)
+        res.redirect('/drones');
+    }).catch(err => {
+        res.render('error');
+    })
+
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
