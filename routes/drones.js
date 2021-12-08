@@ -37,23 +37,58 @@ router.post('/drones/create', (req, res, next) => {
       maxSpeed
     })
     .then(() => res.redirect('/drones'))
-  console.log('Error while getting drones from the DB: ', error);
-  next(error);
+    .catch(err => {
+      console.log("Error while getting drones from the DB: '", err)
+      res.render('error')
+    });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const {
+    id
+  } = req.params;
+
+  Drone.findById(id)
+    .then((drone) => {
+      res.render('drones/update-form', drone)
+    }).catch(err => {
+      console.log("errorrr", err)
+      res.render('error')
+    });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const {
+    id
+  } = req.params;
+  const {
+    name,
+    propellers,
+    maxSpeed,
+    ...rest
+  } = req.body
+  Drone.findByIdAndUpdate(id, {
+      name,
+      propellers,
+      maxSpeed
+    })
+    .then((drone) => {
+      res.render('drones/update-form', drone)
+    }).catch(err => {
+      console.log("error", err)
+      res.render('error')
+    });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
-});
+  const { id } = req.params;
+
+  Drone.findByIdAndDelete(id)
+    .then(() => res.redirect(`/drones`))
+    .catch(err => next(err))
+  });
 
 module.exports = router;
