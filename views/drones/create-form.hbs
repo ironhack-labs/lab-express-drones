@@ -1,1 +1,20 @@
 <h2>Create a new drone</h2>
+<form action="/drones/create" method="post">
+<div class="card">
+  <div class="card-header">
+    Create a drone
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Create a drone</h5>
+    <p class="card-text">
+        <label >Name</label>
+        <input type="text" name="name" value={{this.name}}>
+        <label >Propellers</label>
+        <input type="text" name="propellers" value={{this.propellers}}>
+        <label >Max Speed</label>
+        <input type="text" name="maxSpeed" value={{this.maxSpeed}}>
+        <button type="submit">Create</button>
+    </p>
+  </div>
+</div>
+</form>

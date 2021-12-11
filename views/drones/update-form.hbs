@@ -1,1 +1,20 @@
 <h2>Update the drone</h2>
+
+<div class="card">
+  <div class="card-header">
+    Update
+  </div>
+  <form action="drones/create" method="post">
+  <div class="card-body">
+    <h5 class="card-title">Create a drone</h5>
+    <p class="card-text">
+        <label >Name</label>
+        <input type="text" value={{this.name}}>
+        <label >Propellers</label>
+        <input type="text" value={{this.propellers}}>
+        <label >Max Speed</label>
+        <input type="text" value={{this.maxSpeed}}>
+        <button type="submit">Update</button>
+    </p>
+  </div>
+  </form>
