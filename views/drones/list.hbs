@@ -1,1 +1,20 @@
-<h2>Available drones</h2>
+<div class="list-div uk-margin-medium-top">
+    <h1 class="uk-text-center">Available drones</h1>
+
+    <div class="uk-margin-medium-top uk-flex uk-flex-center" uk-grid>
+        {{#each drones}}
+        <div class="drones-card uk-card uk-card-primary uk-card-body">
+            <h3>{{name}}</h3>
+            <p>Number of propellers: {{propellers}}</p>
+            <p>Speed: {{maxSpeed}} m/s</p>
+            <form class="uk-text-center">
+                <a class="uk-button uk-button-default" href="/drones/{{_id}}/edit">Edit</a>
+            </form>
+
+            <form class="uk-text-center uk-margin-small" action="/drones/{{_id}}/delete" method="post">
+                <button class="uk-button uk-button-default">Delete</button>
+            </form>
+        </div>
+    {{/each}}
+    </div>
+</div> 
