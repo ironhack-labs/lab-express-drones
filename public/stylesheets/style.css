@@ -6,3 +6,23 @@ body {
 a {
   color: #00b7ff;
 }
+
+#drone-info-btns {
+  display: flex;
+  width: 100px;
+  justify-content: space-around;
+}
+
+#update-container form,
+#create-container form {
+
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-around;
+}
+
+#update-container form button,
+#create-container form button {
+  width: 75px;
+}

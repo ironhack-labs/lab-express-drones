@@ -3,12 +3,17 @@
     <h2>Available drones</h2>
     <hr>
     {{#each drones}}
-        <div id="done-info">
+        <div id="drone-info">
             <p> <b> Name:</b> {{name}} </p>
             <p> <b> Propellers:</b> {{propellers}} </p>
             <p> <b> Max-speed:</b> {{maxSpeed}} </p>
         </div>
-        <a href="/drones/{{_id}}/edit">Edit</a>
+        <div id="drone-info-btns">
+            <a href="/drones/{{_id}}/edit">Edit</a>
+            <form action="/drones/{{_id}}/delete" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
         <hr>
     {{/each}}
     
