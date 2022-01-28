@@ -30,7 +30,6 @@ router.post('/drones/create', (req, res, next) => {
     })
     .then(() => res.redirect('/drones'))
     .catch(err => {
-
       console.log('Ops!! Something went wrong while creating drone', err);
       res.render('/drones/create');
     });
@@ -38,12 +37,32 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const droneId = req.params.id;
+  // console.log(droneId);
+  DroneModel.findById(droneId)
+    .then(droneFromDB => {
+      res.render('drones/update-form', {drone: droneFromDB});
+    })
+    .catch(err => {
+      console.log('Ops!! Something went wrong while trying to get drone to be updated', err);
+    });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const droneId = req.params.id;
+  console.log(droneId);
+  const { name, propellers, maxSpeed } = req.body;
+  DroneModel.findByIdAndUpdate(droneId, {name, propellers, maxSpeed}, {new:true})
+  .then(updatedDrone => {
+
+    console.log('updated drone', updatedDrone);
+    res.redirect('/drones');
+  })
+  .catch(err => {
+    console.log('Ops!! Something went wrong while trying to update drone', err);
+    res.render('drones/update-form', {drone: { name, propellers, maxSpeed }});
+  });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
