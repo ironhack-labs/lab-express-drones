@@ -6,13 +6,13 @@ const router = express.Router();
 
 router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
-  drones.find()
+  Drone.find()
     .then((results) => {
-      console.log('These are the results', results);
-      res.render('./drones/list',{drones: results});
+      console.log(results);
+      res.render('drones/list',{drones: results});
     })
     .catch((err) => {
-      console.log('Something went wrong', err);
+      console.log(err);
     });
     
 });
