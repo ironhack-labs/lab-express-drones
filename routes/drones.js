@@ -9,7 +9,7 @@ router.get('/drones', (req, res, next) => {
   Drone.find()
     .then((results) => {
       console.log(results);
-      res.render('drones/list',{drones: results});
+      res.render('drones/list', {drones: results});
     })
     .catch((err) => {
       console.log(err);
@@ -19,12 +19,20 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form');
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  const {name, propellers, maxSpeed} = req.body;
+  Drone.create({name, propellers, maxSpeed})
+    .then(drone => {
+      console.log('new drone', drone);
+      res.redirect('/drones');
+    })
+    .catch((err) => {
+      console.log('Something went wrong', err);
+    });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
