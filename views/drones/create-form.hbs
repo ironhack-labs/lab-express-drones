@@ -1,1 +1,31 @@
-<h2>Create a new drone</h2>
+
+<section class="py-3 py-md-5">
+    <div class="container">
+        <div class="card mx-auto col-12 col-md-4">
+            <div class="card-body p-md-4">
+                <h2>New drone</h2>
+                <p class="lead">Create your new awesome drone.</p>
+                <form action="/drones/create" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="propellors" class="form-label">Propellors</label>
+                        <input type="number" class="form-control" id="propellers" name="propellers" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="maxSpeed" class="form-label">Max speed</label>
+                        <input type="number" class="form-control" id="maxSpeed" name="maxSpeed" >
+                    </div>
+                    <div class="d-flex">
+                        <button type="submit" class="btn btn-primary flex-fill me-2">Create</button>
+                        <a href="/drones/create" class="btn btn-light border">Clear</a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</section>
