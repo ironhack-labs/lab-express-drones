@@ -22,7 +22,7 @@ router.post('/drones/create', (req, res, next) => {
   console.log(req.body);
   Drone.create(req.body)
     .then((drone) => {
-      res.redirect('/drones/');
+      res.redirect('/drones');
     })
     .catch(() => {
       res.render('drones/create-form');
@@ -31,12 +31,21 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+    .then((drone) => {
+      res.render('drones/update-form', drone);
+    })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.redirect('/drones');
+    })
+    .catch(() => {
+      res.render(`drones/${req.params.id}/edit`);
+    })
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
