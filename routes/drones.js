@@ -36,6 +36,7 @@ router.post("/drones/create", (req, res, next) => {
     });
 });
 
+//                      ----->       WE ARE HERE      <-----
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   const { id } = req.params;
@@ -63,6 +64,8 @@ router.post("/drones/:droneId/edit", (req, res, next) => {
       next(error);
     });
 });
+
+//                      ----->       WE ARE HERE      <-----
 
 router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
