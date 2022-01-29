@@ -8,19 +8,25 @@ router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
   Drone.find()
     .then((drones) => {
-      console.log(drones);
       res.render('drones/list', { drones: drones });
     })
 });
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form');
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  console.log(req.body);
+  Drone.create(req.body)
+    .then((drone) => {
+      res.redirect('/drones/');
+    })
+    .catch(() => {
+      res.render('drones/create-form');
+    });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {

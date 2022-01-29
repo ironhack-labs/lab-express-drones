@@ -4,13 +4,16 @@ const Schema = mongoose.Schema;
 
 const droneSchema = new Schema ({
     name: {
-        type: String
+        type: String,
+        required: true
     },
     propellers: {
-        type: Number
+        type: Number,
+        required: true
     },
     maxSpeed: {
-        type: Number
+        type: Number,
+        required: true
     }
 });
 
