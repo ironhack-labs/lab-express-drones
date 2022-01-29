@@ -19,7 +19,6 @@ router.get('/drones/create', (req, res, next) => {
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  console.log(req.body);
   Drone.create(req.body)
     .then((drone) => {
       res.redirect('/drones');
@@ -50,7 +49,11 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect('/drones');
+    })
+    .catch((e) => next(e));
 });
 
 module.exports = router;
