@@ -14,3 +14,6 @@ Drone.deleteMany()
 .then(() => Drone.insertMany(drones))
 .then((dronesCreated) => console.log(dronesCreated))
 .catch((e) => console.log(e))
+.finally(() => {
+  process.exit();
+})
