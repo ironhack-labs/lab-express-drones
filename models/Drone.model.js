@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const dronSchema = new Schema({
+const droneSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -16,6 +16,6 @@ const dronSchema = new Schema({
   
 });
 
-const Drone = model("Dron", dronSchema);
+const Drone = model("Drone", droneSchema);
 
 module.exports = Drone;
