@@ -1,8 +1,14 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+#homepage {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
 }

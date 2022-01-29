@@ -8,7 +8,6 @@ router.get("/drones", (req, res, next) => {
   // Iteration #2: List the drones
   Drone.find()
     .then((allDrones) => {
-      // console.log(allDrones);
       res.render("drones/list", { drones: allDrones });
     })
     .catch((error) => {
@@ -17,13 +16,12 @@ router.get("/drones", (req, res, next) => {
     });
 });
 
+//Create
 router.get("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
   res.render("drones/create-form");
 });
 
 router.post("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
   const { name, propellers, maxSpeed } = req.body;
 
   Drone.create({ name, propellers, maxSpeed })
@@ -36,7 +34,7 @@ router.post("/drones/create", (req, res, next) => {
     });
 });
 
-//                      ----->       WE ARE HERE      <-----
+//Update
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   const { id } = req.params;
@@ -65,11 +63,18 @@ router.post("/drones/:droneId/edit", (req, res, next) => {
     });
 });
 
-//                      ----->       WE ARE HERE      <-----
-
 router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  const { id } = req.params;
+
+  Drone.findByIdAndDelete(id)
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((error) => {
+      console.log(`It seems that is a problem when deleting -> ${error}`);
+      next(error);
+    });
 });
 
 module.exports = router;

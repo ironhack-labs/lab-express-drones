@@ -1,14 +1,23 @@
-<section>
+<h1>Available drones</h1>
 
-  <h1>Available drones</h1>
+<section>
+  <a href="/drones/create">Create a new drone</a>
+
   {{#each drones}}
 
-    <div>
+    <div id="homepage">
 
       <h2>{{this.name}}</h2>
       <h3>{{this.propellers}}</h3>
       <h3>{{this.maxSpeed}}</h3>
-      <button> <a href="/drones/{{_id}}/edit">Edit</a></button>
+
+      <div>
+        <button> <a href="/drones/{{_id}}/edit">Edit</a></button>
+        <form action="/drones/{{_id}}/delete" method="post">
+          <button>Delete</button>
+        </form>
+      </div>
+
     </div>
 
   {{/each}}
