@@ -1,1 +1,18 @@
+
+{{!-- views/book-create.hbs --}}
 <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="post">
+
+  <label for="name-input">name:</label>
+  <input type="text" name="name" id="name-input" />
+
+  <label for="propellers-input">propellers:</label>
+  <input type="number" name="propellers" id="propellers-input" min="1" max="20"/>
+
+  <label for="maxSpeed-input">maxSpeed:</label>
+  <input type="number" name="maxSpeed" id="maxSpeed-input" min="1" max="99">
+
+  <button type="submit">Create</button>
+
+</form>
