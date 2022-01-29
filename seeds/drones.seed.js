@@ -8,9 +8,13 @@ const drones = [
   { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
 ];
 
-Drone.create(drones)
-  .then((drones) => console.log(`${drones.length} drones sucessfully created`))
-  .catch((err) => console.log(`Error while creating a new drone ${err}`))
-  .finally(() => {
-    process.exit();
-  })
+Drone.remove().then(() =>
+  Drone.create(drones)
+    .then((drones) =>
+      console.log(`${drones.length} drones sucessfully created`)
+    )
+    .catch((err) => console.log(`Error while creating a new drone ${err}`))
+    .finally(() => {
+      process.exit();
+    })
+);
