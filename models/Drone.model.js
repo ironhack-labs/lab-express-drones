@@ -1,7 +1,7 @@
 // Iteration #1
 const { Schema, model } = require("mongoose");
 
-const droneSchema = new Schema({
+const dronesSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -16,6 +16,6 @@ const droneSchema = new Schema({
     },
 });
 
-const Drone = model("Drone", droneSchema);
+const Drone = model("Drone", dronesSchema);
 
 module.exports = Drone;
