@@ -1,1 +1,17 @@
 <h2>Create a new drone</h2>
+<!-- Simple form which will send a GET request -->
+<!-- Simple form which will send a GET request -->
+<form action="/drones/create" method="POST">
+  
+  <label for="name-input">Name:</label>
+  <input placeholder="ola" id="name-input" type="text" name="name" />
+    
+    <label for="number-input">Number of propellers:</label>
+  <input id="number-input" type="number" name="propellers" />
+   
+    <label for="speed-input">Maximum speed:</label>
+  <input id="speed-input" type="number" name="maxSpeed" />
+
+  <button type="submit">Create drone</button>
+</form>
+
