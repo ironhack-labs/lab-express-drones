@@ -11,6 +11,10 @@ const drones = [
     { name: "Air Force 1", propellers: 6, maxSpeed: 18 }
   ];
 
-Drone.create(drones)
-    .then((drones)=> console.log(drones))
-    .catch((error)=>console.log(error))
+
+  Drone.deleteMany()
+  .then(() => Drone.create(drones))
+  .then((drones) => console.log(`${drones.length} created`))
+  .finally(() => {
+    process.exit();
+  });

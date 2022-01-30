@@ -37,7 +37,7 @@ router.post('/drones/create', (req, res, next) => {
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
-  const{id} = req.params
+  const{ id } = req.params
   Drone.findById(id)
     .then((drone)=> {
       res.render("drones/update-form", drone);
@@ -59,7 +59,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
    .catch((error)=> next(error))
  });
 
- router.get("/books/:id/delete", (req, res, next) => {
+ router.post("/drones/:id/delete", (req, res, next) => {
    const{ id } = req.params
 
   Drone.findByIdAndDelete(id)
@@ -69,18 +69,6 @@ router.get('/drones/:id/edit', (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-  const{ id }=req.params
-
-  Drone.findOneAndDelete(id)
-  .then(drone => {
-    console.log(drone)
-    res.redirect('/drones');
-  })
-  .catch((error) => next(error))
-});
 
 module.exports = router;
 
