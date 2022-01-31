@@ -8,11 +8,22 @@ h2 {
 
 a {
   color: #00b7ff;
-  margin: 20px;
+  width: 170px;
+  margin-top: 20px;
 }
 
 .index {
   margin-top: 30px;
+}
+
+.btn {
+  width: 170px;
+  /* margin-bottom: 20px; */
+}
+
+.card {
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 10px;
 }
 
 .card-btn-section {
@@ -23,5 +34,11 @@ a {
 }
 
 .card-btn-section a {
-  margin: 0;
+  margin: 0 20px 0 0;
+  width: 100px;
+}
+
+.card-btn-section button {
+  margin: 0 20px 0 0;
+  width: 100px;
 }
