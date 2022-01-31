@@ -5,6 +5,10 @@
     <p>Drone Name: {{this.name}} <br>
     Number of propellers: {{this.propellers}}    <br>
     Drone Maximun speed: {{this.maxSpeed}}<br>
-    <a href="/drones/{{this.id}}/edit">Edit</a>
+    <a href="/drones/{{this.id}}/edit" class="btn btn-primary">Edit</a>
+    <form action="/drones/{{this.id}}/delete" method="post">
+     <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+    
 </div>
 {{/each}}
