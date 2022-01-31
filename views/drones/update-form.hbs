@@ -1,6 +1,6 @@
 <h2>Update the drone</h2>
 
-<form action="/drones/update" method="post">
+<form action="/drones/{{drone._id}}/edit"  method="post">
   <label> Name:
     <input type="text" name="name" value="{{drone.name}}"/>
   </label>

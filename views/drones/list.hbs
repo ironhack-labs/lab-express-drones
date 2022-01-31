@@ -5,7 +5,11 @@
     <h5>{{name}}</h5>
     <p>{{propellers}}</p>
     <p>{{maxSpeed}}</p>
-     <a href="/drones/{{_id}}/edit">Edit</a>
+     <a href="/drones/{{_id}}/edit">Edit</a> <br>
+
+     <form action="/drones/delete" method="post"></form>
+       <a href="/drones/{{drone._id}}/delete">Delete</a>
+       </form>
   </div>
 {{/each}}
  
