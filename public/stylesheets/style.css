@@ -6,3 +6,22 @@ body {
 a {
   color: #00b7ff;
 }
+
+h2{
+  text-align: center;
+}
+
+#droneContainer{
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  margin: 1rem auto;
+}
+
+#droneDetails, #droneUpdate{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+}
