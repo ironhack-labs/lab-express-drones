@@ -35,17 +35,45 @@ router.post("/drones/create", (req, res, next) => {
     .catch((error) => {
       console.log(error);
       next(error);
+      res.redirect("/drones/create");
     });
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  const { id: droneId } = req.params;
+  console.log(droneId);
+  Drones.findById(droneId)
+    .then((foundDrone) => {
+      console.log("this is your drone: " + foundDrone);
+      res.render("drones/update-form.hbs", { drone: foundDrone });
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  const { id: droneId } = req.params;
+  const { name, propellers, maxSpeed } = req.body;
+  console.log(droneId, name, propellers, maxSpeed);
+  Drones.findOneAndUpdate(
+    { _id: droneId },
+    { name, propellers, maxSpeed },
+    { new: true }
+  )
+    .then(() => {
+      console.log("drone updated");
+      res.redirect("/drones");
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
 });
 
 router.post("/drones/:id/delete", (req, res, next) => {
