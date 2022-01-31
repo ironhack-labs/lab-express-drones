@@ -36,19 +36,19 @@ router.post('/drones/create', (req, res, next) => {
 });
 
 
-router.get('/drones/:droneid/edit', (req, res, next) => {
+router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  const { droneId } = req.params;
+  const { id } = req.params;
    
-    Drone.findById(droneId)
+    Drone.findById(id)
       .then(droneToEdit => {
         console.log(droneToEdit);
-        res.render('droness/update-form.hbs', { drone: droneToEdit });
+        res.render('drones/update-form.hbs', { drone: droneToEdit });
       })
       .catch(error => next(error));
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
+/*router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   const { droneId } = req.params;
     const {  name, propellers , maxSpeed  } = req.body;
@@ -56,7 +56,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
     Drone.findByIdAndUpdate(droneId, {  name, propellers , maxSpeed  }, { new: true })
       .then(updatedDrone => res.redirect(`/drones/${updatedDrone.id}`)) // go to the details page to see the updates
       .catch(error => next(error));
-  });
+  });*/
    
   
 
