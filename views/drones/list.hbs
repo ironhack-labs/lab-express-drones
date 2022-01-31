@@ -1,1 +1,15 @@
 <h2>Available drones</h2>
+
+{{!-- since we passed allDronesFromDB as `drones`,
+we can iterate over it here with #each--}}
+
+{{#each drones}}
+  <div>
+    <h3>{{name}}</h3>
+    <p>Number of Propellers: {{propellers}}</p> {{!-- additional drone property --}}
+    <p>Speed: {{maxSpeed}}</p>
+    {{!-- <form action="/books/{{_id}}/delete" method="POST">
+      <button>Delete</button>
+    </form> --}}
+  </div>
+{{/each}}
