@@ -39,12 +39,27 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  Drone.findById(id)
+    .then((droneToEdit) => {
+      console.log(droneToEdit);
+      res.render("drones/update-form.hbs", { drone: droneToEdit });
+    })
+    .catch((error) => next(error));
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { id } = req.params;
+  const { name, propellers, maxSpeed} = req.body;
+
+  Drone.findByIdAndUpdate(
+    id,
+    { name, propellers, maxSpeed},
+    { new: true }
+  )
+    .then((updatedDrone) => res.redirect(`/drones`)) // go to the details page to see the updates
+    .catch((error) => next(error));
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
@@ -53,3 +68,28 @@ router.post('/drones/:id/delete', (req, res, next) => {
 });
 
 module.exports = router;
+
+
+/* 
+//POST route to actually make updates on a specific book
+router.post("/books/:bookId/edit", (req, res, next) => {
+  const { bookId } = req.params;
+  const { title, description, author, rating } = req.body;
+
+  Book.findByIdAndUpdate(
+    bookId,
+    { title, description, author, rating },
+    { new: true }
+  )
+    .then((updatedBook) => res.redirect(`/books/${updatedBook.id}`)) // go to the details page to see the updates
+    .catch((error) => next(error));
+});
+
+// POST route to delete a book from the database
+router.post('/books/:bookId/delete', (req, res, next) => {
+  const { bookId } = req.params;
+ 
+  Book.findByIdAndDelete(bookId)
+    .then(() => res.redirect('/books'))
+    .catch(error => next(error));
+}); */
