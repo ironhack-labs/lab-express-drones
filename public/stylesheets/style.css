@@ -1,8 +1,27 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h2 {
+  margin-bottom: 30px;
 }
 
 a {
   color: #00b7ff;
+  margin: 20px;
+}
+
+.index {
+  margin-top: 30px;
+}
+
+.card-btn-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.card-btn-section a {
+  margin: 0;
 }
