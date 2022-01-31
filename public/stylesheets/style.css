@@ -6,3 +6,15 @@ body {
 a {
   color: #00b7ff;
 }
+
+.btnsize {
+  margin: 1em;
+  width: 5em;
+  height: 2em;
+}
+
+.arr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
