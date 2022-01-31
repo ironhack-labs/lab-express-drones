@@ -50,9 +50,12 @@ router.post("/drones/:droneId/edit", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.post("/drones/:droneId/delete", (req, res, next) => {
+  const { droneId } = req.params;
+
+  Book.findByIdAndDelete(droneId)
+    .then(() => res.redirect("/drones"))
+    .catch((error) => next(error));
 });
 
 module.exports = router;

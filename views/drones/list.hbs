@@ -5,5 +5,8 @@
     <p>Number of propellers: {{propellers}}</p>
     <p>Maximum speed &#40;m/s&#41;: {{maxSpeed}}</p>
     <a href="/drones/{{_id}}/edit">Edit</a>
+    <form action="/drones/{{_id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
   </div>
 {{/each}}
