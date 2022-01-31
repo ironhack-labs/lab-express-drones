@@ -53,7 +53,7 @@ router.post("/drones/:droneId/edit", (req, res, next) => {
 router.post("/drones/:droneId/delete", (req, res, next) => {
   const { droneId } = req.params;
 
-  Book.findByIdAndDelete(droneId)
+  Drone.findByIdAndDelete(droneId)
     .then(() => res.redirect("/drones"))
     .catch((error) => next(error));
 });
