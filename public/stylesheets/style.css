@@ -1,8 +1,44 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h2 {
+  margin-bottom: 30px;
 }
 
 a {
-  color: #00b7ff;
+  color: #8be96f;
+  width: 160px;
+  margin-top: 20px;
+}
+
+.index {
+  margin-top: 40px;
+}
+
+.btn {
+  width: 160px;
+  /* margin-bottom: 20px; */
+}
+
+.card {
+  border: 1px solid rgb(221, 102, 195);
+  border-radius: 10px;
+}
+
+.card-btn-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.card-btn-section a {
+  margin: 0 20px 0 0;
+  width: 110px;
+}
+
+.card-btn-section button {
+  margin: 0 20px 0 0;
+  width: 110px;
 }
