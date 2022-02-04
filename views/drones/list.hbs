@@ -1,1 +1,51 @@
-<h2>Available drones</h2>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-md">
+    <div class="bg-orange-400 px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+    <div class="ml-4 mt-2">
+      <h3 class="text-xl leading-6 font-bold text-gray-900">Available drones</h3>
+    </div>
+    <div class="ml-4 mt-2 flex-shrink-0">
+      <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add drone</button>
+    </div>
+  </div>
+</div>
+{{#each data }}
+  <ul role="list" class="divide-y divide-gray-200">
+    <li>
+      <a href="#" class="block hover:bg-orange-200">
+        <div class="flex items-center px-4 py-4 sm:px-6">
+          <div class="min-w-0 flex-1 flex items-center">
+            <div class="flex-shrink-0">
+              <img class="h-12 w-12 rounded-full" src="https://www2.djicdn.com/cms/uploads/cdcadbf686ac35831ac05e077ab944cf@640*640.jpg" alt="">
+            </div>
+            <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
+              <div>
+                <p class="text-sm font-medium text-indigo-600 truncate">{{ name }}</p>
+              </div>
+              <div class="hidden md:block">
+                <div>
+                  <p class="text-sm text-gray-900">
+                    Proppellers: {{ propellers }}
+                  </p>
+                  <p class="mt-2 flex items-center text-sm text-gray-600">
+                    Speed: {{ maxSpeed }} m/s
+                  </p>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+          <div>
+            <!-- Heroicon name: solid/chevron-right -->
+            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  {{/each }}
+</div>
