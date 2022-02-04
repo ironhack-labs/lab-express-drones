@@ -3,7 +3,8 @@
 require('dotenv/config');
 
 // ℹ️ Connects to the database
-require('./db');
+const connectDB	= require("./db/index")
+connectDB()
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
