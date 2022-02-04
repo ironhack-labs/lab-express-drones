@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
+	<script src="https://cdn.tailwindcss.com"></script>
 
-    {{{body}}}
+	<title>Drone App</title>
+</head>
 
-    <script src="/js/script.js"></script>
-  </body>
+<body>
+
+	<header class="bg-black">
+		<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+			<div class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
+				<div class="flex items-center">
+					<a href="/">
+						<img class="h-10 w-auto" src="./images/kisspng-ironhack-web-development-job-startup-company-march-26-2017-5b3cc178746835.0575003615307083444768.png"
+							alt="">
+					</a>
+					<div class="hidden ml-10 space-x-8 lg:block">
+						<a href="/" class="text-base font-medium text-white hover:text-indigo-50"> 
+							Home
+						</a>
+
+						<a href="/drones" class="text-base font-medium text-white hover:text-indigo-50"> 			Drone List
+						</a>
+
+						<a href="/drones/create" class="text-base font-medium text-white hover:text-indigo-50">
+							Create Drone
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	{{{ body }}}
+
+</body>
 
 </html>
