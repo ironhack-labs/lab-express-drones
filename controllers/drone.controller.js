@@ -13,3 +13,19 @@ exports.getDrones = async (req, res) => {
     }
 
 }
+
+exports.createDrones = async (req, res) => {
+    res.render('drones/create')
+}
+
+exports.createDronesForm = async (req, res) => {
+    const { name, propellers, maxSpeed } = req.body;
+
+    try {
+        await Drone.create({ name, propellers, maxSpeed })
+        return res.redirect('/drones');
+    } catch (error) {
+        console.log(error);
+        return
+    }
+}
