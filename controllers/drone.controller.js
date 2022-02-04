@@ -29,3 +29,21 @@ exports.createDronesForm = async (req, res) => {
         return
     }
 }
+
+exports.editDrone = async (req, res) => {
+    const { droneID } = req.params;
+    const foundDrone = await Drone.findById(droneID);
+    res.render('drones/update-form', { drone: foundDrone });
+}
+
+exports.editDroneForm = async (req, res) => {
+    const {droneID} = req.params;
+    const { name, propellers, maxSpeed } = req.body;
+    const updateDrone = await Drone.findByIdAndUpdate(
+        droneID,
+        { name, propellers, maxSpeed },
+        { new: true }
+    )
+    console.log(updateDrone);
+    return res.redirect(`/drones/${updateDrone._id}`)
+}

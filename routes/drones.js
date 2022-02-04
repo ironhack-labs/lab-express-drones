@@ -9,17 +9,11 @@ router.get('/create', droneCtrl.createDrones);
 
 router.post('/create', droneCtrl.createDronesForm);
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.get('/:droneID/update-form', droneCtrl.editDrone);
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.post('/:droneID/update-form', droneCtrl.editDroneForm);
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.post('/:droneID/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
 });
