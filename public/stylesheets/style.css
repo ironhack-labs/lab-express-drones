@@ -6,3 +6,40 @@ body {
 a {
   color: #00b7ff;
 }
+
+h1 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 30px;
+  margin-top: 100px;
+}
+
+.home {
+  /* background-image: url(/images/150ef84c5f79da0f3cee8788b203e5b9@1x.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  object-fit: cover; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.home a {
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-decoration: none;
+  padding: 10px 50px;
+}
+
+.home a:hover {
+  background-color: rgba(196, 189, 189, 0.664);
+}
+
+.home article {
+  position: absolute;
+  z-index: 100;
+}
