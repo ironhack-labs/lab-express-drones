@@ -14,7 +14,7 @@ exports.createDroneForm = async (req, res) => {
     }
 }
 
-//R: Leer drones y listarlos, mostrar un dron
+//R: Leer drones y listarlos
 exports.getDrones = async (req, res) => {
     try {
         const foundDrones = await Drone.find({});
@@ -24,6 +24,25 @@ exports.getDrones = async (req, res) => {
     }
 }
 
+
+
 //U: Actualizar dron
+exports.editDroneRender = async (req, res) => {
+    const { droneID } = req.params;
+    const getOneDrone = await Drone.findById(droneID);
+    res.render('drones/update-form', { drone: getOneDrone })
+}
+
+exports.editDroneForm = async (req, res) => {
+    const { droneID } = req.params;
+    const { name, propellers, maxSpeed } = req.body;
+    try {
+        await Drone.findByIdAndUpdate(droneID, {name, propellers, maxSpeed}, {new:true})
+        return res.redirect('/drones')
+    } catch (error) {
+       console.log(error); 
+    }
+    
+}
 
 //D: Eliminar dron
