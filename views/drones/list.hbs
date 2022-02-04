@@ -1,1 +1,13 @@
 <h2>Available drones</h2>
+
+{{#each drones}}
+<h5>{{name}}</h5>
+<p>{{propellers}}</p>
+<p>{{maxSpeed}}</p>
+
+<form action="/drones/{{id}}/delete" method="POST">
+<button>eliminar</button>
+</form>
+<br>
+<a href="/drones/{{id}}/edit">editar</a>
+{{/each}}
