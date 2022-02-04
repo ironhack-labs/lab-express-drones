@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
+ 
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+main{
+  padding: 20px;
 }
 
 a {
   color: #00b7ff;
+}
+
+.navbar{
+  padding: 20px;
+}
+
+.drone{
+  display: flex;
+  padding: 25px 25px;
+}
+
+button{
+  margin: 10px 10px;
+}
+img{
+  width: 350px;
 }
