@@ -6,15 +6,8 @@ const droneController = require('../controllers/droneController')
 
 router.get('/drones', droneController.getDrones)
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
-
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
+router.get('/drones/create', droneController.createDroneRender);
+router.post('/drones/create', droneController.createDroneForm);
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone

@@ -1,1 +1,66 @@
-<h2>Create a new drone</h2>
+<div class="bg-orange-100 shadow overflow-hidden sm:rounded-md">
+    <form action="/drones/create" method="POST">
+  <div class="bg-orange-400 px-4 py-5 border-b border-gray-200 sm:px-6">
+    <div
+      class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap"
+    >
+      <div class="ml-4 mt-2">
+        <h3 class="text-xl leading-6 font-bold text-gray-50">Add new drone</h3>
+      </div>
+      <div class="ml-4 mt-2 flex-shrink-0">
+        <button
+          type="submit"
+          class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >Save</button>
+      </div>
+    </div>
+  </div>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="bg-white py-6 px-4 sm:p-6">
+      <div class="mt-1 grid grid-cols-4 gap-6">
+        <div class="col-span-4 sm:col-span-2">
+          <label
+            for="name"
+            class="block text-sm font-medium text-gray-700"
+          >Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm"
+          />
+        </div>
+
+        <div class="col-span-4 sm:col-span-1">
+          <label
+            for="propellers"
+            class="block text-sm font-medium text-gray-700"
+          >Propellers</label>
+          <input
+            type="number"
+            name="propellers"
+            id="propellers"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm"
+          />
+        </div>
+
+        <div class="col-span-4 sm:col-span-1">
+          <label
+            for="maxSpeed"
+            class="flex items-center text-sm font-medium text-gray-700"
+          >Speed (m/s)</label>
+          <input
+            type="number"
+            name="maxSpeed"
+            id="maxSpeed"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+
+
+
