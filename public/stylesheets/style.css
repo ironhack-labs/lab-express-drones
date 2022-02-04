@@ -1,8 +1,109 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: rgb(22, 22, 22);
 }
 
 a {
   color: #00b7ff;
+}
+
+h1 {
+  margin-top: 70px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: rgb(251, 255, 0);
+}
+
+h2{
+  margin-top: 70px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: rgb(251, 255, 0);
+}
+
+.home-title{
+  margin-top: 100px;
+  font-size: 5rem;
+}
+
+.home-p{
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 300px;
+  text-align: center;
+}
+
+label{
+  color: white;
+}
+
+input{
+  width: 300px;
+}
+
+.card {
+  background-color: black;
+  margin: 25px 0px;
+  padding: 10px;
+}
+
+.card h5{
+  color: rgb(251, 255, 0);
+}
+
+.info{
+  margin: 30px 0px;
+  color: rgba(255, 255 , 255, .5);
+}
+
+.btn-primary {
+  color: black;
+  background-color: rgba(251, 255, 0, 0.6);
+  border-color: rgba(251, 255, 0, 1);
+}
+
+.btn-primary:hover {
+  color: black;
+  background-color: rgba(251, 255, 0, 1);
+  border-color: rgba(251, 255, 0, 1);
+}
+
+.btn-outline{
+  border-color:rgba(251, 255, 0, 0.4);
+  color: rgba(251, 255, 0, 0.4);
+}
+
+.btn-outline:hover{
+  border-color:rgba(251, 255, 0, 1);
+  color: rgba(251, 255, 0, 1);
+}
+
+.form{
+  margin-top: 50px;
+  background-color: black;
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.form p{
+  margin-right: 20px;
+}
+
+.form input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 0px white solid;
+}
+
+.firstlabel{
+  margin-top: 30px;
+}
+
+.edit-button{
+  margin: 30px;
+  border-radius: 5px;
+  padding: 10px 40px;
 }
