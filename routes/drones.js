@@ -20,12 +20,16 @@ router.get('/drones/create', (req, res, next) => {
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  const { name, propellers, maxSpeed } = req.body
+  if (!req.body) {
+    res.redirect('/drones/create')
+  } else {
+    const { name, propellers, maxSpeed } = req.body
 
-  Drone
-    .create({ name, propellers, maxSpeed })
-    .then(() => res.redirect('/drones'))
-    .catch(() => res.redirect('/drones/create'))
+    Drone
+      .create({ name, propellers, maxSpeed })
+      .then(() => res.redirect('/drones'))
+      .catch(() => res.redirect('/drones/create'))
+  }
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
