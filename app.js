@@ -19,16 +19,14 @@ const app = express();
 require('./config')(app);
 
 // default value for title local
-const projectName = 'lab-express-drones';
-const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
-
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+;
+app.locals.appTitle = 'Mi Lab de Drones para Ironhack - Generated with Ironlauncher';
 
 // 👇 Start handling routes here
-const index = require('./routes/index');
-app.use('/', index);
+const indexRoutes = require('./routes/index.routes');
+app.use('/', indexRoutes);
 
-const droneRoutes = require('./routes/drones')
+const droneRoutes = require('./routes/drones.routes')
 app.use('/', droneRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
