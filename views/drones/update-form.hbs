@@ -3,12 +3,20 @@
 
 <form action="/drones/{{_id}}/edit" method="POST">
 
-
-    <label for="">name <input type="text" name="name" value="{{name}}"></label>
+    <div class="form-group w-25">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+    </div>
     <br>
-    <label for="">propellers <input type="text" name="propellers" value="{{propellers}}"></label>
+    <div class="form-group w-25">
+        <label for="inputAddress">Propellers</label>
+        <input type="text" class="form-control" id="inputAddress" name="propellers" value="{{propellers}}">
+    </div>
     <br>
-    <label for="">maxSpeed <input type="text" name="maxSpeed" value="{{maxSpeed}}"></label>
+    <div class="form-group w-25">
+        <label for="inputAddress2">Max Speed</label>
+        <input type="text" class="form-control" id="inputAddress2" name="maxSpeed" value="{{maxSpeed}}">
+    </div>
 
 
     <input type="submit" value="Update Drone">

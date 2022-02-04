@@ -2,11 +2,20 @@
 
 <form action="/drones/create" method="POST">
 
-    <label for="">name <input type="text" name="name"></label>
+    <div class="form-group w-25">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
     <br>
-    <label for="">propellers <input type="text" name="propellers"></label>
+    <div class="form-group w-25">
+        <label for="inputAddress">Propellers</label>
+        <input type="text" class="form-control" id="inputAddress" name="propellers">
+    </div>
     <br>
-    <label for="">maxSpeed <input type="text" name="maxSpeed"></label>
+    <div class="form-group w-25">
+        <label for="inputAddress2">Max Speed</label>
+        <input type="text" class="form-control" id="inputAddress2" name="maxSpeed">
+    </div>
 
 
     <input type="submit" value="Create Drone">
