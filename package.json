@@ -13,6 +13,7 @@
     "hbs": "^4.1.1",
     "mongoose": "^6.1.2",
     "morgan": "^1.10.0",
+    "parsec": "^2.0.2",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
