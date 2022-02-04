@@ -3,20 +3,22 @@
 require('dotenv/config');
 
 // ℹ️ Connects to the database
-require('./db');
+const connectDB = require('./db');
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require('express');
+const app = express();
 
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
 
-const app = express();
+connectDB()
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
+
 
 // default value for title local
 const projectName = 'lab-express-drones';
