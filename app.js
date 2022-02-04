@@ -18,11 +18,8 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
-// default value for title local
-const projectName = 'lab-express-drones';
-const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+app.locals.appTitle = `IronDrons`;
 
 // 👇 Start handling routes here
 const index = require('./routes/index');
