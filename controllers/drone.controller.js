@@ -47,3 +47,9 @@ exports.editDroneForm = async (req, res) => {
     console.log(updateDrone);
     return res.redirect(`/drones/${updateDrone._id}`)
 }
+
+exports.deleteDrone = async (req, res) => {
+    const { droneID } = req.params;
+    await Drone.findByIdAndDelete(droneID);
+    return res.redirect('/drones')
+}
