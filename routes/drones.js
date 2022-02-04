@@ -42,10 +42,11 @@ router.get('/drones/:id/edit', (req, res, next) => {
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   const { name, propellers, maxSpeed } = req.body
+  const id = req.params.id
   Drone
     .findByIdAndUpdate(req.params.id, { name, propellers, maxSpeed })
     .then(updatedDrone => res.redirect('/drones'))
-    .catch(() => res.redirect('/drones/create'))
+    .catch(() => res.redirect(`/drones/${id}/edit`))
 
 
 
