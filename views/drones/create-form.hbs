@@ -1,1 +1,26 @@
-<h2>Create a new drone</h2>
+<div class="create-drone">
+
+    <h2>Create a new drone</h2>
+    
+    <form action="/drones/create" method="POST">
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+    
+        <label>
+            Propellers:
+            <input type="number" name="propellers">
+        </label>
+    
+        <label>
+            Max speed:
+            <input type="number" name="maxSpeed">
+        </label>
+    
+        <input class="index-link" type="submit" value="Create Drone">
+    </form>
+    
+    <a class="index-link" href="/">Lleva a Index</a>
+    
+</div>

@@ -6,3 +6,69 @@ body {
 a {
   color: #00b7ff;
 }
+
+.index-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.index-link {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: skyblue;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+
+}
+
+
+.create-drone {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.create-submit {
+  padding: 20px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.list-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit-list {
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: skyblue;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.delete-list {
+  padding: 10px;
+  border: none;
+  background-color: rgb(228, 68, 68);
+  border-radius: 5px;
+  color: white;
+}
+
+.update-drone {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
