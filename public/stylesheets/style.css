@@ -1,8 +1,78 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image:url('../images/background.jpeg');
+  background-size: cover;
+  
+}
+h1{
+  font-size: 4em;
 }
 
-a {
-  color: #00b7ff;
+h2{
+  color: aliceblue;
+  font-size: 2em;
+  font-weight: 600;
 }
+
+p{
+  font-size: 1.2em;
+}
+
+a, button {
+  text-decoration: none;
+  color: white;
+  padding: 10px 60px;
+  background-color: tomato;
+  border-radius: 12px;
+  
+}
+
+a:hover, button:hover {
+  background-color: brown;
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
+.intro {
+ display: flex;
+ flex-direction: column;
+ color: aliceblue;
+ align-items: center;
+ justify-content: center;
+ align-content: center;
+
+ 
+}
+
+.intro img{
+  width: 500px;
+}
+
+.drone{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  
+  border-radius: 20px;
+  margin: 20px;
+  align-items: center;
+  
+}
+
+button{
+  display: inline;
+  margin-top: 20px;
+  border: none;
+
+}
+
+.new{
+  display:block;
+  width: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
