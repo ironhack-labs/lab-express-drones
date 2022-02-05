@@ -1,7 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 0px;
+  margin: 90px;
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
   background-image: url(/images/fondo.jpg);
+  background-color: #cccccc;
+  
+}
+
+.navbar {
+  margin-left: 35px;
+}
+
+.carousel {
+  width: 70%;
+  display: block;
+  text-align: center;
 }
 
 a {
@@ -11,4 +29,8 @@ a {
 h1 {
   font-weight: 900;
   font-size: large;
+}
+
+.btn {
+  margin: 15px;
 }

@@ -20,7 +20,7 @@ require('./config')(app);
 
 // default value for title local
 ;
-app.locals.appTitle = 'Mi Lab de Drones para Ironhack - Generated with Ironlauncher';
+app.locals.appTitle = 'Lab de Drones - Ironhack';
 
 // 👇 Start handling routes here
 const indexRoutes = require('./routes/index.routes');

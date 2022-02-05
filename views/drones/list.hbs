@@ -1,31 +1,27 @@
-<h2>Drones disponibles</h2>
+<h2>DRONES DISPONIBLES</h2>
 <hr>
-
 {{#each drones}}
-<h3>Nombre: {{name}}</h3>
+<ul>
+    <li>
+        <h3>Nombre: {{name}}</h3>
 
-<h4>Propellers:</h4>
-<p>{{propellers}}</p>
+    </li>
+    <li>
+        <h3>Propellers: {{propellers}}</h3>
+    </li>
+    <li>
+        <h3>Velocidad max: {{maxSpeed}}</h3>
+    </li>
+    <a class="btn btn-warning" href="/drones/{{_id}}/edit">Edit drone info</a>
 
-<h4>Velocidad max:</h4>
-<p>{{maxSpeed}}</p>
+    <form action="/drones/{{_id}}/delete" method="POST" style="display: inline-block;">
+        <button type="button" class="btn btn-danger">Eliminar</button>
+    </form>
+</ul>
 
-<a href="/drones/{{_id}}/edit">Edit drone info</a>
-
-<br>
-
-<form action="/drones/{{_id}}/delete" method="POST" style="display: inline-block;">
-
-    <button type="button" class="btn btn-warning">Eliminar</button>
-    
-</form>
 <hr>
 {{/each}}
 
-<br>
+<a class="btn btn-warning" href="/" role="button">Inicio</a>
 
-<a class="btn btn-dark" href="/" role="button">Inicio</a>
-
-<br>
-
-<a class="btn btn-dark" href="/drones/create" role="button">Crea tu Drone</a>
+<a class="btn btn-warning" href="/drones/create" role="button">Crea tu Drone</a>
