@@ -1,8 +1,106 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+    background-color: #1f1f23;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-weight: 600;
 }
 
-a {
-  color: #00b7ff;
+a, 
+a:hover {
+    color: #00b7ff;
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 30px;
+}
+
+header {
+    background-color: #2f2f35;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    color: #b5b5b5;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #fff;
+    transition: all 500ms ease-in-out;
+}
+
+img {
+    position: absolute;
+    animation: fly 6s ease-out; 
+}
+
+@keyframes fly {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+h1,
+h2,
+h5 {
+    color: grey;
+}
+
+.card {
+    background-color: #2f2f35;
+    margin: 20px 0;
+    color: #b5b5b5;
+    border-radius: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn {
+    color: #fff;
+    background-color: #b5b5b5;
+    font-weight: 600;
+}
+
+.btn.del {
+    background-color: grey;
+}
+
+.btn:hover {
+    color: #2f2f35;
+    transition: all 500ms ease-in-out;
+}
+
+label {
+    color: #b5b5b5;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 300px;
+    background: none;
+    border: none;
+    border-bottom: solid 1px #b5b5b5;
+    outline: none;
+    color: #fff;
 }
