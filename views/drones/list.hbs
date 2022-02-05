@@ -1,6 +1,7 @@
 <h2>Available drones</h2>
 <hr>
 
+<!--
 {{#each data}}
 <div>
     <h3>{{ name }}</h3>
@@ -12,3 +13,31 @@
     </form>
 </div>
 {{/each}}
+-->
+
+<div>
+  <div class="flow-root mt-6">
+    <ul role="list" class="-my-5 divide-y divide-gray-200">
+        {{#each data}}
+        <li class="py-4">
+        <div class="flex items-center space-x-4">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate">{{ name }}</p>
+            <p class="text-sm text-gray-500 truncate">Propulsores: {{ propellers }}</p>
+            <p class="text-sm text-gray-500 truncate">Velocidad Máxima: {{ maxSpeed }}</p>
+          </div>
+          <div>
+            <a href="/drones/{{_id}}/update-form" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> Editar </a>
+          </div>
+          <div>
+            <form action="/drones/{{_id}}/delete" method="post">
+                <button class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> Borrar</button>
+            </form>
+          </div>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
