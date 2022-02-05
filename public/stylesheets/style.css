@@ -3,8 +3,6 @@
   margin: 0;
 }
 
-
-
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
@@ -13,3 +11,17 @@ body {
 a {
   color: #00b7ff;
 }
+
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: -48px;
+  margin-bottom: 65px;
+}
+
+img {
+  margin: 4px;
+  padding-left: 302px;
+}
+
