@@ -1,1 +1,23 @@
-<h2>Available drones</h2>
+<h2>Lista De Drones</h2>
+
+
+<ul>
+    {{#each drones}}
+
+    <li>
+        {{name}}
+    </li>
+
+    <li>
+        {{propellers}}
+    </li>
+
+    <li>
+        {{maxSpeed}}
+        <hr>
+    </li>
+
+    {{/each}}
+</ul>
+
+<a href="/list/drone">Crear Nuevo Dron</a>
