@@ -46,3 +46,36 @@ exports.createDronesForm = async (req, res) => {
 
 
 }
+
+exports.editDrone = async (req, res) => {
+
+	const { droneID } = req.params
+
+	const foundDrone = await Drone.findById(droneID)
+
+	res.render("drones/update-form", { drone: foundDrone })
+
+
+}
+
+exports.editDroneForm = async (req, res) => {
+
+	// 1. NECESITO EL ID DEL DRONE QUE VOY A EDITAR
+	const { droneID } = req.params
+
+	// 2. NECESITO LOS DATOS DEL FORMULARIO NUEVOS CON LOS CUALES VOY A ACTUALIZAR EL DRONE EN BD
+	const { name, propellers, maxSpeed } = req.body
+
+
+	// 3. ACTUALIZAR EN BASE DE DATOS
+	const updateDrone = await Drone.findByIdAndUpdate(
+		droneID,
+		{ name, propellers, maxSpeed },
+		{ new: true }
+	)	
+
+	// 4. REDIRECCIONAR A LA PÁGINA INDIVIDUAL DEL LIBRO
+	return res.redirect(`/drones`)
+
+
+}
