@@ -1,3 +1,4 @@
+const connectDB = require("./db/index")
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require('dotenv/config');
@@ -17,7 +18,7 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
-
+connectDB()
 // default value for title local
 const projectName = 'lab-express-drones';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
@@ -29,7 +30,11 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const droneRoutes = require('./routes/drones')
-app.use('/', droneRoutes)
+app.use('/drones', droneRoutes)
+
+// const list = require('./routes/drones');
+// app.use('/drones', droneRoutes)
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

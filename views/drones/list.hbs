@@ -1,1 +1,8 @@
 <h2>Available drones</h2>
+{{#each data }}
+		<div>
+			<h3>{{name}}</h3>
+						
+			<form action="/list/{{_id}}/delete" method="POST"></form>
+		</div>
+	{{/each}}
