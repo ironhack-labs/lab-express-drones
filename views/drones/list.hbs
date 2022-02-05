@@ -17,16 +17,19 @@
         <div class="flex items-center px-4 py-4 sm:px-6">
           <div class="min-w-0 flex-1 flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-12 w-12 rounded-full" src="https://www2.djicdn.com/cms/uploads/cdcadbf686ac35831ac05e077ab944cf@640*640.jpg" alt="">
+               <form action="/drones/{{_id}}/delete" method="POST">
+                  <button class="relative inline-flex items-center px-2 py-1 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">X</button>
+               </form>
             </div>
             <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
               <div>
                 <p class="text-lg font-bold text-indigo-600 truncate">{{ name }}</p>
+                
               </div>
               <div class="hidden md:block">
                 <div>
                   <p class="text-sm text-gray-900">
-                    Proppellers: {{ propellers }}
+                    Propellers: {{ propellers }}
                   </p>
                   <p class="mt-2 flex items-center text-sm text-gray-600">
                     Speed: {{ maxSpeed }} m/s
@@ -36,6 +39,7 @@
               </div>
               
             </div>
+            
           </div>
           <div>
             <!-- Heroicon name: solid/chevron-right -->

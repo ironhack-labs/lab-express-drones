@@ -42,7 +42,11 @@ exports.editDroneForm = async (req, res) => {
     } catch (error) {
        console.log(error); 
     }
-    
 }
 
 //D: Eliminar dron
+exports.deleteDrone = async (req, res) => {
+    const { droneID } = req.params;
+    await Drone.findByIdAndDelete(droneID)
+    res.redirect('/drones')
+}
