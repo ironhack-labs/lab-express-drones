@@ -1,1 +1,38 @@
 <h2>Available drones</h2>
+<hr />
+<section>
+  <div class='row row-cols-1 row-cols-md-4 g-4'>
+
+    {{#each listDrones}}
+      <div class='col'>
+        <div class='card' style='width: 18rem;'>
+          <img
+            src='https://images-na.ssl-images-amazon.com/images/I/61N0rJz2qnL._AC_UL160_SR160,160_.jpg'
+            class='card-img-top'
+            alt='drone'
+          />
+          <div class='card-body'>
+            <h5 class='card-title'>{{name}}</h5>
+            <ul class='card-text'>
+              <li>Propellers: {{propellers}}</li>
+              <li>Max speed: {{maxSpeed}}</li>
+            </ul>
+            <a href='/drones/{{_id}}/edit' class='btn btn-primary'>Edit</a>
+            <form
+              action='/drones/{{_id}}/delete'
+              method='post'
+              style='display: inline-block;'
+            >
+              <input
+                type='submit'
+                class='btn btn-primary'
+                value='Delete'
+              /></form>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>
+<br /><br />
+<a href='/drones/create' class='btn btn-primary'>New drone</a>
