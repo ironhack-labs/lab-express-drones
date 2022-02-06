@@ -22,7 +22,11 @@ p {
   
 }
 
+a{
+  color: white;
+  text-decoration: none;
 
+}
 
 .index-button {
   margin-bottom: 1rem;

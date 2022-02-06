@@ -1,22 +1,25 @@
-<h2>Do you really want to edit our fantastic drone?</h2>
-<p>Well, feel free to modify it</p>
+<div class="container">
 
-<form action="/drones/{{id}}/edit" method="POST">
-    <label>
-        Drone's name
-        <input type="text" name="name" value="{{name}}">
-    </label>
-    <br>
-    <label>
-        Number of propellers
-        <input type="number" name="propellers" value="{{propellers}}">
-    </label>
-    <br>
-    <label>
-        Max speed
-        <input type="number" name="maxSpeed" value="{{maxSpeed}}">
-    </label>
-    <br>
-    <input type="submit" value="Create your drone!">
+    <h2>Do you really want to edit our fantastic drone?</h2>
+    <p>Well, feel free to modify it</p>
 
-</form>
+    <form action="/drones/{{id}}/edit" method="POST">
+        <label>
+            <p>Drone's name</p> 
+            <input type="text" name="name" value="{{name}}">
+        </label>
+        <br>
+        <label>
+            <p>Number of propellers</p> 
+            <input type="number" name="propellers" value="{{propellers}}">
+        </label>
+        <br>
+        <label>
+            <p>Max speed</p> 
+            <input type="number" name="maxSpeed" value="{{maxSpeed}}">
+        </label>
+        <hr>
+        <input class="btn btn-dark" type="submit" value="Create your drone!">
+
+    </form>
+</div>

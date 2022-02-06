@@ -1,25 +1,28 @@
-<h2>Create a new drone</h2>
-<p>Fill in the gaps with the information about your fantastic drone!</p>
+<div class="container">
 
-<form action="/drones/create" method="POST">
-    <label>
-        Drone's name
-        <input type="text" name="name">
-    </label>
-    <br>
-    <label>
-        Number of propellers
-        <input type="number" name="propellers">
-    </label>
-    <br>
-    <label>
-        Max speed
-        <input type="number" name="maxSpeed">
-    </label>
-    <br>
-    <input type="submit" value="Create your drone!">
-    {{!-- <button>
-        <a href="/drones">Go back to our list of drones</a>
-    </button> --}}
+    <h2>Create a new drone</h2>
+    <p>Fill in the gaps with the information about your fantastic drone!</p>
 
-</form>
+    <form action="/drones/create" method="POST">
+        <label>
+            <p>Drone's name</p>
+            <input type="text" name="name">
+        </label>
+        <br>
+        <label>
+            <p>Number of propellers</p>
+            <input type="number" name="propellers">
+        </label>
+        <br>
+        <label>
+            <p>Max speed</p>
+            <input type="number" name="maxSpeed">
+        </label>
+        <hr>
+        <input class="btn btn-outline-dark" type="submit" value="Create your drone!">
+        <button class="btn btn-dark">
+            <a href="/drones">Go back to our list of drones</a>
+        </button>
+
+    </form>
+</div>
