@@ -1,20 +1,27 @@
-<h2>Available drones</h2>
+<div class="row ">
+    {{#each drone}}
+    <div class="col-6 text-justified form">
+        <h3>Drone's model: {{name}}</h3>
+        <p>Propellers amount: {{propellers}}</p>
+        <p>Maximum speed (meters per second): {{maxSpeed}} </p>
+    </div>
+    <div class="col-6 form">
+        <a class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto" role="button" href="/drones/edit/{{_id}}">Edit
+            Drone</a>
 
-{{#each drone}}
-<h3>{{name}}</h3>
-<p>Propellers amount: {{propellers}}</p>
-<p>Maximum speed (meters per second):{{maxSpeed}} </p>
-<div class="col-12">
+        <form action="/drones/delete/{{_id}}" method="POST">
+            <button type="submit" class="btn btn-outline-danger d-grid gap-2 col-6 mx-auto">Delete Drone</button>
+        </form>
+    </div>
+    <br><br>
 
-    <a class="btn btn-primary" role="button" href="/drones/edit/{{_id}}">Edit Drone</a>
+
+    {{/each}}
 </div>
-
-<form action="/drones/delete/{{_id}}" method="POST">
-    <button type="submit" class="btn btn-danger">Delete Drone</button>
-
-</form>
-<br><br>
-{{/each}}
-<div class="col-12">
-    <a class="btn btn-primary" role="button" href="/drones/create">Create a new Drone</a>
+<div class="col-6 form">
+    <a class="btn btn-dark d-grid gap-2 col-12 mx-auto" role="button" href="/drones/create">Create a new
+        Drone</a>
+</div>
+<div class="col-6">
+    <a class="btn btn-outline-ligth d-grid gap-2 col-12 mx-auto" role="button" href="/">Go back to home page</a>
 </div>

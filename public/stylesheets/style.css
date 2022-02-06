@@ -1,8 +1,28 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: rgb(194, 190, 190);
+  
+  /* background: url('/images/drone.png')no-repeat;
+  background-size: cover; */
 }
+/* .index{
+  margin: 50px, auto;
+ 
+} */
 
+/* .btn-outline-dark{
+
+} */
+.form{
+  margin-top: 50px;
+}
+img{
+  width: 500px;
+  margin-top: 50px;
+}
 a {
   color: #00b7ff;
 }
+
+
