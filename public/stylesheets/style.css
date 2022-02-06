@@ -9,11 +9,12 @@ body {
   color: whitesmoke;
   background-image: url(/images/fondo.jpg);
   background-color: #cccccc;
+  background-size: cover;
   
 }
 
 .navbar {
-  margin-left: 35px;
+  padding-left: 35px;
 }
 
 .carousel {
@@ -28,7 +29,7 @@ a {
 
 h1 {
   font-weight: 900;
-  font-size: large;
+  font-size: 5em;
 }
 
 .btn {
