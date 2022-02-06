@@ -1,3 +1,5 @@
+
+const connectDB			= require("./db/index")
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require('dotenv/config');
@@ -17,7 +19,7 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
-
+connectDB()
 // default value for title local
 const projectName = 'lab-express-drones';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
@@ -35,3 +37,4 @@ app.use('/', droneRoutes)
 require('./error-handling')(app);
 
 module.exports = app;
+

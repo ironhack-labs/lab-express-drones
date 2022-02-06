@@ -1,1 +1,149 @@
-<h2>Create a new drone</h2>
+<nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
+
+            Heroicon name: outline/menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+            Icon when menu is open.
+
+            Heroicon name: outline/x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="block lg:hidden h-8 w-auto" src="https://as2.ftcdn.net/v2/jpg/02/90/67/79/1000_F_290677917_SCh4w9u6qhOUnhWSypWW13J3cxjUXq0p.jpg" alt="Drones">
+          <img class="hidden lg:block h-8 w-auto" src="https://as2.ftcdn.net/v2/jpg/02/90/67/79/1000_F_290677917_SCh4w9u6qhOUnhWSypWW13J3cxjUXq0p.jpg" alt="Drones">
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            
+            <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+
+            <a href="/drones" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Drones List</a>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</nav>
+
+
+
+<form action="/drones/{{drone._id}}create" method="post">
+  <div class="relative bg-white">
+    <div class="lg:absolute lg:inset-0">
+      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img class="h-56 w-full object-cover lg:absolute lg:h-full" src="https://www.incibe-cert.es/sites/default/files/styles/recuadro_original/public/contenidos/blog/drones.jpg?itok=-sRFNhud" alt="">
+      </div>
+    </div>
+    <div class="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
+      <div class="lg:pr-8">
+        <div class="max-w-md mx-auto sm:max-w-lg lg:mx-0">
+          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Create your drone</h2>
+          <p class="mt-4 text-lg text-gray-500 sm:mt-3"> Fill out the survey to create your drone</p>
+          <form action="#" method="POST" class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <div class="mt-1">
+                <input type="text" name="name" autocomplete="Insert a name" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+              </div>
+            </div>
+            <div>
+              <label for="propellers" class="block text-sm font-medium text-gray-700">Propeller</label>
+              <div class="mt-1">
+                <input type="number" name="propellers" autocomplete="Number of propellers" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="maxSpeed" class="block text-sm font-medium text-gray-700">Max Speed</label>
+              <div class="mt-1">
+                <input name="maxSpeed" type="number" autocomplete="Max Speed" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="image" class="block text-sm font-medium text-gray-700">Link of image</label>
+              <div class="mt-1">
+                <input type="text" name="image" autocomplete="Image" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+              </div>
+
+            <div class="text-right sm:col-span-2">
+              <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create your drone</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+{{!-- 
+  <center><div class="space-y-6">
+    <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+      <div class="md:grid md:grid-cols-1 md:gap-6">
+        <div class="mt-5 md:mt-0 md:col-span-2">
+          <form class="space-y-6" action="#" method="POST">
+            <div>
+              <label class="block text-sm font-medium text-gray-700"> Upload image </label>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                <div class="space-y-1 text-center">
+                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <div class="flex text-sm text-gray-600">
+                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                      <span>Upload a file</span>
+                      <input id="file-upload" name="image" type="file" class="sr-only">
+                    </label>
+                    <p class="pl-1">or drag and drop</p>
+                  </div>
+                  <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div></center>
+            <br> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

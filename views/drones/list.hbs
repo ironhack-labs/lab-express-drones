@@ -1,1 +1,146 @@
-<h2>Available drones</h2>
+{{!-- <h1>Available drones</h1>
+
+
+	{{#each data }}
+		<div>
+			<img class = "imagen" src={{image}}>
+			<h4>Device name: {{name}}</h4>
+            <h4>Number of Propellers: {{propellers}}</h4>
+            <h4>Speed: {{maxSpeed}}</h4>
+			<a href ="/drones/{{_id}}/edit">Edit</a>
+			<form action="/drones/{{_id}}/delete" method="POST">
+				<button>Delete</button>				
+			</form>
+			<br>
+		</div>
+	{{/each}} --}}
+<nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
+
+            Heroicon name: outline/menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+            Icon when menu is open.
+
+            Heroicon name: outline/x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="block lg:hidden h-8 w-auto" src="https://as2.ftcdn.net/v2/jpg/02/90/67/79/1000_F_290677917_SCh4w9u6qhOUnhWSypWW13J3cxjUXq0p.jpg" alt="Drones">
+          <img class="hidden lg:block h-8 w-auto" src="https://as2.ftcdn.net/v2/jpg/02/90/67/79/1000_F_290677917_SCh4w9u6qhOUnhWSypWW13J3cxjUXq0p.jpg" alt="Drones">
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            
+            <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+
+            <a href="/drones/create" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create a new drone</a>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</nav>
+
+
+
+	<div class="background">
+  <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+    <div class="space-y-12">
+      <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+        <center><h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl bold ">Available drones</h2></center>
+        <center><p class="text-xl text-gray-500">Select your favorite drone</p></center>
+      </div>
+      <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
+        {{#each data }}
+		<li>
+          <div class="space-y-4">
+            <div class="aspect-w-3 aspect-h-2">
+              <img class = "imagen" src={{image}} alt="">
+            </div>
+            <div class="space-y-2">
+              <div class="text-lg leading-6 font-medium space-y-1">
+                <h3>Device name: {{name}}</h3>
+                <p class="text-indigo-600">Number of Propellers: {{propellers}}</p>
+				<p class="text-indigo-600">Speed: {{maxSpeed}}</p>
+              </div>
+              {{!-- <ul role="list" class="flex space-x-5">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Edit</span>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <a href ="/drones/{{_id}}/edit">Edit</a>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Delete</span>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+						<form action="/drones/{{_id}}/delete" method="POST">
+							<button>Delete</button>				
+						</form>
+                    </svg>
+                  </a>
+                </li>
+              </ul> --}}
+				<span class="relative z-0 inline-flex shadow-sm rounded-md gray"> 
+						{{!-- <div class="editv"
+							<span class="sr-only"></span>
+							<a href ="/drones/{{_id}}/edit">Edit</a> 
+
+						</div> --}}
+
+
+						<form action="/drones/{{_id}}/edit" method="get">
+							<button class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-700 hover:bg-teal-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"style="margin-left: 90px">Edit</button>				
+						</form>
+
+
+
+
+						{{!-- <form action="/drones/{{_id}}/edit" method="POST">
+							<button type="button" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-teal-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" style="margin-left: 90px" >Edit</button>			
+						</form> --}}
+						<!-- Heroicon name: solid/chevron-left -->
+						{{!-- <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+						<path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+						</svg> --}}
+						<form action="/drones/{{_id}}/delete" method="POST">
+							<button class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-700 hover:bg-teal-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"style="margin-left: 40px">Delete</button>				
+						</form>
+
+						
+						<!-- Heroicon name: solid/chevron-right -->
+						{{!-- <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+						</svg> --}}
+				</span> 
+            </div>
+          </div>
+        </li>
+		{{/each}}
+
