@@ -1,1 +1,49 @@
 <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="POST">
+
+
+
+
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-header">
+            <label>NAME
+                <input class="input-field" type="text" name='name' placeholder="model name">
+            </label>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><label class="label">IMAGE
+                    <input class="input-field" type="string" name='img' placeholder="paste URL">
+                </label></li>
+            <li class="list-group-item"><label class="label">MANUFACTURER
+                    <input class="input-field" type="string" name='manufacturer' placeholder="country">
+                </label></li>
+            <li class="list-group-item"><label class="label">PROPELLERS
+                    <input class="input-field" type="number" name='propellers' placeholder="propellers">
+                </label></li>
+            <li class="list-group-item"><label class="label">PEAK SPEED
+
+                    <input class="input-field" type="number" name='maxSpeed' placeholder=" max speed">
+                </label></li>
+            <li class="list-group-item"><label>WEAPON SYSTEMS
+
+
+                    <ul class="weapon-list">
+
+                        <li class="weapon"><input type="string" name="weaponSystems" placeholder="WEAPON SYSTEM">
+                            {{!-- <button class="remove" type="button">REMOVE</button> --}}
+
+                        </li>
+
+                    </ul>
+                    <button class="create-btn btn btn-sm btn-warning edit" type="button">ADD WEAPON</button>
+                </label></li>
+
+        </ul>
+    </div>
+    <hr>
+    <input class="submit-btn btn btn-lg btn-warning edit" type="submit" value="CREATE ENTRY">
+    <br><br>
+    <a href="/drones">back</a>
+</form>

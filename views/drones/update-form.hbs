@@ -1,1 +1,57 @@
-<h2>Update the drone</h2>
+<h1>Update the {{name}}</h1>
+
+<form action="/drones/{{_id}}/edit" method="POST">
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-header">
+            <label>NAME
+                <input type="text" name='name' value="{{name}}">
+            </label>
+
+        </div>
+
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><label class="label">IMAGE
+                    <input type="string" name='img' value="{{img}}">
+                </label></li>
+
+            <li class="list-group-item"><label class="label">MANUFACTURER
+                    <input type="string" name='manufacturer' value="{{manufacturer}}">
+                </label></li>
+
+            <li class="list-group-item">
+                <label class="label">PROPELLERS
+                    <input type="number" name='propellers' value="{{propellers}}">
+
+                </label>
+            </li>
+
+            <li class="list-group-item"><label class="label">PEAK SPEED
+                    <input type="number" name='maxSpeed' value="{{maxSpeed}}">
+                </label></li>
+
+            <li class="list-group-item"><label>WEAPON SYSTEMS
+                    <ul class="weapon-list">
+                        {{#each weaponSystems}}
+                        <li class="weapon"><input type="string" name="weaponSystems" value="{{this}}"><button
+                                class="remove-btn btn-danger" type="button">REMOVE</button></li>
+                        {{/each}}
+
+                    </ul>
+                    <button class="create-btn btn btn-sm btn-warning edit" type="button">ADD WEAPON</button>
+
+                </label></li>
+
+
+        </ul>
+    </div>
+
+
+
+    <hr>
+    <input class="submit-btn btn btn-lg btn-warning edit" type="submit" value="SAVE CHANGES">
+    <br><br>
+    <a href="/drones">back</a>
+
+</form>

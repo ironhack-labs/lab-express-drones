@@ -1,1 +1,46 @@
-<h2>Available drones</h2>
+<div class="d-grid gap-2 d-md-block">
+    <a href="/drones/create" class="btn btn-lg btn-warning edit">
+        REGISTER NEW MODEL
+    </a>
+    <a class="btn btn-lg btn-outline-warning edit" href="/">main</a>
+
+</div>
+
+
+
+<div class="row">
+
+    {{#each drones}}
+
+
+    <div class="card" style="width: 18rem;">
+
+        <img src="{{img}}" class="card-img-top" alt="{{name}} image">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Manufacturer: {{manufacturer}}</li>
+            <li class="list-group-item">Propellers: {{propellers}}</li>
+            <li class="list-group-item">Peak Speed: {{maxSpeed}} km/h</li>
+        </ul>
+        <div class="card-footer">
+            <ul class="list-group list-group-flush">
+                {{#each weaponSystems}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="card-body ">
+            <div class="list-buttons">
+                <a class="btn btn-sm btn-warning edit" href="/drones/{{_id}}/edit" role="button">edit</a>
+                <form action="/drones/{{_id}}/delete" method="POST">
+                    <input class="btn-danger" type="submit" value="delete">
+                </form>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+
+</div>

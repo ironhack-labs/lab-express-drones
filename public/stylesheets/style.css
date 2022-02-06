@@ -6,3 +6,61 @@ body {
 a {
   color: #00b7ff;
 }
+li{
+  list-style: none;
+
+}
+.frontpage{
+  display: flex;
+  background-image: url("../images/background.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+place-items: center;
+justify-content: center;
+  
+}
+
+.intro{
+  background-color: rgba(161, 138, 8, 0.74);
+  border-radius: 15px;
+  /* // if done with shorthand, bootstrap overrides the style */
+  padding-top:15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.label{
+  display: flex;
+  justify-content: space-between;
+
+} 
+
+.weapon{margin: 5px;}
+
+/* //components */
+
+.list-buttons{
+  display: flex;
+}
+
+.remove-btn{
+  margin-left:5px;
+}
+
+.edit{
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-right: 5px;
+ border-radius: 0;
+ border-style: outset;
+ border-width: 2px;
+}
+
+.card{
+  margin: 20px;
+
+}
