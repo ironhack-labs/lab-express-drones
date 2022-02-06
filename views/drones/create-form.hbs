@@ -1,1 +1,37 @@
 <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="POST">
+
+<div class="mb-3"></div>
+    <label>
+        Name
+        <input type="text" name="name" >
+    </div>
+    </label>
+
+    <label>
+        Propellers
+        <input type ="number" name="propellers">
+     </label>
+
+    <label>
+        maxSpeed
+        <input type ="number" name="maxSpeed">
+    </label>
+<input type="submit" class="btn btn-primary" value="Crear Dron">
+</form>
+
+
+
+{{!-- <form>
+   
+  
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+   
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary"></button>
+</form> --}}
