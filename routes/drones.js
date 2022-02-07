@@ -14,7 +14,7 @@ router.get("/drones", (req, res, next) => {
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
-  res.render("drones/create-form");
+  res.render("drones/create-form", { thetitle: "" });
 });
 
 router.post("/drones/create", (req, res, next) => {
@@ -27,7 +27,9 @@ router.post("/drones/create", (req, res, next) => {
     })
     .catch((err) => {
       console.log("something went wrong adding to the db", err);
-      res.render("drones/create-form");
+      res.render("drones/create-form", {
+        thetitle: "Something went wrong when adding the drone, try again",
+      });
     });
 });
 
