@@ -18,11 +18,26 @@ router.get('/drones', (req, res, next) => {
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  let err = "hidden";
+  if(req.query.error==="true"){
+    err = "";
+  }
+  res.render("drones/create-form", { error: err } );
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  const { name, propellers, maxSpeed } = req.body;
+  Drone.create({name, propellers, maxSpeed})
+      .then(resDroneCreated => {
+        console.log("User introduced a new Drone.", resDroneCreated);
+        res.redirect("./");
+      })
+      .catch(err => {
+        console.log("Error while creating a new drone: ", err);
+        res.redirect("./create?error=true");
+      });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
