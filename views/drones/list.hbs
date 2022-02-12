@@ -1,5 +1,5 @@
 <h2>Available drones</h2>
-{{#each this}}
+{{#each drones}}
 {{#with this}}
 {{#if name}}
 <div>
@@ -9,8 +9,12 @@
         <li>Max. Speed: {{maxSpeed}}km/h</li>
     </ul>
     <a href="/drones/{{_id}}/edit">Edit</a>
+    <form action="/drones/{{_id}}/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
 </div>
 {{/if}}
 {{/with}}
 {{/each}}
 <a href="/drones/create">Create a drone</a>
+<h2 {{error}}>Error while deleting a drone</h2>
