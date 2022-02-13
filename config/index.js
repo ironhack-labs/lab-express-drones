@@ -17,6 +17,13 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
+/* 
+const sass = require('sass');
+
+const result = sass.compile('/src/main.scss'); */
+
+/* const sass = require('sass'); */
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
@@ -36,4 +43,12 @@ module.exports = (app) => {
 
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
+
+  /* app.use(
+    sass.middleware({
+        src: __dirname + '/src', //where the sass files are 
+        dest: __dirname + '/public/stylesheets', //where css should go
+        debug: true // obvious
+    })
+); */
 };

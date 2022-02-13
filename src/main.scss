@@ -1,0 +1,318 @@
+/* VARIABLES */
+$primary-color: #1BA87E;
+$secondary-color: blue;
+$white-color: #fff;
+$grey-color: #f0f0f0;
+$transparent-color: rgba(0, 0, 0, 0);
+$primary-font: 'Montserrat', sans-serif;
+
+$box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, .6);
+$transition: all 0.3s ease;
+
+
+
+/* MIXINS BTNS */
+@mixin reset-p-m {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+@mixin flex($dis, $direction, $wrap, $justify, $align) {
+  display: $dis;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin btn-bg($background-color, $color) {
+  background-color: $background-color;
+  color: $color;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+@mixin btn-border($border-color, $color) {
+  background-color: $transparent-color;
+  color: $color;
+  border: solid 2px $border-color;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block
+}
+
+@mixin btn-bg-hover($background-color, $color) {
+  background-color: $background-color;
+  color: $color;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+
+/* MIXINS GENERAL */
+* {
+    @include reset-p-m();
+}
+
+
+
+
+/* GENERALES STYLES */
+body {
+  font-family: $primary-font;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* HOME */
+.background-home {
+    background-image: url('../images/home-background.jpg');
+    height: 100vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex(flex, row, wrap, center, center);
+
+    padding: 0px 100px;
+}
+
+.home-content {
+  width: 45%;
+  @include flex(flex, column, wrap, center, flex-start);
+
+  &__title {
+    font-size: 50px;
+    color: $white-color;
+    padding-bottom: 0px;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    color: $grey-color;
+  }
+
+  &__btns {
+    @include flex(flex, row, wrap, flex-start, center);
+    width: 100%;
+  }
+  
+  &__btn-create {
+    @include btn-bg($primary-color, $white-color);
+    margin-top: 40px;
+    margin-right: 20px;
+    transition: $transition;
+    box-shadow: $box-shadow;
+
+    &:hover {
+      @include btn-bg-hover($white-color, $primary-color);
+      box-shadow: none;
+    }
+  }
+
+  &__btn-drones {
+    @include btn-border($primary-color, $white-color);
+    box-shadow: $box-shadow;
+    margin-top: 40px;
+    transition: $transition;
+
+    &:hover {
+      @include btn-border($white-color, $white-color);
+      box-shadow: none;
+    }
+  }
+}
+
+.home-image {
+  width: 55%;
+  @include flex(flex, column, wrap, center, center);
+
+  &__drone {
+    width: 100%;
+  }
+}
+
+
+
+/* LIST DRONES */
+.background-drones {
+  @include flex(flex, row, wrap, center, center);
+  height: 100vh;
+  background-image: url('../images/home-background.jpg');
+  width: 100%;
+}
+
+.title-drones {
+  text-align: center;
+  color: $white-color;
+  margin-bottom: 20px;
+}
+
+.list-drones {
+  @include flex(flex, row, wrap, space-evenly, center)
+}
+
+.drones-container {
+  padding: 50px;
+  border: solid 2px $primary-color;
+  border-radius: 20px;
+  margin: 0px 10px;
+  box-shadow: $box-shadow;
+
+  &__name {
+    color: $white-color;
+  }
+
+  &__btns {
+    @include flex(flex, row, wrap, space-evenly, center);
+
+    &--update {
+      @include btn-bg($primary-color, $white-color);
+      margin-right: 10px;
+      transition: $transition;
+
+      &:hover {
+        @include btn-bg-hover($white-color, $primary-color)
+      }
+    }
+  
+    &--delete {
+      @include btn-border($white-color, $white-color);
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        @include btn-bg($white-color, $primary-color)
+      }
+    }
+  }
+
+  &__ul {
+    list-style-type: none;
+    margin: 10px 0;
+  }
+
+  &__li {
+    font-size: 20px;
+    color: $white-color;
+    font-weight: 400;
+  }
+  
+}
+
+.back-home {
+  @include flex(flex, row, wrap, center, center);
+  margin-top: 40px;
+
+  &__btn {
+    @include btn-border(none, $white-color);
+    transition: $transition;
+
+    &:hover {
+      @include btn-border(none, $primary-color)
+    }
+  }
+
+}
+
+
+/* NEW FORM DRONE */
+.background-new-drone {
+  @include flex(flex, row, wrap, center, center);
+  height: 100vh;
+  background-image: url('../images/home-background.jpg');
+  width: 100%;
+}
+
+.new-drone {
+  @include flex(flex, row, wrap, center, center);
+
+  &__img {
+    width: 25%;
+
+    &--drone {
+      width: 100%;
+    }
+  }
+}
+
+.drone-form {
+  width: 50%;
+
+  &__title {
+    color: $white-color;
+  }
+
+}
+
+.form-container {
+  width: 100%;
+  @include flex(flex, column, wrap, center, stretch);
+
+  &__label {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  &__input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px;
+  }
+
+  &__btn {
+    @include btn-border($primary-color, $white-color);
+    margin-top: 10px;
+    box-shadow: $box-shadow;
+    transition: $transition;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:hover {
+      @include btn-bg($primary-color, $white-color)
+    }
+  
+}
+}
+
+
+
+/* UPDATE DRONE */
+
+.background-update-drone {
+  @include flex(flex, row, wrap, center, center);
+  height: 100vh;
+  background-image: url('../images/home-background.jpg');
+  width: 100%;
+}
+
+.update-form {
+  @include flex(flex, row, wrap, center, center);
+  
+  &__title {
+    color: $white-color;
+  }
+}
+
+.drone-form-update {
+  width: 100%;
+
+}

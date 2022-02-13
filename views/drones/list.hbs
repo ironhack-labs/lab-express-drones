@@ -1,15 +1,36 @@
-<h1>Available drones</h1>
+<div class="background-drones">
+  <div class="wrapper">
+  
+    <h1 class="title-drones">Available drones</h1>
+    <div class="list-drones">
+      
+          {{#each drones}}
 
-{{#each drones}}
+          <div class="drones-container">
+            <h1 class="drones-container__name">{{name}}</h1>
+            <ul class="drones-container__ul">
+                <li class="drones-container__li">Propellers: {{propellers}}</li>
+                <li class="drones-container__li">Max Speed: {{maxSpeed}}</li> 
+            </ul>
 
-    <h2>{{name}}</h2>
-    <ul>
-        <li>Propellers: {{propellers}}</li>
-        <li>Max Speed: {{maxSpeed}}</li> 
-    </ul>
-    <a href="/drones/{{_id}}/edit">Update</a>
-    <form method="POST" action="/drones/{{_id}}/delete">
-        <button type="submit">Delete</button>
-    </form>
+            <div class="drones-container__btns">
+              <a href="/drones/{{_id}}/edit" class="drones-container__btns--update">Update</a>
+              <form method="POST" action="/drones/{{_id}}/delete">
+                  <button type="submit" class="drones-container__btns--delete">Delete</button>
+              </form>
+            </div>
+            
+          </div>
+          
+      {{/each}}
+    </div>
 
-{{/each}}
+    <div class="back-home">
+        <a href="/" class="back-home__btn">Go Home</a>
+      </div>
+
+  </div>
+</div>
+
+
+

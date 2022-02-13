@@ -1,20 +1,45 @@
-<h1>Create a new drone</h1>
+<div class="background-new-drone">
 
-<form method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <br />
-        <input type="text" name="name" />
+  <div class="wrapper">
+    <div class="new-drone">
+
+      <div class="new-drone__img">
+        <img src="../images/drone-1.png" alt="" class="new-drone__img--drone">
+      </div>
+
+      <div class="drone-form">
+        <h1 class="drone-form__title">Create a new drone</h1>  
+        <form method="POST" class="form-container">
+          <div class="form-container__label">
+            <label for="name"></label>
+            <br />
+            <input class="form-container__input" type="text" name="name" placeholder="Name" required/>
+          </div>
+          <div class="form-container__label">
+            <label for="propellers"></label>
+            <br />
+            <input class="form-container__input" type="text" name="propellers" placeholder="Propellers" required/>
+          </div>
+          <div class="form-container__label">
+            <label for="maxSpeed"></label>
+            <br />
+            <input class="form-container__input" type="number" name="maxSpeed" placeholder="Max Speed" required/>
+          </div>
+          <button type="submit" class="form-container__btn">Create new drone</button>
+        </form>
+
+        <div class="back-home">
+          <a href="/" class="back-home__btn">Go Home</a>
+        </div>
+      </div>
+
+      <div class="new-drone__img">
+        <img src="../images/drone-2.png" alt="" class="new-drone__img--drone">
+      </div>
+
     </div>
-    <div>
-        <label for="propellers">Propellers:</label>
-        <br />
-        <input type="text" name="propellers" />
-    </div>
-    <div>
-        <label for="maxSpeed">Max Speed:</label>
-        <br />
-        <input type="number" name="maxSpeed" />
-    </div>
-    <button type="submit">Create new drone</button>
-</form>
+  </div>
+
+  
+
+</div>
