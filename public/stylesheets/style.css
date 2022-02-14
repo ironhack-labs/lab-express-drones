@@ -1,8 +1,235 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins';
+  background-color: rgb(48, 46, 46);
+  color: white;
+  font-size: 10px;
+}
+
+
+
+
+/* font Styling */
+
+h1 {
+  font-size: 2.2em;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+h2 {
+
+  font-size: 4em;
+  text-align: center;
+  margin-top: 30px;
+
+}
+
+h3 {
+  font-size: 1.6em;
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+  background-color:darkviolet;
+  padding: 10px 30px;
+  text-decoration: none;
+  margin-top:20px;
+  margin-bottom: 10px;
+  border: solid 2px darkviolet;
+  font-size: 1.2em;
 }
+
+p {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+
+/* Home Page */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+
+
+
+
+
+
+/* Drone List Info Styling */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.create-btn {
+
+  border: solid 2px rgb(213, 114, 255);
+  color: rgb(213, 114, 255);
+  background-color: transparent;
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15;
+
+}
+
+.create-btn:hover {
+
+  background-color:rgb(43, 187, 173);
+  color: white;
+  border: solid 2px rgb(43, 187, 173);
+}
+
+
+/* Drone Info Styling */
+
+.drone-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+
+}
+
+.drone-container {
+
+  border: solid 2px white;
+  padding: 30px;
+  margin: 10px;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+
+a:hover {
+
+  background-color: transparent;
+  color: white;
+  border: solid 2px white;
+
+}
+
+.delete-btn {
+
+  background-color: transparent;
+  color: white;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  border-width: none;
+  border-style: none;
+  border-color: none;
+
+  border-bottom: solid 2px white;
+
+
+}
+
+.delete-btn:hover {
+  color: red;
+  border-bottom: solid 2px red;
+}
+
+
+/* Form Styles */
+
+.form-container {
+  height: 70vh;
+}
+
+.drone-form {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:  center;
+  width: 100vw;
+  margin-top: 20px;
+
+}
+
+input {
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  width: 250px;
+  height: 30px;
+
+}
+
+label {
+
+  font-size: 1.4em;
+
+}
+
+.form-btn {
+
+  border: solid 2px rgb(213, 114, 255);
+  color: rgb(213, 114, 255);
+  background-color: transparent;
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15;
+
+}
+
+.form-btn:hover {
+
+  background-color:rgb(43, 187, 173);
+  color: white;
+  border: solid 2px rgb(43, 187, 173);
+
+}
+
+/* Footer */
+
+footer {
+background-color:darkviolet;
+color: white;
+text-align: center;
+display:flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 0 !important;
+
+
+}
+
+footer h3 {
+  padding: 20px;
+}
+
+
+
+
