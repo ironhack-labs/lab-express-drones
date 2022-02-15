@@ -61,13 +61,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 85vh;
 }
-
-
-
-
-
 
 
 /* Drone List Info Styling */
@@ -91,7 +86,6 @@ p {
   font-family: 'Poppins';
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.15;
 
 }
 
@@ -160,7 +154,7 @@ a:hover {
 /* Form Styles */
 
 .form-container {
-  height: 70vh;
+  height: 65vh;
 }
 
 .drone-form {
@@ -180,7 +174,7 @@ input {
   margin-bottom: 20px;
   font-size: 1.5em;
   width: 250px;
-  height: 30px;
+  height: 40px;
 
 }
 
@@ -200,7 +194,6 @@ label {
   font-family: 'Poppins';
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.15;
 
 }
 
@@ -215,13 +208,15 @@ label {
 /* Footer */
 
 footer {
-background-color:darkviolet;
-color: white;
-text-align: center;
-display:flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 0 !important;
+
+  background-color:darkviolet;
+  color: white;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
 
 
 }
