@@ -1,36 +1,69 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const Drone = require('../models/Drone.model')
 
 // require the Drone model here
 
-router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
-});
+router.get('/drones', async (req, res, next) => {
+  try {
+    // Iteration #2: List the drones
+    const drones = await Drone.find()
+
+    res.render('drones/list', { drones })
+  } catch (error) {
+    console.error(error)
+  }
+})
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
-});
+  res.render('drones/create-form')
+})
 
-router.post('/drones/create', (req, res, next) => {
+router.post('/drones/create', async (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
-});
+  try {
+    const droneToCreate = req.body
+    await Drone.create(droneToCreate)
 
-router.get('/drones/:id/edit', (req, res, next) => {
+    res.redirect('/drones')
+  } catch {
+    res.redirect('/drones/create')
+  }
+})
+
+router.get('/drones/:id/edit', async (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
-});
+  try {
+    const drone = await Drone.findById(req.params.id)
 
-router.post('/drones/:id/edit', (req, res, next) => {
+    res.render('drones/update-form', { drone })
+  } catch {
+    next()
+  }
+})
+
+router.post('/drones/:id/edit', async (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
-});
+  try {
+    const droneToUpdate = req.body
+    await Drone.findByIdAndUpdate(req.params.id, droneToUpdate)
 
-router.post('/drones/:id/delete', (req, res, next) => {
+    res.redirect('/drones')
+  } catch {
+    res.redirect(`/drones/${req.params.id}/edit`)
+  }
+})
+
+router.post('/drones/:id/delete', async (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
-});
+  try {
+    await Drone.findByIdAndDelete(req.params.id)
 
-module.exports = router;
+    res.redirect('/drones')
+  } catch {
+    res.send('sorry that did not work, try again')
+  }
+})
+
+module.exports = router
