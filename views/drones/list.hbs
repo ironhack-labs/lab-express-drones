@@ -1,1 +1,25 @@
-<h2>Available drones</h2>
+<h1>Listado de publicaciones</h1>
+
+<hr>
+
+<ul>
+    {{#each drones}}
+
+    <li>
+        <a href="/drones">{{name}}</a>
+        <p>{{propellers}} propulsores</p>
+        <p>{{maxSpeed}} km/h</p>
+        <a href="/drones/{{id}}/edit">editar</a>
+    </li>
+
+    {{/each}}
+</ul>
+
+<hr>
+
+<a href="/">Volver al incio</a>
+<hr>
+<a href="/drones/create">Crear dron</a>
+<hr>
+
+
