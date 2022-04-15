@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+.navbar {
+  margin-bottom: 50px;
 }
 
-a {
-  color: #00b7ff;
+.btns-drones {
+  display: flex;
 }
+.btns-drones a{
+  margin: 0 10px 20px 0
+}
+.img-index {
+  background-image: url(/images/drones-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
