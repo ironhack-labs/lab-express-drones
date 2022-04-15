@@ -1,20 +1,22 @@
-<h2>Create a new drone</h2>
-<form action="/drones/create" method="POST">
+<div class="formContainer">
+    <h2>Create a new drone</h2>
+    <form action="/drones/create" method="POST">
 
-    <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="name" name="name">
-    </div>
-    <div class="mb-3">
-        <label for="propellers" class="form-label">Propulsores</label>
-        <input type="number" class="form-control" id="propellers" name="propellers">
-    </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="propellers" class="form-label">Propulsores</label>
+            <input type="number" class="form-control" id="propellers" name="propellers">
+        </div>
 
-    <div class="mb-3">
-        <label for="maxSpeed" class="form-label">Velocidad máxima</label>
-        <input type="number" class="form-control" id="maxSpeed" name="maxSpeed">
-    </div>
+        <div class="mb-3">
+            <label for="maxSpeed" class="form-label">Velocidad máxima</label>
+            <input type="number" class="form-control" id="maxSpeed" name="maxSpeed">
+        </div>
 
-    <button type="submit" class="btn btn-dark">Crear nuevo drone</button>
-    <a href="/" class="btn btn-dark">Volver al incio</a>
-</form>
+        <button type="submit" class="btn btn-dark">Crear nuevo drone</button>
+        <a href="/" class="btn btn-dark">Volver al incio</a>
+    </form>
+</div>
