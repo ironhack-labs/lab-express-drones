@@ -1,8 +1,24 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+
+footer {
+  background-color: #212429;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+
+.navbar {
+  margin-bottom: 40px;
 }
