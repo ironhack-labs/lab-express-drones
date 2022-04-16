@@ -10,6 +10,9 @@
         <p>{{propellers}} propulsores</p>
         <p>{{maxSpeed}} km/h</p>
         <a href="/drones/{{id}}/edit">editar</a>
+        <form action="/drones/{{id}}/delete" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Eliminar</button>
+        </form>
     </li>
 
     {{/each}}
