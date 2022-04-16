@@ -1,1 +1,62 @@
-<h2>Available drones</h2>
+<div class="container">
+
+    <h1>Drones</h1>
+
+    <hr>
+
+    {{!-- <div>
+        {{#each drone}}
+        <ul class="book-row">
+            <li>
+                <p>{{name}}</p>
+
+            </li>
+            <li>
+
+            </li>
+            <li>
+                <p>{{propellers}}</p>
+
+            </li>
+            <a href="/drones/{{id}}/edit" class="btn btn-sm btn-dark">Editar</a>
+            <form action="/drones/{{id}}/delete" method="POST">
+                <button class="btn btn-sm " type="submit">Eliminar</button>
+            </form>
+        </ul>
+        {{/each}}
+    </div> --}}
+    <div class="container">
+        <div class="row">
+            {{#each drone}}
+
+            <div class="card col-6" style="width: 18rem;">
+
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        <p>{{name}}</p>
+                    </li>
+                    <li class="list-group-item ">
+                        <p>{{propellers}}</p>
+
+                    </li>
+                    <li class="list-group-item ">
+                        <p>{{maxSpeed}}</p>
+                    </li>
+                    <a href="/drones/{{id}}/edit" class="btn btn-sm btn-dark">Editar</a>
+                    <form action="/drones/{{id}}/delete" method="POST">
+                        <button class="btn btn-sm " type="submit">Eliminar</button>
+                </ul>
+
+            </div>
+            {{/each}}
+
+
+        </div>
+    </div>
+
+
+    <hr>
+
+    <a href="/" class="btn btn-dark">Volver al incio</a>
+
+</div>
