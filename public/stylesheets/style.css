@@ -1,8 +1,145 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
 }
 
 a {
   color: #00b7ff;
+}
+
+.navbar {
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar-brand {
+  font-size: 2em;
+  color: red;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.5em;
+}
+
+.line {
+  background-color: red;
+  padding: 8px;
+}
+
+.background {
+  background-image: url(/images/dron1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 900px;
+}
+
+.container {
+  margin: 50px;
+}
+
+.naming {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: absolute;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 50px;
+  color: rgb(0, 0, 0)
+}
+
+.slogan {
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 50px;
+  margin-top: 110px;
+  color: rgb(0, 0, 0)
+}
+
+.features {
+  font-size: 1.2em;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.imag {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+form {
+  margin-top: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+footer {
+  background-color: black;
+  padding: 20px;
+  color: white;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.editButton {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding: 12px;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.editButton2 {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding: 12px;
+  width: 120px;
+  border-radius: 5px;
+
+}
+
+.createButton {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding: 12px;
+  width: 150px;
+  border-radius: 5px;
+
+}
+
+.btn {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.parts {
+  width: 80%;
+  border-bottom: 30px;
+  margin: auto;
+  margin-left: 30px;
+}
+
+.parts2 {
+  width: 80%;
+  border-bottom: 30px;
+  margin: auto;
+  margin-left: 50px;
 }
