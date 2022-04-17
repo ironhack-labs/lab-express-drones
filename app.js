@@ -19,7 +19,7 @@ const app = express();
 require('./config')(app);
 
 // default value for title local
-app.locals.title = `Dronaria`;
+app.locals.title = `OH MY DRON!`;
 
 // 👇 Start handling routes here
 const index = require('./routes/index');
