@@ -1,1 +1,38 @@
-<h2>Available drones</h2>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/drones.css" />
+</head>
+
+<body>
+    <h2>Available drones</h2>
+
+    <hr>
+    <div class="container box-text">
+        {{#each drones}}
+        <div class="row">
+            <div class="col md-3">
+                <p><strong>Nombre: </strong>{{name}}</p>
+                <p><strong>Hélices: </strong> {{propellers}}</p>
+                <p><strong>Max Speed: </strong> {{maxSpeed}}</p><br>
+                <a href="/drones/{{_id}}/edit" class="btn btn-light">Editar</a><br><br>
+                <form action="/drones/{{_id}}/delete" method="POST">
+                    <button class="btn btn-sm btn-warning" type="submit">Eliminar</button><br><br>
+                    <hr>
+                </form>
+            </div>
+
+
+        </div>
+        {{/each}}
+        <ul>
+    </div>
+
+
+</body>
+
+</html>

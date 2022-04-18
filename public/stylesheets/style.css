@@ -1,8 +1,26 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: 'Lato';
+  font-weight: 300;
 }
 
-a {
-  color: #00b7ff;
+.navbar {
+  padding: 20px;
+}
+
+.box-text {
+  width: 70%;
+  margin: auto;
+}
+
+.box-form {
+  width: 40%;
+  margin: auto;
+
+  padding-top: 60px;
+
+}
+
+p {
+  font-size: 1.5em;
 }
