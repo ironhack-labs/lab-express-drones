@@ -1,1 +1,15 @@
-<h2>Available drones</h2>
+<div class="container">
+    <div class="row">
+        {{#each allDrones }}
+        <div class="col-md-6 box-list">
+            <h3>{{name}} || {{propellers}} || {{maxSpeed}}</h3>
+            <button class="btn btn-sm btn-dark" type="submit">Edit Droncito</button>
+            <form action="/drones/{{id}}/delete" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Eliminar</button>
+            </form>
+            {{/each}}
+            <a href="/drones/create"> New Droncito</a>
+        </div>
+    </div>
+
+</div>
