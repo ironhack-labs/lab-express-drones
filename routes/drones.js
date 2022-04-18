@@ -5,7 +5,8 @@ const Drone = require("../models/Drone.model");
 // require the Drone model here
 
 router.get("/drones", (req, res, next) => {
-    Drone.find().then((drones) => {
+    Drone.find()
+        .then((drones) => {
         res.render("drones/list", { drones });
     });
 });
