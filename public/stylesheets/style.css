@@ -1,8 +1,21 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 35px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  color: #0a0a0a;
+}
+
+.containerButtons {
+  margin-top: 65px;
+
+}
+
+.imgDrone {
+  width: 460px;
+  height: 260px;
+  margin-left: 10px;
+  margin-top: 30px;
+
 }
