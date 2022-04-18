@@ -1,1 +1,22 @@
-<h2>Available drones</h2>
+<table class="table table-hover " id="drone-list">
+  <thead>
+    <tr class="bg-info">
+      <th scope="col">Drone List</th>
+      <th scope="col">Propellers</th>
+      <th scope="col">Speed (m/s)</th>      
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each drones}}
+    <tr>
+      <th scope="row">{{name}}</th>
+      <td>{{propellers}}</td>
+      <td>{{maxSpeed}}</td>
+      <td><a class="btn btn-outline-info mx-auto" href="/drones/{{_id}}/edit" role="button">Edit</a></td>
+      <td><form action="/drones/{{_id}}/delete" method="POST"><input class="btn btn-outline-danger" type="submit" value="Delete"></form></td>
+    </tr>
+    {{/each}}      
+  </tbody>
+</table>            

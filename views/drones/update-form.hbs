@@ -1,1 +1,30 @@
-<h2>Update the drone</h2>
+<h2>Updating drone</h2>
+
+{{#with drone}}
+<h3>{{name}}</h3>
+
+<div class="row">
+    <div class="col">
+          <form action="" method="POST">
+          <div class="form-group">
+            <label for="name">Drone Name:</label>
+            <input class="form-control" type="text" name="name" id="name" value="{{name}}">
+          </div>  
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="propellers">Number of propellers:</label>
+                <input class="form-control" type="number" name="propellers" id="propellers" value="{{propellers}}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="maxSpeed">Max Speed (m/s):</label>
+                <input class="form-control" type="number" name="maxSpeed" id="maxSpeed" value="{{maxSpeed}}">
+            </div>    
+          </div>  
+            <div class="d-flex justify-content-center">
+                <input class="btn btn-outline-warning " type="submit" value="Update Drone">
+            </div>  
+          </div>  
+        </form>
+    </div>
+</div>
+{{/with}}

@@ -1,19 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>{{title}}</title>
   </head>
-
   <body>
-
+    <div class="container">
+<ul class="nav nav-tabs nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" id="nav-home" href="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="nav-list" href="/drones">Drone List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="nav-create" href="/drones/create">Create New Drone</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Order Drone Delivery</a>
+  </li>
+</ul>      
     {{{body}}}
-
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js"></script>    
+    </div>
   </body>
-
 </html>
+
