@@ -2,20 +2,24 @@
 
 const mongoose = require('mongoose');
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
+require('../db');
+
+// mongoose
+//   .connect(MONGO_URI)
+//   .then((x) => {
+//     console.log(
+//       `Connected to Mongo! Database name: "${x.connections[0].name}"`
+//     );
+//   })
+//   .catch((err) => {
+//     console.error("Error connecting to mongo: ", err);
+//   });
+
+// const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
 
 const Drone = require('../models/Drone.model');
  
-mongoose
-  .connect(MONGO_URI)
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo: ", err);
-  });
+
  
 const drones = [
     { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
