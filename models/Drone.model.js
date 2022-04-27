@@ -5,7 +5,8 @@ const DroneSchema=new Schema({
     propellers:Number,
     maxSpeed:{
         type:Number,
-        max: 18
+        min:0,
+        max:18
     }
 })
 
