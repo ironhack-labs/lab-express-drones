@@ -1,8 +1,35 @@
 body {
-  padding: 50px;
+  
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+  
 }
+
+.forma {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  align-items:flex-start;
+
+}
+
+.navBar {
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+align-content: flex-start;
+justify-content: flex-start;
+justify-items: flex-start;
+
+}
+
+.navbar a {
+  color: #00b7ff;
+  text-decoration: none;
+  margin-right: 45px;
+  font-size: 25px;
+  }

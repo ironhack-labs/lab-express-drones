@@ -4,6 +4,7 @@ const droneModel = require("../models/Drone.model");
 
 // require the Drone model here
 
+//Ruta para Lista de Drones
 router.get("/drones", (req, res, next) => {
   droneModel
     .find()
@@ -13,6 +14,7 @@ router.get("/drones", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+//Ruta para Crear un Drone
 router.get("/drones/create", (req, res, next) => {
   res.render("drones/create-form");
 });
@@ -29,6 +31,7 @@ router.post("/drones/create", (req, res, next) => {
 })
 })
 
+//Editar Drone
 router.get("/drones/:id/edit", (req, res, next) => {
   const { id } = req.params;
 
@@ -39,13 +42,30 @@ router.get("/drones/:id/edit", (req, res, next) => {
   })
   .catch(err => console.log(err))
 });
+
 router.post("/drones/:id/edit", (req, res, next) => {
+  const { id } = req.params
   
+  droneModel.findByIdAndUpdate(id, req.body, { new: true})
+  .then(droneActualizado => {
+    console.log("Drone Actualizado", droneActualizado)
+    res.redirect("/drones")
+    
+    
+  })
+.catch(console.log)
+
 });
 
+//Eliminar Drone
 router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  const { id } = req.params;
+  droneModel.findByIdAndDelete(id)
+  .then(() => {
+    console.log("Drone Eliminado")
+    res.redirect("/drones")
+  })
+  .catch(console.log)
 });
 
 module.exports = router;
