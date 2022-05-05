@@ -24,6 +24,11 @@ const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerC
 
 app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 
+app.set('views', __dirname + '/views');
+app.set('view engine','hbs');
+app.use(express.static('public'));
+hbs.registerPartials(__dirname +'/views/partials')
+
 // 👇 Start handling routes here
 const index = require('./routes/index');
 app.use('/', index);
