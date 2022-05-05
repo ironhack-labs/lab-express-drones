@@ -11,6 +11,7 @@ const drones = [
 
 const droneSeed = async () => {
     try {
+        await Drone.deleteMany();
         await Drone.create(drones);
         console.log(`${drones.length} drones created`);
         mongoose.connection.close();
