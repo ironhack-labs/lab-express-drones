@@ -1,8 +1,123 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.background {
+  background-image: url(/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 20;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.navText {
+  text-align: right;
+}
+.title {
+  text-shadow: 2px 2px grey;
+  text-align: center;
+}
+
+.center {
+  width: 350px;
+  height: 150px;
+  background: rgba(223, 225, 186, 0.396);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.cards-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#mainList {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  box-shadow: inset 0px 1px 3px 0px #3e7327;
+  background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+  background-color: #77b55a;
+  border-radius: 5px;
+  border: 1px solid #4b8f29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 11px 15px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #5b8a3c;
+  text-align: center;
+  margin-top:10px;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+  background-color: #72b352;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.centerButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.update {
+  display: flex;
+  flex-direction: column;
+
+  width: 300px;
+  height: 200px;
+  background: rgba(223, 225, 186, 0.396);
+  border-radius: 8px;
+
+}
+
+.updateTag{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.formUp{
+  padding: 10px;
+
+  height: 200px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  font-size: 16px;
 }
