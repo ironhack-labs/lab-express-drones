@@ -1,0 +1,95 @@
+h2 {
+  font-size: 3rem;
+  color: #00b7ff;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+em {
+  color: #0779a6;
+}
+
+a:hover {
+  color: white;
+  font-style: oblique;
+}
+
+.title-and-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-of-drones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  width: 80rem;
+}
+
+.list-of-drones a {
+  padding: 0.5rem 0.2rem;
+  border-radius: 5px;
+  background-color: #0779a6;
+  color: white;
+}
+
+.each-drone {
+  background-color: rgba(255, 255, 255, 0.54);
+  padding: 1rem;
+  width: 25vw;
+  height: 28vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-buttons {
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+
+.list-buttons a {
+  font-style: normal;
+  text-decoration: none;
+}
+
+.list-buttons a:hover {
+  text-decoration: none;
+  background-color: #00b7ff;
+}
+
+#delete-button:hover {
+  background-color: #00b7ff;
+}
+
+#delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  height: 3vh;
+  margin-top: 0.8rem;
+  /*  padding: 0.5rem 0.2rem; */
+  border-radius: 5px;
+  border: none;
+  background-color: #0779a6;
+  color: white;
+}

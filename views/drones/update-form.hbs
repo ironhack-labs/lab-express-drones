@@ -1,21 +1,38 @@
-<h2>Update the drone</h2>
+<head>
+  <link rel="stylesheet" href="/stylesheets/form.css" />
+</head>
 
-<form action="/drones/{{_id}}/edit" method="post">
+<main>
+  <div class="title-and-links">
+    <h2>Update the drone</h2>
+    <div class="links">
+      <a href="/">Homepage</a>
+      <a class="long-link" href="/drones">Drones List</a>
+    </div>
+  </div>
 
-  <label for="name">name</label>
-  <input type="text" name="name" id="name" value="{{name}}" />
+  <section class="form">
 
-  <label for="propellers">Number of Propellers:</label>
-  <input
-    type="number"
-    name="propellers"
-    id="propellers"
-    value="{{propellers}}"
-  />
+    <form action="/drones/{{_id}}/edit" method="post">
 
-  <label for="maxSpeed">Maximum Speed:</label>
-  <input type="number" name="maxSpeed" id="maxSpeed" value="{{maxSpeed}}" />
+      <label for="name">Name of the Drone:</label>
+      <input type="text" name="name" id="name" value="{{name}}" />
 
-  <button type="submit">Update</button>
+      <label for="propellers">Number of Propellers:</label>
+      <input
+        type="number"
+        name="propellers"
+        id="propellers"
+        value="{{propellers}}"
+      />
 
-</form>
+      <label for="maxSpeed">Its maximum speed is:</label>
+      <input type="number" name="maxSpeed" id="maxSpeed" value="{{maxSpeed}}" />
+
+      <div class="form-button-div">
+        <button class="form-button" type="submit">Update</button>
+      </div>
+
+    </form>
+  </section>
+</main>

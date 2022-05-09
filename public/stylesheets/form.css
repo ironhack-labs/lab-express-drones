@@ -1,0 +1,41 @@
+form {
+  background-color: rgba(255, 255, 255, 0.54);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 28vh;
+  gap: 5%;
+}
+
+form input {
+  width: 15vw;
+  height: 3vh;
+}
+
+.form-button {
+  width: 4vw;
+  padding: 0.5rem 0rem;
+  border-radius: 10%;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: #00b7ff;
+  font-weight: 900;
+}
+
+.form-button:hover {
+  color: #0779a6;
+}
+
+.form-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+  font-style: oblique;
+}

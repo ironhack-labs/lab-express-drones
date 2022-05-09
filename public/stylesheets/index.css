@@ -1,0 +1,33 @@
+body {
+  margin-left: 0;
+  margin-top: 1.5rem;
+  padding-left: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 8rem;
+  color: #00b7ff;
+}
+
+h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+em {
+  color: #00b7ff;
+}
+
+a:hover {
+  color: white;
+}

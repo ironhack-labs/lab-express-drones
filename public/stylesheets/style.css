@@ -1,8 +1,37 @@
 body {
+  background-image: url("/images/background1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+main {
+  color: white;
+  height: 85vh;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
 a {
   color: #00b7ff;
+}
+
+.title-and-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links {
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
 }
