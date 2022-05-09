@@ -1,36 +1,54 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const Drone = require("../models/Drone.model");
 
 // require the Drone model here
 
-router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+router.get("/create", (req, res, next) => {
+  res.render("drones/create-form");
 });
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.post("/create", (req, res, next) => {
+  const { name, propellers, maxSpeed, price, rating } = req.body;
+  Drone.create({ name, propellers, maxSpeed, price, rating })
+    .then(() => {
+      res.redirect(`/`);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect(`/create`);
+    });
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.get("/edit/:id", (req, res, next) => {
+  const { id } = req.params;
+  Drone.findById(id)
+    .then((result) => {
+      res.render("drones/update-form", result);
+    })
+    .catch((err) => next(err));
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post("/edit/:id", (req, res, next) => {
+  const { id } = req.params;
+  const { name, propellers, maxSpeed, price, rating } = req.body;
+  Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed, price, rating })
+    .then(() => {
+      res.redirect(`/`);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect(`/edit/${id}`);
+    });
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
-
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.post("/delete/:id", (req, res, next) => {
+  const { id } = req.params;
+  Drone.findByIdAndRemove(id)
+    .then(() => {
+      res.redirect(`/`);
+    })
+    .catch((err) => next(err));
 });
 
 module.exports = router;

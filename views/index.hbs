@@ -1,2 +1,52 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<main class="main-index">
+  <h2>Available drones</h2>
+  <div>
+    <a class="btn btn-success" href="/create">Create a new drone</a>
+    <div class="row">
+      {{#each drones}}
+        <div class="card m-3">
+          <span class="poster-img">
+            <h5 class="p-2 mx-3 drone-name">{{name}}</h5>
+            <img class="card-img-top" src="{{image}}" alt="{{name}}" />
+            <span
+              class="p-1 ps-2 price-tag mx-3 d-flex justify-content-center"
+            >${{price}}</span>
+            <span
+              class="p-2 rating mx-3 d-flex justify-content-center bg-success rounded-2"
+            ><span class="pe-2">{{rating}}</span>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth="0"
+                viewBox="0 0 16 16"
+                className="ms-2"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                ></path>
+              </svg>
+            </span>
+          </span>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="card-text">
+              <div>Propells amount: {{propellers}}</div>
+              <div>Max speed: {{maxSpeed}}</div>
+              <div>Rating: {{rating}}</div>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="/edit/{{_id}}" class="btn btn-primary">Update</a>
+              <form action="/delete/{{_id}}" method="post">
+                <button
+                  class="btn btn-danger"
+                  type="submit"
+                >Delete</button></form>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</main>

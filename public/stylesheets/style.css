@@ -1,8 +1,39 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://img.freepik.com/free-vector/space-background-with-abstract-shape-stars_189033-30.jpg?w=2000");
+  background-size: 100%;
 }
-
-a {
-  color: #00b7ff;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10vw 10vh;
+  border-radius: 15px;
+  background-color: lightgrey;
+}
+.card {
+  width: 18rem;
+}
+.poster-img {
+  position: relative;
+}
+.drone-name {
+  top: 5px;
+  position: absolute;
+}
+.price-tag {
+  bottom: 5px;
+  position: absolute;
+  font-size: large;
+}
+.rating {
+  bottom: 5px;
+  position: absolute;
+  right: -10px;
+  color: white;
+}
+button {
+  margin-top: 12px;
 }
