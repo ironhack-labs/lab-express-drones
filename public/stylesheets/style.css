@@ -1,8 +1,90 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container {
+  background-image: url("../images/dronehp.jpg");
+  background-size: cover;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.drones {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  min-width: 200px;
+  height: 250px;
+  border: solid;
+  margin: 80px;
+  font-size: 1.4rem;
+}
+
+.drones-name {
+  position: absolute;
+  color: #000;
+  padding-bottom: 5px;
+  left: 30px;
+  bottom: 10%;
+}
+
+.drones-btn {
+  position: absolute;
+  color: #000;
+  right: 10px;
+  bottom: 2%;
+  padding: 20px 30px;
+  border-radius: 28px;
+  color: #000;
+  font-size: 17px;
+  padding: 10px 20px;
+}
+
+.drones-btn a {
+  color: #000;
+  text-decoration: none;
+}
+
+.delete-btn {
+  border: none;
+}
+
+.update {
+  font-size: 1rem;
+}
+
+.container1 {
+  background-image: url("../images/drone1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: none;
 }
