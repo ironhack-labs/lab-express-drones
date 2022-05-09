@@ -1,8 +1,67 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/bertrand-bouchez-SOoakFA6brI-unsplash\ \(1\).jpg");
+  background-size: cover;
+  background-position: center;
+  font-size: 1.26rem;
 }
 
 a {
-  color: #00b7ff;
+  color: #01374d;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+}
+.btn {
+  margin-right: 1.15em;
+  width: 150px;
+}
+
+.container {
+  padding: 1.25em 0;
+}
+
+/* drone list */
+
+.drones {
+  background-image: url("/images/joe-woods-4Zaq5xY5M_c-unsplash.jpg");
+  background-size: cover;
+  width: 400px;
+  padding: 1.98em;
+  margin-top: 2em;
+  border: 1px solid #01374d;
+}
+
+.edit {
+  margin: 0.456em 0;
+}
+
+/* create drone */
+
+.create-drone {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 7em;
+}
+
+.create-drone > * {
+  margin-bottom: 1.2em;
+}
+
+.form-label {
+  margin-bottom: 0.5em;
+}
+
+/* layout */
+
+.go-back {
+  padding-top: 5em;
 }
