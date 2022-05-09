@@ -1,8 +1,159 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+a,
+.text-blue {
   color: #00b7ff;
+}
+
+/* NAV  */
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HOMEPAGE */
+
+.hero h1 {
+  font-size: 72px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.hero-link {
+  display: block;
+}
+
+/* LIST SITE */
+main {
+  min-height: 100vh;
+}
+.list-header {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  color: #00b7ff;
+  font-size: 62px;
+  margin-bottom: 3rem;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.drone-name {
+  font-weight: bold;
+  padding: 1.2rem 0.4rem;
+  font-size: 1.1rem;
+}
+
+.description {
+  padding: 0 0.5rem 0.3rem 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-edit,
+.btn-create,
+.hero-link {
+  background-color: #ea4c89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  outline: none;
+  padding: 0.6em 1.4em;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 3rem;
+}
+
+.delete {
+  background-color: #ea4c4c;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  outline: none;
+  padding: 0.6em 1.4em;
+  text-align: center;
+  text-decoration: none;
+  margin: 1.2rem 0 2rem 0;
+}
+
+/* UPDATE AND CREATE PAGES */
+.update-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-title,
+.create-title {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+input {
+  display: block;
+  width: 200px;
+  padding: 12px 20px;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+.btn-create {
+  background-color: #4cea8e;
+}
+.update-btn,
+.btn-create {
+  margin-top: 1rem;
+}
+
+.update-sec,
+.create-sec {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-width: 30vw;
+  margin: 4rem auto;
+  padding-bottom: 2rem;
 }

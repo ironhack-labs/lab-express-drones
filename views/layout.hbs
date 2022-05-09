@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
-    <a href="/drones">See all Drones</a>
+    <header>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/drones">All Drones</a></li>
+          <li class="nav-item"><a class="nav-link" href="/drones/create">Create
+              a Drone</a></li>
+        </ul>
+      </nav>
+    </header>
 
     {{{body}}}
 
