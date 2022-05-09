@@ -1,1 +1,32 @@
+
+
+
+<section class="createSec" >
+
+
 <h2>Create a new drone</h2>
+
+<div class="createDiv">
+
+<form action="/drones/create" method="post">
+
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" />
+
+  <label for="propellers">Propellers</label>
+  <input type="number" name="propellers" id="propellers" min='0' max='4'/>
+
+  <label for="maxSpeed">Max Speed</label>
+  <input type="number" name="maxSpeed" id="propellers"  min='0' max='18'>
+
+  
+
+  </label>
+
+  <button type="submit">Create</button>
+
+</form>
+
+</div>
+
+</section>
