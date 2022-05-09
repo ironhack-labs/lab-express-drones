@@ -1,8 +1,75 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: url("/images/bgDrone.jpg");
+    background-repeat: no-repeat;
+    background-size: 1400px 600px;
 }
 
 a {
-  color: #00b7ff;
+    color: white;
+    text-decoration: none;
+}
+
+.box-button {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    padding: 8px;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    margin-top: 10px;
+}
+
+.drones {
+    padding: 50px;
+    display: flex;
+    padding-left: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h2 {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.drone-card {
+    max-width: 25%;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.form-button {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: flex-start;
+    padding-top: 90px;
+}
+
+h5 {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.index {
+    display: flex;
+    justify-content: center;
+    padding: 200px;
 }
