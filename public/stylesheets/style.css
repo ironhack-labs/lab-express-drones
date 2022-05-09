@@ -1,8 +1,58 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url('../images/drones.jpg');
+  background-size: cover;
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  border: 2px solid black;
+  padding: 8px;
+  margin-bottom: 8px;
 }
+
+.dronesdiv {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 16px
+  
+}
+
+.onlyonedrone {
+  background-color: rgba(255, 255, 255, 0.623);
+  border: 1px solid black;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.seebtn {
+  margin-top:  16px;
+  color: white;
+  background-color: blue;
+  border: 1px solid black;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.updatediv {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
