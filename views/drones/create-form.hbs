@@ -1,16 +1,24 @@
-<h2>Create a new drone</h2>
+<h1>Create a new drone</h1>
+<div class="updatediv">
+  <form action="/drones/create" method="post">
 
-<form action='/drones/create' method='post'>
+    <div class="nameupdate">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" />
+    </div>
 
-  <label for='name'>Name</label>
-  <input type='text' name='name' id='name' />
+    <div class="propupdate">
+      <label for="propellers">Propellers</label>
+      <input type="number" name="propellers" id="propellers" min="0" max="4" />
+    </div>
 
-  <label for='propellers'>Propellers</label>
-  <input type='number' name='propellers' id='propellers' min="0" max="4" />
+    <div class="speedupdate">
+      <label for="maxSpeed">Speed</label>
+      <input type="number" name="maxSpeed" id="maxSpeed" min="0" max="18" />
+    </div>
+    <div>
+      <button class="updatebtn" type="submit">Create Drone</button>
+    </div>
 
-  <label for='maxSpeed'>Speed</label>
-  <input type='number' name='maxSpeed' id='maxSpeed' min='0' max='18' />
-
-  <button type='submit'>Create Drone</button>
-
-</form>
+  </form>
+</div>
