@@ -1,1 +1,24 @@
-<h2>Available drones</h2>
+<h2 class="list-title">Available drones</h2>
+<div class="div-drones">
+  {{#each drones}}
+    <div class="each-div">
+      <h3>{{name}}</h3>
+      {{#if img}}
+        <img class="drone-img" src="{{img}}" />
+      {{else}}
+        <img class="drone-img" src="/images/drone-none_ccexpress.png" />
+      {{/if}}
+      <p>Propellers: {{propellers}}</p>
+      <p>Speed: {{maxSpeed}}</p>
+      <p>Takeoff Weight: {{takeoffWeight}}g</p>
+      <p>Diagonal Length: {{diagonalLength}}mm</p>
+      <p>Max Flight Time: {{maxFlightTime}}minutes</p>
+      <div class="div-button-try">
+      <a class="a-list" href="/drones/{{_id}}/edit">Edit the drone</a>
+      <form action="/drones/{{_id}}/delete" method="post">
+        <button type="submit">Delete the Drone</button>
+      </form>
+      </div>
+    </div>
+  {{/each}}
+</div>

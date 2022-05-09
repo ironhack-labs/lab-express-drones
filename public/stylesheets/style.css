@@ -1,8 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Babylonica&family=Bellefair&family=Dangrek&family=Montserrat:ital,wght@1,100&display=swap");
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: "Aldrich", sans-serif;
+  background-image: url("/images/drone-background1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  color: white;
+  min-height: 100vh;
 }
 
-a {
-  color: #00b7ff;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 1rem;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+.div-drones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  flex-basis: 300px;
+  margin: 5px;
+}
+
+.each-div {
+  background: rgba(255, 255, 255, 0.1);
+  min-width: 300px;
+}
+
+.a-list {
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  color: white;
+  padding: 10px 12px;
+  font-family: "Aldrich", sans-serif;
+  font-size: 15px;
+  width: max-content;
+  height: max-content;
+}
+
+button:hover {
+  background-color: #111;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  padding: 10px 12px;
+  font-family: "Aldrich", sans-serif;
+  border: none;
+}
+
+.list-title {
+  text-align: center;
+}
+
+.drone-img {
+  width: 100px;
+  height: 100px;
+}
+
+input {
+  display: flex;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+}
+
+.div-button-try {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
