@@ -1,8 +1,158 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 98vw;
+  height: 97vh;
 }
 
-a {
-  color: #00b7ff;
+.createBtn {
+  background-color: white;
+  text-decoration: none;
+  color: #555555;
+  padding: 5px 9px 5px 9px;
+  border-radius: 5px;
+  border: 2px solid #555555;
+  transition-duration: 0.4s;
+}
+.createBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+.checkDroneBtn {
+  background-color: #555555;
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+}
+
+.updateBtn {
+  background-color: white;
+  text-decoration: none;
+  color: #555555;
+  transition-duration: 0.4s;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  border: 2px solid #555555;
+}
+.updateBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+.deleteBtn {
+  background-color: white;
+  text-decoration: none;
+  color: #555555;
+  transition-duration: 0.4s;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  border: 2px solid #555555;
+}
+.deleteBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.homePage {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homePage h3 {
+  border-bottom: 2px double darkslategrey;
+}
+
+.checkBtnDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.listTitle {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 100px;
+  margin-top: 70px;
+}
+
+.listTitle h2 {
+  border-bottom: 2px double darkslategrey;
+}
+
+.createBtnDiv {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 100px;
+}
+
+.allDrones {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-right: 100px;
+}
+.eachDrone {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  border-left: 2px double darkslategrey;
+  border-right: 2px double darkslategrey;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.listBtns {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  justify-content: space-around;
+}
+
+.createTitle {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 100px;
+  margin-top: 70px;
+}
+
+.createTitle h2 {
+  border-bottom: 2px double darkslategrey;
+}
+.createForm {
+  display: flex;
+  flex-direction: column;
+  margin-left: 120px;
+  margin-top: 30px;
+  width: 300px;
+}
+
+.formInput {
+  padding: 5px;
+  margin: top 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px double darkslategrey;
+  border-radius: 5px;
+}
+.changeInfoBtn {
+  background-color: white;
+  color: #555555;
+  transition-duration: 0.4s;
+  border-bottom: 1px double darkslategrey;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 150px;
+}
+
+.changeInfoBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.formLabel {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
