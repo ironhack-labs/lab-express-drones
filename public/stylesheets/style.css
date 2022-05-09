@@ -74,6 +74,7 @@ p {
 
 .droneCard img {
   width: 298px;
+  height: 230px;
   border-radius: 10px;
   border: 1px solid black;
 }

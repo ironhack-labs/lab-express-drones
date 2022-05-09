@@ -20,8 +20,8 @@ router.get("/drones/create", (req, res, next) => {
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  const { name, propellers, maxSpeed } = req.body;
-  Drone.create({ name, propellers, maxSpeed, image: "images/drone.jpg" })
+  const { name, propellers, maxSpeed, image } = req.body;
+  Drone.create({ name, propellers, maxSpeed, image })
     .then((drones) => res.redirect("/drones"))
     .catch((err) => console.log(err));
 });
@@ -39,12 +39,12 @@ router.get("/drones/:id/edit", (req, res, next) => {
 router.post("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   const { id } = req.params;
-  const { name, propellers, maxSpeed } = req.body;
+  const { name, propellers, maxSpeed, image } = req.body;
   Drone.findByIdAndUpdate(id, {
     name,
     propellers,
     maxSpeed,
-    image: "images/drone.jpg",
+    image,
   })
     .then((drone) => res.redirect("/drones"))
     .catch((err) => console.log(err));
