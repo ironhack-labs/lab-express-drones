@@ -1,8 +1,54 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Helvetica";
+  background-image: url("https://celuloseonline.com.br/wp-content/uploads/2020/01/drone.jpg");
+  height: 100vh;
+  background-size: cover;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  /* color: #00b7ff; */
+  color: white;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+h2 {
+  padding-bottom: 50px;
+}
+h4 {
+  padding-bottom: 20px;
+}
+.links > a {
+  padding-bottom: 20px;
+}
+
+.btn-outline-secondary {
+  margin-top: 20px;
+}
+
+.space1 {
+  margin-left: 56px;
+  margin-bottom: 20px;
+}
+.space2 {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+.space3 {
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.udpade-btn {
+  margin-left: 130px;
+  margin-top: 20px;
+  color: white;
 }
