@@ -1,8 +1,89 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("/images/background.jpg");
+  background-position: center-100px center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-a {
-  color: #00b7ff;
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.form-container {
+  padding-top: 30px;
+  background-color: grey;
+  opacity: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+.form-container h5 {
+  color: black;
+}
+
+.form-container p {
+  color: black;
+}
+
+.form-container a {
+  color: rgb(2, 59, 2);
+}
+
+.form-container button {
+  padding: 1px 3px;
+  background-color: rgb(2, 59, 2);
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 0px;
+  color: #ffff;
+}
+
+.form-container button a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+h6 {
+  padding-top: 30px;
+  background-color: grey;
+  opacity: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+.back-button a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 10px;
 }
