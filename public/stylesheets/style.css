@@ -6,3 +6,95 @@ body {
 a {
   color: #00b7ff;
 }
+
+h1{
+  display: flex;
+  justify-content: center;
+  color: #00b7ff;
+  font-size: 60px;
+
+}
+
+.all_drones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.container_drones{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+font-size: 40px;
+color: #9ed7ee;
+font-style: italic;
+}
+
+.button_create {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  text-decoration: none;
+  
+
+}
+
+button{
+  padding: 30px;
+  font-size: 20px;
+  background-color: #9ed7ee;
+  color: white;
+  border: none;
+}
+
+.button_edit {
+  font-size: larger;
+  padding: 15px;
+}
+
+.drone_image{
+  width: 100px;
+  height: 100px;
+}
+
+.form-display{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#create_drone_button{
+  width: 205px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+
+.container-create{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+#edit_drone_button{
+  width: 205px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  
+
+}
+
+
+
