@@ -19,7 +19,8 @@ a {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  gap: 16px
+  gap: 16px;
+  margin: 16px;
   
 }
 
@@ -31,6 +32,7 @@ a {
   flex-direction: column;
   color: black;
   align-items: center;
+  margin: 16px;
 }
 
 h1 {
@@ -39,7 +41,7 @@ h1 {
 }
 
 .seebtn {
-  margin-top:  16px;
+  margin: 32px;
   color: white;
   background-color: blue;
   border: 1px solid black;
@@ -51,8 +53,45 @@ h1 {
 
 .updatediv {
   display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  gap: 16px;
+  margin: 16px;
+}
+
+.nameupdate {
+  margin: 16px;
+  font-size: 32px;
+  color: white;
+  display: flex;
   flex-direction: column;
 }
 
+.propupdate {
+  margin: 16px;
+  font-size: 32px;
+  color: white;
+  display: flex;
+  flex-direction: column;
 
+}
+
+.speedupdate {
+  margin: 16px;
+  font-size: 32px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.updatebtn {
+  margin: 16px;
+  color: white;
+  background-color: blue;
+  border: 1px solid black;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
