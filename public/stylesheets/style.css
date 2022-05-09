@@ -1,8 +1,125 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-x: hidden;
 }
 
-a {
-  color: #00b7ff;
+p {
+  margin: 0px;
+}
+
+.home {
+  width: 100vw;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons a,
+.droneButtons a,
+.droneButtons form button,
+.update form button,
+.create form button {
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #bdbdbd 5%, #8a8a8a 100%);
+  background-color: #bdbdbd;
+  border-radius: 6px;
+  border: 1px solid #a89ea8;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000000;
+  margin-top: 10px;
+}
+.buttons a:hover,
+.droneButtons a:hover,
+.droneButtons form button:hover,
+.update form button:hover,
+.create form button:hover {
+  background: linear-gradient(to bottom, #8a8a8a 5%, #bdbdbd 100%);
+  background-color: #8a8a8a;
+}
+.buttons a:active,
+.droneButtons a:active,
+.droneButtons form button:active,
+.update form button:active,
+.create form button.active {
+  position: relative;
+  top: 1px;
+}
+
+.dronesHeader {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.allDrones {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.droneCard img {
+  width: 298px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.droneCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  margin: 50px;
+}
+
+.droneText {
+  margin: 0px 10px 0px 10px;
+}
+
+.droneButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create,
+.update {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.create form,
+.update form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create form input,
+.update form input {
+  margin-bottom: 10px;
+  width: 300px;
 }
