@@ -1,8 +1,122 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+  font-family: "Koulen", cursive;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
 }
 
 a {
   color: #00b7ff;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(238, 130, 238, 0.4);
+  color: rgb(27, 255, 247);
+  font-size: 46px;
+  border-radius: 15px;
+  border: 1px solid white;
+  -webkit-text-stroke: 0.5px black;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+}
+
+body {
+  background-image: url(/images/planes.jpg_large);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.list-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.list-btn {
+  border-radius: 15px;
+  background-color: rgb(0, 255, 127, 0.3);
+  margin: 10px;
+  width: 300px;
+  border: 1px solid rgb(rgb(89, 255, 0), green, blue);
+}
+
+.create-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.create-btn {
+  width: 300px;
+  font-size: 25px;
+  border-radius: 25px;
+  height: 250px;
+  background-color: springgreen;
+  margin: 10px;
+}
+
+.list {
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.drone-card {
+  width: 300px;
+  height: 250px;
+  background-color: rgba(248, 59, 255, 0.641);
+  border-radius: 25px;
+  color: antiquewhite;
+  text-align: center;
+  border-color: rgb(255, 2, 234);
+  transition-duration: 0.4s;
+  border: 0.5px solid white;
+  margin: 30px;
+  padding: 10px;
+  -webkit-text-stroke: 0.3px black;
+}
+
+.drone-card:hover {
+  background-color: rgb(248, 59, 255);
+  color: white;
+  border: 0.5px solid rgb(27, 255, 247);
+}
+
+.edit-button {
+  border-radius: 5px;
+  background-color: rgb(127, 255, 212, 0.9);
+  margin: 5px;
+  transition-duration: 0.4s;
+}
+
+.edit-button:hover {
+  border-radius: 5px;
+  background-color: rgb(0, 188, 125);
+  margin: 5px;
+}
+
+.delete-button {
+  border-radius: 5px;
+  background-color: rgba(255, 121, 31, 0.5);
+  margin: 5px;
+  transition-duration: 0.4s;
+}
+
+.delete-button:hover {
+  border-radius: 5px;
+  background-color: rgb(255, 31, 31);
+  margin: 5px;
 }
