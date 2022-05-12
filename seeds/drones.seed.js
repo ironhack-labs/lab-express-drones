@@ -1,8 +1,7 @@
 // Iteration #1
-
-const Drone = require('../models/Drone.model');
 require('../db');
-
+const Drone = require('../models/Drone.model');
+const mongoose = require("mongoose");
 
 const drones = [
     { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
@@ -13,9 +12,10 @@ const drones = [
 
 const droneSeed = async () => {
     try {
+        await Drone.deleteMany();
         await Drone.create(drones);
         console.log(`${drones.length} drones created`)
-        await mongoose.connection.close();
+        mongoose.connection.close();
     }catch(error){
         console.error(error);
       }
