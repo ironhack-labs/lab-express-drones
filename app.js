@@ -28,8 +28,9 @@ app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 const index = require('./routes/index');
 app.use('/', index);
 
+/* Bellow its the place were we define prefixes, so that we dont need to repeat ourselves over and over on routes */
 const droneRoutes = require('./routes/drones')
-app.use('/', droneRoutes)
+app.use('/drones', droneRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
