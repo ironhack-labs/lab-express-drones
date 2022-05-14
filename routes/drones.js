@@ -58,6 +58,7 @@ router.post("/drones/:id/edit", async (req, res, next) => {
   }
 });
 
+
 router.post("/drones/:id/delete", async (req, res, next) => {
   try {
     const { id } = req.params;
