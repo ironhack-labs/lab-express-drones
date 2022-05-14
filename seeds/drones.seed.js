@@ -1,13 +1,18 @@
 //primero requiero mongoose creando una variable
 const mongoose = require('mongoose');
-
+require('../db')
 //conecto la url de la base de datos con este puerto especificamente, despues de la barra estoy diciendo que base de datos quiero exactamente
 
-const MONGODB_URI = 'mongodb://localhost/lab-express-drones';
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
 
-// tengo que conectarme literalmente
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGO_URI)
+  .then((x) => {
+    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
+  })
+  .catch((err) => {
+    console.error("Error connecting to mongo: ", err);
+  });
   
   const drones = [
     { 
@@ -40,5 +45,4 @@ const seedDrones = async () => {
     console.log(error);
   }
 };
-
 seedDrones();
