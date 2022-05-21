@@ -1,10 +1,10 @@
 // Iteration #1
-const { schema, model } = require ("mongoose");
+const { Schema, model } = require ("mongoose");
 
-const DroneSchema = new schema({
+const DroneSchema = new Schema({
     name: String,
     propeller: Number,
     maxSpeed: Number,
 });
 
-module.exports = model("drones", DroneSchema);
+module.exports = model("Drones", DroneSchema);
