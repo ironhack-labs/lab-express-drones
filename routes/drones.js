@@ -74,11 +74,11 @@ router.post('/drones/:id/edit', (req, res, next) => {
   });
 });
 
-router.get('/drones/:id/delete', (req, res, next) => {
+router.post('/drones/:id/delete', (req, res, next) => {
  const {id} = req.params 
  Drone.findByIdAndDelete(id)
  .then(() =>{
-  res.render("index")
+  res.redirect('/')
  })
  .catch((error) => {
   console.log("este es el error, wey",error);
