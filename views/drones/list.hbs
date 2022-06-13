@@ -1,1 +1,16 @@
 <h2>Available drones</h2>
+
+<ul>
+  {{#each drones}}
+  
+ <li>{{name}} has {{propellers}} propellers and its max speed is {{maxSpeed}}m/s</li> 
+ <a href="/drones/{{_id}}/edit">Edit</a>
+ <a href="/drones/{{_id}}/delete">Delete</a>
+ 
+  {{/each}}
+
+</ul>
+
+<a href="/">go home</a>
+<br>
+<a href="/drones/create">create new drone</a>
