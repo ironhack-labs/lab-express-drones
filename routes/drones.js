@@ -18,7 +18,6 @@ router.get('/drones/create', (req, res, next) => {
 
 router.post('/drones/create', (req, res, next) => {
   const {name, propellers, maxSpeed} = req.body
-
   Drone.create({name, propellers, maxSpeed})
     .then(() => res.redirect('/drones'))
     .catch(error => {
@@ -52,7 +51,8 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
 router.post('/drones/:id/delete', (req, res, next) => {
   const {id} = req.params
-  Drone.findOneAndDelete(id)
+  Drone.findByIdAndDelete(id)
+  
     .then(() => res.redirect('/drones'))
     .catch(error => {
       console.log(`Error ---> ${error}`)
