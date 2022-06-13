@@ -1,17 +1,40 @@
-<h2>Update the drone</h2>
 
-<form action="/drones/{{drone._id}}/edit" method="POST">
-  <label>Name:
-    <input type="text" name="name" value="{{drone.name}}">
-  </label>
+<h2 class="title has-text-primary has-text-centered pt-5 pb-5">Update the Drone</h2>
 
-  <label>Propellers:
-    <input type="number" name="propellers" value="{{drone.propellers}}">
-  </label>
+<div class="container">
+  <div class="columns is-centered ">
+    
+    <div class="column is-6 is-size-4 has-text-centered has-text-weight-bold has-background-grey-lighter">
 
-  <label>Max Speed
-    <input type="number" name="maxSpeed" value="{{drone.maxSpeed}}">
-  </label>
+      <form action="/drones/{{drone._id}}/edit" method="POST">
+        <div class="mb-5">
+          <label class="mt-3">
+            <p>Name</p>
+            <input class="input is-primary" type="text" name="name" value="{{drone.name}}">
+          </label>
+        </div>
 
-  <button>SAVE</button>
-</form>
+        <div class="mb-5">
+          <label class="mt-3">
+            <p>Propellers</p>
+            <input class="input is-primary" type="number" name="propellers" value="{{drone.propellers}}" style="width:20%">
+          </label>
+        </div>
+
+        <div class="mb-5">
+          <label class="pt-3">
+            <p>Max Speed</p>
+            <input class="input is-primary" type="number" name="maxSpeed" value="{{drone.maxSpeed}}" style="width:20%">
+          </label>
+        </div>
+
+          <div class="control">
+            <button class="button is-primary is-large mt-5">SAVE</button>
+          </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+

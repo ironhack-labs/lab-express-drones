@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
+    <nav class="navbar has-shadow">
+      <div class="navbar-menu navbar-end is-size-5 has-text-weight-bold">
+        <a class="pr-5" href="/drones">Available Drones</a>
+        <a class="pl-5" href="/drones/create">Create a Drone</a>
+      </div>
+    </nav>
 
     {{{body}}}
 
-    <a href="/Drones">Drones</a>
 
     <script src="/js/script.js"></script>
   </body>

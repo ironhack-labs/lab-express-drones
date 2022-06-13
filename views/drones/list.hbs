@@ -1,16 +1,21 @@
-<h2>Available drones</h2>
+<h2 class="title has-text-primary has-text-centered pt-5 pb-5">Available drones</h2>
 
-{{#each drones}}
-  <div>
-    <h4>Name: {{name}} </h4>
-    <h4>Propellers: {{propellers}} </h4>
-    <h4>Max Speed: {{maxSpeed}} </h4>
+<div class="columns is-multiline has-background-grey-lighter p-2">
+  {{#each drones}}
+  <div class="column is-4 has-text-centered ">
+    <div class="card">
+      <h4 class="is-size-5 has-text-weight-bold pt-4 mb-2">Name: {{name}} </h4>
+      <h4 class="is-size-5 has-text-weight-bold mb-2">Propellers: {{propellers}} </h4>
+      <h4 class="is-size-5 has-text-weight-bold mb-2">Max Speed: {{maxSpeed}} </h4>
 
-    <a href="/drones/{{_id}}/edit">Edit</a>
-    
-    <form action="/drones/{{_id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
+      <div class="card-footer has-text-weight-bold">
+        <form class="card-footer-item has-background-info" action="/drones/{{_id}}/delete" method="POST">
+          <button class="button has-text-light has-background-danger ml-4" >Delete</button>
+          <a class="button has-background-warning mr-4" href="/drones/{{_id}}/edit">Edit</a>
+        </form>
+      </div>
 
+    </div>
   </div>
-{{/each}}
+  {{/each}}
+</div>
