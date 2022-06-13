@@ -31,7 +31,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
   const {id} = req.params
   Drone.findById(id)
     .then(droneToEdit => {
-      res.render('../views/drones/update-form.hbs', {drone: droneToEdit})
+      res.render('../views/drones/update-form', {drone: droneToEdit})
     })
     .catch(error => {
       console.log(`Error --->`,error)
@@ -40,10 +40,10 @@ router.get('/drones/:id/edit', (req, res, next) => {
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
- const {id} = req.params
- const {name, propellers, maxSpeed} = req.body
- Drone.findByIdAndUpdate(id, {name, propellers, maxSpeed},{new:true})
-  .then((update) => res.redirect(`../views/drones`))
+  const {id} = req.params
+  const {name, propellers, maxSpeed} = req.body
+  Drone.findByIdAndUpdate(id, {name, propellers, maxSpeed},{new:true})
+  .then(() => res.redirect(`/drones`))
   .catch(error => {
     console.log(`Error --->`,error)
     next()
