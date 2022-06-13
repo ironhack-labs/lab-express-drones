@@ -6,3 +6,28 @@ body {
 a {
   color: #00b7ff;
 }
+
+td{
+  text-align: center;
+}
+tr{
+  text-align: center;
+}
+
+.create{
+background-color: blue;
+border-radius: 10px;
+color: blue;
+}
+
+.create a{
+text-decoration: none;
+color: aliceblue;
+}
+.link{
+  text-decoration: none;
+}
+
+.dronesBtn a{
+  text-decoration: none;
+}
