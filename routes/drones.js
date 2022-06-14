@@ -44,19 +44,44 @@ router.post("/drones/create", (req, res, next) => {
     });
 });
 
-router.get("/drones/:id/edit", (req, res, next) => {
+router.get("/drones/:_id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { _id } = req.params;
+  Drone.findById(_id)
+    .then((drone) => {
+      res.render("drones/update-form", drone);
+    })
+    .catch((error) => {
+      console.log("error:", error);
+      next();
+    });
 });
 
-router.post("/drones/:id/edit", (req, res, next) => {
+router.post("/drones/:_id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { _id } = req.params;
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drone.findByIdAndUpdate(_id, { name, propellers, maxSpeed }, { new: true })
+    .then((updatedDrone) => {
+      res.render("index", { ...updatedDrone.toObject(), isEdit: true });
+    })
+    .catch((error) => {
+      console.log("error:", error);
+      next();
+    });
 });
 
-router.post("/drones/:id/delete", (req, res, next) => {
+router.get("/drones/:_id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  const { _id } = req.params;
+  Drone.findByIdAndDelete(_id)
+    .then(() => {
+      res.render("index");
+    })
+    .catch((error) => {
+      console.log("error;", error);
+      next();
+    });
 });
-
 module.exports = router;

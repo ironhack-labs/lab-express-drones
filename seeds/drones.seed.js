@@ -12,7 +12,7 @@ const drones = [
   { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
 ];
 
-//create
+//call Drone model and create "drones" collection, using "drones"array as an argument
 Drone.create(drones, (err) => {
   if (err) {
     throw err;
