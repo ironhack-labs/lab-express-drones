@@ -70,16 +70,17 @@ router.post('/drones/:id/edit', (req, res, next) => {
 
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.get('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
-
-  const {id}= req.params
+  
+  const {id} = req.params
+  
 
    DroneModel.findByIdAndDelete(id)
   .then(()=>{
-    res.render("drones/list",{isDelete:true})
-
+    console.log("que se esta borrando",id)
+    res.redirect("/")
   })
   .catch(error =>{
     console.log("El error",error)
