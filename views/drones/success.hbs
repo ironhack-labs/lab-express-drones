@@ -1,11 +1,11 @@
-{{#if isDelete}}
-<h1>The {{drone.name}} has been deleted from the list</h1>
+{{#if isDeleted}}
+<h1>The {{name}} has been deleted from the list</h1>
 
-{{else if isUpdate}}
-<h1>The {{drone.name}} has been updated</h1>
+{{else if isUpdated}}
+<h1>The {{name}} has been updated</h1>
 
-{{else}}
-<h1>Congratulations!! you have created a new Drone!!</h1>
+{{else if isCreated}}
+<h1>Congratulations!! you have created, {{name}}, a new Drone!!</h1>
 
 {{/if}}
 
