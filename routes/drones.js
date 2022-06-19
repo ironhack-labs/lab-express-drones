@@ -17,11 +17,20 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form')
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
+  Drone.create(req.body)
+    .then(drone => {
+      console.log("A Drone has been created", drone);
+      res.render('/drones/success', {isCreated: true});
+    })
+    .catch(err => {
+      res.render('/drones/create-form');
+      next()
+    })
   // ... your code here
 });
 
