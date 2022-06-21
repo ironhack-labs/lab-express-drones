@@ -8,6 +8,12 @@
             <p>Helices: {{propellers}}</p>
             <p>Velocidad maxima: {{maxSpeed}}</p>
             <a href="/drones/{{_id}}/edit">Editar</a>
+            <form class="box1" action="/drones/{{_id}}/delete" method="POST">
+                <button class="#" >Delete</button>
+            </form>
+            {{!-- <form action="/drones/{{_id}}/delete" method="post">
+                <p><a href="/drones">Eliminar</a></p>
+            </form> --}}
         </li>
         </div>
 

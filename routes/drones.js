@@ -65,6 +65,11 @@ router.post('/drones/:id/edit', (req, res, next) => {
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
+  const {id} = req.params
+  console.log('que tiene el id:',id)
+  Drone.findByIdAndDelete(id)
+  .then(()=>res.redirect('/drones'))
+  .catch(error => console.log('Ha salido un error al momento de borrar el drone: ',error))
 });
 
 module.exports = router;
