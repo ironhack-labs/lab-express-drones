@@ -1,1 +1,57 @@
-<h2>Update the drone</h2>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    <a class="navbar-brand drones-nav" href="/"><b>Drones in the sky</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/drones">Drones</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/drones/create">Crea un dron</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <h1>Edita tu Dron, Mago</h1>
+
+            <hr>
+
+            <form action="/drones/{{id}}/edit" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="propellers" class="form-label">Hélices</label>
+                    <input type="text" class="form-control" id="propellers" name="propellers" value="{{propellers}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="maxSpeed" class="form-label">Velocidad Máxima</label>
+                    <input type="text" class="form-control" id="maxSpeed" name="maxSpeed" value="{{maxSpeed}}">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Editar Dron</button>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
