@@ -1,8 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00b7ff;
+.background{
+  
+  background-image:url(../images/drones.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  text-align: center;
+  height: 100vh;
+  text-transform: uppercase;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  
+}
+.color{
+  background-color: orangered;
 }

@@ -1,1 +1,34 @@
-<h2>Available drones</h2>
+<div class="container">
+
+
+    <h2>Drones disponibles</h2>
+
+    <hr>
+
+    {{#each drones}}
+
+    <article>
+
+        <h3>Nombre: {{name}}</h3>
+
+        <h3>Hélices: {{propellers}}</h3>
+
+        <h3>Velocidad máxima: {{maxSpeed}}</h3>
+
+
+
+
+        <a href="/drones/{{id}}/edit" class="btn btn-success">Actualizar</a>
+
+        <form action="/drones/{{id}}/delete" method="POST" style="display: inline-block">
+
+            <input type="submit" value="Eliminar" class="btn btn-danger">
+
+        </form>
+        <hr>
+
+    </article>
+
+    {{/each}}
+
+</div>
