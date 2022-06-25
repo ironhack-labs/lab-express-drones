@@ -1,0 +1,45 @@
+.navbar-elm {
+    color: white;
+    text-decoration: none;
+
+}
+
+.navbar-elm:hover {
+    background-color: #87C1FF;
+    color: white;
+}
+
+.nav-li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.page-title {
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.form-title {
+    text-align: center;
+    margin: 50px 0 60px 0;
+}
+
+.index-background {
+    height: 100vh;
+    background-image: url('./../images/drone.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index-content {
+    text-align: center;
+}
+
+.index-content>h1 {
+    padding: 25px 0 0 0;
+    margin: 0 0 25px 0;
+}
+
+.index-content>p {
+    margin: 25px 0 25px 0;
+}
