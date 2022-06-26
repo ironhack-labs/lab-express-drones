@@ -1,8 +1,30 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+  background-image: url("./images/ciudad.jpg");
 }
 
 a {
   color: #00b7ff;
+}
+
+.index h1 {
+
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+.index p {
+
+  color: white;
+}
+
+.list p {
+  color: white
+}
+
+.update form {
+  color: white;
 }
