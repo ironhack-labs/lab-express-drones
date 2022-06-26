@@ -1,8 +1,24 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+.hero {
+    background-image: url("./../images/drones.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
 }
 
-a {
-  color: #00b7ff;
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.listText {
+    text-align: center;
+}
+
+.list-btn {
+    float: right;
 }

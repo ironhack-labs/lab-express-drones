@@ -1,19 +1,33 @@
-<h2>Available drones</h2>
-{{#each data}}
+<div class="container">
+    <h2 class="listText">Available drones</h2>
 
-<h5>{{name}}</h5>
-<ul>
-    <li>
-        <p>Propellers: {{propellers}}</p>
-    </li>
-    <li>
-        <p>Max speed: {{maxSpeed}}</p>
-    </li>
 
-    <form action="/drones/{{id}}/delete" method="POST">
-        <a href="/drones/{{id}}/edit">Edit</a>
-        <button type="submit">Delete</button>
-    </form>
-</ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Propellers</th>
+                <th scope="col">MaxSpeed</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{propellers}}</td>
+                <td>{{maxSpeed}}</td>
+                <td><a href="/drones/{{id}}/edit" class="btn btn-primary list-btn">Edit</a></td>
+                <td>
+                    <form action="/drones/{{id}}/delete" method="POST">
+                        <button type="submit" class="btn btn-danger list-btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 
-{{/each}}
+    <a href="/drones/create" class="btn btn-success list-btn">Add</a>
+</div>
