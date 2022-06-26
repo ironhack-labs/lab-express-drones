@@ -1,1 +1,21 @@
 <h2>Update the drone</h2>
+
+{{!-- views/books/books-edit.hbs --}}
+
+<h2>Your drone: {{drone.name}}</h2>
+
+<form action="/drones/{{id}}/edit" method="post"> {{!-- /drones/:drone_id/edit --}}
+    <label> Name:
+        <input type="text" name="name" value="{{name}}" />
+    </label>
+
+    <label> Propellers:
+        <input type="text" name="propellers" value="{{propellers}}" />
+    </label>
+
+    <label> maxSpeed:
+        <input type="text" name="maxSpeed" value="{{maxSpeed}}" />
+    </label>
+
+    <button>Your new changes</button>
+</form>

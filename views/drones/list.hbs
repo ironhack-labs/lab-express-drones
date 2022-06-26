@@ -1,1 +1,8 @@
-<h2>Available drones</h2>
+{{#each drone}}
+
+<p>{{name}}</p>
+<p>{{propellers}}</p>
+<p>{{maxSpeed}}</p>
+<a class="nav-link" href="/drones/create">Create a new drone</a>
+<a class="nav-link" href="/drones/{{_id}}/edit">Edit</a>
+{{/each}}
