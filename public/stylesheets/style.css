@@ -1,8 +1,21 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
+  background-image: url('/public/images/drone.jpg');
+  background-size: cover;
 }
 
-a {
-  color: #00b7ff;
+h1,
+h2 {
+  text-align: center;
+  margin: 100px 0;
+}
+
+/* .picture-body {
+  background-image: url('/public/images/alessio-soggetti-rSFxBGpnluw-unsplash.jpg');
+  background-size: cover;
+} */
+
+.drone-card {
+  margin-bottom: 50px;
+  text-align: center;
 }
