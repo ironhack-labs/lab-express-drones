@@ -1,1 +1,18 @@
-<h2>Create a new drone</h2>
+<h2 class="text-center"><strong> Create a new drone </strong></h2>
+<hr>
+<div class="hero d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center  bg-gradient shadow rounded p-4 col-sm-8">
+        <form action="/drones" method="post" class="d-flex align-items-center flex-column col-sm-12 my-4 "> 
+            <label for="name"><strong>Drone name</strong></label>
+            <input id="name" name="name" placeholder="Drone name..." class="form-control mb-3 col-5"/>
+            
+            <label for="propellers"><strong>Drone propellers</strong></label>
+            <input id="propellers" name="propellers" placeholder="Drone propellers..." class="form-control mb-3 col-5"/>
+            
+            <label for="maxSpeed"><strong>Drone maxSpeed</strong></label>
+            <input id="maxSpeed" name="maxSpeed" placeholder="Drone maxSpeed..." class="form-control mb-3 col-5"/>
+
+            <button type="submit" class="btn btn-primary">Update Drone</button>
+        </form>
+    </div>
+</div>

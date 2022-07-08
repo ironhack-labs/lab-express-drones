@@ -1,1 +1,24 @@
-<h2>Available drones</h2>
+<div class=" d-flex justify-content-center align-items-center ">
+    <div class="d-flex justify-content-center bg-gradient shadow rounded p-4 col-sm-8 ">
+        <div class="row">
+        <h2 class="text-center"><strong>Available Drones</strong></h2>
+        <hr>
+            <div class="d-flex d-flex justify-content-center align-items-center row" >
+                {{#each drones as |drone|}}
+                        <div class="card mb-4 shadow d-flex justify-content-center align-items-center text-center  col-4">
+                            <div class="card-body">
+                                <h6 class="card-title"><strong>Name:</strong></h6>
+                                <p>{{drone.name}}</p>
+                                <h6 class="card-title"><strong>propellers:</strong></h6>
+                                <p>{{drone.propellers}}</p>
+                                <h6 class="card-title"><strong>maxSpeed:</strong></h6>
+                                <p>{{drone.maxSpeed}}</p>
+                                <a href="drones/{{drone.id}}/edit" class="btn btn-primary">See detail</a>
+                            </div>
+                        </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
