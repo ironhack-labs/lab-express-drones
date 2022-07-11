@@ -3,6 +3,7 @@
   <p>Name: {{this.name}}</p>
   <p>Propellers: {{this.propellers}}</p>
   <p>Max Speed: {{this.maxSpeed}}</p>
+  <a href='drones/{{this.id}}/edit'>Edit</a>
   <form action='/drones/{{this.id}}/delete' method='post'>
     <button style='color: red; border-color: red;'>Delete</button>
   </form>

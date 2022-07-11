@@ -8,7 +8,6 @@ router.get('/drones', (req, res, next) => {
       const data = {
         dronesArr: dronesFromDB,
       }
-      console.log(data)
       res.render('drones/list', data)
     })
     .catch((error) => {
@@ -41,14 +40,36 @@ router.post('/drones/create', (req, res, next) => {
 })
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-})
+  const {id} = req.params;
+  console.log(id)
+  Drone.findById(id)
+  .then( (droneDetails) => {
+    res.render("drones/update-form", droneDetails)
+  })
+  .catch( (error) => {
+    console.log("Error updating the Drone in DB", error);
+    next(error);
+  })
+});
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-})
+  const droneId = req.params.id;
+
+  const newDetails= {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed,
+  };
+
+  Drone.findByIdAndUpdate(droneId, newDetails)
+  .then( () => {
+    res.redirect("/drones")
+  })
+  .catch( (error) => {
+    console.log("Error updating the Drone in DB", error);
+    next(error);
+  })
+});
 
 router.post('/drones/:id/delete', (req, res, next) => {
   Drone.findByIdAndDelete(req.params.id).then(() => {
