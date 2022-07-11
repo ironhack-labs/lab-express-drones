@@ -1,6 +1,9 @@
 <h2>Available drones</h2>
 {{#each dronesArr}}
-    <p>Name: {{this.name}}</p>
-    <p>Propellers: {{this.propellers}}</p>
-    <p>Speed: {{this.speed}}</p>
+  <p>Name: {{this.name}}</p>
+  <p>Propellers: {{this.propellers}}</p>
+  <p>Max Speed: {{this.maxSpeed}}</p>
+  <form action='/drones/{{this.id}}/delete' method='post'>
+    <button style='color: red; border-color: red;'>Delete</button>
+  </form>
 {{/each}}
