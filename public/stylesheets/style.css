@@ -6,3 +6,12 @@ body {
 a {
   color: #00b7ff;
 }
+
+input {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+button {
+  margin-top: 15px;
+}
