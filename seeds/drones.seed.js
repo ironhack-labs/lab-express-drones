@@ -19,9 +19,8 @@ mongoose
   })
   .then(dronesFromDB => {
     console.log(`Created ${dronesFromDB.length} drones`);
-
     mongoose.connection.close();
   })
   .catch((err) => {
-    console.log(`An error occurred while creating books from the DB: ${err}`)
+    console.log(`An error occurred while creating drones from the DB: ${err}`)
   });

@@ -7,10 +7,8 @@ const Drone   = require("../models/Drone.model");
 
 router.get('/drones', (req, res) => {  // Iteration #2: List all the drones in DB
 Drone.find()
-  .then((droneArr) => {
-    res.render("drones/list", {droneArr})
-  })
-  .catch((error) => console.log("Error getting data from DB", error))
+  .then((droneArr) => res.render("drones/list", {droneArr}))
+  .catch((error)   => console.log("Error getting data from DB", error))
 });
 
 
@@ -27,19 +25,15 @@ router.post('/drones/create', (req, res) => {  // Iteration #3: Add a new drone
   };
 
   Drone.create(newDrone)
-  .then(() => {
-    res.redirect("/drones")    //show the new list
-  })
+  .then(() => res.redirect("/drones"))
   .catch((error) => console.log("Error creating new Drone in DB", error))
 });
 
 
 router.get('/drones/:_id/edit', (req, res) => {  // Iteration #4: Update the drone
   Drone.findById(req.params._id)
-  .then(droneToUpdate => {
-    res.render("drones/update-form", {droneToUpdate})
-  })
-  .catch((error) => console.log("Error getting drone data from DB", error))
+  .then(droneToUpdate => res.render("drones/update-form", {droneToUpdate}))
+  .catch((error)      => console.log("Error getting drone data from DB", error))
 });
 
 
@@ -50,12 +44,15 @@ router.post('/drones/:_id/edit', (req, res) => {  // Iteration #4: Update the dr
     maxSpeed:   req.body.maxSpeed
   };
   Drone.findByIdAndUpdate(req.params._id, updatedDrone)
-  .then(() => res.redirect("/drones"))    //show the updated list
+  .then(()       => res.redirect("/drones"))
   .catch((error) => console.log("Error updating drone data in DB", error))
 });
 
 
-router.post('/drones/:id/delete', (req, res) => {  // Iteration #5: Delete the drone
+router.post('/drones/:id/delete', (req, res) => {  // Iteration #5: Delete  drone
+  Drone.findByIdAndDelete(req.params.id)
+  .then( ()      => res.redirect("/drones"))
+  .catch((error) => console.log("Error deleting drone data", error))
 });
 
 module.exports = router;
