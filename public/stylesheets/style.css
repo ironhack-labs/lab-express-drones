@@ -6,3 +6,50 @@ body {
 a {
   color: #00b7ff;
 }
+
+h2 {
+  font-size: 50px;
+}
+
+.dronesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -20px;
+
+
+}
+.droneCard {
+  background-color: lightgray;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.droneCard h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.droneCard > form > button{
+  background-color: white;
+  width: 100%;
+  border: none;
+}
+
+.form {
+  position: relative;
+  border: 1px solid lightgray;
+  padding: 30px;
+}
+
+.form > * {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.form input {
+  position: absolute;
+  left: 200px;
+  width: 300px;
+}
