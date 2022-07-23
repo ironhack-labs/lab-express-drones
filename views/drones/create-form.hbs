@@ -1,1 +1,16 @@
+{{#if isEdit}}
+<h2>Edit drone's info</h2>
+{{else}}
 <h2>Create a new drone</h2>
+{{/if}}
+
+
+<form action="/drones/{{#if isEdit}}{{updatedDrone.id}}/edit{{else}}create{{/if}}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{updatedDrone.name}}" required>
+    <label for="propellers">Propellers:</label>
+    <input type="number" id="propellers" name="propellers" value="{{updatedDrone.propellers}}" required>
+    <label for="maxSpeed">Max speed:</label>
+    <input type="number" id="maxSpeed" name="maxSpeed" value="{{updatedDrone.maxSpeed}}" required>
+    <button type="submit">Submit</button>
+</form>
