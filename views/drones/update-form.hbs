@@ -3,15 +3,15 @@
 <form action="/drones/{{drone.id}}" method="POST">
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" name="name" required>
+    <input value="{{drone.name}}" type="text" class="form-control" id="name" name="name" required>
   </div>
   <div class="mb-3">
     <label for="propellers" class="form-label">Propellers</label>
-    <input type="number" class="form-control" id="propellers" name="propellers">
+    <input value="{{drone.propellers}}" type="number" class="form-control" id="propellers" name="propellers">
   </div>
   <div class="mb-3">
     <label for="maxSpeed" class="form-label">Maximum Speed</label>
-    <input type="number" class="form-control" id="maxSpeed" name="maxSpeed">
+    <input value="{{drone.maxSpeed}}" type="number" class="form-control" id="maxSpeed" name="maxSpeed">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
