@@ -1,1 +1,8 @@
 <h2>Available drones</h2>
+<div class="card-group">
+  {{#each drones as |drone|}}
+    {{> droneCard}}
+  {{else}}
+    <p>Aun no hay drones</p>
+  {{/each}}
+</div>

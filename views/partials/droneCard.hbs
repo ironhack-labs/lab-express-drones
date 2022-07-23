@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h>
+    <p class="card-text">Number of propellers: {{this.propellers}}</p>
+    <p class="card-text">This drone's max speed: {{this.maxSpeed}}</p>
+    <a href="/drones/{{this.id}}/edit" class="btn btn-secondary">Edit</a>
+    <form action="/drones/{{this.id}}/delete" method="POST">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+</div>
