@@ -63,3 +63,4 @@ module.exports.delete = (req, res, next) => {
       res.redirect('/drones')
     })
 }
+hola
