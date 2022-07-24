@@ -8,7 +8,6 @@ const DRONES = require('../seeds/seeds.json')
 require('../db')
 
 // Vaciarla
-
 mongoose.connection.once('open', () => {
   mongoose.connection.db.dropDatabase()
     .then(() => {
