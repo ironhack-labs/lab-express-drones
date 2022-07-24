@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5">Add new Dron to the DDBB</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <form action="/drones" method="POST">
+                <div class="mb-3">
+                    <label for="drone" class="form-label">Drone Name</label>
+                    <input type="text" class="form-control" id="drone" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="propellers" class="form-label">Number of Propellers</label>
+                    <input type="number" class="form-control" id="propellers" name="propellers" required>
+                </div>
+                <div class="mb-3">
+                    <label for="maxSpeed" class="form-label">Max Speed</label>
+                    <input type="number" class="form-control" id="maxSpeed" name="maxSpeed" required>
+                </div>
+                <button class="btn btn-sm btn-dark me-md-2" type="submit">Add drone</button>
+            </form>
+        </div>
+    </div>
+</div>
