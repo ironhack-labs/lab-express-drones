@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Drone = require("../models/Drone.model");
 
 const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://localhost/lag-express-drones";
+  process.env.MONGO_URI || "mongodb://localhost/lab-express-drones";
 
 mongoose
   .connect(MONGO_URI)
