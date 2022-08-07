@@ -4,19 +4,21 @@ const router = express.Router();
 // require the Drone model here
 const DroneModel = require("../models/Drone.model");
 
+const showFooter = true;
+
 router.get("/drones", (req, res) => {
   // Iteration #2: List the drones
   DroneModel.find()
     .then((allDronesFromDB) => {
       console.log(allDronesFromDB);
-      res.render("drones/list", { drones: allDronesFromDB });
+      res.render("drones/list", { drones: allDronesFromDB, showFooter });
     })
     .catch((err) => console.log("Something went wrong", err));
 });
 
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  res.render("drones/create-form");
+  res.render("drones/create-form", { showFooter });
 });
 
 router.post("/drones/create", (req, res, next) => {
@@ -37,7 +39,7 @@ router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   DroneModel.findById(req.params.id)
     .then((drone) => {
-      res.render("drones/update-form", { drone });
+      res.render("drones/update-form", { drone, showFooter });
     })
     .catch((err) => {
       console.log("Displaying the drone failed", err);

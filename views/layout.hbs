@@ -10,14 +10,15 @@
   </head>
 
   <body>
-<header>
-  <nav>
-    <a href="/drones">Drones</a>
-  </nav>
-</header>
+
     {{{body}}}
 
     <script src="/js/script.js"></script>
+  {{#if showFooter}}
+  <footer>
+   <a href="/">Back to Homepage</a>
+  </footer>
+  {{/if}}
   </body>
 
 </html>
