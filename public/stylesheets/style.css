@@ -6,3 +6,7 @@ body {
 a {
   color: #00b7ff;
 }
+
+.drone-info {
+  border:#00b7ff dashed 1px;
+}
