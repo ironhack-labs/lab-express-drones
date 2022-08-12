@@ -1,1 +1,24 @@
 <h2>Available drones</h2>
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Propellers</th>
+            <th scope="col">Max Speed</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {{!-- Iterate with Drone Data --}}
+        {{#each drones}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.propeller}}</td>
+            <td>{{this.maxSpeed}} m/s</td>
+            <td><a href="/drones/{{this._id}}/edit" class="btn btn-primary" role="button">Update</a></td>
+            <td><a href="/drones/{{this._id}}/edit" class="btn btn-primary" role="button">Delete</a></td>
+        </tr>
+        {{/each}}
+    </thead>
+</table>
+<a href="/drones/create-form" class="btn btn-primary" role="button">Add Drone</a>
