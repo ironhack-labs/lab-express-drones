@@ -25,14 +25,19 @@ router.post("/drones/create", (req, res, next) => {
     .then((drone) => console.log("successfully added a new drone."))
     .catch((err) => {
       console.log(err);
-      res.render("drones/create-from");
+      res.render("drones/create-form");
     });
   res.redirect("/drones");
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  console.log(req.params.id);
+  Drone.findById(req.params.id)
+    .then(({ name, propellers, maxSpeed }) =>
+      res.render("drones/update-form", { name, propellers, maxSpeed })
+    )
+    .catch((err) => console.log(err));
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
