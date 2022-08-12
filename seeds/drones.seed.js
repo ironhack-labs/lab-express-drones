@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Drone = require("../models/Drone.model");
 require("../db/index.js");
-console.log("im here");
 
 const MONGO_URI =
   process.env.MONGO_URI || "mongodb://localhost/lab-express-drones";
