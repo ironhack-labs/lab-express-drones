@@ -2,18 +2,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// create the drone schema
 const droneSchema = new Schema({
-  name: {
-    type: String,
-  },
-  propellers: {
-    type: Number,
-  },
-  maxSpeed: {
-    type: Number,
-  },
+  name: String,
+  propellers: Number,
+  maxSpeed: Number,
 });
 
-const DroneModel = mongoose.model("Drone", droneSchema);
+const Drone = mongoose.model("Drone", droneSchema);
 
-module.exports = DroneModel;
+module.exports = Drone;

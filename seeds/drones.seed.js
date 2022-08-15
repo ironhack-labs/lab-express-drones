@@ -2,7 +2,6 @@
 const mongoose = require("mongoose");
 const Drone = require("../models/Drone.model");
 
-/*Connect to the database */
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
 
@@ -28,7 +27,9 @@ const drones = [
 /*Create a drone document for the server */
 Drone.create(drones)
   .then((dronesFromDB) => {
-    console.log(`There are in total in the array ${dronesFromDB.length}`);
+    console.log(
+      `There are in total in the array ${dronesFromDB.length} drones`
+    );
     mongoose.connection.close();
   })
   .catch((err) => {
@@ -36,5 +37,3 @@ Drone.create(drones)
       `Oopsie, there went something wrong with the drone seeds file ${err}`
     );
   });
-
-module.exports = drones;
