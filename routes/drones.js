@@ -45,9 +45,19 @@ router.post("/drones/create", (req, res, next) => {
     });
 });
 
-router.get("/drones/:id/edit", (req, res, next) => {
+router.get("/drones/:id/edit", (req, res) => {
   // Iteration #4: Update the drone
   // ... your code here
+  DroneModel.findById(req.params.id)
+    .then((currentDrone) => {
+      res.render("drones/update-form", { currentDrone });
+    })
+    .catch((err) => {
+      console.log(
+        `Oopsie there went something wrong with your current drone ${err}`
+      );
+    });
+  // res.render("drones/update-form");
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
