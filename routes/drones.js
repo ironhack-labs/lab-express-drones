@@ -17,14 +17,32 @@ router.get("/drones", (req, res) => {
     });
 });
 
-router.get("/drones/create", (req, res, next) => {
+router.get("/drones/create", (req, res) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  res.render("drones/create-form");
 });
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  const { name, propellers, maxSpeed } = req.body;
+
+  DroneModel.create({
+    name,
+    propellers,
+    maxSpeed,
+  })
+    .then((newDrone) => {
+      console.log("newDrone:", newDrone);
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log(
+        `Oopsie, there went something wrong with creating a new drone ${err}`,
+        res.render("drones/create-form")
+      );
+    });
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {

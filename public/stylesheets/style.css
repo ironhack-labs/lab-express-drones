@@ -1,8 +1,19 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.drones-list-outer-container,
+.drones-list-inner-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #00b7ff;
+}
+
+.link-to-add-drone {
+  color: black;
 }
