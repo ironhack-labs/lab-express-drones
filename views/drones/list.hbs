@@ -7,6 +7,10 @@
       <h3>Propellers:{{propellers}}</h3>
       <h3>Speed:{{maxSpeed}}</h3>
       <a id="edit-drone-btn" href="/drones/{{_id}}/edit">Edit Drone</a>
+
+      <form action="/drones/{{_id}}/delete" method="post">
+        <button type="submit">Delete drone</button>
+      </form>
     </div>
     <br />
     <hr />
