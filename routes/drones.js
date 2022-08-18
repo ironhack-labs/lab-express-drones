@@ -57,12 +57,23 @@ router.get("/drones/:id/edit", (req, res) => {
         `Oopsie there went something wrong with your current drone ${err}`
       );
     });
-  // res.render("drones/update-form");
 });
 
-router.post("/drones/:id/edit", (req, res, next) => {
+router.post("/drones/:id/edit", (req, res) => {
   // Iteration #4: Update the drone
   // ... your code here
+  const { name, propellers, maxSpeed } = req.body;
+
+  DroneModel.findByIdAndUpdate(req.params.id, { name, propellers, maxSpeed })
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((err) => {
+      console.log(
+        `There went something wrong with the update drone form ${err}`
+      );
+      res.render("drone/update-form");
+    });
 });
 
 router.post("/drones/:id/delete", (req, res, next) => {
