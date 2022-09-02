@@ -4,6 +4,9 @@ body {
   padding: 0;
 }
 
+h1 {
+  text-align: center;
+}
 
 a {
   color: #00b7ff;
@@ -11,6 +14,13 @@ a {
 
 .main-content {
   margin: 30px 100px
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 40px
 }
 
 .main-content h2 {
@@ -25,7 +35,19 @@ a {
   align-items: center;
 }
 
-
 .main-content form {
   width: 40%;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.drone-list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
