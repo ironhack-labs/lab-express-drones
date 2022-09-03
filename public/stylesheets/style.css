@@ -6,3 +6,8 @@ body {
 a {
   color: #00b7ff;
 }
+
+.nav-home {
+  width: 100%;
+  margin-bottom: 40px;
+}

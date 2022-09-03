@@ -1,1 +1,25 @@
-<h2>Create a new drone</h2>
+<div class="container">
+    <h2>Create a new drone</h2>
+    <div class="col-6">
+        <div class="row">
+            <form action="/drones/create" method="post">
+                <div class="row m-5">
+                    <label for="">Name</label>
+                    <input type="string" name="name">
+                </div>
+                <div class="row m-5">
+                    <label for="">Propellers</label>
+                    <input type="number" name="propellers">
+                </div>
+                <div class="row m-5">
+                    <label for="">Max Speed</label>
+                    <input type="number" name="maxSpeed">
+                </div>
+
+                {{!-- <input type="text" name="user" value="{{_id}}">
+                --}}
+                <button class="m-5" type="submit">Create Drone</button>
+            </form>
+        </div>
+    </div>
+</div>
