@@ -1,1 +1,34 @@
-<h2>Available drones</h2>
+<div class="d-flex justify-content-center mt-4">
+    <h2 class="text-center">Available Drones</h2>
+</div>
+
+<div class="d-flex flex-row justify-content-around">
+    {{#each dronesFromDroneSeed}}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images\droneImg.jpg" alt="Drone Img">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text"> Propellers: {{propellers}}</p>
+            <p class="card-text"> Max Speed: {{maxSpeed}}</p>
+
+            <div class="d-flex justify-content-around">
+                <div class="row">
+                    <a href="/drones/{{id}}/edit" class="btn btn-warning">Edit Drone</a>
+                </div>
+                <div class="row">
+                    <form action="/drones/{{id}}/delete" method="post">
+                        <button type="submit" class="btn btn-danger row">Delete Drone</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {{/each}}
+</div>
+
+<div class="d-flex justify-content-center mt-4">
+    <a class="btn btn-primary d-flex justify-content-around px-4" href="/drones/create-form">Create Drone</a>
+</div>

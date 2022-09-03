@@ -1,1 +1,24 @@
-<h2>Update the drone</h2>
+<div class="container mt-4">
+    <div class="d-flex justify-content-center">
+        <h2 class="text-center">Update the Drone: <span class="text-danger">{{name}}</span></h2>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <form action="/drones/{{id}}/edit" method="post">
+
+            <label for="name">Name</label>
+            <input type="text" name="name">
+
+            <label class="ml-2" for="propellers">Propellers</label>
+            <input type="text" name="propellers">
+
+            <label for="maxSpeed">Max Speed</label>
+            <input type="text" name="maxSpeed">
+
+            <button class="btn btn-warning" type="submit">Update Drone</button>
+
+        </form>
+    </div>
+</div>
+<div class="d-flex justify-content-center mt-4">
+    <a class="btn btn-secondary px-4 text-white nav-link" href="/drones">Back</a>
+</div>
