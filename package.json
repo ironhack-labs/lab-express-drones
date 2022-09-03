@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "seed": "node seeds/drones.seed.js",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
