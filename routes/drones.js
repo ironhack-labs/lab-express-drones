@@ -34,6 +34,9 @@ router.post('/drones/create-form', (req, res, next) => {
       console.log(newDron)
       res.redirect('/drones/create-form') //redirigir a otra página que diga que todo ha ido bien
     })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
@@ -42,6 +45,9 @@ router.get('/drones/:id/edit', (req, res, next) => {
       console.log(updateDrone)
       res.render('drones/update-form', updateDrone)
     })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
@@ -51,6 +57,9 @@ router.post('/drones/:id/edit', (req, res, next) => {
       console.log(updateDron)
       res.redirect('/drones')
     })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
@@ -59,6 +68,9 @@ router.post('/drones/:id/delete', (req, res, next) => {
       console.log(removeDron)
       res.redirect('/drones')
     })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 module.exports = router;
