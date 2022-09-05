@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
+  padding: 0;
+  margin: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: lightslategray;
 }
 
 a {
   color: #00b7ff;
+}
+
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/jared-brashier-duNHkmSkW6M-unsplash.jpg');
+  background-size: cover;
+
 }

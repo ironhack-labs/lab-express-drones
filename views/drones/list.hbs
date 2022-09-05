@@ -1,1 +1,8 @@
-<h2>Available drones</h2>
+<div class="m-5">
+    <h2>Available drones</h2>
+    {{#each drones}}
+    {{> dronePartial this}}
+    {{/each}}
+
+    <a href="drones/create" class="btn btn-warning mx-3"> Create new drone</a>
+</div>

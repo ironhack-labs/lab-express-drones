@@ -1,0 +1,11 @@
+<div class="m-2 list-page">
+    <h1 class="text-light">{{name}}</h1>
+    <p class="text-dark">Propellers: {{propellers}}</p>
+    <p class="text-dark">Max speed: {{maxSpeed}}</p>
+    <div class="d-flex align-items-center">
+        <a href="drones/{{_id}}/edit" class="text-light btn btn-dark mx-2">Update drone</a>
+        <form action="/drones/{{_id}}/delete" method="post">
+            <button type="submit" class="btn btn-danger mx-2">Delete drone</button>
+        </form>
+    </div>
+</div>
