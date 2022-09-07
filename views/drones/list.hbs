@@ -1,1 +1,13 @@
-<h2>Available drones</h2>
+<h1>Available Drones</h1>
+
+<button type="submit" >Create a new Drone</button>
+
+
+
+{{#each drone}}
+<div>
+ <h1>Name: {{name}}</h1>
+ <h2>Propellers: {{propellers}}</h2>
+ <h2>Speed: {{maxSpeed}}</h2>
+ </div>
+{{/each}}
