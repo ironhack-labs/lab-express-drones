@@ -1,1 +1,15 @@
-<h2>Available drones</h2>
+<h2 class="h2" style="text-align: center;">Available drones</h2>
+<div class="card-group">
+{{#each drones}}
+  <div class="card text-white bg-primary m-5" style="max-width: 20rem;">
+  <div class="card-header">{{name}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{propellers}}</h5>
+    <p class="card-text">{{maxSpeed}}</p>
+    <a href="/drones/{{_id}}/edit" class="btn btn-danger">Details</a>
+  
+   
+  </div>
+  </div>
+{{/each}}
+</div>
