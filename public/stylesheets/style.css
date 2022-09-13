@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+nav {
+  margin-bottom: 150px;
+}
+
+.droneCard {
+  margin: 20px auto;
+}
+
+.form-control {
+  margin-bottom: 30px;
 }
