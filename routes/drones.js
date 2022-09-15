@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/drones', (req, res, next) => {
   Drone.find()
     .then((data) => {
-      console.log('This data', data);
+      // console.log('This data', data);
       res.render('drones/list', { drones: data });
     })
     .catch((err) => {
@@ -17,12 +17,22 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form');
 });
+// .catch((err) => {
+//   console.error(err);
+// });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  Drone.create(req.body)
+    .then(() => {
+      console.log('Drone saved');
+      res.redirect('/drones', { saved: 1 });
+    })
+    .catch((err) => {
+      res.render('drones/create-form', { errorCode: err.code });
+    });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
