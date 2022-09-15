@@ -13,12 +13,19 @@ router.get("/", async (req, res, next) => {
 
 router.get("/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render("drones/create-form");
 });
 
-router.post("/create", (req, res, next) => {
+router.post("/create", async (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  console.log(req.body);
+  try {
+    const newDrone = new Drone({ ...req.body });
+    await newDrone.save();
+    res.redirect("/drones");
+  } catch (err) {
+    console.log("Sorry, there was an error", err);
+  }
 });
 
 router.get("/:id/edit", (req, res, next) => {
