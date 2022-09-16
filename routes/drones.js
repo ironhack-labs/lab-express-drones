@@ -26,23 +26,36 @@ router.get('/drones/create', (req, res, next) => {
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   Drone.create(req.body)
-    .then(() => {
-      console.log('Drone saved');
-      res.redirect('/drones', { saved: 1 });
+    .then((data) => {
+      res.redirect('/drones');
     })
     .catch((err) => {
-      res.render('drones/create-form', { errorCode: err.code });
+      console.log(err);
+      res.render('drones/create-form', { errorCode: 1 });
     });
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+    .then((data) => {
+      // console.log(data);
+      res.render('drones/update-form', data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect('drones/update-form');
+      // App crashes here if there is a duplicate key error
+    });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findByIdAndUpdate(req.params.id, req.body).then(() => {
+    res.redirect('/drones');
+  });
+  // console.log(req.params.id);
+  // console.log('BODY', req.body);
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
