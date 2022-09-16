@@ -1,1 +1,40 @@
 <h2>Available drones</h2>
+<div class="divTable blueTable">
+  <div class="divTableHeading">
+    <div class="divTableRow">
+      <div class="divTableHead">Name</div>
+      <div class="divTableHead">Propellers</div>
+      <div class="divTableHead">MaxSpeed</div>
+      <div class="divTableHead">Actions</div>
+    </div>
+  </div>
+  <div class="divTableBody">
+    {{#each drones}}
+      <div class="divTableRow">
+        <div class="divTableCell">{{this.name}}</div>
+        <div class="divTableCell">{{this.propellers}}</div>
+        <div class="divTableCell">{{this.maxSpeed}}</div>
+        <div class="divTableCell">
+          <a href="/drones/{{this.id}}/edit">edit</a>
+          <a onclick="document.getElementById('myform').submit();" href="#">delete</a>
+          {{!-- trick to do a POST from an "a" tag using onclick and adding form--}}
+          {{!-- https://stackoverflow.com/questions/6180256/post-from-an-a-tag --}}
+          <form id="myform" method="post" action="/drones/{{this.id}}/delete"></form>
+          {{!-- <a class="add"    title="Add"    data-toggle="tooltip"><i class="material-icons" >&#xE03B;</i></a>
+          <a class="edit"   title="Edit"   data-toggle="tooltip"><i class="material-icons" >&#xE254;</i></a>
+          <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons" >&#xE872;</i></a> --}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+{{! <div class="blueTable outerTableFooter">
+  <div class="tableFootStyle">
+    <div class="links"><a href="#">&laquo;</a>
+      <a class="active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">&raquo;</a></div>
+  </div>
+</div> }}
