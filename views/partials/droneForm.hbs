@@ -1,15 +1,24 @@
-<div class='form'>
+<div class='form-group'>
   <label for='name'>Name of Drone</label>
-  <input type='text' name='name' value='{{name}}' required />
+  <input type='text' class='form-control light-opacity' name='name' value='{{name}}' required />
+  <small class='ml-3 form-text text-muted'>
+    Please use manufacturer and model
+  </small>
 </div>
-<div class='form'>
+<div class='form-group'>
   <label for='propellers'>Propellers</label>
-  <input type='number' name='propellers' value='{{propellers}}' required />
+  <input type='number' class='form-control light-opacity' name='propellers' value='{{propellers}}' min='2' max='128' required />
+  <small class='ml-3 form-text text-muted'>
+    Please enter the maximum possible number of propellers for this model
+  </small>
 </div>
-<div class='form'>
+<div class='form-group'>
   <label for='maxSpeed'>Maximum Speed</label>
-  <input type='number' name='maxSpeed' value='{{maxSpeed}}' required />
+  <input type='number' class='form-control light-opacity' name='maxSpeed' value='{{maxSpeed}}' min='2' max='100' required />
+  <small class='ml-3 form-text text-muted'>
+    Please enter the theoretical maximum speed
+  </small>
 </div>
-<div class='form'>
-  <input type='submit' value='Save Drone' />
+<div class='form-group w-25'>
+  <input type='submit' class='form-control btn btn-secondary' value='Save Drone' />
 </div>

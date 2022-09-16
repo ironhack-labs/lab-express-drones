@@ -1,10 +1,10 @@
 {{#if errorCode}}
-  <h3>This drone already exists, sorry!</h3>
+  <h3 class="mt-3 text-white bg-danger w-50 p-1 rounded text-center">There was an error, please try again!</h3>
   <hr />
 {{/if}}
-<h2>Create a new drone</h2>
+<h2 class="m-3">Save a new drone</h2>
 <hr />
-<form action='/drones/create' method='post' class='form'>
+<form class="w-50" action='/drones/create' method='post' class='form'>
   
 {{> droneForm }}
 

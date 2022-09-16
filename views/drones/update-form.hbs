@@ -1,12 +1,7 @@
-{{#if errorCode}}
-  <h3>You haven´t change anything!</h3>
-  <hr />
-{{/if}}
-
-<h2>Update the drone</h2>
+<h2 class="m-3">Update the <em>{{name}}</em></h2>
 
 <hr />
-<form action='/drones/{{this.id}}/edit' method='post' class='form'>
+<form class="w-50" action='/drones/{{id}}/edit' method='post' class='form'>
   
 {{> droneForm }}
 

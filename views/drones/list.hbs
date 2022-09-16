@@ -1,20 +1,24 @@
-{{#if saved}}
-  <h1>Drone saved</h1>
-  <hr />
-{{/if}}
-<h2>Available drones</h2>
+<h2 class='display-6 mt-4'>Drones in our database:</h2>
 <hr />
-{{#each drones}}
-  <div class='drone-card'>
-    <h1>{{this.name}}</h1>
-    <h3>Propellers: {{this.propellers}}</h3>
-    <h3>Maximum Speed: {{this.maxSpeed}}</h3>
-  </div>
-  <a href='/drones/{{this.id}}/edit'>edit</a>
-  <form action='/drones/{{this.id}}/delete' method='post' class='form'>
-    <div class='form'>
-      <input type='submit' value='Delete' />
+<div class='d-flex flex-wrap p-1'>
+
+  {{#each drones}}
+    <div class='card m-1 light-opacity' style='width: 16rem;'>
+      <div class='card-body'>
+        <h4 class='card-title'>{{this.name}}</h4>
+        <div class='lign-items-start p-1'>
+          <h5 class='text-monospace text-secondary mr-3'>Propellers: <span class='text-dark'>{{this.propellers}}</span></h5>
+          <h5 class='text-monospace text-secondary'>Maximum Speed: <span class='text-dark'>{{this.maxSpeed}}</span></h5>
+        </div>
+        <div class='d-flex align-items-start'>
+          <a class='btn btn-secondary mr-3' href='/drones/{{this.id}}/edit' role='button'>Edit</a>
+          <form action='/drones/{{this.id}}/delete' method='post' class='form'>
+            <div>
+              <input class='btn btn-secondary' type='submit' value='Delete' />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </form>
-  <hr />
-{{/each}}
+  {{/each}}
+</div>
