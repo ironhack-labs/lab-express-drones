@@ -1,1 +1,18 @@
 <h2>Update the drone</h2>
+{{#with drone}}
+<form action="/drones/{{id}}/edit" method="post">
+    <p>
+        <span>Edit Name:</span>
+        <input type="text" name="name" value="{{name}}">
+    </p>
+    <p>
+        <span>Number of Propellers:</span>
+        <input type="number" name="propellers" value="{{propellers}}">
+    </p>
+    <p>
+        <span>Edit maximal Speed:</span>
+        <input type="number" name="maxSpeed" value="{{maxSpeed}}">
+    </p>
+    <button type="submit">Save changes</button>
+</form>
+{{/with}}
