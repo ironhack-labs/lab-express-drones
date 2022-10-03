@@ -20,14 +20,32 @@ router.get('/drones', (req, res, next) => {
 
 });
 
+  //CREATE: display a form
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render("drones/create-form");
 });
 
+//CREATE: process form
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  console.log(req.body);
+
+  const droneDetails = {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed
+  }
+
+  Drone.create(droneDetails)
+  .then( droneDetails => {
+    res.redirect("/drones")
+  })
+  .catch(err => {
+    console.log("error creating new drone in DB", err);
+    res.render("drones/create-form");
+    next();
+  })
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {

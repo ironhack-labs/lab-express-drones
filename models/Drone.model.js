@@ -3,7 +3,10 @@ const { Schema, model } = require('mongoose');
 
 const droneSchema = new Schema(
     {
-        name: String,
+        name: {
+            type: String,
+            unique: true
+        },
         propellers: Number,
         maxSpeed: Number
     }
