@@ -14,6 +14,7 @@ router.get('/drones', (req, res, next) => {
         })
         .catch((error) => {
           console.log("Error getting datas from DB", error)
+          next()
         })
 
 });
@@ -35,17 +36,38 @@ router.post('/drones/create', (req, res, next) => {
         })
         .catch(error => {
           console.log("Error creating a drone",error);
+          next();
         })
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const droneId = req.params.id;
+  Drone.findById(droneId)
+        .then((droneDetails)=>{
+          console.log(droneDetails)
+          res.render("drones/update-form", droneDetails)
+        })
+        .catch((error) => {
+          console.log("Error getting Drone details from DB",error);
+          next();
+        })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  console.log(req.body);
+  const droneId = req.params.id;
+  const {name, propellers, maxSpeed} = req.body;
+  Drone.findByIdAndUpdate(droneId,{name, propellers, maxSpeed})
+        .then((updatedData)=>{
+              console.log("Drone data updated successfully",updatedData)
+              res.redirect("/drones")
+        })
+        .catch((error) => {
+          console.log("Error updating data in the DB",error);
+          next();
+        })
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
