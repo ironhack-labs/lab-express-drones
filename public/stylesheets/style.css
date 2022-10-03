@@ -1,8 +1,41 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: aliceblue;
+}
+h1 , h2{
+  background-color: rgb(37, 129, 51);
+  color: #fff;
+  padding: 20px;
+  width: fit-content;
+}
+h2 {
+  font-size: 36px;
 }
 
-a {
-  color: #00b7ff;
+a, button{
+  background-color: rgb(192, 33, 33);
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid rgb(192, 33, 33);
+  border-radius: 5px;
+  margin: 10px
 }
+form {
+  border: 2px solid rgb(192, 33, 33);
+  padding: 20px;
+  width: fit-content;
+}
+input {
+  padding: 10px;
+  border: 2px solid rgb(37, 129, 51);
+}
+.drone-list {
+  background-color: rgb(37, 129, 51);
+  padding: 20px;
+  width: 200px;
+}
+
+

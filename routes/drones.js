@@ -6,7 +6,6 @@ const Drone = require("../models/Drone.model")
 router.get('/drones', (req, res, next) => {
   Drone.find()
     .then((dataFromDB) => {
-      console.log(dataFromDB)
       res.render("drones/list", { drones: dataFromDB })
     })
     .catch(err => console.log(" error getting data from DB", err))
@@ -48,7 +47,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
     propellers: req.body.propellers,
     maxSpeed: req.body.maxSpeed
   }
-  Drone.findByIdAndUpdate(req.body.id, updatedDrone)
+  Drone.findByIdAndUpdate(req.params.id, updatedDrone)
     .then(() => {
       res.redirect("/drones")
 
