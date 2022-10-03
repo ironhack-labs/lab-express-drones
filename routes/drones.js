@@ -9,7 +9,6 @@ router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
   Drone.find()
   .then( dronesFromDB => {
-    console.log(dronesFromDB);
     res.render("drones/list", {drones: dronesFromDB})
   })
   .catch( err => {
@@ -29,7 +28,6 @@ router.get('/drones/create', (req, res, next) => {
 //CREATE: process form
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // console.log(req.body);
 
   const droneDetails = {
     name: req.body.name,
@@ -54,7 +52,6 @@ router.get('/drones/:id/edit', (req, res, next) => {
   
   Drone.findById(req.params.id)
   .then( droneDetails => {
-    // console.log(droneDetails);
     res.render("drones/update-form", droneDetails);
   })
   .catch(err => {
