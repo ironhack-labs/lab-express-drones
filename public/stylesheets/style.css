@@ -6,3 +6,18 @@ body {
 a {
   color: #00b7ff;
 }
+#list-buttons{
+  display: flex;
+  align-items: center;
+
+}
+#list-buttons a{
+  text-decoration: none;
+  background-color: #8080803d;
+  padding: 0.1rem;
+  color: black;
+  margin: 5px 5px 5px 0px;
+  border-radius: 0.2rem;
+  border: 0.1rem solid grey;
+  font-size: small;
+}
