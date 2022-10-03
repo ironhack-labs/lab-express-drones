@@ -31,14 +31,31 @@ router.post('/drones/create', (req, res, next) => {
     .catch(() => res.redirect("/drones/create"))
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.get('/drones/:droneId/edit', (req, res, next) => {
+  Drone.findById(req.params.droneId)
+  .then((droneDetails) => {
+    res.render('drones/update-form', droneDetails);
+  })
+  .catch( err => {
+    console.log('error getting drone details from DB', err);
+  })
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post('/drones/:droneId/edit', (req, res, next) => {
+  const droneId = req.params.droneId;
+
+  const newDetails = {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed,
+  }
+  Drone.findByIdAndUpdate(droneId, newDetails)
+  .then(() => {
+    res.redirect('/drones');
+  })
+  .catch( err=> {
+    res.redirect('/drones/:droneId/edit', droneId);
+  })
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
