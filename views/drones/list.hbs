@@ -1,9 +1,25 @@
-<h2>Available drones</h2>
+{{!-- <h2>Available drones</h2>
 
 {{#each drones}}
 
 <h1>Name:{{this.name}}</h1>
 <h2>Propellers:{{this.propellers}}</h2>
 <h3>Speed:{{this.maxSpeed}}</h3>
+<a href="/drones/{{this._id}}/edit">Update drone info</a>
+{{/each}} --}}
 
+<h1>Books in our DB:</h1>
+
+{{#each drones}}
+    <section class="drone-summary">
+        <h2>{{this.name}}</h2>
+        <p>
+            propellers: {{this.propellers}} <br />
+            maxSpeed: {{this.maxSpeed}} <br />
+
+            <a href="/drones/{{_id}}/edit">Edit</a>
+            <a href="/drones/{{_id}}/delete">Delete</a>
+        </p>
+
+    </section>
 {{/each}}
