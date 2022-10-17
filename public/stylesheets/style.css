@@ -1,8 +1,32 @@
 body {
-  padding: 50px;
+  padding: 0px;
+  margin: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+nav{ 
+  width: 100%;
+  background-color: lightcyan;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a{
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: lightblue;
+  color: white;
+  width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+img {
+  border: 0px;
 }

@@ -6,5 +6,8 @@
         <p>Max Speed: {{this.maxSpeed}}</p>
         
         <a href="/drones/{{this._id}}/edit"><p>Actualizar</p></a>
+        <form action="/drones/{{this._id}}/delete" method="post">
+            <button>Delete</button>
+        </form>
     {{/each}}
 </div>
