@@ -1,33 +1,40 @@
-<h2>Update the drone</h2>
+<section class="container">
 
-<form action="/drones/{{_id}}/edit" method="post">
+  <div class="card">
 
-  <label for="name"><b>Name</b></label>
-  <br />
-  <input type="text" name="name" id="name" value="{{name}}" required />
+    <h1>Update the drone</h1>
 
-  <br />
-  <br />
+    <form action="/drones/{{_id}}/edit" method="post">
 
-  <label for="propellers"><b>Propellers</b></label>
-  <br />
-  <input
-    type="number"
-    name="propellers"
-    id="propellers"
-    value="{{propellers}}"
-  />
+      <label for="name"><b>Name</b></label>
+      <br />
+      <input type="text" name="name" id="name" value="{{name}}" required />
 
-  <br />
-  <br />
+      <br />
+      <br />
 
-  <label for="maxSpeed"><b>MAX Speed</b></label>
-  <br />
-  <input type="number" name="maxSpeed" id="maxSpeed" value="{{maxSpeed}}" />
+      <label for="propellers"><b>Propellers</b></label>
+      <br />
+      <input
+        type="number"
+        name="propellers"
+        id="propellers"
+        value="{{propellers}}"
+      />
 
-  <br />
-  <br />
+      <br />
+      <br />
 
-  <button type="submit">Edit</button>
+      <label for="maxSpeed"><b>MAX Speed</b></label>
+      <br />
+      <input type="number" name="maxSpeed" id="maxSpeed" value="{{maxSpeed}}" />
 
-</form>
+      <br />
+      <br />
+
+      <button type="submit" class="custom-button">Edit</button>
+
+    </form>
+
+  </div>
+</section>

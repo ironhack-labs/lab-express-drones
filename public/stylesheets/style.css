@@ -1,8 +1,160 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+body {
+  background-image: url("../images/drone-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+nav {
+  display: flex;
+  background-color: #333333;
+  height: 8vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav a {
+  color: #f7f9f9;
+  font-size: 15px;
+  font-family: monospace;
+  text-decoration: none;
+  padding: 0px 35px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10vh;
+  flex-wrap: wrap;
+}
+
+.container form {
+  margin: 0 auto;
+}
+
+.container form label {
+  color: white;
+}
+
+.container form input {
+  background-color: rgb(255 255 255 / 30%);
+  padding: 5px;
+  color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 4px;
+  width: 50vw;
+  margin-bottom: 100px;
+  padding: 100px;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.card h3,
+.card p {
+  color: white;
+}
+
+.card div.custom-div {
+  padding: 25px 100px;
+  border: 1px solid red;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.container div.custom-div:hover {
+  background-color: rgb(255 0 0 / 20%);
+  transform: scale(0.9);
+  transition: ease-in-out 0.5s;
+}
+
+.card div.custom-div a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.card-top {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title button,
+button.custom-button {
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #f44336;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.card-title button:hover,
+.card-title button:focus-visible,
+button.custom-button:hover,
+button.custom-button:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.card-title button:active,
+button.custom-button:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.card-title button a,
+button.custom-button {
+  color: #f7f9f9;
+  font-weight: bold;
+  text-decoration: none;
 }

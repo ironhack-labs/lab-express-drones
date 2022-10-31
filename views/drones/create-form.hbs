@@ -1,28 +1,35 @@
-<h2>Create a new drone</h2>
+<section class="container">
 
-<form action="/create-form" method="post">
+  <div class="card">
 
-  <label for="name"><b>Name</b></label>
-  <br />
-  <input type="text" name="name" id="name" />
+    <h1>Create a new drone</h1>
 
-  <br />
-  <br />
+    <form action="/create-form" method="post">
 
-  <label for="propellers"><b>Propellers</b></label>
-  <br />
-  <input type="number" name="propellers" id="propellers" />
+      <label for="name"><b>Name</b></label>
+      <br />
+      <input type="text" name="name" id="name" />
 
-  <br />
-  <br />
+      <br />
+      <br />
 
-  <label for="maxSpeed"><b>MAX Speed</b></label>
-  <br />
-  <input type="number" name="maxSpeed" id="maxSpeed" />
+      <label for="propellers"><b>Propellers</b></label>
+      <br />
+      <input type="number" name="propellers" id="propellers" />
 
-  <br />
-  <br />
+      <br />
+      <br />
 
-  <button type="submit">Add Drone</button>
+      <label for="maxSpeed"><b>MAX Speed</b></label>
+      <br />
+      <input type="number" name="maxSpeed" id="maxSpeed" />
 
-</form>
+      <br />
+      <br />
+
+      <button type="submit" class="custom-button">Add Drone</button>
+
+    </form>
+
+  </div>
+</section>
