@@ -1,4 +1,10 @@
 <h2>Available drones</h2>
+
+<form action="/drones/create" method="get">
+    <button type="submit">Create Drone</button>
+</form>
+
+
 {{#each drones}}
 <ul>
     <li>name: {{name}}</li>
@@ -10,4 +16,5 @@
 <form action="/drones/{{_id}}/delete" method="post">
     <button type="submit">Delete Drone</button>
 </form>
+
 {{/each}}

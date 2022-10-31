@@ -66,4 +66,8 @@ router.post('/drones/:id/delete', async (req, res, next) => {
 })
 
 
+
+
+
+
 module.exports = router;
