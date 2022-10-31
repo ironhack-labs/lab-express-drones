@@ -1,7 +1,8 @@
-<h2>Available drones</h2>
+<h2 class="dronesh2">Available drones</h2>
 {{#each drones}}
-  <div>
+  <div class="drones">
     <h3>{{name}}</h3>
+    <hr />
     <p>Propellers: {{propellers}}</p>
     <p>Max Speed: {{maxSpeed}}</p>
     <a href="/drones/{{_id}}/edit">Update Drone</a>
