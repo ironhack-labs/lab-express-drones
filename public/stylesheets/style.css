@@ -1,8 +1,75 @@
 body {
-  padding: 50px;
+/* padding: 50px; */
+padding:0;
+margin:0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.homepage{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://pyxis.nymag.com/v1/imgs/819/12a/46aa0a6292788f5febd7065e16374fdc2a-30-drone-lede.2x.rsocial.w600.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homepage-text{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 30px;
+  color:#394e5d
+}
+
+.navbar-buttons{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #394e5d
+ 
+}
+
+.link-button{
+  text-decoration: none;
+  color: white;
+}
+
+.title{
+  font-size: 36px;
+}
+
+.welcome-to{
+  font-size:18px;
+}
+
+
+
+
+
+
+
+
+
+
+.available-drones{
+  background-color: #e2b084;
+ /*  width: 100vw; */
+  height: 100vh;
+}
+
+.create-drone{
+
+}
+
+.inputs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top:200px;
 }
