@@ -1,8 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(../images/drone-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 150vh;
+  overflow: hidden;
+  width: 100vw;
 }
 
 a {
   color: #00b7ff;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #0063bf;
+  color: white;
+}
+
+.title {
+  padding: 10%;
+
+  text-align: center;
+}
+
+.title p {
+  padding: 5%;
+}
+
+.h1 {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    to right top,
+    #0d6876,
+    #1255ff,
+    #1d316b,
+    #323344,
+    #06011e
+  );
+  background-size: 50% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 2vw;
+  animation: gradientAnim 7.5s ease alternate infinite;
+}
+
+@keyframes gradientAnim {
+  to {
+    background-position: 100% top;
+  }
+}
+.drones-title {
+  text-align: center;
+  padding: 2%;
+
+}
+
+.drones {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3%;
+}
+
+.peiding {
+  margin-bottom: 10%;
 }
