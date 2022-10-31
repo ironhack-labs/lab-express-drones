@@ -1,8 +1,87 @@
 body {
-  padding: 50px;
+  padding: 0px;
+  margin: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+#navbar {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+  background-color: #457b9d;
+  height: 50px;
+  padding: 0px;
+  text-align: center;
+}
+
+.navlink {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.textbody {
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  color: #495057;
+}
+
+.img-background img {
+  width: 100vw;
+  height: 93vh;
+  position: absolute;
+}
+
+.home {
+  position: relative;
+}
+
+.hometext {
+  position: relative;
+  /* text-align: center; */
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  background-color: rgba(255, 255, 255, 0.593);
+  align-items: center;
+}
+
+.dronelistpage {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	/* justify-content: space-between;
+	align-items: flex-start;
+	align-content: center; */
+  margin: 20px 20px 10px 20px;
+  padding: 5px 20px 10px 10px; 
+  width: 300px;
+  border: solid #495057;
+}
+
+.dronebutton {
+  margin-left: 40px;
+}
+
+.h2text {
+  margin: 15px;
+  color: #495057;
+}
+
+ul {
+  list-style-type: none;
 }
