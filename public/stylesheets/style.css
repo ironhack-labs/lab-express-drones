@@ -1,8 +1,24 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url("https://dji-official-fe.djicdn.com/dps/dfdeb1f6c33c93e47b5b9753637edfb7.jpg");
+  background-size: cover;
+  flex-direction: column;
+  align-items: flex-start;
+
+  display: flex;
+  
+  color: white;
+}
+
+.navbar-buttons{
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
   color: #00b7ff;
 }
+
