@@ -1,1 +1,17 @@
 <h2>Available drones</h2>
+
+{{#each drones}}
+<div class = "availableDrones">
+    <h3>{{name}}</h3>
+    <p>Propellers: {{propellers}}</p>
+    <p>Speed: {{maxSpeed}}</p>
+    <a href="/drones/{{_id}}/edit">Edit</a>
+</div>
+    <form action="/drones/{{_id}}/delete" method ="post">
+    <button type = "submit">Delete Drone</button>
+
+    </form>
+
+{{/each}}
+
+<a href="/drones/create">Create</a>
