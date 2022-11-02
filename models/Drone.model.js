@@ -6,9 +6,10 @@ const droneSchema = new Schema({
     propellers : Number,
     maxSpeed:  Number,
 }, 
-)
-//createdAt
-//updatedAt
+{
+    timestamps : true
+})
+
 
 const Drone = model('Drone', droneSchema)
 
