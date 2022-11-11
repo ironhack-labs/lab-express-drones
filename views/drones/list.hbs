@@ -1,1 +1,30 @@
-<h2>Available drones</h2>
+<div class="container mt-4">
+    <h1>Available drones</h1>
+    <hr>
+    <div class="row gp-4 m-4 d-flex justify-content-center alig-items-center">
+        {{#each drone}}
+        <div class="d-flex card col-md-4 p-3 m-1">
+            <div class="p-3 bg-white mb-1">
+                <img
+                    src="https://media.wired.com/photos/59265687af95806129f4f16f/master/w_2400,c_limit/Drone-TA-674480931.jpghttps://media.wired.com/photos/59265687af95806129f4f16f/master/w_2400,c_limit/Drone-TA-674480931.jpg">
+                <h4 class="card-title pt-3">{{name}}</h4>
+                <p>Name Model`s</p>
+                <h5 class="card-subtitle pt-2">{{propellers}}</h5>
+                <p class="card-text">Propellers</p>
+                <h5 class="card-subtitle pt-2">{{maxSpeed}}</h5>
+                <p class="card-text">Max Speed</p>
+                <div class="d-flex justify-content-between">
+                    <a href="/drones/{{_id}}/edit" class="btn btn-secondary">Edit</a>
+                    <form action="/drones/{{_id}}/delete" method="POST">
+                        <input type="submit" value="Delete Drone" class="btn btn-danger">
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <div class="d-grid col-md-4">
+            <a href="/drones/create" class="btn btn-success p-3 m-1">Create a new Drone</a>
+            <a href="/" class="btn btn-dark p-3 m-1 d-block">Go Home</a>
+        </div>
+    </div>
+</div>
