@@ -3,9 +3,20 @@ const mongoose = require("mongoose");
 
 const droneSchema = new mongoose.Schema(
 	{
-		name: String,
-		propellers: Number,
-		maxSpeed: Number,
+		name: {
+			type: String,
+			required: true,
+		},
+		propellers: {
+			type: Number,
+			required: true,
+			min: 0,
+		},
+		maxSpeed: {
+			type: Number,
+			required: true,
+			min: 0,
+		},
 	},
 	{
 		timestamps: true,
