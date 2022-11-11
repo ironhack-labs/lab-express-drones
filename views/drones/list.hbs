@@ -1,1 +1,23 @@
-<h2>Available drones</h2>
+<div class="container">
+	<h2 class="my-4">Available drones</h2>
+	<div class="row d-flex justify-content-center gap-4">
+		{{#each drones}}
+			<div class="card justify-content-between col-lg-3 col-md-4 mb-3 p-3 gap-3" style="width: 18rem;">
+				<img
+					class="card-img-top"
+					src="https://media.wired.com/photos/6077303d9654cfea28c956dd/1:1/w_1800,h_1800,c_limit/Gear-Air-2S--Drone-2.jpg"
+					alt="drone"
+				/>
+				<h2 class="card-title">{{name}}</h2>
+				<ul>
+					<li>Nº of propellers: {{propellers}}</li>
+					<li>Max speed: {{maxSpeed}}</li>
+				</ul>
+				<a class="btn btn-secondary" href="/drones/{{_id}}/edit">Edit</a>
+				<form action="/drones/{{_id}}/delete" method="POST" class="btn btn-danger">
+					<input type="submit" value="Delete" class="btn btn-danger p-0" />
+				</form>
+			</div>
+		{{/each}}
+	</div>
+</div>
