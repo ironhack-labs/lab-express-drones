@@ -1,6 +1,10 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+   background-image: url("../images/dronees.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+  
 }
 
 a {
