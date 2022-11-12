@@ -1,1 +1,27 @@
-<h2>Available drones</h2>
+<div class="container-fluid mt-5">
+    <h1 class="display-3 text-center">List of available drones</h1>
+    <div class="row mt-5">
+        <div class="d-flex justify-content-around mt-5">
+            <div class="w-25 text-center fs-3"><strong>Modelo</strong></div>
+            <div class="w-25 text-center fs-3"><strong>Motores</strong></div>
+            <div class="w-25 text-center fs-3"><strong>Velocidad Máxima</strong></div>
+            <div class="w-25 text-center fs-3"><strong>Acciones</strong></div>
+
+        </div>
+        {{#each droneDB}}
+        <div class="d-flex align-items-center mt-2">
+            <div class="col-3 text-center">{{name}}</div>
+            <div class="col-3 text-center">{{propellers}}</div>
+            <div class="col-3 text-center">{{maxSpeed}}</div>
+            <div class="col-3 d-flex justify-content-center"><a href="/drones/{{_id}}/edit"
+                    class="btn btn-dark">Editar</a>
+                <form action="/drones/{{_id}}/delete" method="POST">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                </form>
+
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
