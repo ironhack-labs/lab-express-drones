@@ -5,6 +5,7 @@ const droneSchema = new mongoose.Schema(
         name: {
             type: String,
             unique: true,
+            required: true,
         },
         propellers: Number,
         maxSpeed: Number
