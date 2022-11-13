@@ -6,3 +6,80 @@ body {
 a {
   color: #00b7ff;
 }
+
+.row {
+  margin-top: 40px;
+}
+
+.button-container {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.button-index,
+.a-button-form {
+  padding: 10px;
+  background-color: #00b7ff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.a-button-form {
+  width: 130px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.button-index:hover,
+.button-index:active,
+.a-button-form:hover,
+.a-button-form:active {
+  color: white;
+  text-decoration: none;
+}
+
+.title-page {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.list-container {
+  text-align: center;
+}
+
+.list-container p:nth-child(odd) {
+  font-weight: bold;
+}
+
+.drone-container {
+
+  margin: 0 auto;
+  width: 200px
+}
+
+.drone-container label {
+  font-weight: bold;
+}
+
+.drone-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.drone-button,
+.drone-delete {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #00b7ff;
+  padding: 10px;
+  border: 0;
+  color: white;
+}
+
+.drone-delete {
+  width: 130px;
+}
