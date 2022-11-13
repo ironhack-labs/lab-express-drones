@@ -10,4 +10,18 @@ const drones = [
     { name: "Courier 3000i", propellers: 6, maxSpeed: 18 }
   ];
 
-  drones.seed()
+
+
+  async function seeds(){
+    try{
+      const x = await mongoose.connect( MONGO_URI)
+      console.log|(`connected to: ${x.connections[0].name}`)
+      let createDrone = await Drone.create(drones)
+      console.log(`Sucessfuly created ${createDrone.length}`)
+      x.disconnect()
+    }catch(err) {
+      console.log(err)
+    }
+  }
+
+  seeds()

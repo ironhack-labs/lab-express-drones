@@ -26,9 +26,9 @@ router.post('/drones/create', async (req, res, next) => {
     const createdDrone = await Drone.create({name, propellers, maxSpeed})
 
     res.redirect (`/drones`);
-  console.log(createdDrone);
   
     } catch (error) {
+      res.redirect('/drones/create')
       console.log(error);
       next(error);
     }
@@ -36,8 +36,9 @@ router.post('/drones/create', async (req, res, next) => {
 
   
   router.get('/drones/:id/edit', async (req, res, next) => {
+    const {id} = req.params;
     try{
-      const drone = await Drone.findById(req.params.id);
+      const drone = await Drone.findById(id);
   res.render('drones/update-form', drone );
   
   } catch (error) {
@@ -70,4 +71,4 @@ router.post('/drones/create', async (req, res, next) => {
         }
       });
       
-      module.exports = router
+      module.exports = routers
