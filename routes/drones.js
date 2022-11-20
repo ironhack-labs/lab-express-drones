@@ -1,4 +1,5 @@
 const express = require("express");
+const DroneModel = require("../models/Drone.model");
 const router = express.Router();
 
 // require the Drone model here
@@ -45,7 +46,13 @@ router.post("/drones/:id/edit", (req, res, next) => {
 
 router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  const {id}=req.params;
+  Drone.findByIdAndDelete(id)
+  .then(()=>res.redirect('/drones'))
+  .catch((error) => {
+     next(error);
+  });
+  
 });
 
 module.exports = router;

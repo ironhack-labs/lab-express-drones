@@ -9,8 +9,16 @@
 <div>
     <span>Speed:{{maxSpeed}} </span>
 </div>
+<div>
 <a href="/drones/{{_id}}/edit">Edit Drone</a>
+</div>
+<div>
+   <form action="/drones/{{_id}}/delete" method="POST">
+     <button type="submit">Delete</button>
+    </form>
+</div>
 <hr>
+
 {{/each}}
 
  <a href="/drones/create">Create New Drone</a>
