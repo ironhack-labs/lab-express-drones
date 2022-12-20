@@ -1,1 +1,20 @@
 <h2>Available drones</h2>
+{{#if drones}}
+    {{#each drones}}
+        <section class="drone-summary">
+            <h2>{{this.name}}</h2>
+            <p>
+                Amount of Propellers: {{this.propellers}}<br />
+                Maximum Speed: {{this.maxSpeed}} mph<br />
+                <a href="drones/{{this._id}}">More Details</a>
+                <a href="/drones/{{_id}}/edit">Edit</a>
+                {{!-- add the form to handle the POST request to remove a specific book  --}}
+                <form action="/drones/{{_id}}/delete" method="POST">
+                    <button>Delete</button>
+                </form>
+            </p>
+        </section>
+    {{/each}}
+{{else}}
+    <h3>Sorry, no drones in the DB</h3>
+{{/if}}
