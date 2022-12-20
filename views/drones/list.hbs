@@ -5,12 +5,12 @@
             <h2>{{this.name}}</h2>
             <p>
                 Amount of Propellers: {{this.propellers}}<br />
-                Maximum Speed: {{this.maxSpeed}} mph<br />
-                <a href="drones/{{this._id}}">More Details</a>
-                <a href="/drones/{{_id}}/edit">Edit</a>
-                {{!-- add the form to handle the POST request to remove a specific book  --}}
-                <form action="/drones/{{_id}}/delete" method="POST">
-                    <button>Delete</button>
+                Maximum Speed: {{this.maxSpeed}}mph<br />
+                <a href="drones/{{this._id}}" class="details">More Details</a>
+                <a href="drones/{{this._id}}/edit" class="edit">Edit</a>
+
+                <form action="/drones/{{this._id}}/delete" method="POST">
+                    <button class="delete">Delete</button>
                 </form>
             </p>
         </section>
@@ -18,3 +18,8 @@
 {{else}}
     <h3>Sorry, no drones in the DB</h3>
 {{/if}}
+
+    <br />
+    <br />
+    <a href="drones">View all Drones</a> | 
+    <a href="drones/create">Create a new Drone</a>
