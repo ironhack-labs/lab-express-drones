@@ -1,6 +1,6 @@
 // Iteration #1
 const mongoose = require('mongoose');
-const Drone = require('../models/Drone.model')
+const Drone = require('../models/Drone.model');
 
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1/lab-express-drones";
 
