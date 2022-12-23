@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Drone = require("../models/Drone.model");
 
 const MONGO_URI = "mongodb://127.0.0.1:27017/lab-express-drones";
+// replaced '//localhost/' with //127.0.0.1:27017/ so it would stop failing
 
 mongoose
   .connect(MONGO_URI)
