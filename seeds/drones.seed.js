@@ -1,14 +1,14 @@
 // Iteration #1
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const Drone = require("../models/Drone.model")
+const Drone = require('../models/Drone.model');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/drones';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/drones';
 
 const drones = [
-  { name: "drone1", propellers: 5, maxSpeed: 45 },
-  { name: "drone2", propellers: 2, maxSpeed: 10 },
-  { name: "drone3", propellers: 6, maxSpeed: 30 },
+  { name: 'drone1', propellers: 5, maxSpeed: 45 },
+  { name: 'drone2', propellers: 2, maxSpeed: 10 },
+  { name: 'drone3', propellers: 6, maxSpeed: 30 },
 ];
 
 mongoose
