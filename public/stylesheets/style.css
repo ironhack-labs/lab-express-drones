@@ -6,3 +6,121 @@ body {
 a {
   color: #00b7ff;
 }
+
+.view, .create {
+  display: inline-block;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view:hover, .create:hover {
+  background: #000;
+  color: #ffffff;
+}
+
+.edit {
+  display: inline-block;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Edit */
+.edit {
+  border-color: #2196F3;
+  color: #1e90ff;
+  margin: 10px 0 0 0;
+}
+
+.edit:hover {
+  background: #2196F3;
+  color: #ffffff;
+}
+
+button {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Save */
+.save {
+  border-color: #04AA6D;
+  color: #008000;
+}
+
+.save:hover {
+  background-color: #04AA6D;
+  color: #ffffff;
+}
+
+/* Delete */
+.delete {
+  margin: -5px 0; 
+  border-color: #f44336;
+  color: #ff0000;
+}
+
+.delete:hover {
+  background: #f44336;
+  color: #ffffff;
+}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 1900px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.drones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.drones>section {
+  flex: 0 0 200px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding: 10px 20px;
+}
