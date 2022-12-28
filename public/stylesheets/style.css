@@ -1,8 +1,81 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+  color: #e0e1dd;
+  background-color: #415a77 ;
+}
+
+h2 {
+  color: #0d1b2a;
 }
 
 a {
-  color: #00b7ff;
+  color: #e0e1dd;
+}
+
+a, h2 {
+  text-decoration: none;
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+h3 {
+  color: #0d1b2a;
+}
+
+.list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.edit-delete {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+  padding: 5px 15px;
+}
+
+button {
+  color: #0d1b2a;
+  background-color: #e0e1dd;
+  text-transform: uppercase;
+
+  padding: 5px 15px;
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+}
+
+.create a {
+  text-align: center;
+  padding: 15px;
+  margin-top: 25px;
+
+  border: 2px solid #e0e1dd;
+  border-radius: 15px;
+}
+
+.form form {
+  border: 2px solid #e0e1dd;
+  border-radius: 15px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.form button {
+  margin-top: 25px;
 }
