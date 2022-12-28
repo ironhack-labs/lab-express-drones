@@ -42,19 +42,48 @@ router.post('/drones/create', (req, res, next) => {
     })
 });
 
+// Iteration #4: Update the drone
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+  .then((dronedetails) =>{
+      res.render("drones/update-form",dronedetails);
+  })
+  .catch(err =>{
+      console.log("err displaying drone detail from db",err);
+      next();
+  })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const droneId = req.params.id;
+    const newDetail = {
+      name: req.body.name,
+      propellers: req.body.propellers,
+      maxSpeed: req.body.maxSpeed,
+      };
+    Drone.findByIdAndUpdate(droneId,newDetail)
+      .then((droneDetails) => {
+       
+        res.redirect("/drones");
+      })
+      .catch((err) => {
+        console.log("error updating Drone information to the db", err);
+        next();
+      })
+  
 });
-
+// Iteration #5: Delete the drone
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+  .then(() =>{
+      console.log("drone deleted");
+      res.redirect("/drones")
+  })
+  .catch(err =>{
+      console.log("error deleting the drone from the database",err);
+      next();
+  });
+ 
 });
 
 module.exports = router;
