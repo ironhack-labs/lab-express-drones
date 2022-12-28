@@ -1,5 +1,6 @@
-<h2>Available drones</h2>
+<h1>Available drones</h1>
 {{#if drones}}
+    <div class="drones">
     {{#each drones}}
         <section class="drone-summary">
             <h2>{{this.name}}</h2>
@@ -15,11 +16,12 @@
             </p>
         </section>
     {{/each}}
+    </div>
 {{else}}
     <h3>Sorry, no drones in the DB</h3>
 {{/if}}
 
     <br />
     <br />
-    <a href="drones">View all Drones</a> | 
-    <a href="drones/create">Create a new Drone</a>
+    <a href="drones" class="view">View all Drones</a> 
+    <a href="drones/create" class="create">Create a new Drone</a>
