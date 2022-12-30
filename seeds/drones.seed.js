@@ -1,4 +1,4 @@
-const Drones = require("../models/Drone.model.js")
+const Drones = require("../models/Drone.model.js");
 const mongoose = require("mongoose");
 
 const drones = [
@@ -19,21 +19,23 @@ const drones = [
   },
 ];
 
-
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/lab-express-drones";
+const MONGO_URI =
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/lab-express-drones";
 
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
-Drones.create(drones,function(error, data){
-    mongoose.connection.close()
-    if (error) return console.log(error)
-    console.log(data.length)  
-})
-
-    
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+    Drones.create(drones, function (error, data) {
+      mongoose.connection.close();
+      if (error) return console.log(error);
+      console.log(data.length);
+    });
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
   });
+
+
