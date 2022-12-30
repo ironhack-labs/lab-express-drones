@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Drone = require('../models/Drone.model');
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/lab-express-drones";
 
 const drones = [
     {
@@ -37,7 +37,7 @@ mongoose
     console.log(`Created ${dronesFromDB.length} drones`);
 
     // Once the documents are created, close the DB connection
-    return mongoose.disconnect();
+    return mongoose.connection.close();
   })
   .then(() => {
     // Once the DB connection is closed, print a message

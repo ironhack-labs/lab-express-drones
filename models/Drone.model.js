@@ -10,6 +10,4 @@ const droneSchema = new Schema(
     }
 );
 
-
-
 module.exports = model('Drone', droneSchema);

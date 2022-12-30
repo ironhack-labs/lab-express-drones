@@ -1,11 +1,24 @@
 const express = require('express');
 const router = express.Router();
-
+const DroneModel = require('../models/Drone.model.js');
 // require the Drone model here
 
 router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
   // ... your code here
+  DroneModel.find()
+  .then((allTheDronesFromDB) => {
+    // -> allTheBooksFromDB is a placeholder, it can be any word
+    console.log("Retrieved drones from DB:", allTheDronesFromDB)
+
+    res.render("drones/list.hbs", { drones: allTheDronesFromDB })
+  })
+  .catch((error) => {
+    console.log("Error while getting the books from the DB: ", error);
+
+    // Call the error-middleware to display the error page to the user
+    next(error);
+  });
 });
 
 router.get('/drones/create', (req, res, next) => {
@@ -34,3 +47,9 @@ router.post('/drones/:id/delete', (req, res, next) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
