@@ -1,8 +1,52 @@
 body {
+  align-items: center;
+  background-color: #FFF5EE;
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  display:flex;
+  flex-direction: column;
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none;
+}
+
+button{
+  border-style: none;
+}
+
+form{
+  text-align: center;
+}
+
+button, form{
+  background-color: red;
+}
+
+h1,h2 {
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0.1vw 0;
+  padding: 0.5vw;
+  text-align: left;
+}
+
+.drone{
+  border: 1px solid #000;
+  margin: 1vw;
+  text-align: center;
+}
+
+.edit{
+  text-align: center;
+}
+
+#drones{
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
 }
