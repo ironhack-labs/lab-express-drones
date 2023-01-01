@@ -6,6 +6,10 @@ const router = express.Router();
 const Drone = require('../models/Drone.model');
 
 
+
+
+
+
 router.get('/drones', (req, res, next) => {
   Drone.find()
     .then((dronesFromDB) => {
@@ -14,6 +18,19 @@ router.get('/drones', (req, res, next) => {
     .catch(err => {
       console.log("Error getting drones from DB", err);
       next();
+    })
+});
+
+// Bonus to can check a singular drone
+router.get("/drones/:droneId/", (req, res, next) => {
+  const id = req.params.droneId;
+  Drone.findById(id)
+    .then( droneDetails => {
+        res.render("drones/drone-details", droneDetails)
+    })
+    .catch( err => {
+        console.log("error getting drone details from DB", err);
+        next();
     })
 });
 
@@ -40,18 +57,37 @@ return Drone.create(droneDetails)
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+	const { id } = req.params;
+	Drone.findById(id)
+		.then((drone) => {
+			res.render('drones/update-form', drone);
+		})
+    .catch(err => {
+      console.log("Error getting drone details from DB...", err);
+    })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+	const { name, propellers, maxSpeed } = req.body;
+	const { id } = req.params;
+
+	Drone.findByIdAndUpdate(id, { name, propellers, maxSpeed })
+		.then(() => {
+			res.redirect('/drones');
+		})
+    .catch(err => {
+      console.log("Error updating the drone...", err);
+    });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+  .then(() => {
+      res.redirect("/drones");
+  })
+  .catch(err => {
+      console.log("error deleting book...", err);
+  })
 });
 
 module.exports = router;
