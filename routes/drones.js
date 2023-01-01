@@ -2,10 +2,24 @@ const express = require('express');
 const router = express.Router();
 
 // require the Drone model here
+const Drone = require("../models/Drone.model.js"); // <== add this line before your routes
+
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+  Drone.find()
+  .then((allTheDronesFromDatabase) => {
+    // -> allTheDronesFromDatabase is a placeholder, it can be any word
+    console.log("Retrieved drones from DB:", allTheDronesFromDatabase);
+
+    // we call the render method after we obtain the drones data from the database -> allTheDronesFromDatabase
+    res.render("drones/list.hbs", { drones: allTheDronesFromDatabase }); // pass `allTheDronesFromDatabase` to the view (as a variable drones to be used in the HBS)
+  })
+  .catch((error) => {
+    console.log("Error while getting the drones from the DB: ", error);
+
+    // Call the error-middleware to display the error page to the user
+    next(error);
+  });
 });
 
 router.get('/drones/create', (req, res, next) => {
