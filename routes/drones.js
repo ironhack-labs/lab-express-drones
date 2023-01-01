@@ -37,19 +37,21 @@ router.post('/drones/create', (req, res, next) => {
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  const {_id} = req.params;
-  Drone.findById(_id)
-  .then(theDroneByReq=>res.render('drones/update-form.hbs',{theDrone: theDroneByReq}))
-  .catch(err=>{
-    console.error("Error editting the drone",theDroneByReq,err);
-})
+  const {id} = req.params;
+  // console.log(req.params);
+  Drone.findById(id)
+    .then(theDroneByReq => res.render('drones/update-form.hbs',{theDrone: theDroneByReq}))
+    .catch(err => {
+      console.error("Error editting the drone", theDroneByReq, err);
+    })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  const {_id} = req.params;
+  const {id} = req.params;
+  //console.log(req.body);
   const {name, propellers,maxSpeed} = req.body;
 
-  Drone.findByIdAndUpdate(_id, {name, propellers,maxSpeed},{new:true})
+  Drone.findByIdAndUpdate(id, {name, propellers,maxSpeed},{new:true})
     .then(updateDrone => res.redirect('/drones'))
     .catch(err=>{
       console.error("Error updating the drone",updateDrone,err);
@@ -58,9 +60,10 @@ router.post('/drones/:id/edit', (req, res, next) => {
   });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  const {_id} = req.params;
-  Drone.findByIdAndDelete(_id)
-    .then(()=>res.redirect('/drones'))
+  const {id} = req.params;
+  
+  Drone.findByIdAndDelete(id)
+    .then(() => res.redirect('/drones'))
     .catch(err=>{
       console.error("Error deleting the drone",err);
     })
