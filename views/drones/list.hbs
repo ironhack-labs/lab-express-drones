@@ -6,6 +6,9 @@
     <p>amount of propellers: {{propellers}}</p>
     <p>maximum speed: {{maxSpeed}}</p>
     <a href="/drones/{{_id}}/edit">Edit</a> {{!-- link to redirect to the edit form for each specific book  --}}
-   
+    {{!-- add the form to handle the POST request to remove a specific book  --}}
+    <form action="/drones/{{_id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
   </div>
 {{/each}}
