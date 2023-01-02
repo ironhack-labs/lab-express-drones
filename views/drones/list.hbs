@@ -1,8 +1,16 @@
 <h2>Available drones</h2>
 
 {{#each drones}}
-  <div class="drone">
+  <div class="drone" style="border: 1px solid black; margin:10px; padding:10px; background-color:#ddd">
     <h3>{{name}}</h3>
-    <p>{{description}}</p>
+    <p>propellers:{{propellers}}</p>
+    <p>maxSpeed: {{maxSpeed}}</p>
+
+    <a href="/drones/{{id}}/edit">edit</a>
+
   </div>
 {{/each}}
+
+<br />
+
+<a href="/drones/create">new drone</a>
