@@ -12,9 +12,10 @@ const express = require('express');
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
-
 const app = express();
-
+hbs.registerPartials(__dirname + "/views/partials");
+app.set("views", __dirname + "/views");
+app.set("view engine", "hbs");
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
@@ -28,7 +29,7 @@ app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 const index = require('./routes/index');
 app.use('/', index);
 
-const droneRoutes = require('./routes/Drone.routes')
+const droneRoutes = require('./routes/drone.routes')
 app.use('/', droneRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

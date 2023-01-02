@@ -8,10 +8,10 @@
         <li>Max Speed: {{this.maxSpeed}} m/s</li>
         <li class="edit"><a href="/drones/{{this._id}}/edit">Edit</a></li> 
     </ul>
-    <form class=action="/drones/{{_id}}/delete" method="POST">
+    <form action="/drones/{{_id}}" method="POST">
             <button>Delete</button>
     </form>
 </div>
 {{/each}}
 </div>
-<a href="/drones/create">Create New Drone</a>
+<a class="create-href" href="/drones/create">Create New Drone</a>

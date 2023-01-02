@@ -1,0 +1,14 @@
+ul{
+    display: flex;
+    justify-content: end;
+    margin:0;
+    padding: 0;
+}
+
+li{
+    margin: 1vw 2vw;
+}
+
+li > a{
+    font-size: 1vw;
+}

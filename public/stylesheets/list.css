@@ -1,0 +1,17 @@
+ul{
+    list-style-type: none;
+}
+
+.drone{
+    border: 1px solid #000;
+    text-align: left;
+    width: 33vw;
+}
+
+#drones{
+    display: flex;
+    flex-wrap: wrap;
+    height: 65vw;
+    justify-content: center;
+    margin: 1vw 2vw;
+}

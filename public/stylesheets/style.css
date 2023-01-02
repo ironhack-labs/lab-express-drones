@@ -1,52 +1,43 @@
-body {
-  align-items: center;
+body, html{
   background-color: #FFF5EE;
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  display:flex;
+  display: flex;
   flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100vw;
 }
 
-a {
-  color: #00b7ff;
+a{
+  background-color: burlywood;
+  color: brown;
+  font-size: 4vw;
   text-decoration: none;
 }
 
-button{
-  border-style: none;
+a:hover{
+  opacity: 0.7;
 }
 
-form{
-  text-align: center;
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
 }
 
-button, form{
-  background-color: red;
+h1{
+  font-size: 5vw;
 }
 
-h1,h2 {
-  text-align: center;
+.title-heading{
+  font-size: 2vw;
 }
 
-ul{
-  list-style-type: none;
-  margin: 0.1vw 0;
-  padding: 0.5vw;
-  text-align: left;
+.title-image{
+  height: 70vh;
 }
 
-.drone{
-  border: 1px solid #000;
-  margin: 1vw;
-  text-align: center;
-}
-
-.edit{
-  text-align: center;
-}
-
-#drones{
-  display: flex;
-  flex-wrap: wrap;
-  align-self: center;
+.title-paragraph{
+  font-size: 1vw;
 }
