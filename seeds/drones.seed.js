@@ -1,11 +1,22 @@
 // Iteration #1
+
 const mongoose = require("mongoose");
-const Drone = require("../models/DroneModel.js");
 
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
 
-// require("../configs/db.config");
+mongoose
+  .connect(MONGO_URI)
+  .then((x) => {
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+  })
+  .catch((err) => {
+    console.error("Error connecting to mongo: ", err);
+  });
+
+const DroneModel = require("../models/DroneModel");
 
 let drones = [
   {
@@ -25,23 +36,27 @@ let drones = [
   },
 ];
 
-mongoose
-  .connect(MONGO_URI)
-  .then((x) => {
-    console.log(`Connected to Mongo database: "${x.connections[0].name}"`);
+// DroneModel.create(drones)
+//   .then((addedDrones) => {
+//     addedDrones.forEach((eachDrones) => console.log(eachDrones.name)); // to console.log each added drone name
 
-    // Create new documents in the books collection
-    return Drone.create(drones);
-  })
-  .then((seededDrones) => {
-    console.log(`Created ${seededDrones.length}`);
+//     // to close the DB after data insertion
+//     mongoose.connection
+//       .close()
+//       .then(() => console.log("Database closed"))
+//       .catch((err) => console.log("Error closing DB", err));
+//   })
+//   .catch((err) => {
+//     console.log("Error with mongoose method", err);
+//   });
 
-    return mongoose.connection.close();
+DroneModel.create(drones)
+  .then((addedDrones) => {
+    console.log(`Created ${addedDrones.length} drones`);
+
+    // Once created, close the DB connection
+    mongoose.connection.close();
   })
-  .then(() => {
-    // Once the DB connection is closed, print a message
-    console.log("DB connection closed!");
-  })
-  .catch((err) => {
-    console.log(`An error occurred while creating books from the DB: ${err}`);
-  });
+  .catch((err) =>
+    console.log(`An error occurred while creating drones from the DB: ${err}`)
+  );

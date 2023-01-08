@@ -13,6 +13,6 @@ let droneSchema = new mongoose.Schema({
   },
 });
 
-let Drone = mongoose.model("Drone", droneSchema);
+let DroneModel = mongoose.model("drone", droneSchema);
 
-module.exports = Drone;
+module.exports = DroneModel
