@@ -7,4 +7,9 @@
     <li>Speed: {{maxSpeed}}</li>
 </ul>
 <a href="/drones/{{_id}}/edit"> Edit drone</a>
+
+<form action="/drones/{{_id}}/delete" method="post">
+<button type="submit"> Delete drone
+</button>
+</form>
 {{/each}}
