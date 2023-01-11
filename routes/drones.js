@@ -12,33 +12,40 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/create", (req, res, next) => {
+router.get("/create", (req, res, next) => res.render('drones/create-form'));
+
+router.post("/create", async (req, res, next) => {
   try {
+    await Drone.create(req.body)
+    res.redirect('.')
   } catch (error) {
     next(error);
   }
 });
 
-router.post("/create", (req, res, next) => {
-  try {} catch (error) {
+router.get("/:id/edit", async (req, res, next) => {
+  try {
+    const drone = await Drone.findById(req.params.id)
+    res.render('drones/update-form', drone)
+  } catch (error) {
     next(error);
   }
 });
 
-router.get("/:id/edit", (req, res, next) => {
-  try {} catch (error) {
+router.post("/:id/edit", async (req, res, next) => {
+  try {
+    await Drone.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect('..')
+  } catch (error) {
     next(error);
   }
 });
 
-router.post("/:id/edit", (req, res, next) => {
-  try {} catch (error) {
-    next(error);
-  }
-});
-
-router.post("/:id/delete", (req, res, next) => {
-  try {} catch (error) {
+router.post("/:id/delete", async (req, res, next) => {
+  try {
+    await Drone.findByIdAndRemove(req.params.id)
+    res.redirect('..')
+  } catch (error) {
     next(error);
   }
 });
