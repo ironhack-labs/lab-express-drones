@@ -1,1 +1,34 @@
-<h2>Create a new drone</h2>
+<div class='main__container--drones-create'>
+  <div class='main__container--drones--create-header'>
+    <h2>{{formData.title}}</h2>
+  </div>
+
+  <form action='{{formData.action}}' method='post'>
+    <label for='name'>Name:</label>
+    <input type='text' name='name' id='name' required value='{{drone.name}}' />
+
+    <label for='genre'>Propellers:</label>
+    <input
+      type='number'
+      name='propellers'
+      id='propellers'
+      required
+      value='{{drone.propellers}}'
+    />
+
+    <label for='genre'>Max Speed:</label>
+    <input
+      type='number'
+      name='maxSpeed'
+      id='maxSpeed'
+      required
+      value='{{drone.maxSpeed}}'
+    />
+
+    <button type='submit'>{{formData.btnSubmit}}</button>
+    <button
+      type='button'
+      onclick="document.location.href = '/drones'"
+    >Cancel</button>
+  </form>
+</div>

@@ -1,1 +1,24 @@
-<h2>Available drones</h2>
+<div class='main__container-drones'>
+
+  <h2>Available drones</h2>
+  <div><h3><a href='/drones/create'>Add New Drone</a></h3></div>
+  <div class='main__container--drones-list'>
+    {{#each drones}}
+      <div class='main__container--drones--list-item'>
+        <div>
+          <div>{{this.name}}</div>
+          <div>Propellers: {{this.propellers}}</div>
+          <div>Speed: {{this.maxSpeed}}</div>
+        </div>
+        <div>
+          <div><a href='drones/create/{{this._id}}'>Edit</a></div>
+          <div><a
+              href='drones/delete/{{this._id}}'
+              onclick="if(!confirm('Are you sure you want to delete this drone?')) event.preventDefault();"
+            >Delete</a></div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</div>
