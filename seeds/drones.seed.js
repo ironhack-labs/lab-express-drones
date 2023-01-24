@@ -37,7 +37,10 @@ mongoose.connection.once('open', () => {
         console.log(`${drones.length} drones has been created`)// para contar el numero de drones creados
     })
     .catch(err => console.log(err))
-    .finally(()=> mongoose.connection.close())//cerrar conexión.
+    .finally(()=> mongoose.connection.close(function() {//cerrar conexión.
+        console.log("Mongoose disconected")
+        process.exit(0);
+    }))
 
 })
 

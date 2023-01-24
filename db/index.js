@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 //esto se utiliza pa la coneccion a la base de datos
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/lab-express-drones";
 
 mongoose
   .connect(MONGO_URI)
@@ -17,3 +17,6 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
   });
+
+
+  //mongodb://127.0.0.1:27017/db_name
