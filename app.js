@@ -9,17 +9,18 @@ require('./config/db.config');
 
 const app = express();
 
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(cookieParser());
+
 // 👇 Routes
 const index = require('./routes/index');
 app.use('/', index);
 
 const droneRoutes = require('./routes/drones')
 app.use('/', droneRoutes)
-
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 app.set("views", path.join(__dirname, ".", "views"));
 app.set("view engine", "hbs");
