@@ -1,1 +1,9 @@
 <h2>Available drones</h2>
+
+<div>
+    {{#each drones as |drone|}}
+    <h3>{{drone.name}}</h3>
+    <p>Propellers: {{drone.propellers}}</p>
+    <p>Max Speed: {{drone.maxSpeed}}</p>
+    {{/each}}
+</div>
