@@ -10,6 +10,7 @@ const Drone = require('../models/Drone.model');
 require('../db'); // esto es igual que db/index.js-conexion mongo
 
 
+
 //interaccion 1
 
 const drones = [
@@ -19,17 +20,25 @@ const drones = [
   ];
 
 
+mongoose.connection.once('open', () => {
+    console.info(`*** connected to the database ${mongoose.connection.db.databaseName} ***`);//una vez que se conecte que hagas lo siguiente
 
-//Once the database connection is established, call the Drone model's .create() method with the array as an argument.
-//Si ha ido bien, pasarlo a la consola
+    mongoose.connection.db
+    .dropDatabase()// para que no repita la base de datos. Recibe una promesa
+    .then(() => {
+        console.info('database clear')
 
-Drone.create(drones)
-.then(createDrone => {
-    createDrone.forEach(drone =>{
-        console.log(`${drone.name} has been created`)//itero en cada uno de ellos para verlos
+      return  Drone.create(drones)
     })
-    console.log(`${drones.length} drones has been created`)// para contar el numero de drones creados
+    .then(createdDrones => {
+        createdDrones.forEach(drone =>{
+            console.log(`${drone.name} has been created`)//itero en cada uno de ellos para verlos
+        })
+        console.log(`${drones.length} drones has been created`)// para contar el numero de drones creados
+    })
+    .catch(err => console.log(err))
+    .finally(()=> mongoose.connection.close())//cerrar conexión.
+
 })
-.catch(err => console.log(err))
-.finally(()=> mongoose.connection.close())//cerrar conexión.
+
 
