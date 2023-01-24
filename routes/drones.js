@@ -10,15 +10,9 @@ router.get('/drones/create', droneController.create);
 
 router.post('/drones/create', droneController.doCreate);
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.get('/drones/:id/edit', droneController.edit);
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.post('/drones/:id/edit', droneController.doEdit);
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
