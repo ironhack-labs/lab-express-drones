@@ -1,3 +1,4 @@
+const { findByIdAndDelete } = require('../models/Drone.model');
 const Drone = require('../models/Drone.model')
 
 module.exports.list = (req, res, next) => {
@@ -38,6 +39,15 @@ module.exports.doEdit = (req, res, next) => {
     .then(drone => {
         res.redirect('/drones')
         console.info(`Drone ${drone.name} has been updated`)
+    })
+    .catch(err => console.error(err))
+};
+
+module.exports.doDelete = (req, res, next) => {
+    Drone.findByIdAndDelete(req.params.id)
+    .then(drone => {
+        res.redirect('/drones')
+        console.info(`Drone ${drone.name} has been deleted`)
     })
     .catch(err => console.error(err))
 };

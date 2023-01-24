@@ -15,18 +15,18 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 
+app.set("views", path.join(__dirname, ".", "views"));
+app.set("view engine", "hbs");
+
+app.use(express.static(path.join(__dirname, ".", "public")));
+app.use(favicon(path.join(__dirname, ".", "public", "images", "favicon.ico")));
+
 // 👇 Routes
 const index = require('./routes/index');
 app.use('/', index);
 
 const droneRoutes = require('./routes/drones')
 app.use('/', droneRoutes)
-
-app.set("views", path.join(__dirname, ".", "views"));
-app.set("view engine", "hbs");
-
-app.use(express.static(path.join(__dirname, ".", "public")));
-app.use(favicon(path.join(__dirname, ".", "public", "images", "favicon.ico")));
 
 // default value for title local
 const projectName = 'lab-express-drones';
