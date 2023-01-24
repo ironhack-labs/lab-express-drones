@@ -2,8 +2,8 @@
 // https://www.npmjs.com/package/dotenv
 require('dotenv/config');
 
-// ℹ️ Connects to the database
-require('./db');
+// ℹ️ Connects to the database*************importante
+require('./db'); // esto es igual que db/index.js-conexion mongo
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express

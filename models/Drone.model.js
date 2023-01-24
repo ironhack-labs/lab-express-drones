@@ -1,6 +1,6 @@
 // Iteration #1
 
-const mongoose = require ('mongoose');
+const mongoose = require("mongoose");
 
 const droneSchema = new mongoose.Schema({
 
@@ -16,7 +16,7 @@ const droneSchema = new mongoose.Schema({
         required: [true, ' the number is required']
     },
 
-    maxSpeed : {
+    maxSpeed: {
 
         type: Number, 
         required: [true, 'the maxSpedd is required']
