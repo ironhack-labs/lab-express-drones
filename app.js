@@ -32,6 +32,6 @@ const droneRoutes = require('./routes/drones')
 app.use('/', droneRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
-require('./error-handling')(app);
+require('./error-handling')(app);//exporta la funcion y por eso la tengo que requerir
 
 module.exports = app;
