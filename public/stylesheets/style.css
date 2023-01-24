@@ -1,8 +1,65 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.home-navbar {
+  background-color: black;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+}
+
+.home-navbar a {
+  text-decoration: none;
+  color: white;
+  padding-right: 30px;
+}
+
+.create-drone-form, .update-drone-form {
+  padding: 40px;
+  box-shadow: 0px 0px 22px -6px rgba(0,0,0,0.25);
+  border: 1px solid rgb(228, 228, 228);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.drones-list-page {
+  margin: 0 50px;
+}
+
+.drones-list-page .drones-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.drones-list-page .drones-list .sing-drone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  padding: 40px;
+  box-shadow: 0px 0px 22px -6px rgba(0,0,0,0.25);
+  border: 1px solid rgb(228, 228, 228);
+}
+
+.drones-list-page .drones-list .sing-drone .list-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.drones-list-page .drones-list .sing-drone .list-btns a {
+  margin-right: 10px;
 }
