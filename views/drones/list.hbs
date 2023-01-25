@@ -1,1 +1,22 @@
-<h2>Available drones</h2>
+{{!--  use a #each loop to display tags with each drone's 
+name, propellers, and speed. --}}
+<div class="list-page">
+    <h2>Available drones</h2>
+    <div class="drones-container">
+        {{#each dronesFromDB}}
+            <div class="drone-card">
+                <h3>Name: {{name}}</h3>
+                <h5>Propellers: {{propellers}}</h5>
+                <h5>Speed: {{maxSpeed}}</h5>
+                <a href="/drones/{{id}}/edit">EDIT</a>
+                <form action="/drones/{{id}}/delete" method="POST">
+                    <button type="submit">DELETE</button>
+                </form>
+            </div>
+        {{/each}}
+    </div>
+
+    <a href="/drones/create">Create new drone!</a>
+</div>
+
+

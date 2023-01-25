@@ -6,3 +6,9 @@ body {
 a {
   color: #00b7ff;
 }
+
+.drones-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
