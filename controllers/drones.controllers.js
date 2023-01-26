@@ -39,6 +39,21 @@ module.exports.detail = ( )=> {
 }
 
 
-module.exports.create = ( )=> {
+module.exports.create = ( req, res, next)=> {
+res.render('drones/create-form')// no buscamos en la base de datos porque estamos creando, no llamando.
+}
 
+
+module.exports.doCreate = (req, res, next )=> {// es donde metemos el formulario. el POST
+    //****DE CONFIG/INDEX */
+    //estas doos lineas son muy importantes para que nos lleguen informacion para el backend
+    //app.use(express.urlencoded({ extended: false }));
+    //app.use(cookieParser());
+Drone.create(req.body)//si todo va bien,enseñame el dron creado
+.then(drone => {
+    console.log(drone)
+    //ver el dron creado en la pantalla
+    res.redirect('/drones')
+})
+.catch(err => console.log(err))
 }
