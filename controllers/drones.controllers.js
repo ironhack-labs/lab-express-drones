@@ -34,11 +34,6 @@ Drone.find()//para encontrar todos lo drones
 }
 
 
-module.exports.detail = ( )=> {
-
-}
-
-
 module.exports.create = ( req, res, next)=> {
 res.render('drones/create-form')// no buscamos en la base de datos porque estamos creando, no llamando.
 }
@@ -56,4 +51,39 @@ Drone.create(req.body)//si todo va bien,enseñame el dron creado
     res.redirect('/drones')
 })
 .catch(err => console.log(err))
+}
+
+
+
+module.exports.update = (req, res, next )=> {
+    Drone.findById(req.params.id)//buscamos el id en req.params.id
+    .then(drone => {
+        if(drone) {
+            res.render('drones/update-form', {drone})
+        }
+        else {
+            res.redirect('/drones')
+        }
+    })
+    .catch(() => res.redirect('/drones'))
+ 
+}
+
+
+module.exports.doUpdate = (req, res, next) => {
+    Drone.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect('/drones')
+    })
+    .catch(err => console.log(err))
+}
+
+module.exports.delete = (req, res, next) => {
+    Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect('/drones')
+    })
+    .catch(err => {
+        res.redirect('/drones')
+    })
 }

@@ -6,12 +6,21 @@
     {{#each drones as | drone| }}
 
         <li>
+            <a href="/drones/{{drone.id}}/edit">
 
-            {{drone.name}}
-            {{drone.propellers}} propellers
-            {{drone.maxSpeded}} m/s
+                {{drone.name}}
+                {{drone.propellers}} propellers
+                {{drone.maxSpeded}} m/s
 
+            </a>
+                    <form action="/drones/{{drone.id}}/delete" method="POST"> 
+                        <button>Delete drone</button>
+                    </form>
+           
+                 
         </li>
+
+     
 
 
     {{/each}}

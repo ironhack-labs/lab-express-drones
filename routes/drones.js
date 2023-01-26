@@ -19,19 +19,10 @@ router.get('/drones/create', dronesControllers.create);
 
 router.post('/drones/create', dronesControllers.doCreate);// es donde metemos el formulario
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.get('/drones/:id/edit',dronesControllers.update);
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
+router.post('/drones/:id/edit', dronesControllers.doUpdate);
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-});
+router.post('/drones/:id/delete', dronesControllers.delete);
 
 module.exports = router;
