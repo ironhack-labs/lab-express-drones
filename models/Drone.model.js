@@ -24,7 +24,7 @@ const droneSchema = new mongoose.Schema({
     
 });
 
-
+//
 const Drone = mongoose.model('Drone', droneSchema);
 
 module.exports = Drone; // esto es para exportar el modelo, un objeto, una funcion, un string..etc
