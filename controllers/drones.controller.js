@@ -14,7 +14,7 @@ module.exports.create=(req,res,next) => {
 }
 
 module.exports.doCreate=(req,res,next) => {
-    Drone.Create(req.body)
+    Drone.create(req.body)
     .then(drone => {
         res.redirect("/drones")
     })
