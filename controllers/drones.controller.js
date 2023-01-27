@@ -34,8 +34,19 @@ module.exports.update= (req,res,next) => {
 
 module.exports.doUpdate =(req,res,next) => {
     Drone.findByIdAndUpdate(req.params.id, req.body) // encuentro por el parametro en el id y lo updateo con lo que se ha rellenado en el body
-    .then ( drone => {
+    .then (() => {
         res.redirect("/drones")
     })
     .catch (err => console.err (err))
+}
+
+module.exports.delete = (req,res,next) => {
+    Drone.findByIdAndDelete(req.params.id)
+    .then (() => {
+        res.redirect("/drones")
+    })
+    .cacth (err => {
+        console.err (err)
+    res.redirect('/drones')
+    })
 }
