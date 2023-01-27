@@ -9,4 +9,10 @@ module.exports.list =(req, res, next) => { // middleware
     .catch(err => console.log(err))
 }
 
-module.exports.create
+module.exports.create=(req,res,next)=>{
+    Drone.create(req.body)
+    .then(drone => {
+        res.redirect("/drones")
+    })
+    .catch(err => console.err(err))
+}
