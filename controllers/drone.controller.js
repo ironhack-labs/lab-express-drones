@@ -18,3 +18,19 @@ module.exports.doCreate = (req, res, next) => {
     })
     .catch(next)
 }
+
+module.exports.edit = (req, res, next) => {
+  console.log(req.params)
+  Drone.findById(req.params.id)
+    .then(drone => {
+      res.render("drones/update-form", { drone })
+    })
+    .catch(err => console.log(err))
+}
+
+module.exports.doEdit = (req, res, next) => {
+  Drone.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.redirect("/drones")
+    })
+}
