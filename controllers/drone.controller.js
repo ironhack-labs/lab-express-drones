@@ -5,6 +5,7 @@ module.exports.list = (req, res, next) => {
     .then(drones => {
       res.render("drones/list", { drones })
     })
+    .catch(next)
 }
 
 module.exports.create = (req, res, next) => {
@@ -20,12 +21,11 @@ module.exports.doCreate = (req, res, next) => {
 }
 
 module.exports.edit = (req, res, next) => {
-  console.log(req.params)
   Drone.findById(req.params.id)
     .then(drone => {
       res.render("drones/update-form", { drone })
     })
-    .catch(err => console.log(err))
+    .catch(next)
 }
 
 module.exports.doEdit = (req, res, next) => {
@@ -33,4 +33,13 @@ module.exports.doEdit = (req, res, next) => {
     .then(() => {
       res.redirect("/drones")
     })
+    .catch(next)
+}
+
+module.exports.delete = (req, res, next) => {
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("/drones")
+    })
+    .catch(next)
 }

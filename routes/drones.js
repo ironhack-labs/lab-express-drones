@@ -15,9 +15,6 @@ router.get('/drones/:id/edit', droneController.edit);
 
 router.post('/drones/:id/edit', droneController.doEdit);
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-});
+router.post('/drones/:id/delete', droneController.delete);
 
 module.exports = router;
