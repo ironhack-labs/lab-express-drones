@@ -1,0 +1,17 @@
+<div class="drones-container">
+  <div>
+    <h1>Drones List</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each drones as |drone|}}
+      <div class="card drones-cards" style="width: 12rem;">
+        {{!-- <img class="card-img-top" src="{{drone.image}}" alt="" /> --}}
+        <h5 class="card-title">{{drone.name}}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Propellers - {{drone.propellers}}</li>
+          <li class="list-group-item">Max Speed - {{drone.maxSpeed}}</li>
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+</div>

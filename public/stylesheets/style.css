@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.home-container {
+  background-image: url("https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_926e75d45f2a997152f4401844b3b4d5.jpg");
+  background-size:contain;
+  background-position:initial;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+.drones-container {
+  padding: 1rem 0 1rem 1rem;
+}
+
+.drones-cards {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin: 3rem;
 }
