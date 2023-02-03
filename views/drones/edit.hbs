@@ -1,9 +1,10 @@
 <div class="m-3">
-  <h1>New Drone</h1>
-  <form class="m-4" action="/drones" method="post">
+  <h1>Edit Drone</h1>
+  <form class="m-4" action="/drones/{{drone.id}}" method="post">
     <div>
       <label for="name" class="form-label"></label>
       <input
+        value="{{drone.name}}"
         type="text"
         name="name"
         id="name"
@@ -14,6 +15,7 @@
     <div>
       <label for="propellers" class="form-label"></label>
       <input
+        value="{{drone.propellers}}"
         type="text"
         name="propellers"
         id="propellers"
@@ -24,6 +26,7 @@
     <div>
       <label for="maxSpeed" class="form-label"></label>
       <input
+        value="{{drone.maxSpeed}}"
         type="text"
         name="maxSpeed"
         id="maxSpeed"
@@ -34,6 +37,7 @@
     <div>
       <label for="image" class="form-label"></label>
       <input
+        value="{{drone.image}}"
         type="text"
         name="image"
         id="image"
@@ -41,6 +45,6 @@
         placeholder="Image Url"
       />
     </div>
-    <button type="submit" class="btn btn-primary mt-2 ">Create</button>
+    <button type="submit" class="btn btn-primary mt-2">Update</button>
   </form>
 </div>

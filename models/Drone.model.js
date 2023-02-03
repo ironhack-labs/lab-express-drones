@@ -14,6 +14,9 @@ const droneSchema = new Schema({
     type: Number, 
     required: true
   },
+  image: {
+    type: String
+  }
 })
 
 const Drone = mongoose.model('Drone', droneSchema);
