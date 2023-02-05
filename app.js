@@ -27,6 +27,12 @@ app.use('/', userRouter)
 const droneRoutes = require('./routes/drones')
 app.use('/', droneRoutes)
 
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500);
+  res.send("Ops, ha sucedido un error");
+});
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

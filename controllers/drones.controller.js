@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Drone = require('../models/Drone.model');
 
 module.exports.list = (req, res, next) => {
@@ -17,6 +18,12 @@ module.exports.doCreate = (req, res, next) => {
     .then(() => {
       res.redirect('/')
     })
-    .catch()
+    .catch((err) => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        res.render('drones/create-form', { errors: err.errors, drone: req.body});
+      } else {
+        next(err)
+      }
+    })
 };
 
