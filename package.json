@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon -e hbs,js,css app.js"
+    "dev": "nodemon -e hbs,js,css app.js",
+    "seed": "node ./seed/seed.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
