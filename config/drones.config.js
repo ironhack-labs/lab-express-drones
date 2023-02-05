@@ -9,6 +9,7 @@ routes.get("/drones/create", drones.create);
 routes.post("/drones/create", drones.doCreate);
 routes.get("/drones/:id/update", drones.update);
 routes.post("/drones/:id/update", drones.doUpdate);
+routes.post("/drones/:id/delete", drones.delete);
 
 module.exports = (app) => {
   app.use("/", routes);

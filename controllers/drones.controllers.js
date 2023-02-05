@@ -5,7 +5,7 @@ module.exports.home = (req, res) => {
   res.render("pages/home");
 };
 
-module.exports.list = (req, res, next) => {
+module.exports.list = (req, res) => {
   dataBase.connect(
     droneModel
       .find()
@@ -61,6 +61,19 @@ module.exports.doUpdate = (req, res) => {
         console.log(error);
 
         res.render("pages/drones/create-form");
+      })
+  );
+};
+
+module.exports.delete = (req, res) => {
+  dataBase.connect(
+    droneModel
+      .findByIdAndDelete(req.params.id)
+      .then(() => {
+        res.redirect("/drones");
+      })
+      .catch((error) => {
+        console.log(error);
       })
   );
 };
