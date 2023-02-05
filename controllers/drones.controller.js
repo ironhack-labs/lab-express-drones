@@ -7,3 +7,16 @@ module.exports.list = (req, res, next) => {
     })
     .catch()
 }
+
+module.exports.create = (req, res, next) => {
+  res.render('drones/create-form')
+}
+
+module.exports.doCreate = (req, res, next) => {
+  Drone.create(req.body)
+    .then(() => {
+      res.redirect('/')
+    })
+    .catch()
+};
+
