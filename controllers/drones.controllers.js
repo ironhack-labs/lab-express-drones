@@ -19,3 +19,23 @@ module.exports.list = (req, res) => {
       })
   );
 };
+
+module.exports.create = (req, res) => {
+  res.render("pages/drones/create-form");
+};
+
+module.exports.doCreate = (req, res) => {
+  dataBase.connect(
+    droneModel
+      .create(req.body)
+      .then(() => {
+        res.redirect("/drones");
+      })
+      .catch((error) => {
+        console.log(error);
+        dataBase.disconnect();
+        
+        res.render("pages/drones/create-form");
+      })
+  );
+};
