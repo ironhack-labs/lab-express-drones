@@ -1,1 +1,18 @@
-<h2>Available drones</h2>
+<h1 class="mt-4">{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+
+<h2 class="mt-4 ms-4">Available drones</h2>
+<ul>
+  {{#each drones as | drone |}}  
+  <div class="row mt-3">
+    <div class="col-10">
+      <div class="list-group" id="list-tab" role="tablist">
+        <li class="list-group-item list-group-item-action active bg-info border-info" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">{{drone.name}}</li>
+        <li class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Propellers: {{drone.propellers}}</li>
+        <li class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Max Speed: {{drone.maxSpeed}}</li>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</ul>
