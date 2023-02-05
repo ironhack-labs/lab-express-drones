@@ -5,17 +5,15 @@ module.exports.home = (req, res) => {
   res.render("pages/home");
 };
 
-module.exports.list = (req, res) => {
+module.exports.list = (req, res, next) => {
   dataBase.connect(
     droneModel
       .find()
       .then((drones) => {
         res.render("pages/drones/list", { drones });
-        dataBase.disconnect();
       })
       .catch((error) => {
         console.log(error);
-        dataBase.disconnect();
       })
   );
 };
@@ -33,8 +31,35 @@ module.exports.doCreate = (req, res) => {
       })
       .catch((error) => {
         console.log(error);
-        dataBase.disconnect();
-        
+
+        res.render("pages/drones/create-form");
+      })
+  );
+};
+
+module.exports.update = (req, res) => {
+  dataBase.connect(
+    droneModel
+      .findById(req.params.id)
+      .then((drone) => {
+        res.render("pages/drones/update-form", { drone });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  );
+};
+
+module.exports.doUpdate = (req, res) => {
+  dataBase.connect(
+    droneModel
+      .findByIdAndUpdate(req.params.id, req.body)
+      .then(() => {
+        res.redirect("/drones");
+      })
+      .catch((error) => {
+        console.log(error);
+
         res.render("pages/drones/create-form");
       })
   );

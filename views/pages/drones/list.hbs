@@ -1,7 +1,9 @@
 <h1>Drones</h1>
+<a href="/drones/create">Create new drone</a>
 
 {{#each drones as |drone|}}
   <h2>Name: {{drone.name}}</h2>
   <h3>Propellers: {{drone.propellers}}</h3>
   <h3>Speed: {{drone.maxSpeed}}</h3>
+  <a href="/drones/{{drone.id}}/update">Update</a>
 {{/each}}
