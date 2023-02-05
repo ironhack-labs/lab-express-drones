@@ -11,7 +11,13 @@ module.exports.doCreate = (req, res, next) => {
     .then(() => {
       res.redirect('/login')
     })
-    .catch();
+    .catch((err) => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        res.render('users/new', { errors: err.errors, user: req.body})
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.login = (req, res) => {

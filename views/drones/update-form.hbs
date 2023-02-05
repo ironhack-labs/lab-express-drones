@@ -1,1 +1,41 @@
 <h2>Update the drone</h2>
+
+{{#if errors}}
+  <div class="alert alert-danger">
+    review form data
+  </div>
+{{/if}}
+
+<form action="/drones/create" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" value="{{drone.name}}" name="name" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="name">
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="mb-3">
+    <label for="propellers" class="form-label">Propellers</label>
+    <input type="text" value="{{drone.propellers}}" name="propellers" class="form-control {{#if errors.propellers}}is-invalid{{/if}}" id="propellers">
+    {{#if errors.propellers}}
+      <div class="invalid-feedback">
+        {{errors.propellers.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="mb-3">
+    <label for="maxSpeed" class="form-label">Max Speed</label>
+    <input type="text" value="{{drone.maxSpeed}}" name="maxSpeed" class="form-control {{#if errors.maxSpeed}}is-invalid{{/if}}" id="maxSpeed">
+    {{#if errors.maxSpeed}}
+      <div class="invalid-feedback">
+        {{errors.maxSpeed.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
