@@ -47,11 +47,11 @@
       id="password",
       value="{{user.password}}"
     />
-    {{!-- {{#if}}
+    {{#if errors.password}}
       <div class="invalid-feedback">
-        {{errors.email.password}}
+        {{errors.password.message}}
       </div>
-    {{/if}} --}}
+    {{/if}}
   </div>
   <button type="submit" class="btn btn-primary">Crear usuario</button>
 </form>
