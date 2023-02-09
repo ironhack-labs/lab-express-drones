@@ -15,8 +15,10 @@
           <li class="list-group-item">Max Speed - {{drone.maxSpeed}}</li>
         </ul>
         <div>
-          <a class="btn btn-primary" href="/drones/{{drone.id}}/update">Edit</a>
-          <a class="btn btn-danger" href="">Delete</a>
+          <a class="btn btn-primary" href="/drones/{{drone.id}}/update">EDIT</a>
+          <form action="/drones/{{drone.id}}/delete" method="post">
+            <button class="btn btn-danger">DELETE</button>
+          </form>
         </div>
       </div>
     {{/each}}

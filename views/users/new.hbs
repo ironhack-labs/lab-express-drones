@@ -1,0 +1,42 @@
+<h1>Register</h1>
+
+{{#if errors}}
+  <div class="alert alert-danger">
+    review form data
+  </div>
+{{/if}}
+
+<form action="/users" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">name</label>
+    <input type="text" value="{{user.name}}" name="name" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="name">
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">email</label>
+    <input type="email" value="{{user.email}}" name="email" class="form-control {{#if errors.email}}is-invalid{{/if}}" id="email">
+    {{#if errors.email}}
+      <div class="invalid-feedback">
+        {{errors.email.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">password</label>
+    <input type="password" value="{{user.password}}" name="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" id="password">
+    {{#if errors.password}}
+      <div class="invalid-feedback">
+        {{errors.password.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -1,10 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
+
 const commonController = require('../controllers/common.controller')
 const droneController = require('../controllers/drone.controller')
+const userController = require('../controllers/users.controller')
 
 router.get('/', commonController.home)
+
+router.get("/users/new", userController.create);
+router.post("/users", userController.doCreate);
 
 router.get('/drones', droneController.list)
 

@@ -41,7 +41,10 @@ module.exports.doUpdate = ((req, res, next) => {
     .then((drone) => {
       res.redirect('/drones')
     })
-    .catch((error) => console.error('An error occurred trying to update drones', error))
+    .catch((error) => {
+      console.error('An error occurred trying to update drones', error)
+      res.redirect('/drones/:id/update')
+    })
 })
 module.exports.delete = ((req, res, next) => {
   Drone.findByIdAndDelete(req.params.id)

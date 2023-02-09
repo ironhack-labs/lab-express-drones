@@ -1,23 +1,7 @@
 // Iteration #1
-// require("../config/db.config")
+require("../config/db.config") //connect with the db
+const Drone = require('../models/drone.model') //require the model
 
-const Drone = require('../models/drone.model')
-
-// Drone.deleteMany().then(() => {
-//   for (let i=0; i < 100; i++) {
-//     Drone.create({
-
-//     })
-//   }
-// })
-
-const mongoose = require('mongoose')
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/lab-express-drones'
-
-mongoose
-  .connect(MONGO_URI)
-  .then(() => console.info(`Successfully connected to the database ${MONGO_URI}`))
-  .catch((err) => console.error(`Error connecting to mongo ${err}`));
 
 const drones = [
   { name: "Creeper XL 500", propellers: 3, maxSpeed: 12, image: "https://dronerush.com/wp-content/uploads/2017/09/Atlas-Pro-InterDrone-DR.jpg" },
@@ -29,3 +13,5 @@ Drone.create(drones)
   .then((drones) => console.log(drones))
   .catch((err) => console.error(`An error has occurred ${err}`))
   .finally(() => mongoose.connection.close())
+
+
