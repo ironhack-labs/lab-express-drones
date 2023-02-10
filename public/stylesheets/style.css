@@ -1,6 +1,8 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url(https://www.bbva.com/wp-content/uploads/2020/04/BBVA-Dron-Coronavirus-1504-1920x1180.jpg);
+  background-size: cover;
+
 }
 
 a {
