@@ -1,8 +1,27 @@
 body {
-  padding: 50px;
+  margin: 0px;
+  padding: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+img {
+  width: 100%;
+}
+
+.bg-img {
+  background: url(https://www.undp.org/sites/g/files/zskgke326/files/2022-09/52197317486_8530490923_k.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  min-height: 100%;
+
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+ul {
+  list-style-type: none;
 }
