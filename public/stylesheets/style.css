@@ -1,8 +1,16 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.index {
+  margin: 100px;
+}
+
+.list {
+  margin: 30px;
+}
+
+.btn {
+  margin: 10px;
 }
