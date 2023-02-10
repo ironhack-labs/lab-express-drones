@@ -1,8 +1,54 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url(../images/drone.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
   color: #00b7ff;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%
+}
+
+footer p {
+  margin: 0
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 3rem;
+  font-weight: 100;
+  color: #21252b;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #21252b;
+}
+
+hr {
+  color: white;
+}
+
+.form {
+  background-color: rgb(240, 248, 255, 0.5);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.card {
+  background-color: rgb(240, 248, 255, 0.5);
 }
