@@ -83,7 +83,7 @@ const drones = [
   { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
   { name: "Racer 57", propellers: 4, maxSpeed: 20 },
   { name: "Courier 3000i", propellers: 6, maxSpeed: 18 }
-];
+]
 ```
 
 _Hint 2_: Don't forget to close the connection with the database after you have seeded the database. You are familiar with `mongoose.connection.close()` approach, but you can also check the `.disconnect()` Mongoose method. Click [here](https://mongoosejs.com/docs/api.html) to search through Mongoose docs.

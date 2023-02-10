@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  console.log('lab-express-drones JS imported successfully!');
+  console.log('lab-express-drones JS imported successfully!')
 
-}, false);
+}, false)
