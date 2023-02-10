@@ -1,1 +1,27 @@
-<h2>Update the drone</h2>
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 p-4">
+
+            <h2>Update {{name}}</h2>
+            <form class="row g-3" action="/drones/{{id}}/edit" method="POST">
+                <div class="col-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" value="{{name}}" id="name"
+                        placeholder="Popino 5000">
+                </div>
+                <div class="col-md-6">
+                    <label for="propellers" class="form-label">Propellers:</label>
+                    <input type="number" value={{propellers}} name="propellers" class="form-control" id="propellers">
+                </div>
+                <div class="col-md-6">
+                    <label for="maxSpeed" class="form-label">Max Speed:</label>
+                    <input type="number" value="{{maxSpeed}}" name="maxSpeed" class="form-control" id="maxSpeed">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

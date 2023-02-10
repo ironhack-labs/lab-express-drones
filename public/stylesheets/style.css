@@ -1,8 +1,6 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
+.index-hero {
+  background-image: url("../images/drone.jpg");
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 56px);
 }
