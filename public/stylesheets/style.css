@@ -1,8 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url('../images/drone-bg.jpeg');
+  background-size: cover;
 }
 
-a {
-  color: #00b7ff;
+h1 {
+  color: antiquewhite;
+  font-size: 7em;
+}
+
+h2 {
+  color: antiquewhite;
+  font-size: 3em;
 }
