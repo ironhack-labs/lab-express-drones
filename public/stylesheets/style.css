@@ -1,8 +1,14 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+  background-image: url("//cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/04/drone-2308279.jpg?tf=2048x");
 }
 
 a {
   color: #00b7ff;
+}
+
+.margint {
+  margin: 50px;
 }
