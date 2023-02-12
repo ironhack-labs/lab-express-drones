@@ -1,8 +1,13 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+    background-image: url("../images/normativa-drones-espana-aesa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-a {
-  color: #00b7ff;
+.card-body {
+
+    height: 200px;
+    object-fit: scale-down;
+
+
 }
