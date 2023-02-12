@@ -1,1 +1,29 @@
-<h2>Available drones</h2>
+<div class="container mt-5">
+
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+
+        {{#each drone}}
+
+        <div class="col">
+            <div class="card">
+                <img src="{{imageURL}}" onerror="this.src='./../../images/placeholder-drone.jpg';" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">{{name}}</h6>
+                    <p class="m-0">max speed: {{maxSpeed}}</p>
+                    <p>propellers: {{propellers}}</p>
+                    <div class="row row-cols-1 row-cols-md-2 ms-2">
+                        <a href="/drones/{{id}}/edit" class="btn btn-success">Edit</a>
+                        <form action="/drones/{{id}}/delete" method="post">
+                            <input type="submit" value="Eliminar" class="btn btn-secondary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+
+</div>
