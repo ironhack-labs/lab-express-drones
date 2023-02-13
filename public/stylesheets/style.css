@@ -1,8 +1,5 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
+    background-image: url('https://www.myglobaltruck.com/wp-content/uploads/2020/11/Drones_mensajeros_MGT-1536x1025.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
