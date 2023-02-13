@@ -1,1 +1,19 @@
-<h2>Available drones</h2>
+<div class='container'>
+    <dir class="encabezado mt-5">
+        <h2>Available drones</h2>
+    </dir>
+    {{#each drones}}
+    <div class="dronelist ms-5 mt-5">
+        <h4>{{name}}</h4>
+        <ul>
+            <li>Propellers: {{propellers}}</li>
+            <li>Max speed: {{maxSpeed}} m/s</li>
+        </ul>
+            <a class="btn btn-dark mt-2" href="/drones/{{_id}}/edit" role="button">Update</a>
+            <form action="/drones/{{_id}}/delete" method="POST">
+                <input type="submit" value="Delete" class="btn btn-danger btn-sm mt-2">
+            </form>
+    </div>
+    {{/each}}
+
+</div>
