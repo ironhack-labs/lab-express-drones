@@ -6,10 +6,12 @@
     <h3>{{name}}</h3>
     <p>Number of propellers: {{propellers}}</p>
     <p>Maximum speed: {{maxSpeed}}</p>
-    <a href="/drones/{{_id}}/edit">Edit specs</a>
+    <a href="/drones/{{_id}}/edit" class="btn btn-warning">Edit specs</a>
     <form action="/drones/{{_id}}/delete" method="post">
-        <button type="submit">Delete drone</button>
+        <button type="submit" class="btn btn-danger">Delete drone</button>
     </form>
   </div>
 
 {{/each}}
+
+<a href="/drones/create" class="btn btn-success">Add new drone</a>

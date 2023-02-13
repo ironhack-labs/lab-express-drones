@@ -2,17 +2,21 @@
 
 <form action="/drones/{{_id}}/edit" method="post">
 
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="{{name}}"/>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">🚁</span>
+        <input type="text" value="{{name}}" name="name" id="name" class="form-control" placeholder="Drone's name" aria-label="Name" aria-describedby="basic-addon1">
+    </div>
 
-    <label for="propellers">Number of propellers</label>
-    <input type="number" name="propellers" id="propellers" value="{{propellers}}"/>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">💿</span>
+        <input type="text" value="{{propellers}}" name="propellers" id="propellers" class="form-control" placeholder="Number of propellers" aria-label="Name" aria-describedby="basic-addon1">
+    </div>
 
-    <label for="maxSpeed">Maximum speed</label>
-    <input type="number" name="maxSpeed" id="maxSpeed" value="{{maxSpeed}}"/>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">💨</span>
+        <input type="text" value="{{maxSpeed}}" name="maxSpeed" id="maxSpeed" class="form-control" placeholder="Maximum Speed" aria-label="Name" aria-describedby="basic-addon1">
+    </div>
 
-    <button type="submit">Submit edits</button>
+    <button type="submit" class="btn btn-warning">Submit edits</button>
 
 </form>
-
-

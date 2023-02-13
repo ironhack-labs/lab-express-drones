@@ -2,15 +2,31 @@
 
 <form action="/drones/create" method="post">
 
-    <label for="name">Name</label>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">🚁</span>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Drone's name" aria-label="Name" aria-describedby="basic-addon1">
+    </div>
+
+{{!--     <label for="name">Name</label>
     <input type="text" name="name" id="name"/>
+ --}}
 
-    <label for="propellers">Number of propellers</label>
-    <input type="number" name="propellers" id="propellers">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">💿</span>
+        <input type="text" name="propellers" id="propellers" class="form-control" placeholder="Number of propellers" aria-label="Name" aria-describedby="basic-addon1">
+    </div>
 
-    <label for="maxSpeed">Maximum speed</label>
-    <input type="number" name="maxSpeed" id="maxSpeed">
+{{!--     <label for="propellers">Number of propellers</label>
+    <input type="number" name="propellers" id="propellers"> --}}
 
-    <button type="submit">Create</button>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">💨</span>
+        <input type="text" name="maxSpeed" id="maxSpeed" class="form-control" placeholder="Maximum Speed" aria-label="Name" aria-describedby="basic-addon1">
+    </div>
+
+{{!--     <label for="maxSpeed">Maximum speed</label>
+    <input type="number" name="maxSpeed" id="maxSpeed"> --}}
+
+    <button type="submit" class="btn btn-success">Create</button>
 
 </form>
