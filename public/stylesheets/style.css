@@ -1,8 +1,15 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: rgb(226, 226, 124);
+  flex-direction: column;
+  display: flex;
+  
 }
 
+
+
 a {
-  color: #00b7ff;
+  color: #01364b;
+  font-size: medium;
 }
