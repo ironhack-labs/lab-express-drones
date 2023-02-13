@@ -1,1 +1,22 @@
 <h2>Create a new drone</h2>
+
+<form action="/drones/create" method="post">
+  {{!  Action: where we are sending. Since we are creating something we should use the post }}
+  <ul>
+    <li>
+      <label for="title">Name</label>
+      <input type="text" name="name" id="name" />
+      {{! Use name to link with the book route post method object deconstruction }}
+    </li>
+    <li>
+      <label for="propellers">Propellers</label>
+      <input type="text" name="propellers" id="propellers" />
+    </li>
+    <li>
+      <label for="MaxSpeed">Max Speed</label>
+      <input type="number" id="MaxSpeed" />
+    </li>
+
+    <button type="submit">Create</button>
+  </ul>
+</form>
