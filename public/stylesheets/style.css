@@ -6,3 +6,24 @@ body {
 a {
   color: #00b7ff;
 }
+
+.nav-bar{
+  background-color:#00b7ff ;
+  width: 100vw;
+  height: 60px;
+  text-align: center;
+  
+}
+
+.buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.buttons2{
+  margin-top: 15px;
+  width: 100px;
+  height: 30px;
+
+}
