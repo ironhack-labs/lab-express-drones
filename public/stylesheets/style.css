@@ -1,8 +1,38 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url("https://i.pinimg.com/originals/68/b3/42/68b34208cb36f45e938a3f935a72054e.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
   color: #00b7ff;
+}
+
+.title{
+  padding: 2%;
+  border: 5px solid white;
+  font-size: 40px;
+}
+
+.welcome{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.drones{
+  color: white;
+  text-decoration: none;
+  border: 5px solid white;
+  padding: 1%;
+  margin: 2%
+}
+button{
+  color: white;
+  background-color: blueviolet;
 }
