@@ -1,14 +1,14 @@
 <div class="listPage">
-<h2>Available drones</h2>
+<h2 class="available">Available drones</h2>
 {{#each drones}}
 <h2>{{name}}</h2>
 <p>{{propellers}}</p>
 <p>{{maxSpeed}}</p>
-<a href="/drones/{{_id}}/edit">Edit</a>
+<a class="edit" href="/drones/{{_id}}/edit">Edit</a>
 <form action="/drones/{{_id}}/delete" method="post">
 <button type="submit">Delete Drone</button>
 </form>
 
 {{/each}}
-<a href="/drones/create" id="createDroneButt">Create Drone</a>
+<a class="create" href="/drones/create" id="createDroneButt">Create Drone</a>
 </div>
