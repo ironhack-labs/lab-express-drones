@@ -10,16 +10,16 @@ mongoose
   .connect(MONGO_URI)
   .then((x) => {
     console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`);
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
 
-      Drone.deleteMany({})
-        .then(Drone.create(droneSeed)
-          .then(data => {
-            console.log(`${data.length} drones created successfully!`);
-            mongoose.connection.close();
-            console.log("DB connection closed!");
-                        })
-              )
+    Drone.deleteMany({}).then(
+      Drone.create(droneSeed).then((data) => {
+        console.log(`${data.length} drones created successfully!`);
+        mongoose.connection.close();
+        console.log("DB connection closed!");
+      })
+    );
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
