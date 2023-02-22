@@ -4,5 +4,37 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: black;
+  font-size: large;
+}
+
+header {
+  background-color: #00b7ff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #00b7ff;
+  position: relative;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid #00b7ff;
+}
+
+.drones {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #00b7ff;
+  padding-bottom: 20px;
+  border-radius: 10px;
+
+}
+
+header a {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid rgb(155, 54, 255);
+  color: rgb(155, 54, 255);
 }
