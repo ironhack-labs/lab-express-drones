@@ -10,7 +10,13 @@
     Max Speed:
     {{this.maxSpeed}}
     <br />
+    <br />
     <a href="/drones/{{this._id}}/edit">Edit</a>
+    <br />
+    <br />
+    <form action="/drones/{{this._id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
   </div>
   --
   <br />
