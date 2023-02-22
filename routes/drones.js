@@ -25,17 +25,32 @@ router.post("/drones/create", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.get("/drones/:id/edit", (req, res, next) => {
+router.get("/drones/:droneId/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { droneId } = req.params;
+
+  Drone.findById(droneId).then((drone) => {
+    res.render("drones/update-form", { drone });
+  });
 });
 
-router.post("/drones/:id/edit", (req, res, next) => {
+router.post("/drones/:droneId/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { droneId } = req.params;
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drone.findByIdAndUpdate(
+    droneId,
+    { name, propellers, maxSpeed },
+    { new: true }
+  )
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((error) => next(error));
 });
 
-router.post("/drones/:id/delete", (req, res, next) => {
+router.post("/drones/:droneId/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
 });
