@@ -1,8 +1,91 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin:0;
+  font: 20px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/images/drones.jpg);
+  background-repeat:repeat-y;
+  background-size: cover;
 }
 
 a {
   color: #00b7ff;
+}
+nav{
+  height:50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav a{
+  margin:5px 20px;
+  text-decoration: none;
+  color:green;
+}
+.row{
+  background-color: rgba(141, 174, 143,0.8);
+}
+.buttons-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.btn{
+  width:50%;
+}
+.edit{
+  text-decoration: none;
+  color:green;
+  font-weight: bold;
+}
+.delete{
+  color:red;
+}
+.flying-drone {
+    height:100px;
+    width:100px;
+  /* 
+   * Make the initial position to be the center of the circle you want this
+   * object follow.
+   */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /*
+   * Sets up the animation duration, timing-function (or easing)
+   * and iteration-count. Ensure you use the appropriate vendor-specific 
+   * prefixes as well as the official syntax for now. Remember, tools like 
+   * CSS Please are your friends!
+   */
+  -webkit-animation: myOrbit 8s linear infinite; /* Chrome, Safari 5 */
+     -moz-animation: myOrbit 8s linear infinite; /* Firefox 5-15 */
+       -o-animation: myOrbit 8s linear infinite; /* Opera 12+ */
+          animation: myOrbit 8s linear infinite; /* Chrome, Firefox 16+, 
+                                                    IE 10+, Safari 5 */
+}
+/*
+* Set up the keyframes to actually describe the begining and end states of 
+* the animation.  The browser will interpolate all the frames between these 
+* points.  Again, remember your vendor-specific prefixes for now!
+*/
+@-webkit-keyframes myOrbit {
+  from { -webkit-transform: rotate(0deg) translateX(300px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+  from { -moz-transform: rotate(0deg) translateX(300px) rotate(0deg); }
+  to   { -moz-transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+  from { -o-transform: rotate(0deg) translateX(300px) rotate(0deg); }
+  to   { -o-transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+  from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
 }
