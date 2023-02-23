@@ -15,7 +15,9 @@
 <hr>
 
 <div class="row">
+   
 {{#each drones}}
+
     <div class="col-sm-2">
         <h5>{{this.name}}</h5>
     </div>
@@ -35,7 +37,7 @@
     <div class = "col-sm-3 buttons-div">
 
             <form action="/drones/{{this.id}}/delete" method="POST">
-                <button class="btn delete">Delete</button>
+                <button class="btn btn-success">Delete</button>
             </form>
 
     </div>

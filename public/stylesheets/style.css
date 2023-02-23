@@ -23,6 +23,10 @@ nav a{
   text-decoration: none;
   color:green;
 }
+#frontText{
+  margin-top:5%;
+  font-size:100px;
+}
 .row{
   background-color: rgba(141, 174, 143,0.8);
 }
@@ -31,18 +35,25 @@ nav a{
   flex-direction: column;
   justify-content: space-evenly;
 }
-
+.container{
+  margin-top:5%;
+}
 .btn{
   width:50%;
+}
+.createForm div{
+  margin:10px;
+ 
+}
+.newDrone{
+  margin-top:20px;
 }
 .edit{
   text-decoration: none;
   color:green;
   font-weight: bold;
 }
-.delete{
-  color:red;
-}
+
 .flying-drone {
     height:100px;
     width:100px;
