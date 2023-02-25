@@ -1,8 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
-
+/** common *===================*/
 a {
   color: #00b7ff;
+  text-decoration: none;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+li {
+  list-style: none;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/** list *===================*/
+#list {
+  width: 100%;
+}
+#list .list-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 30%;
+  text-align: center;
+}
+#list .list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+#list .list-card p {
+  padding: 1rem;
+}
+#list .edit-delete {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem auto;
+  align-items: center;
+}
+#list h4 {
+  white-space: nowrap;
+  margin-top: 2rem;
+}
+#list button {
+  border: none;
+  padding: .5rem;
+  background-color: rgb(109, 228, 57);
+  border-radius: 5px;
+  color: #fff;
+}
+
+/** edit *===================*/
+#edit input {
+  border: none;
+  background-color: rgb(240, 235, 235);
+  height: 2rem;
+}
+#edit .name-form,
+#edit .propellers-form,
+#edit .maxSpeed {
+  margin-bottom: 2rem;
+}
+#edit button {
+  margin-left: 40%;
+  margin-top: 2rem;
+  border: none;
+  padding: .5rem;
+  background-color: rgb(109, 228, 57);
+  border-radius: 5px;
+  color: #fff;
+}
+
+/** create*===================*/
+#create, #edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#create input {
+  border: none;
+  background-color: rgb(240, 235, 235);
+  height: 2rem;
+}
+#create .create-name,
+#create .create-propellers,
+#create .create-maxSpeed {
+  margin-bottom: 2rem;
+}
+#create button {
+  margin-left: 40%;
+  margin-top: 2rem;
+  border: none;
+  padding: .5rem;
+  background-color: rgb(109, 228, 57);
+  border-radius: 5px;
+  color: #fff;
 }

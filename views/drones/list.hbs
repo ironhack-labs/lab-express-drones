@@ -1,1 +1,22 @@
-<h2>Available drones</h2>
+{{#if errorMessage}}
+<p class='error'>{{errorMessage}}</p>
+{{/if}}
+
+<section id="list">
+  <h2>Available drones</h2>
+  <div class="list-container">
+    {{#each drones}}
+    <div class="list-card">
+      <h4>{{name}}</h4>
+      <p>{{propellers}}</p>
+      <p>{{maxSpeed}}</p>
+      <div class="edit-delete">
+        <a href="/drones/{{_id}}/edit">Edit</a>
+        <form action="/drones/{{_id}}/delete" method="post">
+          <button>delete</button>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
