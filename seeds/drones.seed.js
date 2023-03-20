@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Drone = require('../models/Drone.model');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/drones-project';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/lab-express-drones';
 
 const drones = [
     { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
@@ -28,6 +28,12 @@ mongoose
         console.error('Error connecting to the DB:', e);
     })
     .finally(() => {
-        mongoose.connection.close();
-    });
+        return mongoose.connection.close();
+    })
+    .then(dbStatus => {
+        console.log(`Connection successfully closed!`)
+    })
+    .catch(e => {
+        console.error("The connection couldn't be closed!!! Error:", e)
+    })
 
