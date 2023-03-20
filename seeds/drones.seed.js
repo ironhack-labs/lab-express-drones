@@ -1,5 +1,4 @@
-
-const Drone = require("../models/drone")
+const Drone = require("../models/Drone.model")
 
 const  mongoose  = require('mongoose');
 
@@ -25,7 +24,7 @@ mongoose.connect(MONGO_URI)
 
     })
     .then(() => {
-        return Drone.insertMany(droneArray);
+        return Drone.insertMany(drones);
     })
     .then(() => {
         mongoose.connection.close();
