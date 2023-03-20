@@ -35,24 +35,41 @@ router.post('/drones/create', (req, res, next) => {
     });
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
 
 router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+  .then(droneFromDb=>{
+    res.render("drones/update-form",droneFromDb);
+  })
+  .catch((e) => {
+    console.log("Error to display list of drones", e);
+  });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+  const newDrone = {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed,
+  };
+  Drone.findByIdAndUpdate(req.params.id,newDrone)
+  .then(()=>{
+    res.redirect("/drones")
+  })
+
+  .catch((e) => {
+    console.log("Error to display list of drones", e);
+  });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+  .then(()=>{
+    res.redirect("/drones")
+  })
+  .catch((e) => {
+    console.log("Error to display list of drones", e);
+  });
 });
 
 module.exports = router;
