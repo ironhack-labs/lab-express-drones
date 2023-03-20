@@ -7,6 +7,7 @@ const { Schema, model } = require("mongoose");
         name: String, 
         propellers : Number, 
         maxSpeed: Number,
+      
     }
 );
 

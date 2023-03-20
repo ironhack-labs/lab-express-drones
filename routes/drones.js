@@ -25,13 +25,13 @@ router.get("/drones/create", (req, res, next) => {
 router.post("/drones", (req, res, next) => {
   const droneDetails = {
     name: req.body.name,
-    propellers: req.body.proppelers,
+    propellers: req.body.propellers,
     maxSpeed: req.body.maxSpeed,
   };
 
   Drone.create(droneDetails)
     .then(() => {
-      console.log(droneDetails);
+      //console.log(droneDetails);
       res.redirect("/drones");
     })
     .catch((error) => {
@@ -40,11 +40,17 @@ router.post("/drones", (req, res, next) => {
     });
 });
 
-router.get("/drones/:id/edit", (req, res, next) => {
-  const { droneId } = req.params;
 
-  Drone.findById(droneId)
+
+//EDIT ////////////////////////
+
+router.get("/drones/:id/edit", (req, res, next) => {
+    const Id = req.params.id;
+  
+  
+return Drone.findById(Id)
     .then((droneToEdit) => {
+      
       console.log("droneToEdit", droneToEdit);
 
       res.render("drones/update-form.hbs", { drone: droneToEdit });
@@ -53,14 +59,19 @@ router.get("/drones/:id/edit", (req, res, next) => {
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-  const { droneId } = req.params;
+ 
+  const { Id } = req.params.id;
   const { name, propellers, maxSpeed } = req.body;
-  Book.findByIdAndUpdate(droneId, { name, propellers, maxSpeed }, { new: true })
-    .then((updatedDrone) => res.redirect(`/drones/${updatedDrone.id}`))
+  Drone.findByIdAndUpdate(Id, { name, propellers, maxSpeed }, { new: true })
+    .then((updatedDrone) => {
+      res.redirect(`/drones`)
+  })
     .catch((error) => next(error));
 });
+
+
+
+// DELETE/////////////////
 
 router.post("/drones/:id/delete", (req, res, next) => {
   const { droneId } = req.params;
@@ -68,5 +79,10 @@ router.post("/drones/:id/delete", (req, res, next) => {
     .then(() => res.redirect("/drones"))
     .catch((error) => next(error));
 });
+
+
+const drone= Drone.findById("64188b3d8f43e7ce8ae7071d")
+console.log(drone)
+
 
 module.exports = router;
