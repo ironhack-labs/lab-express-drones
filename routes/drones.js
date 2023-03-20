@@ -22,12 +22,32 @@ router.get('/drones', (req, res, next) => {
     });
 });
 
-router.get('/drones/create', (req, res, next) => {
+
+
   // Iteration #3: Add a new drone
   router.get("/drones/create", (req, res, next) => {
     res.render("drones/create-form");
   });
+
+
+router.post("/drones", (req, res, next) => {
+  
+  const newDrone = {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed,
+    };
+    Drone.create(newDrone)
+      .then(() =>{
+        res.redirect("/drones");
+      })
+      .catch((e) =>{
+        console.log("Error occured while displaying Drones", e);
+      })
 });
+
+
+
 
 
 router.get('/drones/:id/edit', (req, res, next) => {
