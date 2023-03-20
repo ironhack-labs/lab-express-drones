@@ -1,8 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: rgb(87, 87, 55);
+}
+
+nav {
+  width: 100vw;
+  height: 7vh;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+nav a {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 15px;
 }
 
 a {
   color: #00b7ff;
+}
+
+
+.all-drones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.all-drones section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+}
+
+.all-drones section>* {
+  margin: 5px 10px;
 }
