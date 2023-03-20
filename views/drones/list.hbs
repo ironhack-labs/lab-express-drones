@@ -1,1 +1,12 @@
 <h2>Available drones</h2>
+
+{{#each drones}}
+<section class="book-summary">
+    <h2>{{this.title}}</h2>
+    <p>
+        Name: {{this.name}} <br>
+        Rating: {{this.propellers}} <br>
+        maxSpeed: {{this.maxSpeed}} <br>
+    </p>
+</section>
+{{/each}}
