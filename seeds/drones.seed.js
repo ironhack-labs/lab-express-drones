@@ -1,7 +1,8 @@
 // Iteration #1
 const mongoose = require("mongoose");
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-express-drones";
 const Drone = require('../models/Drone.model');
+
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1/lab-express-drones";
 
 const drones = [
     {
@@ -22,10 +23,15 @@ const drones = [
 ];
 
 mongoose
-  .connect(MONGO_URI)
-  .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
-  })
+.connect(MONGO_URI)
+.then(x=>{
+    console.log(`Connected to Mongo database:"${x.connections[0].name}"`)
+    return Drone.create(drones)
+})
+.then(dronesFromDB=>{
+    console.log(`Created ${dronesFromDB.length} drones`);
+    return  mongoose.connection.close()
+})
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
   });
