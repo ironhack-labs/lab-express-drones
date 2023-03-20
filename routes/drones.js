@@ -8,8 +8,8 @@ router.get("/drones", (req, res, next) => {
   // Iteration #2: List the drones
   // ... your code here
   Drone.find()
-    .then((droneArr) => {
-      console.log(droneArr);
+    .then(droneArr => {
+      //console.log(droneArr);
       res.render("drones/list", { droneArr });
     })
     .catch((e) => {
@@ -18,13 +18,13 @@ router.get("/drones", (req, res, next) => {
     });
 });
 
-router.get("/drones", (req, res, next) => {
+router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
   res.render("drones/create-form");
 });
 
-router.post("/drones/create", (req, res, next) => {
+router.post("/drones", (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
   const droneDetails = {
@@ -33,7 +33,7 @@ router.post("/drones/create", (req, res, next) => {
     maxSpeed: req.body.maxSpeed,
   };
   Drone.create(droneDetails)
-    .then((droneFromDB) => {
+    .then( droneFromDB => {
       res.redirect("/drones");
     })
     .catch((e) => {
