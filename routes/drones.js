@@ -77,7 +77,7 @@ router.post('/drones/:id/delete', (req, res, next) => {
       res.redirect('/drones')
     })
     .catch(e => {
-      console.error('Error deleting the drone from the DB: ', e);
+      console.error('Error deleting the drone from the DB: ', e);G
     });
 });
 
