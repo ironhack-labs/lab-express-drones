@@ -1,0 +1,21 @@
+<div class='wrapper'>
+	<form action='/drones/{{_id}}/edit' method='POST'>
+
+		<div class='create-book'>
+			<h2>{{name}}</h2>
+			<label for='name'>Name</label>
+			<input type='text' name='name' value='{{name}}' />
+
+			<label for='propellers'>Propellers</label>
+			<input type='text' name='propellers' value='{{propellers}}' />
+
+			<label for='maxSpeed'>Max Speed</label>
+			<input type='number' name='maxSpeed' value='{{maxSpeed}}' />
+
+			<button class='button orange'>Update</button>
+
+			<a href='javascript: history.back()' class='big'>Go Back</a>
+		</div>
+	</form>
+
+</div>

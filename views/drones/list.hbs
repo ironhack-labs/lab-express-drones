@@ -1,1 +1,21 @@
-<h2>Available drones</h2>
+<div id='booksWrapperDiv'>
+
+	{{#each drones}}
+		<div class='book'>
+			<h3> {{name}}</h3>
+			<div>
+				<a href='/drones/{{_id}}'>Details</a>
+				<a href='/drones/{{_id}}/edit' class='orange'>Edit</a>
+				<form action='/drones/{{_id}}/delete' method='POST'>
+					<button class='red'>Delete</button>
+				</form>
+
+			</div>
+		</div>
+	{{/each}}
+
+</div>
+
+<div class='anchor'>
+	<a href='/'>Go Back</a>
+</div>
