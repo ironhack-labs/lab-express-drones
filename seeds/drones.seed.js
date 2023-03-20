@@ -1,11 +1,11 @@
-const express = require('express');
+
 const Drone = require("../models/drone")
-const connectDB = require("../db/index");
-const { default: mongoose } = require('mongoose');
 
-require("dotenv").config()
+const  mongoose  = require('mongoose');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/lab-express-drones';
+
+
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/lab-express-drones';
 
 
 
@@ -15,13 +15,21 @@ const drones = [
   { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
 ];
 
-mongoose.connect(MONGO_URI ) 
+mongoose.connect(MONGO_URI)
+    .then((x) => {
+        console.log(
+            `Connected to Mongo! Database name: "${x.connections[0].name}"`
+        );
 
+        //return Book.deleteMany({}); //WARNING: this will delete all books in your DB !!
 
-Drone.insertMany(drones)
-  .then((x)=>{
-      console.log(`Connected to database:"${x.connections[0].name}"`);
-  })
-  .catch((err)=>{
-      console.log("Errors in inserting drones:", err)
-       })
+    })
+    .then(() => {
+        return Drone.insertMany(droneArray);
+    })
+    .then(() => {
+        mongoose.connection.close();
+    })
+    .catch((err) => {
+        console.error("Error connecting to DB: ", err);
+    });
