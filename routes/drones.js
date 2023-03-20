@@ -42,12 +42,32 @@ router.post('/drones/create', (req, res, next) => {
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  Drone.findById(req.params.id)
+    .then((droneData) => {
+      res.render('drones/update-form', droneData)
+    })
+    .catch(e => {
+      console.error('Error accessing the drone: ', e);
+    });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const { name, propellers, maxSpeed } = req.body;
+
+  const droneUpdatedInfo = {
+    name, 
+    propellers,
+    maxSpeed
+  }
+
+  Drone.findByIdAndUpdate(req.params.id, droneUpdatedInfo, { new: true })
+    .then(updatedDrone => {
+      res.redirect('/drones')
+    })
+    .catch(e => {
+      console.error(`Error updating the drone: ${e}`);
+    });
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
