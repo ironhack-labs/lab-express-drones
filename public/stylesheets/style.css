@@ -4,5 +4,141 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #69aac4;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+p {
+  color: rgb(16, 59, 97);
+  font-size: 16px;
+  text-align: center;
+}
+
+#navContainer {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  background-color: aqua;
+  align-items: center;
+}
+
+#homePageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/images/drone.png);
+  background-position: center;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  height: 80vh;
+
+}
+
+.drones-summary {
+  display: flex;
+  flex-direction: column;
+  /* background-image: url(/images/drone.png); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30vh;
+  width: 20vw;
+  margin: 20px;
+  margin-bottom: 340px;
+ 
+}
+
+h1 {
+  text-align: center;
+}
+
+#availDronesContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+#createFormContainer {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/images/drone.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+label {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+input {
+  height: 20px;
+}
+
+form {
+  margin-bottom: 450px;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #69aac4;;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0062cc;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+header {
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  background: linear-gradient(to right, #333, #666);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #fff;
+  text-align: center;
+
+}
+
