@@ -51,32 +51,33 @@ router.post("/drones", (req, res, next) => {
 
 
 router.get('/drones/:id/edit', (req, res, next) => {
- 
-  Drone.findById(req.params.id)
-    .then((droneData) => {
-      res.render('drones/update-form', droneData)
+ const droneId = req.params.id;
+  Drone.findById(droneId)
+    .then((droneToEdit) => {
+      res.render('drones/update-form', {drone: droneToEdit });
     })
     .catch(e => {
       console.error(`Error displaying drones data`, e);
+      next(e);
     });
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
   
-   const { name, propellers, maxSpeed } = req.body;
-
-  const droneUpdatedInfo = {
-    name, 
-    propellers,
-    maxSpeed
+   const droneId = req.params.id;
+    const data = {
+    name: req.body.name, 
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed
   }
-
-  Drone.findByIdAndUpdate(req.params.id, droneUpdatedInfo, { new: true })
-    .then(droneUpdatedInfo => {
+  console.log(data);
+  Drone.findByIdAndUpdate(droneId, data, { new: true })
+    .then((response) => {
       res.redirect('/drones')
     })
     .catch(e => {
       console.error(`Error updating Drone: ${e}`);
+      next(e);
     });
 });
 
