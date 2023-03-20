@@ -9,6 +9,10 @@
             <strong>Speed: </strong> {{this.maxSpeed}} <br />
         </p>
         <a href="/drones/{{this._id}}/edit">Edit</a>
+
+        <form action="/drones/{{this.id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
     </section>
     <hr />
 
