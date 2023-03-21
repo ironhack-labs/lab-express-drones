@@ -1,7 +1,10 @@
-<div id='booksWrapperDiv'>
+<div class='anchor'>
+	<a class='big' href='/drones/create' style='margin-top: 2rem;'>Create Drone</a>
+</div>
+<div id='dronesWrapperDiv'>
 
 	{{#each drones}}
-		<div class='book'>
+		<div class='drone'>
 			<h3> {{name}}</h3>
 			<div>
 				<a href='/drones/{{_id}}'>Details</a>
@@ -15,7 +18,6 @@
 	{{/each}}
 
 </div>
-
-<div class='anchor'>
+<div class='anchor' style='padding-bottom: 2rem;'>
 	<a href='/'>Go Back</a>
 </div>

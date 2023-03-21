@@ -1,8 +1,9 @@
+<h2 style='padding: 2rem;'>{{name}}</h2>
 <div class='wrapper'>
 	<form action='/drones/{{_id}}/edit' method='POST'>
 
-		<div class='create-book'>
-			<h2>{{name}}</h2>
+		<div class='create-drone'>
+
 			<label for='name'>Name</label>
 			<input type='text' name='name' value='{{name}}' />
 
@@ -11,10 +12,11 @@
 
 			<label for='maxSpeed'>Max Speed</label>
 			<input type='number' name='maxSpeed' value='{{maxSpeed}}' />
+			<div class='create-button-wrap'>
+				<button class='button orange' style='padding-top: 1rem;'>Update</button>
 
-			<button class='button orange'>Update</button>
-
-			<a href='javascript: history.back()' class='big'>Go Back</a>
+				<a href='javascript: history.back()' class='big' style='padding:0.5rem'>Go Back</a>
+			</div>
 		</div>
 	</form>
 

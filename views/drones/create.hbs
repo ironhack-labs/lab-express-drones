@@ -1,21 +1,22 @@
-<h2>Create a new drone</h2>
+<h2 style='padding: 2rem;'>Create a new drone</h2>
 <div class='wrapper'>
 
 	<form action='/drones/create' method='POST'>
 
-		<div class='create-book'>
-			<h1>Add a Drone</h1>
-			<label for='name'>Title</label>
+		<div class='create-drone'>
+			<label for='name'>Name</label>
 			<input type='text' name='name' />
 
-			<label for='propellers'>Author</label>
+			<label for='propellers'>Propellers</label>
 			<input type='text' name='propellers' />
 
-			<label for='maxSpeed'>Rating</label>
+			<label for='maxSpeed'>Max Speed</label>
 			<input type='number' name='maxSpeed' />
+			<div class='create-button-wrap'>
+				<button class='button green' style='padding-top: 1rem;'>Create</button>
+				<a href='/drones' class='big' style='padding:0.5rem'>Go Back</a>
+			</div>
 
-			<button class='button green'>Create</button>
-			<a href='/drones' class='big-anchor'>Go Back</a>
 		</div>
 	</form>
 </div>

@@ -1,10 +1,12 @@
+<h2 style='padding:2rem'>{{name}}</h2>
 <div class='wrapper'>
-	<h2>{{name}}</h2>
+
 	<b>Propellers: </b>
 	<p>{{propellers}}</p>
 	<b>Max Speed: </b>
 	<p>{{maxSpeed}}</p>
-
-	<a href='/drones/{{_id}}/edit' class='orange big'>Edit</a>
-	<a class='big' href='/drones'>Go Back</a>
+	<div class='create-button-wrap'>
+		<a href='/drones/{{_id}}/edit' class='orange big'>Edit</a>
+		<a class='big' href='/drones' style='padding: 0.5rem;'>Go Back</a>
+	</div>
 </div>
