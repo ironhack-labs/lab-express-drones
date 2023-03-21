@@ -69,6 +69,7 @@ router.post("/drones/:id/edit", (req, res, next) => {
     }) // go to the details page to see the updates
     .catch((error) => {
       console.log("Issues updating this drone!");
+      res.render("drones/update-form", { drone: req.body });
     });
 });
 
