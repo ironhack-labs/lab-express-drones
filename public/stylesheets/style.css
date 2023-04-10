@@ -6,3 +6,52 @@ body {
 a {
   color: #00b7ff;
 }
+
+
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.drone-list {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.drone-list .list-item {
+  margin: 5px 0;
+  list-style-type: none;
+}
+
+.drone-list a {
+  text-decoration: none;
+  color: #dc3545;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+.div-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.div-drone{
+  text-align: center;
+
+}
+
