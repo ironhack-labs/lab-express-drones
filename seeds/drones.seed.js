@@ -30,7 +30,7 @@ const drones = [
 
 Drone.create(drones)
   .then((dronesFromDB) => {
-    console.log("Voici tous les drones", dronesFromDB.length);
+    console.log("Voici tous les drones", dronesFromDB, "et la taille de la DB",dronesFromDB.length);
     mongoose.connection.close();
   })
   .catch((err) => {
