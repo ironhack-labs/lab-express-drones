@@ -8,7 +8,10 @@ router.get("/", (req, res, next) => {
   // Iteration #2: List the drones
   Drone.find()
     .then((drones) => res.render("drones/list", { drones }))
-    .catch((error) => console.error("error when getting drones data", error));
+    .catch((error) => {
+      console.error("error when getting drones data", error);
+      next(error);
+    });
 });
 
 router.get("/create", (req, res, next) => {
@@ -20,13 +23,21 @@ router.post("/create", (req, res, next) => {
   const { name, propellers, maxSpeed } = req.body;
   Drone.create({ name, propellers, maxSpeed })
     .then(() => res.redirect("/drones"))
-    .catch((error) => console.error("error when creating drone data", error));
+    .catch((error) => {
+      console.error("error when creating drone data", error);
+      next(error);
+    });
 });
 
 router.get("/:id/edit", (req, res, next) => {
-  Drone.findById(req.params.id).then((drone) => {
-    res.render("drones/update-form", drone);
-  });
+  Drone.findById(req.params.id)
+    .then((drone) => {
+      res.render("drones/update-form", drone);
+    })
+    .catch((error) => {
+      console.error("error when getting drone", error);
+      next(error);
+    });
 });
 
 router.post("/:id/edit", (req, res, next) => {
@@ -34,7 +45,10 @@ router.post("/:id/edit", (req, res, next) => {
   const { name, propellers, maxSpeed } = req.body;
   Drone.findByIdAndUpdate(req.params.id, { name, propellers, maxSpeed })
     .then(() => res.redirect("/drones"))
-    .catch((error) => console.error("error when updating drone data", error));
+    .catch((error) => {
+      console.error("error when updating drone data", error);
+      next(error);
+    });
 });
 
 router.post("/:id/delete", (req, res, next) => {
