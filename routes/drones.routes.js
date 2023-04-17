@@ -20,8 +20,7 @@ router.get("/create", (req, res, next) => {
 
 router.post("/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  const { name, propellers, maxSpeed } = req.body;
-  Drone.create({ name, propellers, maxSpeed })
+  Drone.create(req.body)
     .then(() => res.redirect("/drones"))
     .catch((error) => {
       console.error("error when creating drone data", error);
@@ -42,8 +41,7 @@ router.get("/:id/edit", (req, res, next) => {
 
 router.post("/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  const { name, propellers, maxSpeed } = req.body;
-  Drone.findByIdAndUpdate(req.params.id, { name, propellers, maxSpeed })
+  Drone.findByIdAndUpdate(req.params.id, req.body)
     .then(() => res.redirect("/drones"))
     .catch((error) => {
       console.error("error when updating drone data", error);
@@ -51,9 +49,16 @@ router.post("/:id/edit", (req, res, next) => {
     });
 });
 
-router.post("/:id/delete", (req, res, next) => {
+router.get("/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  Drone.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch((e) => {
+      console.error("Error deleting the drone from the DB: ", e);
+      next(error);
+    });
 });
 
 module.exports = router;
