@@ -1,1 +1,29 @@
 <h2>Available drones</h2>
+<hr class="mb-3">
+<div class="container">
+    <div class="player-card">
+        <div class="row">
+            {{#each drones}}
+            <div class="col-3">
+
+                <p> <strong>Name</strong> {{name}} </p>
+                <p><strong>Number of propellers</strong> {{propellers}}</p>
+                <p> <strong>Top speed </strong>{{maxSpeed}}</p>
+                <a href="/drones/{{id}}/edit" class="btn btn-sm btn-dark">Edit</a>
+                <form action="/drones/{{id}}/delete" method="POST" style="display: inline">
+                    <input type="submit" value="Delete" class="btn btn-sm btn-danger">
+                </form>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+<hr>
+<a href="/" class="btn btn-dark">Volver a inicio</a>
+
+
+
+{{!-- [ <a href="/libros/detalles/{{_id}}">ver detalles</a> ] --}}
