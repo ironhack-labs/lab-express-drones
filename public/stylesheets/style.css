@@ -1,8 +1,45 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: .6em;
+  width: 100%;
+}
+
+#index-page {
+  height: 100vh;
+  background-image: url(/images/Drone-Memes-Kids-Crashing-their-Drones.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding-top: 300px;
+  top: 0;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 15px;
 }
