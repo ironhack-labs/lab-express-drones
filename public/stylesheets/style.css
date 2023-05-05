@@ -1,8 +1,55 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px 'Open Sans, Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+footer {
+  background-color: rgb(55, 9, 36);
+  color: rgb(255, 255, 0);
+  text-align: right;
+  padding: 13px;
+  font-size: 0.8em;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.h6 {
+  font-size: larger;
+}
+
+/* INDEX */
+
+.home {
+  height: 100vh;
+  background-image: url(/images/dron-6.jpeg);
+  background-size: cover;
+  background-image: repeat;
+}
+
+.hola {
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+
+
+/* DRONES */
+
+.container-drones {
+  background-color: blueviolet;
 }
