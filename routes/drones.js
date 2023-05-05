@@ -24,11 +24,10 @@ router.post('/drones/create', (req, res, next) => {
   const {name , propellers, maxSpeed} = req.body
 
   Drone.create({name , propellers , maxSpeed})
-  .then(res.redirect('/drones'))
-  .catch(err => {
-    console.log(err)
-    res.redirect('/drones/create')
-  }) 
+  .then(() => res.redirect('/drones'))
+  .catch(() => res.redirect('/drones/create'))
+  // .catch(err => next(err))
+
 });
 
 
