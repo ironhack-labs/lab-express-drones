@@ -19,10 +19,10 @@ const app = express();
 require('./config')(app);
 
 // default value for title local
-const projectName = 'lab-express-drones';
+const projectName = 'Los Drones de Manuel :)';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+app.locals.title = `${capitalized(projectName)}- Realizado por Manuel Perez`;
 
 // 👇 Start handling routes here
 const index = require('./routes/index');

@@ -1,1 +1,37 @@
 <h2>Create a new drone</h2>
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <h1>Nuevo Dron </h1>
+            <hr>
+
+            <form action="/drones/create-form" method="POST">
+                <div class="mb-3 mt-5">
+                    <label for="dronName" class="form-label">Nombre del Dron</label>
+                    <input type="text" class="form-control" id="dronName" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="propellers" class="form-label">Numero de helices</label>
+                    <input type="text" class="form-control" id="propellers" name="propellers">
+                </div>
+
+                <div class="mb-3 ">
+                    <label for="maxSpeed" class="form-label">Velocidad Maxima</label>
+                    <input type="text" class="form-control" id="maxSpeed" name="maxSpeed">
+                </div>
+                <button type="submit" class="btn btn-dark">Crear Dron</button>
+
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+</div>
