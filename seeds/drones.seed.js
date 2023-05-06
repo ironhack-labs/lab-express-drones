@@ -10,4 +10,19 @@ const drones = [
     { name: "Courier 3000i", propellers: 6, maxSpeed: 18 }
 ];
 
-
+mongoose
+    .connect(MongoUri)
+    .then(x => {
+        console.log(`Conected to Mongo database "${x.connections[0].name}"`)
+        return Drone.create(drones)
+    })
+    .then(dronesDB => {
+        console.log(`Create ${dronesDB.length} drones`)
+        return mongoose.connection.close()
+    })
+    .then(() => {
+        console.log("Conection Closed!! A tu casa ")
+    })
+    .catch(err => {
+        console.log(`An error ocurred while creating Drones from DB : ${err}`)
+    })
