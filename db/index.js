@@ -1,5 +1,4 @@
-// ℹ️ package responsible to make the connection with mongodb
-// https://www.npmjs.com/package/mongoose
+
 const mongoose = require("mongoose");
 
 // ℹ️ Sets the MongoDB URI for our app to have access to it.

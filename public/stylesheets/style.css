@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.try-again-img{
+  background-image: url("./../images/try-again.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
