@@ -1,36 +1,82 @@
 const express = require('express');
 const router = express.Router();
 
-// require the Drone model here
+const Drone = require('../models/Drone.model');
+
 
 router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+  async function getAllDrones(){
+    try {
+      let allDrones = await Drone.find();
+      res.render('drones/list', {response: allDrones})
+    } catch (err) {
+      console.error(err)
+    }
+  }
+  getAllDrones()
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form.hbs');  
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  let {name, propellers, maxSpeed} = req.body;
+
+  async function createDrone() {
+    try {
+      let createdDrone = await Drone.create({name, propellers, maxSpeed});
+      res.redirect('/drones');
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  createDrone();
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.get('/drones/:droneId/edit', (req, res, next) => {
+  let {droneId} = req.params;
+  console.log(droneId)
+  async function findDroneInfo(){
+    try{
+      let droneEdit = await Drone.findById(droneId);
+      res.render('drones/update-form.hbs',{drone: droneEdit});
+    }
+    catch(err){
+      console.error(err);
+    }
+  }
+  findDroneInfo();
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post('/drones/:droneId/edit', (req, res, next) => {
+  let {droneId} = req.params;
+  const {name,propellers,maxSpeed}=req.body;
+  async function updateDrone(){
+    try{
+      let updatedDrone = await Drone.findByIdAndUpdate(droneId,{name,propellers,maxSpeed},{new:true})
+      res.redirect('/drones');
+    }
+    catch(err){
+      console.error(err);
+    }
+  }
+  updateDrone();
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.post('/drones/:droneId/delete', (req, res, next) => {
+let {droneId} = req.params;
+  async function deleteDrone(){
+    try {
+      let droneDeletion = await Drone.findByIdAndDelete(droneId)
+      res.redirect('/drones');
+    }
+    catch (err) {
+      console.error(err)
+    }
+  }
+  deleteDrone()
 });
+
 
 module.exports = router;
