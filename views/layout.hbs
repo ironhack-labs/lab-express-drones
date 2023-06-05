@@ -9,11 +9,16 @@
   </head>
 
   <body>
-    <nav>
-      <a href="/"><span style="color:blue">Home</span></a>
-      <a href="/drones"><span style="color:blue">Drones</span></a>
-    </nav>
-    {{{body}}}
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/"><span>Home</span></a></li>
+          <li><a href="/drones"><span>Drones</span></a></li>
+          <li><a href="/drones/create"><span>Create drone</span></a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="section">{{{body}}}</section>
 
     <script src="/js/script.js"></script>
   </body>
