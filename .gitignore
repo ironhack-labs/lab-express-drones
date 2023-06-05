@@ -11,3 +11,4 @@ npm-debug.log
 # For maintenance purposes - not best practice
 
 package-lock.json
+.env
