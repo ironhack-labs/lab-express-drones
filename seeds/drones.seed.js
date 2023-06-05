@@ -3,7 +3,7 @@ const Drone = require("../models/Drone.model");
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/lab-express-drones";
 
-const drone = [
+const drones = [
   {
     name: "Crazy Pilot",
     propellers: 4,
@@ -27,15 +27,11 @@ mongoose
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
-
-    return Drone.deleteMany({});
+    return Drone.deleteMany();
   })
   .then((response) => {
     console.log(response);
-    return Drone.insertMany(drone);
-  })
-  .then(() => {
-    Drone.create(drone);
+    return Drone.create(drones);
   })
   .then(() => {
     return Drone.find();
@@ -44,8 +40,8 @@ mongoose
     console.log(`Created ${dronesFromDB.length} drones`);
   })
   .then(() => {
-    mongoose.connection.close();
+    mongoose.disconnect();
   })
   .catch((err) => {
-    console.error("Error connecting to DB: ", err);
+    next(err);
   });
