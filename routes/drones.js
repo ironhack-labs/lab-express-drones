@@ -21,6 +21,11 @@ router.get("/drones", (req, res, next) => {
 
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
+  res.render("/drones/create");
+});
+
+router.post("/drones/create", (req, res, next) => {
+  // Iteration #3: Add a new drone
   const newDrone = {
     name: req.body.name,
     propellers: req.body.propellers,
@@ -32,21 +37,37 @@ router.get("/drones/create", (req, res, next) => {
     })
     .catch((e) => {
       console.log("Theres an error while creating new drone", e);
+      next(e);
     });
-});
-
-router.post("/drones/create", (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const droneId = req.params.id;
+  Drones.findById(droneId)
+
+    .then((droneEdit) => {
+      res.render("drones/update-form", droneEdit);
+    })
+    .catch((e) => {
+      console.log("Theres an error while editing drone", e);
+    });
 });
 
 router.post("/drones/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
+  const droneId = req.params.id;
+  const { name, propellers, maxSpeed } = req.body;
+
+  Drones.findByIdAndUpdate(
+    droneId,
+    { name, propellers, maxSpeed },
+    { new: true }
+  )
+    .then((updatedDrone) => res.redirect("/drones"))
+    .catch((e) => {
+      console.log("Theres an error while updating drone to the db", e);
+    });
   // ... your code here
 });
 
