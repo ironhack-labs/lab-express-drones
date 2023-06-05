@@ -8,7 +8,7 @@ mongoose.set('strictQuery', true)
 
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/lab-express-drones";
 
-const droneModel = require("../models/Drone.model")
+const DroneModel = require("../models/Drone.model")
 
 const drones = [
 	{ name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
@@ -22,11 +22,11 @@ mongoose
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
   .then(() => {
-	return droneModel.deleteMany({});
+	return DroneModel.deleteMany({});
   })
   .then((valueObj) => {
 	console.log("Number of drones deleted: ", valueObj.deletedCount)
-	return droneModel.create(drones)
+	return DroneModel.create(drones)
   })
   .then(dronesArrFromDB => {
 	console.log("Number of drones created: ", dronesArrFromDB.length);
