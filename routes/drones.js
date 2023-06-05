@@ -14,18 +14,30 @@ router.get("/drones", (req, res, next) => {
       res.render("drones/list", data);
     })
     .catch((e) => {
-      console.log("Theres an error", e);
+      console.log("Theres an error to show drones list", e);
     });
 });
 
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+
+  res.render("drones/create-form");
 });
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  const newDrone = {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed,
+  };
+  Drone.create(newDrone)
+    .then((newDrone) => {
+      res.redirect("/drones");
+    })
+    .catch((e) => {
+      console.log("Theres an error while creating new drone", e);
+    });
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
