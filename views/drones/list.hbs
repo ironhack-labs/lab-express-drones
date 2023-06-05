@@ -1,1 +1,19 @@
+<a href="/">Home</a>
 <h2>Available drones</h2>
+
+
+{{#each dronesArr}}
+<section>
+  <h3>{{this.name}}</h3>
+  <p>{{this.propellers}}</p>
+  <p>{{this.maxSpeed}}</p>
+  
+  <a href="/drones/{{this._id}}/edit">Edit</a>
+  <a href="/drones/{{this._id}}/delete">Delete</a>
+</section>
+{{/each}}
+
+<br>
+<br>
+
+<a href="/drones/create">Create</a>
