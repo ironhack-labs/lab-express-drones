@@ -8,9 +8,6 @@ const droneSchema = new Schema(
     propellers: Number,
     maxSpeed: Number
   },
-  {
-    timestamps: true
-  }
 );
 
 module.exports = model('Drone', droneSchema);
