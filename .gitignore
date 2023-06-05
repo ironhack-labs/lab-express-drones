@@ -6,8 +6,12 @@ npm-debug.log
 
 # Environment Variables should NEVER be published
 # For learning purposes, we keep .env available for you
-# .env
+
+#.env
 
 # For maintenance purposes - not best practice
 
 package-lock.json
+
+
+# I tried to remove the .env but it is still being pushed :/
