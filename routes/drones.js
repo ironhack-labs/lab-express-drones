@@ -8,7 +8,6 @@ router.get('/drones', async (req, res, next) => {
   // Iteration #2: List the drones
   try { 
     const drones = await Drone.find()
-    console.log(drones)
     res.render("drones/list", { drones })
    
   } catch (error) {
@@ -35,20 +34,24 @@ router.post("/drones/create", async (req, res, next) => {
   }
 })
 
+router.get("/drones/:id/edit", async (req, res, next) => {
+  try {
+    const drone = await Drone.findById(req.params.id)
+    res.render("drones/update-form", drone)
+  } catch (error) {
+    res.send(error)
+  }
+})
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
-});
-
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
-});
-
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post("/drones/:id/edit", async (req, res, next) => {
+  try {
+    console.log("-------------Datas", req.params.id, req.body)
+    await Drone.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect("/drones")
+  } catch (error) {
+    console.log(error);
+    res.render(`/drones/${req.params.id}/edit`);
+  }
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
