@@ -1,8 +1,111 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+header {
+  background-color: #696b6c;
+  text-align: center;
+  color: white;
+
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+ul a {
+  display: block;
+  padding: 8px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #00b7ff;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  margin: 50px;
+}
+
+.button {
+  width: 50px;
+  margin-right: 5px;
+  padding: 2px;
+  padding: 0.2em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: white;
+  background-color: #c0c4c5;
+  border-radius: 6px;
+  color: #fff;
+  font-family: "Oswald";
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+}
+
+.button:hover {
+  border: none;
+
+  background: #00b7ff;
+  box-shadow: 0px 0px 1px #777;
+}
+
+.drones {
+  padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#submit {
+  background-color: #c0c4c5;
+  padding: 0.2em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #fff;
+  font-family: "Oswald";
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+}
+#submit:hover {
+  border: none;
+  background: #00b7ff;
+  box-shadow: 0px 0px 1px #777;
 }
