@@ -1,8 +1,66 @@
+html {
+  min-height: 100%;
+}
 body {
+  min-height: 100%;
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/images/drone.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+  background-color: #00b7ff;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+a:hover,
+a:focus {
+  background-color: #005272;
+}
+button {
+  color: white;
+  background-color: #00b7ff;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  border-style: none;
+}
+
+button:hover,
+button:focus {
+  background-color: #005272;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+input {
+  margin: 5px;
+  border-style: none;
+  border-radius: 10px;
+  width: 200px;
+  height: fit-content;
+  font-size: 18px;
+}
+label {
+  font-size: 18px;
 }
