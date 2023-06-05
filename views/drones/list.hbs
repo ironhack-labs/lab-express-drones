@@ -8,4 +8,7 @@
     <h3>Number of propellers: {{this.propellers}}</h3>
     <h3>Max speed: {{this.maxSpeed}}</h3>
     <a href="drones/{{_id}}/edit">Edit</a>
+    <form action="drones/{{_id}}/delete" method="post">
+        <button type="submit">Delete</button>
+    </form>
 {{/each}}
