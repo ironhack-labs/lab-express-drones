@@ -1,0 +1,18 @@
+section{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: rgba(245, 222, 179, 0.651);
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    margin: 5px;
+}
+
+button , a{
+    margin: 5px;
+}

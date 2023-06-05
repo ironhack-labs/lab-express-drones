@@ -1,1 +1,20 @@
+<link rel="stylesheet" href="/stylesheets/list.css" />
+
 <h2>Available drones</h2>
+<section>
+    {{#each drones}}
+    <ul>
+        <li>Name: {{this.name}}
+            <ul>
+                <li>N. of props: {{this.propellers}}</li>
+                <li>Max speed: {{this.maxSpeed}}</li>
+            </ul>
+        </li>    
+    </ul>
+     <a href="/drones/{{this._id}}/edit">Update Drone</a>
+        <form action="/drones/{{this._id}}/delete" method="POST">
+            <button>Delete Drone</button>
+        </form>
+    {{/each}}
+</section>
+<a onclick="history.back()">Go Back</a>
