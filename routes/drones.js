@@ -12,8 +12,7 @@ router.get('/drones', (req, res, next) => {
   
   .then((dronesFromDB)=>{
     const data = {drones : dronesFromDB}
-    console.log("Hello")
-    res.send("Hello yooooooo")
+    res.render("drones/list", data)
   })
   .catch((e) => {
     console.log("error getting list of drones from DB", e);
@@ -25,13 +24,27 @@ router.get('/drones', (req, res, next) => {
 });
 
 router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  res.render("drones/create-form")
 });
 
 router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+  const newDrone = {
+    
+      name: req.body.name,
+      propellers: req.body.propellers,
+      maxSpeed: req.body.maxSpeed,
+      
+  };
+  Drone.create(newDrone)
+    .then((newDrone)=>{
+      res.redirect("/drones");
+
+    })
+    .catch((e)=>{
+      console.log("erroe creating a drone", e);
+      next(e);
+    })
+
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
@@ -48,5 +61,8 @@ router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
 });
+
+
+
 
 module.exports = router;

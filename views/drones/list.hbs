@@ -3,11 +3,16 @@
 
 {{#each drones}}
       <section >
-          <h2>{{this.name}}</h2>
-          <h2> {{this.propellers}}€</h2>
-         <h2> {{this.maxSpeed}}€</h2>
+          <h3>{{this.name}}</h3>
+          <h4> {{this.propellers}}€</h4>
+         <h4> {{this.maxSpeed}}€</h4>
          
-
+        
           
       </section>
+      
   {{/each}}
+
+  <!-- <a href="views/drones/create">Create New Drone</a> -->
+  <a href="drones/create-form">Create New Drone</a>
+
