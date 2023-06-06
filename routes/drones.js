@@ -51,16 +51,27 @@ Drone.create(newDrone)
         res.redirect("/drones") 
 
     })
-    .catch( e => {
-        console.log("error creating new book", e);
-        next(e);
+    .catch( err => {
+        console.log("error creating new book", err);
+        res.render("drones/create-form");
     });
 
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  // ... your code here
+  const id = req.params.droneId;
+
+    Drone.findById(id)
+        .then( droneFromDB => {
+            res.render("drones/update-form", droneFromDB);
+        })
+        .catch( e => {
+            console.log("error getting drone details from DB", e);
+            next(e);
+        });
+
+
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
