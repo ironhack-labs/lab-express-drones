@@ -4,9 +4,22 @@ const { Schema, model } = require('mongoose')
 
 const droneSchema = new Schema(
   {
-    name: String,
-    propellers: Number,
-    maxSpeed: Number,
+    name: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
+    },
+    propellers: {
+      type: Number,
+      required: true,
+      trim: true,
+    },
+    maxSpeed: {
+      type: Number,
+      required: true,
+      trim: true,
+    },
   },
   {
     timestamps: true,
