@@ -1,21 +1,19 @@
-<section>
+<section class="post-form">
+  <h2>Update the drone</h2>
   {{#with drone}}
-  <section>
-    <h2>Update the drone</h2>
-    <form action="/drones/{{_id}}/edit" method="post">
-    <label for="">Name:
-      <input type="text" name="name" placeholder="{{name}}">
-    </label>
-    <label for="">Propellers:
-      <input type="number" name="propellers" min="1" max="10" placeholder="{{propellers}}">
-    </label>
-    <label for="">Max speed (m/s):
-      <input type="number" name="maxSpeed" min="1" max="30" placeholder="{{maxSpeed}}">
-    </label>
+  <form action="/drones/{{_id}}/edit" method="post">
+  <label for="">Name:
+    <input type="text" name="name" placeholder="{{name}}">
+  </label>
+  <label for="">Propellers:
+    <input type="number" name="propellers" min="1" max="10" placeholder="{{propellers}}">
+  </label>
+  <label for="">Max speed (m/s):
+    <input type="number" name="maxSpeed" min="1" max="30" placeholder="{{maxSpeed}}">
+  </label>
 
-    <button type="submit">Save</button>
-    </form>
-  </section>
+  <button type="submit">Save</button>
+  </form>
   {{/with}}
 
   <a href="/drones">Back</a>

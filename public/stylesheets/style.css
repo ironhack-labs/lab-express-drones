@@ -1,8 +1,62 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 a {
-  color: #00b7ff;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-color: #00b7ff;
+  color: white;
+  width: 80px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.4s ease;
+}
+
+a:hover {
+  background-color: #1e7ca1;
+}
+
+#index div {
+  display: flex;
+  flex-direction: column;
+}
+
+#drone-list div div {
+  margin: 20px 0;
+  background-color: rgb(13, 91, 91);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+body div div p,
+body div div form {
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.post-form form {
+  display: flex;
+  flex-direction: column;
+  background-color: #1e7ca1;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  color: white
+}
+.post-form form label {
+  margin-bottom: 10px;
+}
+.post-form form button {
+  width: 80px;
+  margin-top: 10px;
+}
+
+button {
+  cursor: pointer;
 }
