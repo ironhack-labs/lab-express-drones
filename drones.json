@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Aguila Roja",
+        "propellers": 4,
+        "maxSpeed": 15
+    },
+    {
+        "name": "Oso Rosa",
+        "propellers": 6,
+        "maxSpeed": 20
+    },
+    {
+        "name": "Llama Arcoiris",
+        "propellers": 2,
+        "maxSpeed": 25
+    }
+]
