@@ -7,20 +7,24 @@ const Drone = require('../models/Drone.model')
 router.get('/drones', (req, res, next) => {
   // Iteration #2: List the drones
   Drone.find()
-  .then(drone =>
-    res.render('drones/list', { drone })
-
-  )
+    .then(drone =>
+      res.render('drones/list', { drone })
+    )
+    .catch(err => console.error(err))
 });
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form')
 });
 
-router.post('/drones/create', (req, res, next) => {
+router.post('/drones', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  Drone.create(req.body)
+    .then(createdDrone =>{
+      res.redirect('drones')
+  console.log('Dron has been created')})
+    .catch(err => console.error(err))
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
