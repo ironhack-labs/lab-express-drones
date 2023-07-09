@@ -18,6 +18,8 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
+app.use(express.urlencoded({ extended: false }));
+
 // default value for title local
 const projectName = 'lab-express-drones';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
@@ -30,6 +32,12 @@ app.use('/', index);
 
 const droneRoutes = require('./routes/drones')
 app.use('/', droneRoutes)
+
+app.set('views', __dirname + '/views');
+hbs.registerPartials(__dirname + '/views/partials');
+
+app.use(express.static(__dirname + '/public'));
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
