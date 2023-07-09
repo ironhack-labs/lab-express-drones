@@ -1,1 +1,18 @@
 <h2>Available drones</h2>
+
+<div>
+    <div class="row">
+    {{#each drone}}
+     <div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Done Name: {{this.name}}</h2>
+      <h3>Propellers: {{this.propellers}}</h3>
+      <p>Max Speed: {{this.maxSpeed}}</p>
+      
+    </div>
+  </div>
+</div>
+    {{/each}}
+  </div>
+</div>
