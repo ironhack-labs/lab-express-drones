@@ -1,1 +1,25 @@
-<h2>Create a new drone</h2>
+{{!-- <h2>Create a new drone</h2> --}}
+{{#if isEdit}}
+  <h1>Edit the drone</h1>
+  <form action="/drones/{{drone._id}}" method="POST">
+{{else}}
+  <h1>Create a new Drone</h1>
+  <form action="/drones" method="POST">
+{{/if}}
+  <div class="mb-3">
+    <label for="name" class="form-label">Name *</label>
+    <input value="{{drone.name}}" type="text" class="form-control" id="name" name="name" placeholder="insert a name" autocomplete="off" required>
+  </div>
+  {{!-- {{#unless isEdit}} --}}
+    <div class="mb-3">
+      <label for="propellers" class="form-label">Propellers *</label>
+      <input value="{{drone.propellers}}" type="number" min="0" class="form-control" id="propellers" name="propellers" placeholder="insert number of propellers" required>
+    </div>
+  {{!-- {{/unless}} --}}
+  <div class="mb-3">
+    <label for="maxSpeed" class="form-label">MaxSpeed *</label>
+    <input value="{{drone.maxSpeed}}" type="number" min="0" class="form-control" id="maxSpeed" name="maxSpeed" placeholder="insert maxSpeed" required>
+  </div>
+
+  <button class="btn btn-primary">Submit</button>
+</form>

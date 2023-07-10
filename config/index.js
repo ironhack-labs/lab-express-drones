@@ -36,4 +36,7 @@ module.exports = (app) => {
 
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
+
+  const hbs = require("hbs");
+  hbs.registerPartials(path.join(__dirname, '..', 'views', 'partials'));
 };
