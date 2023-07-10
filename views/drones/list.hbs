@@ -9,7 +9,12 @@
       <h2 class="card-title">Drone Name: {{this.name}}</h2>
       <h3>Propellers: {{this.propellers}}</h3>
       <p>Max Speed: {{this.maxSpeed}}</p>
-      <a href="/drones/{{this._id}}/edit" class="btn btn-primary">Edit info</a>
+      <div class="d-flex">
+      <a class="btn btn-success me-2" href="/drones/{{this._id}}/edit">Edit info</a>
+      <form action="/games/{{this._id}}/delete" method="POST">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    </div>
     </div>
   </div>
 </div>
