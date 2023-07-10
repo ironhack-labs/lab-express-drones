@@ -19,7 +19,7 @@ mongoose.connection.once("open", () => {
         console.log(`${drone.name} has been created`);
       });
 
-      console.log(`${dronesDB.length} games have been created`);
+      console.log(`${dronesDB.length} drones have been created`);
     })
     .catch((err) => console.error(err))
     .finally(() => {
