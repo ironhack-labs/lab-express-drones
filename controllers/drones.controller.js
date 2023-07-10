@@ -19,3 +19,23 @@ module.exports.createDrone = (req, res, next) => {
     })
     .catch(err => next(err));
 }
+
+module.exports.getEditForm = (req, res, next) => {
+  const { id } = req.params;
+
+  Drone.findById(id)
+    .then(drone => {
+      res.render('drones/create-form', { drone, isEdit: true });
+    })
+    .catch(err => next(err));
+}
+
+module.exports.editDrone = (req, res, next) => {
+  const { id } = req.params
+
+  Drone.findByIdAndUpdate(id, req.body, { new: true })
+    .then((drone) => {
+      res.redirect(`/drones/${drone._id}`)
+    })
+    .catch(err => next(err))
+}
