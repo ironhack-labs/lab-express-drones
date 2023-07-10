@@ -22,9 +22,7 @@ router.get("/drones/:id/edit", dronesController.getEditForm);
 // Iteration #4: Update the drone - POST
 router.post("/drones/:id", dronesController.editDrone);
 
-router.post("/drones/:id/delete", (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
-});
+// Iteration #5: Delete the drone
+router.post("/drones/:id/delete", dronesController.deleteDrone);
 
 module.exports = router;

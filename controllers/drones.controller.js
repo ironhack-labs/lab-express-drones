@@ -8,6 +8,14 @@ module.exports.listDrones = (req, res, next) => {
     .catch(err => next(err));
 }
 
+module.exports.deleteDrone = (req, res, next) => {
+  const { id } = req.params;
+
+  Drone.findByIdAndDelete(id)
+    .then(() => res.redirect('/drones'))
+    .catch(err => next(err));
+}
+
 module.exports.getCreateForm = (req, res, next) => {
   res.render('drones/create-form');
 }
