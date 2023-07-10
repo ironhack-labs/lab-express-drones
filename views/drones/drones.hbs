@@ -1,0 +1,19 @@
+<div class="row d-flex justify-content-between">
+{{#each drones}}
+<div class="card m-3" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">  <strong>Propellers:</strong> {{propellers}} - <strong> Max - Speed: </strong> {{maxSpeed}}</p>
+    <div class="d-flex">
+    <form action="/drones/{{_id}}/edit" method="GET">
+        <button class="btn btn-primary me-2">Edit</button>
+      </form>
+      <form action="/drones/{{_id}}/delete" method="POST">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+      </div>
+  </div>
+</div>
+{{/each}}
+</div>
+
