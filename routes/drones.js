@@ -17,7 +17,7 @@ router.get('/drones/create', (req, res, next) => {
   res.render('drones/form')
 });
 
-router.post('/drones', (req, res, next) => {
+router.post('/drones/create', (req, res, next) => {
   Drone.create(req.body)
   .then((createdDrone) => {
     res.redirect('/drones')

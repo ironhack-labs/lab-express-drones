@@ -1,9 +1,9 @@
 {{#if isEdit}}
 <h1 class="mt-3 mb-3">Edit the drone</h1>
-<form action="/drones" method="POST">
+<form action="/drones/{{drone._id}}/edit" method="POST">
 {{else}}
 <h1 class="mt-3 mb-3">Create a new drone</h1>
-<form action="/drones" method="POST">
+<form action="/drones/create" method="POST">
 {{/if}}
  <div class="mb-3">
     <label for="name" class="form-label">Drone name</label>
