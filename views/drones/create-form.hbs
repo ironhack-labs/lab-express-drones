@@ -1,1 +1,24 @@
-<h2>Create a new drone</h2>
+{{#if drone}}
+<h2>Edit Drone</h2>
+<form action="/drones/{{drone._id}}/edit" method="POST" class="d-flex jusstify-content-center align-items-start flex-column"></form>
+    <label for="name">name</label>
+    <input value="{{drone.name}}" type="text" name="name" id="name" required>
+    <label for="propellers">Propellers</label>
+    <input value="{{drone.propellers}}"  type="number" name="propellers" id="propellers" required>
+    <label for="maxSpeed">speed</label>
+    <input value="{{drone.maxSpeed}}" type="number" name="maxSpeed" id="maxSpeed" required>
+    <button type="submit" class="mt-2">Edit a Drone</button>
+{{else}}
+<h2>Create a new Drone</h2>
+<form action="/drones/create" method="POST" class="d-flex jusstify-content-center align-items-start flex-column">
+
+    <label for="name">name</label>
+    <input type="text" name="name" id="name" required>
+    <label for="propellers">Propellers</label>
+    <input type="number" name="propellers" id="propellers" required>
+    <label for="maxSpeed">speed</label>
+    <input type="number" name="maxSpeed" id="maxSpeed" required>
+
+    <button class="mt-2">Create a Drone</button>
+{{/if}}
+</form>
