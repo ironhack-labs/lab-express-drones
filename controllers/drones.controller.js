@@ -23,7 +23,7 @@ module.exports.getCreateForm = (req, res, next) => {
 module.exports.createDrone = (req, res, next) => {
   Drone.create(req.body)
     .then(droneDB => {
-      res.redirect(`/drones/${droneDB._id}`)
+      res.redirect(`/drones`)
     })
     .catch(err => next(err));
 }
@@ -43,7 +43,7 @@ module.exports.editDrone = (req, res, next) => {
 
   Drone.findByIdAndUpdate(id, req.body, { new: true })
     .then((drone) => {
-      res.redirect(`/drones/${drone._id}`)
+      res.redirect(`/drones`)
     })
     .catch(err => next(err))
 }
