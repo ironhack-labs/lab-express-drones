@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Drone1",
+        "propellers": 4,
+        "maxSpeed": 1200
+    },
+    {
+        "name": "Drone2",
+        "propellers": 8,
+        "maxSpeed": 1800
+    },
+    {
+        "name": "Drone3",
+        "propellers": 2,
+        "maxSpeed": 600
+    }
+]

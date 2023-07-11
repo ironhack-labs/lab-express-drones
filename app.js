@@ -18,6 +18,13 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
+app.use(express.urlencoded({ extended: false })); // Para que me inyecte el req.body
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
+hbs.registerPartials(__dirname + '/views/partials');
+
+app.use(express.static(__dirname + '/public'));
+
 // default value for title local
 const projectName = 'lab-express-drones';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();

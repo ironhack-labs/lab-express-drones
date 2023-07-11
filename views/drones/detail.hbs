@@ -1,0 +1,12 @@
+<h1>{{drone.name}}</h1>
+<li>
+    <ul>this Propellers is: {{drone.propellers}}</ul>
+    <ul>this speed is: {{drone.maxSpeed}}</ul>
+</li>
+
+<form action="/drones/{{drone._id}}/delete" method="POST">
+<button class="btn btn-danger">Delete</button>
+</form>
+<form action="/drones/{{drone._id}}/edit" method="">
+<button>Edit</button>
+</form>
