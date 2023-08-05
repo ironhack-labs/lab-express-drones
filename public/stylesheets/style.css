@@ -1,8 +1,45 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+ 
+  font-size:14px;
+  font-family: sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.list{
+  background-image: url('/images/background.jpg');
+  height: 100vh;
+  text-align: center;
+}
+
+.title{
+  color:#fff;
+  font-size: 5rem;
+  padding-top: 50px;
+}
+
+
+.nav-item a{
+  margin-left: 10px;
+}
+
+h2{
+  color:#FFF;
+}
+
+input, button{
+  width: 200px;
+}
+
+.form-label{
+  color: #fff;
+}
+.form-control{
+  width: 20%!important;
+  margin: 0 auto;
+}
+.btn-dark{
+  margin: 0 auto;
 }
