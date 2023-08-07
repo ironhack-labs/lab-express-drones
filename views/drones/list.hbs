@@ -1,1 +1,24 @@
-<h2>Available drones</h2>
+<div id="list">
+    <h2>Available drones</h2>
+    
+    <div id="main-drone">
+        {{#each  drones}}  
+        <div class="drone-box">
+            <h3>{{name}}</h3>
+            <ul id="details">
+                <li><p>With {{propellers}} propellers</p></li>
+                <li><p>Able to reach up to {{maxSpeed}}mps</p></li>
+            </ul>
+            <idv id="actions">
+                <a href="/drones/{{_id}}/edit">Update specs</a>
+                <form action="/drones/{{_id}}/delete" method="post">
+                    <button>Destroy</button>
+                </form>
+            </idv>    
+            
+        </div>
+        {{/each}}
+    </div>
+    
+    
+</div>

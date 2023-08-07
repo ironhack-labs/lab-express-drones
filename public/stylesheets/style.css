@@ -1,8 +1,141 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: bisque;
 }
 
-a {
-  color: #00b7ff;
+#homepage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+#homepage img{
+  width: 700px;
+}
+
+#homepage h1{
+  font-size: 37.5px;
+  text-decoration: underline;
+}
+
+#main-anchor-tags{
+  display: flex;
+  justify-content: space-around;
+}
+
+#main-anchor-tags a{
+  color: black;
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 10px;
+  background-color:darkorange;
+  font-size: 20px;
+  text-decoration: none;
+
+}
+
+#credits{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 30px;
+}
+
+#list{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-items: center;
+}
+
+#list h2{
+  font-size: 37.5px;
+}
+
+#main-drone{
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.drone-box{
+  width: 275px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 2px black;
+  border-radius: 10px;
+  background-color: coral;
+  margin: 50px 30px;
+}
+
+.drone-box h3{
+  font-size: 25px;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+
+#details{
+  width: 100%;
+  font-size: 15px;
+}
+
+
+#actions{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#actions a{
+  text-decoration: none;
+  background-color: beige;
+  color: black;
+  border: solid 2px black;
+  border-style: outset;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#actions button{
+  background-color: beige;
+  border: solid 2px black;
+  border-style: outset;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#create-form{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-form h2{
+  font-size: 37.5px;
+  text-decoration: underline;
+}
+
+#create-form form{
+  margin-top: 50px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  border: solid 2px black;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#creator{
+  display: flex;
+  justify-content: center;
+}
+
+
