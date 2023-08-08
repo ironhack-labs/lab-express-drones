@@ -1,1 +1,20 @@
-<h2>Create a new drone</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Drone</title>
+</head>
+<body>
+  <h1>Create a New Drone</h1>
+  <form action="/drones/create" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="propellers">Propellers:</label>
+    <input type="number" id="propellers" name="propellers"><br>
+    <label for="maxSpeed">Max Speed:</label>
+    <input type="number" id="maxSpeed" name="maxSpeed"><br>
+    <button type="submit">Create Drone</button>
+  </form>
+</body>
+</html>

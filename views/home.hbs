@@ -9,16 +9,20 @@
   <!-- ... other stylesheets ... -->
 </head>
 <body>
-  <header class="header-with-background">
-    <nav class="nav-bar">
-      <a href="/" class="nav-link nav-home">Home</a>
-      <a href="/drones" class="nav-link nav-drones">List Drones</a>
-      <!-- Add other navigation links as needed -->
+  <header>
+    <h1>{{title}}</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/drones">List Drones</a>
+      <!-- ... (other navigation links) -->
     </nav>
   </header>
 
   <main>
-    {{{body}}} <!-- Use triple curly braces to prevent HTML escaping -->
+    <div class="container">
+      <h2 class="home-title">Welcome to Our Drone Store</h2>
+      <p class="home-description">Explore our collection of high-quality drones for various purposes.</p>
+    </div>
   </main>
 
   <footer>
