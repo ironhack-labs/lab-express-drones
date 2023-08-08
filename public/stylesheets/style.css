@@ -1,8 +1,83 @@
 body {
+  display: flex;
+  flex-direction: column;
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(113, 136, 199);
+  color: white;
 }
 
-a {
-  color: #00b7ff;
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: black;
+  color: white;
+  margin: 0;
 }
+
+nav a{
+  margin-right: 10px;
+  text-decoration: none;
+  margin-top: 0;
+  border: 1px solid rgb(80, 65, 65);
+  padding: 20px;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+}
+
+#list-element{
+  padding: 20px;
+  background-color: rgb(82, 79, 79);
+  margin: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  filter: drop-shadow(1px 3px 2px black);
+}
+
+#title-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+#title-buttons a{
+  background-color: aliceblue;
+  text-decoration: none;
+  margin-right: 5px;
+  color: black;
+  padding: 0 3px;
+}
+
+#title-buttons form button{
+  background-color: aliceblue;
+  text-decoration: none;
+  border: none;
+}
+
+
+#list-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  
+};
+
+#list-title{
+text-align: center;
+};
+
+
+
+
+
+
+
