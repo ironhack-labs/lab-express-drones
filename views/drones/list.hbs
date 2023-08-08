@@ -1,1 +1,46 @@
-<h2>Available drones</h2>
+<div class="container">
+	<h2>Available drones</h2>
+	<hr>
+	<div class="row justify-content-start">
+
+		{{#each allDrones}}
+		<div class="card m-3" style="width: 18rem;">
+			<div class="card-body">
+				<h4 class="card-title">{{this.name}}</h4>
+				<hr>
+				<p>Propellers: {{this.propellers}}</p>
+				<p>Speed: {{this.maxSpeed}}</p>
+			</div>
+			<a href="/drones/{{this._id}}/edit" class="btn btn-warning mb-3">Edit Drone</a>
+			<form action="/drones/{{this._id}}/delete" method="POST">
+				<div class="d-grid mb-3">
+					<input class="btn btn-danger" type="submit" value="Delete Drone">
+				</div>
+			</form>
+		</div>
+		{{/each}}
+
+		<div class="card m-3 bg-light" style="max-width: 18rem;">
+			<div class="card-body d-flex flex-column justify-content-between">
+				<div class="row">
+					<div class=" col-md-12">
+						<h5 class="card-title">Add your own Drone</h5>
+						<p class="card-text mt-3">Here you can add your custom Drone to our list</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="d-grid">
+							<a href="/drones/create" class="btn btn-success">Add Drone</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+</div>
+
+<a href="/" class="btn btn-dark">Go back</a>
+</div>
