@@ -15,12 +15,21 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('drones/create-form.hbs')
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  const {name, propellers, maxSpeed} = req.body;
+  Drone.create({name, propellers, maxSpeed})
+    .then((droneFromDB) => {
+      console.log('Added new drone: ', droneFromDB);
+      res.redirect('/drones')
+    })
+    .catch(err => {
+      console.log('Error adding a new drone: ', err)
+      next(err)
+    })
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
