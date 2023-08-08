@@ -8,9 +8,9 @@
       <p class="card-text">Propellers: {{this.propellers}}</p>
       <p class="card-text">Max Speed: {{this.maxSpeed}}</p>
       <div class="row">
-      <a href="/drones/{{this._id}}/edit" class="btn btn-primary mr-1">Update</a>
+      <a href="/drones/{{this._id}}/edit" class="update mr-2">Update</a>
       <form action="/drones/{{this._id}}/delete" method="post">
-        <button class="btn btn-dark">Delete</button>
+        <button class="delete">Delete</button>
       </form>
       </div>
     </div>
