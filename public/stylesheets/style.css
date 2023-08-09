@@ -1,8 +1,172 @@
 body {
-  padding: 50px;
+  padding: 0px;
+  margin: 0px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+header{
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid rgb(155, 54, 255);
+}
+
+header a{
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid rgb(155, 54, 255);
+  color: rgb(155, 54, 255);
+}
+
+header a.highlight {
+  background-color: rgb(155, 54, 255);
+  border: none;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+header a.highlight:hover {
+  transform: scale(1.1);
+}
+
+main{
+  position: relative;
+  padding: 40px 100px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 140px);
+}
+
+.create-form{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15vh;
+}
+
+.create-form form {
+  background-color: white;
+  transform: translateY(200px);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 15px 15px 25px #33333333;
+  padding: 40px 50px;
+  animation-name: fadeInForm;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1.4s;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+.create-form form input {
+  border: 1px solid rgb(155, 54, 255);
+  border-radius: 10px;
+  min-height: 50px;
+  padding-left: 15px;
+}
+
+.create-form form input::placeholder {
+  color: rgba(155, 54, 255, 0.38);
+}
+
+.create-form form input[type=submit] {
+  background-color: rgb(155, 54, 255);
+  color: white;
+  cursor: pointer;
+}
+
+#drone-1, #drone-2 {
+
+  position: absolute;
+  width: 300px;
+  opacity: 0.5;
+  animation-name: alienAnimation;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  
+}
+
+#drone-1 {
+  top: 15%;
+  left: 20%;
+  transform: rotate(-20deg);
+  animation-duration: 12s;
+  
+}
+
+#drone-2{
+  top: 15%;
+  right: 20%;
+  transform: rotate(30deg);
+  animation-duration: 16s;
+  animation-delay: -5.5s;
+}
+
+body{
+  animation-name: fadeInWhite;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+@keyframes alienAnimation {
+  0%{
+    transform: translateY(220px) rotate(30deg);
+  }  
+  50%{
+    transform: translateY(-50px) rotate(-10deg);
+  }
+  100%{
+    transform: translateY(220px) rotate(30deg);
+  }
+}
+
+@keyframes fadeInWhite {
+  0%{
+    opacity: 0;
+  }  
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInForm {
+  0%{
+    opacity: 0;
+    transform: translateY(200px);
+  }  
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.update {
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid rgb(155, 54, 255);
+    color: rgb(155, 54, 255);
+}
+
+.delete {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: rgb(155, 54, 255);
+  border: 1px solid rgb(155, 54, 255);
+  color: white;
 }
