@@ -1,8 +1,80 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content:flex-end;
 }
 
 a {
   color: #00b7ff;
+}
+#index-page {
+  
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+}
+#index-page > img {
+  width: 50vw;
+  height: 50vh;
+}
+.links {
+  color: black;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 7px;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(255, 255, 255);
+  width: 8vw;
+  margin: 2%;
+}
+.links:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.links:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#drones-page {
+  margin-top: 5% ;
+  border: 6px solid black;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content:flex-end;
+  padding: 50px;
+  border-radius: 7px;
+
+}
+#create-page {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content:center;
+  margin-top: 7%;
+}
+#create-page > form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content:center;
+  border: #00b7ff solid 4px;
+  padding: 20px;
+  border-radius: 7px;
+}
+#create-page > form > button {
+  width: 7vw;
+}
+#create-page > form > label {
+  align-self: center;
+  justify-content:center;
+}
+#create-page > form > label > input{
+  width: 20vw;
+  margin: 1%;
 }

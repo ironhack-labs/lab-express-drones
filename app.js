@@ -30,8 +30,10 @@ app.use('/', index);
 
 const droneRoutes = require('./routes/drones')
 app.use('/', droneRoutes)
+app.set('views', __dirname + '/views');
 
-// ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
+app.set('view engine', 'hbs');
+
 require('./error-handling')(app);
 
 module.exports = app;
