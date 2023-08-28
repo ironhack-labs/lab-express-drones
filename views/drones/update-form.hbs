@@ -1,1 +1,7 @@
 <h2>Update the drone</h2>
+<form action="/drones/create/{{_id}}" method="post" style="display: flex; flex-direction: column; align-items: center; justify-content: center">
+<label for="name">Name:</label><input type="text" id="name" placeholder="Enter the name" name={{name}}/></label>
+<label for="propellers">Propellers:<input type="number" id="name" min="1" max="10" name={{propellers}}/></label>
+<label for="name">Speed:<input type="number" id="name"  min="1" max="200" name={{maxSpeed}}/></label>
+<button type="submit">Create</button>
+</form>

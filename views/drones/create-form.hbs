@@ -1,1 +1,8 @@
+<form action="/drones/create" method="post" style="display: flex; flex-direction: column; align-items: center; justify-content: center">
 <h2>Create a new drone</h2>
+<label for="name">Name:<input type="text" id="name" placeholder="Enter the name" name="name"/></label>
+<label for="propellers">Propellers:<input type="number" id="name" min="1" max="10" name="propellers"/></label>
+<label for="name">Speed:<input type="number" id="name"  min="1" max="200" name="maxSpeed"/></label>
+<button type="submit">Create</button>
+</form>
+
