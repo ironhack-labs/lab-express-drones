@@ -1,1 +1,22 @@
-<h2>Available drones</h2>
+<div class="titel-cointainer">
+  <h2 class="list-titel">Available drones</h2>
+  <a class="create-btn" href="/drones/create">Create new drone</a>
+</div>
+<div class="container">
+  {{#each drones}}
+    <section id="section-drones-list">
+      <p>Name: {{this.name}}</p>
+      <p>Propellers: {{this.propellers}}</p>
+      <p>max Speed{{this.maxSpeed}}</p>
+
+      <div class="bottons">
+        <a href="/drones/{{_id}}/edit">Edit Drone</a>
+
+        <form id="delete-form" action="/drones/{{_id}}/delete" method="POST">
+          <button class="btn delete-btn">Delete</button>
+        </form>
+      </div>
+
+    </section>
+  {{/each}}
+</div>
