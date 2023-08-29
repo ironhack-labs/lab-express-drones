@@ -1,1 +1,16 @@
 <h2>Available drones</h2>
+
+
+{{#if drones}}
+    <ul>
+        {{#each drones}}
+            <li>
+                Name: {{this.name}} <br>
+                Propellers: {{this.propellers}} <br>
+                Max speed: {{this.maxSpeed}} <br>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p> Error: No drones found. </p>
+{{/if}}
