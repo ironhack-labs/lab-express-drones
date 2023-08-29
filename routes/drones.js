@@ -12,6 +12,7 @@ router.get('/drones', (req, res, next) => {
     })
     .catch(error => {
       console.log('Error while getting drones from the DB');
+      next(error);
     }); 
 });
 

@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const Drone = require('../models/Drone.model');
 
 // connect to MongoDB
-const MONGODB_URI = 'mongodb://localhost:27017/express-drones';
+const MONGO_URI =
+process.env.MONGODB_URI || 'mongodb://localhost:27017/express-drones';
 
 // create an array of 3 initial objects
 const drones = [
