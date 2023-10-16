@@ -1,8 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.container h1,
+h2 {
+  color: #000;
+}
+.button {
+  margin: auto;
+  padding: 5px 15px;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #515151;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #9bb0c6;
 }
 
-a {
-  color: #00b7ff;
+/* HOME PAGE */
+.bg-home {
+  background: url(/images/drones-unsplash.jpg) no-repeat center center/cover;
+  height: 100%;
+}
+.home-options {
+  text-align: center;
+  margin-top: 75vh;
+}
+.home-options a {
+  text-align: center;
+  background-color: #0f0f0f;
+  color: #d6d6d6;
+  font-size: 14px;
+  padding: 7px 15px;
+  margin: 10px;
+  border-radius: 20px;
+}
+.home-options a:hover {
+  background-color: #9bb0c6;
+  color: #515151;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #333;
+}
+.navbar a {
+  color: #fff;
+  padding: 15px;
+  display: inline-block;
+}
+.navbar a:hover {
+  background-color: #515151;
+  color: #9bb0c6;
+}
+
+/* ALL DRONES PAGE */
+.bg-all-drones {
+  background: url(/images/black-drone-unsplash.jpg) no-repeat center
+    center/cover;
+  height: 100%;
+}
+.drone-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin: 40px;
+}
+.drone-info {
+  width: 25%;
+  margin: 40px auto 0;
+  padding: 20px;
+  background-color: rgb(214, 214, 214, 0.7);
+  border-radius: 4px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.drone-info a {
+  color: #000;
+}
+
+/* CREATE PAGE and UPDATE PAGE */
+.bg-create {
+  background: url(/images/mega-drone-unsplash.jpg) no-repeat center center/cover;
+  height: 100%;
+}
+.bg-update {
+  background: url(/images/update-unsplash.jpg) no-repeat center center/cover;
+  height: 100%;
+}
+.container h2 {
+  color: #fff;
+  font-size: 30px;
+}
+.form-wrapper {
+  width: 40%;
+  margin: 40px auto 0;
+  background-color: rgb(214, 214, 214, 0.9);
+}
+.form-wrapper form,
+.form-wrapper label {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.form-wrapper form {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 30px;
+}
+.form-wrapper input {
+  margin-top: 7px;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  padding: 0 8px;
+  margin-bottom: 20px;
+}
+.form-wrapper button {
+  margin-top: 30px;
+  padding: 5px 0;
+  border: 1px solid #515151;
+  border-radius: 4px;
+}
+.form-wrapper button:hover {
+  background-color: #9bb0c6;
 }
