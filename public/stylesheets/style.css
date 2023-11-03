@@ -1,8 +1,15 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.main-page {
+  text-align: center;
+  padding-top: 250px;
+}
+
+.backImage {
+  background-image: url(./../images/drone-image.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 347px;
 }
