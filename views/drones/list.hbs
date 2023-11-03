@@ -1,1 +1,55 @@
-<h2>Available drones</h2>
+<div class="container mt-5">
+    <h2>Available drones</h2>
+    <table class="table">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name:</th>
+                <th scope="col">Propellers:</th>
+                <th scope="col">Max speed:</th>
+                <th scope="col">Edit button:</th>
+                <th scope="col">Delete button:</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {{#each drones}}
+
+            <tr>
+
+                <td>
+                    {{name}}
+                </td>
+
+                <td>
+                    {{propellers}}
+                </td>
+
+                <td>
+                    {{maxSpeed}}
+                </td>
+
+                <td>
+                    <a href="/drones/{{_id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                </td>
+
+                <td>
+
+                    <form action="/drones/{{_id}}/delete" method="POST">
+                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                    </form>
+
+                </td>
+
+            </tr>
+
+            {{/each}}
+
+        </tbody>
+
+    </table>
+
+    <a href="/" class="btn btn-dark">Back Home</a>
+</div>
