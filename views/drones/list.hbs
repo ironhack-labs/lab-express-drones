@@ -1,1 +1,25 @@
-<h2>Available drones</h2>
+<div class="container">
+    <h2>Available drones</h2>
+    <div class="row align items center">
+        {{#each drones}}
+        <div class="col-3">
+
+            <h4>{{name}}</h4>
+        </div>
+        <div class="col-3">
+            <p>Propellers: {{propellers}}</p>
+        </div>
+        <div class="col-3">
+            <p>Max Speed: {{maxSpeed}}</p>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-warning" href="drones/{{id}}/edit">Edit</a>
+            <a class="btn btn-danger" href="/drones/{{id}}/delete" role="button">Delete</a>
+        </div>
+
+        {{/each}}
+
+
+        <a class="btn btn-success" href="/drones/create" role="button">Create one!</a>
+    </div>
+</div>
