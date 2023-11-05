@@ -1,8 +1,13 @@
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+.container{
+text-decoration: none;
+text-align: center;
+padding-top: 2%;
 }
 
-a {
-  color: #00b7ff;
+.imagen{
+background-image: none;
+width: 100vh;
+height: 30vw;
 }
+
