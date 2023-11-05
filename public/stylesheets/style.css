@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
+}
+
+.container {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+h3 {
+  padding-bottom: 20px
 }
