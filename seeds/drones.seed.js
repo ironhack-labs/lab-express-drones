@@ -21,27 +21,24 @@ const drones = [
         maxSpeed: 18
     }
 ]
-
 const connectionString = "mongodb://127.0.0.1:27017/lab-express-drones"
 
-
 mongoose
-    .connect(connectionString)
-    .then(x => {
-        console.log(`Connected to Mongo database: "${x.connections[0].name}"`)
+    .connect(MONGO_URI)
+    .then((x) => {
+        console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
         return Drone.create(drones)
     })
-    .then(dronesFromDB => {
-        console.log(`Created ${dronesFromDB.length} drones`)
+    .then(dronesDB => {
+        console.log(`Created ${dronesDB.length} drones`)
+        return mongoose.connection.close()
     })
     .then(() => {
         console.log('DB connection closed!')
     })
-    .catch(err => {
-        console.log(`An error ocurred while creating drones form the DB: ${err}`)
-
-    })
-
+    .catch((err) => {
+        console.error("Error connecting to mongo: ", err)
+    });
 
 
 
