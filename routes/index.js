@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
+//const Drone = require()
 
-/* GET home page */
-router.get("/", (req, res, next) => res.render("index"));
+
+router.get("/", (req, res, next) => console.log(drones));
+console.log("ciao ciao")
 
 module.exports = router;
