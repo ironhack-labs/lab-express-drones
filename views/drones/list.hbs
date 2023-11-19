@@ -1,1 +1,22 @@
-<h2>Available drones</h2>
+<div class='bg-all-drones'>
+  <div class='navbar'>
+    <a href='/'>Home</a>
+    <a href='/drones/create'>Create New</a>
+  </div>
+  <div class='container'>
+    <h2>Available drones</h2>
+    <div class='drone-card'>
+      {{#each drones}}
+        <div class='drone-info'>
+          <h3>{{name}}</h3>
+          <p>Propellers: {{propellers}}</p>
+          <p>Max Speed: {{maxSpeed}}</p>
+          <button class='button'><a href='/drones/{{_id}}/edit'>Edit Drone</a></button>
+          <form action='/drones/{{_id}}/delete' method='post'>
+            <button class='button'>Delete</button></form>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+</div>
