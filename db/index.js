@@ -2,6 +2,10 @@
 // https://www.npmjs.com/package/mongoose
 const mongoose = require("mongoose");
 
+
+//I add this line to avoid  DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7
+
+mongoose.set('strictQuery', false);
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 

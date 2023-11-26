@@ -1,6 +1,12 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url('https://www.xtrafondos.com/descargar.php?id=5449&resolucion=2560x1440');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
 }
 
 a {
