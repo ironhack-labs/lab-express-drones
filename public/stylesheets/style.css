@@ -1,6 +1,11 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-image: url('https://taylorryan.io/wp-content/uploads/2019/05/5-EPIC-DRONES-768x411.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
 }
 
 a {
