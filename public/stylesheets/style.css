@@ -1,8 +1,25 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00b7ff;
+.index {
+  background-image: url('https://travesiapirenaica.b-cdn.net/wp-content/uploads/2018/12/Drones-con-c%C3%A1mara-para-outdoor_by-jared-brashier_800x600.jpg');
+  background-size: cover;
+  height: 60rem;
+  padding: 8rem;
+}
+.text { 
+  padding: 50px;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin: 3rem;
+}
+.btn { 
+  width: 10rem;
+}
+.references {
+  display: flex;
+  justify-content: start;
 }
