@@ -1,8 +1,53 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 20px;
+  font: 16px 'Helvetica Neue', Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
 }
 
-a {
-  color: #00b7ff;
+li {
+  list-style: none;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+.product-item {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+form input, form button {
+  padding: 10px;
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+}
+
+button, .button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover, .button:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
 }
