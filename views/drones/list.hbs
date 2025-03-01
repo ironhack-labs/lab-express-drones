@@ -1,1 +1,38 @@
-<h2>Available drones</h2>
+<h2 class="text-2xl font-bold mb-6">Available drones</h2>
+
+{{#if drones.length}}
+  <div class="overflow-x-auto mb-6">
+    <table class="min-w-full bg-white border border-gray-200">
+      <thead>
+        <tr>
+          <th class="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Name</th>
+          <th class="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Propellers</th>
+          <th class="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Max Speed</th>
+          <th class="px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        {{#each drones}}
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4 whitespace-nowrap">{{this.name}}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{this.propellers}}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{this.maxSpeed}} mph</td>
+            <td class="px-6 py-4 whitespace-nowrap space-x-2">
+              <a href="/drones/{{this._id}}" class="inline-block px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Details</a>
+              <a href="/drones/{{this._id}}/edit" class="inline-block px-4 py-2 bg-yellow-500 text-white text-sm font-medium rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">Edit</a>
+              <form action="/drones/{{this._id}}/delete" method="POST" class="inline">
+                <button type="submit" class="inline-block px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Delete</button>
+              </form>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+{{else}}
+  <p class="text-gray-600 mb-6">No drones available yet.</p>
+{{/if}}
+
+<div class="mt-6">
+  <a href="/drones/create" class="inline-block px-5 py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Add a new drone</a>
+</div>

@@ -1,1 +1,38 @@
-<h2>Create a new drone</h2>
+<h2 class="text-2xl font-bold mb-6">Create a new drone</h2>
+
+{{#if errorMessage}}
+  <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6" role="alert">
+    <p>{{errorMessage}}</p>
+  </div>
+{{/if}}
+
+<div class="max-w-2xl">
+  <form action="/drones/create" method="POST">
+    <div class="mb-6">
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" 
+        id="name" name="name" placeholder="Enter drone name" value="{{drone.name}}" required>
+    </div>
+    
+    <div class="mb-6">
+      <label for="propellers" class="block text-sm font-medium text-gray-700 mb-2">Number of Propellers</label>
+      <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" 
+        id="propellers" name="propellers" min="1" placeholder="Enter number of propellers" value="{{drone.propellers}}" required>
+    </div>
+    
+    <div class="mb-6">
+      <label for="maxSpeed" class="block text-sm font-medium text-gray-700 mb-2">Maximum Speed (mph)</label>
+      <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" 
+        id="maxSpeed" name="maxSpeed" min="1" placeholder="Enter maximum speed" value="{{drone.maxSpeed}}" required>
+    </div>
+    
+    <div class="flex space-x-4">
+      <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Create Drone
+      </button>
+      <a href="/drones" class="inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Cancel
+      </a>
+    </div>
+  </form>
+</div>

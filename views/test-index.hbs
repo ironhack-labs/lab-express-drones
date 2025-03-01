@@ -1,0 +1,31 @@
+<div class="max-w-4xl mx-auto py-8">
+  <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-md">
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">Error Testing Routes</h1>
+      <p class="text-gray-600">Use these routes to test different error handling scenarios in the application.</p>
+    </div>
+    
+    <div class="space-y-4">
+      {{#each tests}}
+        <div class="border-l-4 border-blue-500 pl-4 py-2">
+          <h2 class="text-lg font-medium text-gray-700">{{this.description}}</h2>
+          <a href="{{this.path}}" class="inline-flex items-center mt-2 text-blue-600 hover:text-blue-800">
+            <span>{{this.path}}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      {{/each}}
+    </div>
+    
+    <div class="mt-8 pt-4 border-t border-gray-200">
+      <a href="/drones" class="inline-flex items-center text-gray-600 hover:text-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Back to Application
+      </a>
+    </div>
+  </div>
+</div>
