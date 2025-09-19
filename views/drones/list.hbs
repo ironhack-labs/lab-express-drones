@@ -1,1 +1,16 @@
 <h2>Available drones</h2>
+
+{{#each drones}}
+    <ul>
+        <li>{{this.name}}</li>
+        <li>{{this.propellers}}</li>
+        <li>{{this.maxSpeed}}</li>
+    </ul>
+    <a href="/drones/{{this.id}}/edit">Edit</a>
+
+    <!-- utilizar formulario form para borrar elemento con POST, no usar GET -->
+    <form action="/drones/{{this._id}}/delete" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+    </form>
+    
+{{/each}}
